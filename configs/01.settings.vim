@@ -1,6 +1,4 @@
 set nocompatible
-filetype plugin on
-syntax on
 set termguicolors
 set number
 set autoindent
@@ -13,6 +11,11 @@ set mouse=a
 set splitright
 set splitbelow
 set clipboard=unnamedplus
+
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
 
 let g:coc_node_path = '/usr/local/lib/nodejs/bin/node'
 let g:ale_disable_lsp = 1
