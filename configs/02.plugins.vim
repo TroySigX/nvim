@@ -14,13 +14,13 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
-Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary' 
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'dstein64/vim-startuptime'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'folke/todo-comments.nvim'
+Plug 'folke/todo-comments.nvim', {'branch' : 'neovim-pre-0.8.0'}
 Plug 'sheerun/vim-polyglot'
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.*' }
+Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.0.0' }
 
 call plug#end()
