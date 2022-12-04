@@ -23,5 +23,6 @@ Plug 'folke/todo-comments.nvim', {'branch' : 'neovim-pre-0.8.0'}
 Plug 'sheerun/vim-polyglot'
 Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.0*' }
 Plug 'nathom/filetype.nvim'
+" Plug 'mfussenegger/nvim-dap'
 
 call plug#end()
