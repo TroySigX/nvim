@@ -19,9 +19,9 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'dstein64/vim-startuptime'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'folke/todo-comments.nvim', {'branch' : 'neovim-pre-0.8.0'}
+Plug 'folke/todo-comments.nvim'
 Plug 'sheerun/vim-polyglot'
-Plug 'akinsho/bufferline.nvim', { 'tag': 'v3.0*' }
+Plug 'akinsho/bufferline.nvim'
 Plug 'nathom/filetype.nvim'
 " Plug 'mfussenegger/nvim-dap'
 
