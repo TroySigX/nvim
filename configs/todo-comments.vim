@@ -1,10 +1,4 @@
-lua << EOF
-  require("todo-comments").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  }
-EOF
+lua require("todo-comments").setup()
 
 let g:the_primeagen_qf_g = 0
 
