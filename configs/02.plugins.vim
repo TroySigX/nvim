@@ -14,7 +14,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'voldikss/vim-floaterm'
-Plug 'tpope/vim-commentary' 
+" Plug 'tpope/vim-commentary' 
+Plug 'numToStr/Comment.nvim'
 Plug 'lervag/vimtex', {'for': 'tex'}
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 Plug 'dstein64/vim-startuptime'
