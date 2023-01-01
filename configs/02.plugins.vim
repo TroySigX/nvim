@@ -8,8 +8,6 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'jiangmiao/auto-pairs'
 Plug 'dense-analysis/ale'
 Plug 'nvim-lualine/lualine.nvim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'lervag/vimtex', {'for': 'tex'}
