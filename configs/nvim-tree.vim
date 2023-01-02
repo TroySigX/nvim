@@ -8,10 +8,11 @@ local function open_tab_silent(node)
 
 end
 
-local function goto_cwd()
+local function goto_buffer_cwd()
   vim.cmd("wincmd l")
-  vim.cmd("NvimTreeFindFile")
-  vim.cmd("wincmd h")
+  local api = require("nvim-tree.api")
+  api.tree.close()
+  vim.cmd("NvimTreeFindFile!")
 end
 
 require("nvim-tree").setup({
@@ -20,10 +21,10 @@ require("nvim-tree").setup({
     mappings = {
       list = {
         { key = "T", action = "open_tab_silent", action_cb = open_tab_silent },
-        { key = "CD", action = "goto_cwd", action_cb = goto_cwd },
+        { key = "CD", action = "goto_cwd", action_cb = goto_buffer_cwd },
       },
     }
-  }
+  },
 })
 
 EOF
