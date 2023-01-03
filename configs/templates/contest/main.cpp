@@ -16,7 +16,7 @@ namespace IO{
                 cin.exceptions(cin.failbit);
                 setIn("input.txt");
             #endif // ONLINE_JUDGE
-        } else if (s != "__empty__"){
+        } else if (s != "__std__"){
             setIn(s + ".in");
             setOut(s + ".out");
         }
