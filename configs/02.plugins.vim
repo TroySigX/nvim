@@ -5,7 +5,7 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'preservim/tagbar'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'jiangmiao/auto-pairs'
+Plug 'windwp/nvim-autopairs'
 Plug 'dense-analysis/ale'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
