@@ -58,18 +58,6 @@ namespace Function{
         sort(a.begin(), a.end());
         a.resize(unique(a.begin(), a.end()) - a.begin());
     }
-    template <typename T1, typename T2, typename T3> int position(T1 Begin, T2 End, T3 val, bool type = 0){
-        if (type == 0){
-            return lower_bound(Begin, End, val) - Begin;
-        }
-        return upper_bound(Begin, End, val) - Begin;
-    }
-    template <typename T1, typename T2, typename T3, typename T4> int position(T1 Head, T2 Begin, T3 End, T4 val, bool type){
-        if (type == 0){
-            return lower_bound(Head + Begin, Head + End, val) - Head;
-        }
-        return upper_bound(Head + Begin, Head + End, val) - Head;
-    }
     template <typename T> long long sqr(T x) {return 1LL * x * x;}
     template <typename T1, typename T2> long long GCD(T1 a, T2 b) {return b == 0 ? a : GCD(b, a % b);}
     template <typename T1, typename T2> long long LCM(T1 a, T2 b) {return 1LL * a / GCD(a, b) * b;}
