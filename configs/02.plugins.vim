@@ -10,7 +10,6 @@ Plug 'dense-analysis/ale'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'ibhagwan/fzf-lua', {'branch': 'main'}
-Plug 'junegunn/fzf.vim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'numToStr/Comment.nvim'
 Plug 'lervag/vimtex', {'for': 'tex'}
