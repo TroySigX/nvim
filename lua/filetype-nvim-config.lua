@@ -1,4 +1,3 @@
-lua << EOF
 require("filetype").setup({
     overrides = {
         extensions = {
@@ -46,4 +45,3 @@ require("filetype").setup({
         },
     },
 })
-EOF

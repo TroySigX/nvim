@@ -1,5 +1,3 @@
-lua << EOF
-
 local function open_tab_silent(node)
   local api = require("nvim-tree.api")
 
@@ -27,8 +25,7 @@ require("nvim-tree").setup({
   },
 })
 
-EOF
-
-map <silent> <F2> <Esc>:NvimTreeToggle<CR>
-imap <silent> <F2> <Esc>:NvimTreeToggle<CR>
-tmap <silent> <F2> <Esc>:NvimTreeToggle<CR>
+local map = vim.keymap.set
+map("n", "<F2>", ":NvimTreeToggle<CR>", {silent = true})
+map("i", "<F2>", "<Esc>:NvimTreeToggle<CR>", {silent = true})
+map("v", "<F2>", "<Esc>:NvimTreeToggle<CR>", {silent = true})
