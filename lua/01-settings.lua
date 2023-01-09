@@ -13,7 +13,7 @@ vim.cmd([[
     set splitright
     set splitbelow
     set clipboard+=unnamedplus
-    filetype on 
+    filetype on
     filetype plugin on
     filetype indent on
     syntax on
@@ -49,7 +49,7 @@ vim.cmd([[
     autocmd Filetype java :nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/Main.java<CR>:3<CR>i
 ]])
 
-vim.diagnostic.config({ 
+vim.diagnostic.config({
     virtual_text = false,
     signs = { severity = vim.diagnostic.severity.ERROR }
 })

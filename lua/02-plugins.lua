@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
-    }   
+    }
 
     use { 'nvim-lualine/lualine.nvim',
         requires = 'kyazdani42/nvim-web-devicons'
@@ -19,7 +19,7 @@ return require('packer').startup(function(use)
     use 'akinsho/toggleterm.nvim'
 
     use 'numToStr/Comment.nvim'
-    
+
     use 'dstein64/vim-startuptime'
 
     use {
@@ -41,8 +41,8 @@ return require('packer').startup(function(use)
 
     use 'williamboman/mason.nvim'
 
-    use { 
-        'junegunn/fzf', 
+    use {
+        'junegunn/fzf',
         run = './install --bin',
     }
 
@@ -52,6 +52,7 @@ return require('packer').startup(function(use)
     }
 
     use 'mfussenegger/nvim-lint'
+
 
     use {
         'lervag/vimtex',
