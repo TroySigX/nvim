@@ -51,10 +51,7 @@ return require('packer').startup(function(use)
         requires = 'nvim-tree/nvim-web-devicons',
     }
 
-    use {
-        'mfussenegger/nvim-jdtls',
-        ft = java
-    }
+    use 'mfussenegger/nvim-lint'
 
     use {
         'lervag/vimtex',
