@@ -2,12 +2,12 @@ vim.cmd([[
     set nocompatible
     set termguicolors
     set relativenumber
-    set autoindent
     set tabstop=4
     set shiftwidth=4
-    set smarttab
     set softtabstop=4
     set expandtab
+    set ignorecase
+    set smartcase
     set mouse=a
     set splitright
     set splitbelow
