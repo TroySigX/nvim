@@ -27,6 +27,8 @@ return require('packer').startup(function(use)
         requires = "nvim-lua/plenary.nvim",
     }
 
+    -- use 'sheerun/vim-polyglot'
+
     use {
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'

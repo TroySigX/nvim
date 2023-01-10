@@ -1,5 +1,4 @@
 vim.cmd([[
-    set signcolumn=auto
     set nocompatible
     set termguicolors
     set relativenumber
@@ -13,6 +12,8 @@ vim.cmd([[
     set splitright
     set splitbelow
     set clipboard+=unnamedplus
+    set signcolumn=yes
+
     filetype on
     filetype plugin on
     filetype indent on
@@ -20,6 +21,7 @@ vim.cmd([[
 
     set encoding=UTF-8
     set showmatch
+    set nobackup
 
     "abbreviations
     autocmd Filetype java :ab deprint System.out.print();
