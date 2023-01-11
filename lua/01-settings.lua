@@ -22,6 +22,7 @@ vim.cmd([[
     set encoding=UTF-8
     set showmatch
     set nobackup
+    set updatetime=300
 
     "abbreviations
     autocmd Filetype java :ab deprint System.out.print();
