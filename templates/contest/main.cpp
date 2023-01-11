@@ -123,11 +123,6 @@ using namespace Output;
  
 typedef pair <int, int> pii;
  
-const int dx[] = {1, -1, 0, 0};
-const int dy[] = {0, 0, 1, -1};
-const int INF = 1e9 + 10;
-const long long INFL = 1e18 + 1e15;
-const int MOD = 1e9 + 7;
 const int N = 1e5 + 10;
  
 int main(){
