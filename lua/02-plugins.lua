@@ -1,8 +1,6 @@
 return require('packer').startup(function(use)
     use 'lewis6991/impatient.nvim'
 
-    use 'lewis6991/impatient.nvim'
-
     use 'nvim-tree/nvim-tree.lua'
 
     use 'preservim/tagbar'
@@ -75,9 +73,6 @@ return require('packer').startup(function(use)
         requires = {
             'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-cmdline',
         }
     }
 end)

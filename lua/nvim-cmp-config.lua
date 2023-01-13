@@ -9,15 +9,10 @@ end
 local cmp = require('cmp')
 
 cmp.setup({
-    window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
-    },
-
     mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete{ reason = cmp.ContextReason.Auto },
     ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = function(fallback)
       if not cmp.select_next_item() then
         if vim.bo.buftype ~= 'prompt' and has_words_before() then
@@ -65,13 +60,5 @@ cmp.setup({
 
           vim.api.nvim_buf_set_lines(0, line_num - 1, line_num, true, replace)
         end,
-    },
-})
-
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline({ '/', '?' }, {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-      { name = 'buffer' }
     },
 })
