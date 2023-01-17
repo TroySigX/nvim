@@ -26,6 +26,7 @@ require("nvim-tree").setup({
 })
 
 local map = vim.keymap.set
-map("n", "<F2>", ":NvimTreeToggle<CR>", {silent = true})
-map("i", "<F2>", "<Esc>:NvimTreeToggle<CR>", {silent = true})
-map("v", "<F2>", "<Esc>:NvimTreeToggle<CR>", {silent = true})
+local api = require('nvim-tree.api')
+map('n', '<F2>', api.tree.toggle, { desc = 'Toggle Tree' })
+map('i', '<F2>', api.tree.toggle, { desc = 'Toggle Tree' })
+map('v', '<F2>', api.tree.toggle, { desc = 'Toggle Tree' })

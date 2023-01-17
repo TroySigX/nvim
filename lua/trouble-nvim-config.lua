@@ -11,11 +11,11 @@ for _, sign in ipairs(signs) do
 end
 
 local map = vim.keymap.set
-local opts = { silent = true, noremap = true }
+local opts = { silent = true }
 
-map('n', '<F1>', ":TroubleToggle<CR>", opts)
-map('i', '<F1>', "<Esc>:TroubleToggle<CR>", opts)
-map('v', '<F1>', "<Esc>:TroubleToggle<CR>", opts)
-map('n', 'E', vim.diagnostic.open_float, opts)
-map('n', '<C-k>', vim.diagnostic.goto_prev, opts)
-map('n', '<C-j>', vim.diagnostic.goto_next, opts)
+map('n', '<F1>', ":TroubleToggle<CR>", { desc = 'Toggle Trouble List', unpack(opts) })
+map('i', '<F1>', "<Esc>:TroubleToggle<CR>", { desc = 'Toggle Trouble List', unpack(opts) })
+map('v', '<F1>', "<Esc>:TroubleToggle<CR>", { desc = 'Toggle Trouble List', unpack(opts) })
+map('n', 'E', vim.diagnostic.open_float, { desc = 'Open Diagnostic on line' })
+map('n', '<C-k>', vim.diagnostic.goto_prev, { desc = 'Go To Previous Error' })
+map('n', '<C-j>', vim.diagnostic.goto_next, { desc = 'Go To Next Error' })

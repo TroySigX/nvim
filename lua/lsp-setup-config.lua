@@ -1,7 +1,6 @@
 local map = vim.keymap.set
-local bufops = { noremap = true, silent = true }
-map('n', 'K', vim.lsp.buf.definition, bufopts)
-map('n', '<space>a', vim.lsp.buf.code_action, bufops)
+map('n', 'K', vim.lsp.buf.definition, { desc = 'LSP Definition' })
+map('n', '<space>a', vim.lsp.buf.code_action, { desc = 'LSP Code Action' })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig')['clangd'].setup {
