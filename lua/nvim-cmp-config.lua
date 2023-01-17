@@ -33,10 +33,11 @@ cmp.setup({
     end,
     }),
 
-    sources = cmp.config.sources({ { name = 'nvim_lsp' },
-    }, {
-      { name = 'buffer' },
-    }),
+    sources = {
+        { name = 'nvim_lsp' },
+        { name = 'buffer' },
+        { name = 'nvim_lsp_signature_help' },
+    },
 
     snippet = {
         -- We recommend using *actual* snippet engine.
