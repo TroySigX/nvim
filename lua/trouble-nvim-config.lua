@@ -12,6 +12,7 @@ end
 
 local map = vim.keymap.set
 local opts = { silent = true, noremap = true }
+
 map('n', '<F1>', ":TroubleToggle<CR>", opts)
 map('i', '<F1>', "<Esc>:TroubleToggle<CR>", opts)
 map('v', '<F1>', "<Esc>:TroubleToggle<CR>", opts)

@@ -1,8 +1,10 @@
 local map = vim.keymap.set
-map("n", "<F9>", ":ToggleTerm<CR>", {silent = true, noremap = true})
-map("i", "<F9>", "<Esc>:ToggleTerm<CR>", {silent = true, noremap = true})
-map("v", "<F9>", "<Esc>:ToggleTerm<CR>", {silent = true, noremap = true})
-map("t", "<F9>", "<C-\\><C-N>:ToggleTerm<CR>", {silent = true, noremap = true})
+local bufopts = { silent = true }
+
+map("n", "<F9>", ":ToggleTerm<CR>", bufopts)
+map("i", "<F9>", "<Esc>:ToggleTerm<CR>", bufopts)
+map("v", "<F9>", "<Esc>:ToggleTerm<CR>", bufopts)
+map("t", "<F9>", "<C-\\><C-N>:ToggleTerm<CR>", bufopts)
 
 require("toggleterm").setup{
   direction = 'float',
