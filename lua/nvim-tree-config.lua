@@ -23,6 +23,9 @@ require("nvim-tree").setup({
       },
     }
   },
+  git = {
+      ignore = false,
+  },
 })
 
 local map = vim.keymap.set
