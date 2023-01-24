@@ -3,7 +3,15 @@ local function open_tab_silent(node)
 
   api.node.open.tab(node)
   vim.cmd.tabprev()
+end
 
+local function open_tab(node)
+    local api = require('nvim-tree.api')
+
+    api.node.open.tab(node)
+    vim.cmd.tabprev()
+    api.tree.close()
+    vim.cmd.tabnext()
 end
 
 local function goto_buffer_cwd()
@@ -18,6 +26,7 @@ require("nvim-tree").setup({
   view = {
     mappings = {
       list = {
+        { key = "<C-t>", action = "open_tab", action_cb = open_tab },
         { key = "T", action = "open_tab_silent", action_cb = open_tab_silent },
         { key = "CD", action = "goto_cwd", action_cb = goto_buffer_cwd },
       },
