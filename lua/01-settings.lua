@@ -33,6 +33,9 @@ vim.cmd([[
     nmap <F7> gt
     vmap <F7> <Esc> gt
     imap <F7> <Esc> gt
+    nmap <F19> gT
+    vmap <F19> <Esc> gT
+    imap <F19> <Esc> gT
 
     noremap <leader>1 1gt
     noremap <leader>2 2gt
