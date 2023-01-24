@@ -9,6 +9,8 @@ return require('packer').startup(function(use)
 
     use 'jiangmiao/auto-pairs'
 
+    use 'mfussenegger/nvim-dap'
+
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
@@ -64,6 +66,11 @@ return require('packer').startup(function(use)
     use {
         'xuhdev/vim-latex-live-preview',
         ft = 'tex'
+    }
+
+    use {
+        'rcarriga/nvim-dap-ui',
+        requires = { 'mfussenegger/nvim-dap' }
     }
 
     use {
