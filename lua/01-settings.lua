@@ -1,52 +1,59 @@
-vim.cmd([[
-    set nocompatible
-    set termguicolors
-    set relativenumber
-    set tabstop=4
-    set shiftwidth=4
-    set softtabstop=4
-    set expandtab
-    set ignorecase
-    set smartcase
-    set mouse=a
-    set splitright
-    set splitbelow
-    set clipboard+=unnamedplus
-    set signcolumn=yes
+vim.o.nocompatible = true
+vim.o.termguicolors = true
+vim.o.relativenumber = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+vim.o.expandtab = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.mouse = a
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.opt.clipboard:append('unnamedplus')
+vim.o.signcolumn = 'yes'
 
+vim.o.encoding = 'UTF-8'
+vim.o.showmatch = true
+vim.o.nobackup = true
+vim.o.updatetime = 300
+
+-- moving between tabs
+local map = vim.keymap.set
+map('n', '<F7>', 'gt')
+map('i', '<F7>', '<Esc>gt')
+map('v', '<F7>', '<Esc>gt')
+map('n', '<F19>', 'gT')
+map('i', '<F19>', '<Esc>gT')
+map('v', '<F19>', '<Esc>gT')
+
+map('n', '<leader>1', '1gt')
+map('n', '<leader>2', '2gt')
+map('n', '<leader>3', '3gt')
+map('n', '<leader>4', '4gt')
+map('n', '<leader>5', '5gt')
+map('n', '<leader>6', '6gt')
+map('n', '<leader>7', '7gt')
+map('n', '<leader>8', '8gt')
+map('n', '<leader>9', '9gt')
+map('n', '<leader>0', ':tablast<CR>')
+
+vim.diagnostic.config({
+    virtual_text = false,
+    signs = { severity = vim.diagnostic.severity.ERROR }
+})
+
+vim.cmd([[
     filetype on
     filetype plugin on
     filetype indent on
     syntax on
 
-    set encoding=UTF-8
-    set showmatch
-    set nobackup
-    set updatetime=300
 
     "abbreviations
     autocmd Filetype java :ab deprint System.out.print();
     autocmd Filetype java :ab deprintln System.out.println();
     autocmd Filetype python :ab main$ if __name__ == '__main__':
-
-    "moving between tabs
-    nmap <F7> gt
-    vmap <F7> <Esc> gt
-    imap <F7> <Esc> gt
-    nmap <F19> gT
-    vmap <F19> <Esc> gT
-    imap <F19> <Esc> gT
-
-    noremap <leader>1 1gt
-    noremap <leader>2 2gt
-    noremap <leader>3 3gt
-    noremap <leader>4 4gt
-    noremap <leader>5 5gt
-    noremap <leader>6 6gt
-    noremap <leader>7 7gt
-    noremap <leader>8 8gt
-    noremap <leader>9 9gt
-    noremap <leader>0 :tablast<cr>
 
     "template
     autocmd Filetype cpp :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/main.cpp<CR>:131<CR>i
@@ -54,8 +61,3 @@ vim.cmd([[
     autocmd Filetype java :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/Main.java<CR>:24<CR>i
     autocmd Filetype java :nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/Main.java<CR>:3<CR>i
 ]])
-
-vim.diagnostic.config({
-    virtual_text = false,
-    signs = { severity = vim.diagnostic.severity.ERROR }
-})
