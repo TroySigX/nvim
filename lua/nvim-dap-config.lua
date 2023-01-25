@@ -24,5 +24,11 @@ dap.configurations.c = {
 }
 
 dap.configurations.cpp = dap.configurations.c
+local map = vim.keymap.set
 
 require('dapui').setup()
+
+map('n', '<leader>b', require('dap').toggle_breakpoint, { desc = 'Toggle [B]reakpoint' })
+map('n', '<F8>', require('dapui').toggle, { desc = 'Toggle DapUI' })
+map('i', '<F8>', require('dapui').toggle, { desc = 'Toggle DapUI' })
+map('v', '<F8>', require('dapui').toggle, { desc = 'Toggle DapUI' })
