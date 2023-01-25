@@ -57,17 +57,6 @@ return require('packer').startup(function(use)
 
     use 'mfussenegger/nvim-lint'
 
-
-    use {
-        'lervag/vimtex',
-        ft = 'tex'
-    }
-
-    use {
-        'xuhdev/vim-latex-live-preview',
-        ft = 'tex'
-    }
-
     use {
         'rcarriga/nvim-dap-ui',
         requires = { 'mfussenegger/nvim-dap' }
