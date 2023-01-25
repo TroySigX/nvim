@@ -38,6 +38,10 @@ map('n', '<leader>8', '8gt')
 map('n', '<leader>9', '9gt')
 map('n', '<leader>0', ':tablast<CR>')
 
+-- insert new line without entering insert mode
+map('n', '<CR>', 'm`o<Esc>``', { desc = 'Insering new line below without entering insert mode' })
+map('n', '<S-CR>', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
+
 vim.diagnostic.config({
     virtual_text = false,
     signs = { severity = vim.diagnostic.severity.ERROR }
