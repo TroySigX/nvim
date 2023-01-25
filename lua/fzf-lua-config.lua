@@ -9,6 +9,6 @@ map('i', '<F18>', require('fzf-lua').oldfiles, { desc = 'Old files' })
 map('v', '<F18>', require('fzf-lua').oldfiles, { desc = 'Old files' })
 map('t', '<F18>', require('fzf-lua').oldfiles, { desc = 'Old files' })
 
-map('n', '<space>gr', require('fzf-lua').live_grep, { desc = 'Live Urep' })
+map('n', '<space>gr', require('fzf-lua').live_grep, { desc = 'Live [Gr]ep' })
 map('n', '<space>sw', require('fzf-lua').grep_cword, { desc = '[S]earch [W]ord' })
 map('n', '<space>km', require('fzf-lua').keymaps, { desc = '[K]ey[M]aps' })
