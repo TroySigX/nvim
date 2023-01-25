@@ -2,7 +2,11 @@ local dap = require('dap')
 dap.adapters.codelldb = {
     type = 'server',
     host = '127.0.0.1',
-    port = 13000
+    port = 13000,
+    executable = {
+        command = '/usr/bin/codelldb',
+        args = {"--port", "13000"},
+    }
 }
 
 dap.configurations.c = {
@@ -14,7 +18,8 @@ dap.configurations.c = {
         end,
         --program = '${fileDirname}/${fileBasenameNoExtension}',
         cwd = '${workspaceFolder}',
-        terminal = 'integrated'
+        terminal = 'integrated',
+        stopOnEntry = false,
     }
 }
 
