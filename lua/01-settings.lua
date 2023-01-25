@@ -18,6 +18,7 @@ vim.o.showmatch = true
 vim.o.nobackup = true
 vim.o.updatetime = 300
 
+
 -- moving between tabs
 local map = vim.keymap.set
 map('n', '<F7>', 'gt')
@@ -41,6 +42,8 @@ map('n', '<leader>0', ':tablast<CR>')
 -- insert new line without entering insert mode
 map('n', '<CR>', 'm`o<Esc>``', { desc = 'Insering new line below without entering insert mode' })
 map('n', '<S-CR>', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
+
+map('n', 'gx', ":silent execute '!xdg-open ' .. shellescape(expand('<cfile>'))<CR>", { desc = 'open link', silent = true })
 
 vim.diagnostic.config({
     virtual_text = false,
