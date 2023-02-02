@@ -13,9 +13,7 @@ dap.configurations.c = {
     {
         type = 'codelldb',
         request = 'launch',
-        program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd()..'/', 'file')
-        end,
+        program = vim.fn.getcwd()..'/a.out',
         --program = '${fileDirname}/${fileBasenameNoExtension}',
         cwd = '${workspaceFolder}',
         terminal = 'integrated',
