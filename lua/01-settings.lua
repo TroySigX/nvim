@@ -12,6 +12,7 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 vim.opt.clipboard:append('unnamedplus')
 vim.o.signcolumn = 'yes'
+vim.o.syntax = 'on'
 
 vim.o.encoding = 'UTF-8'
 vim.o.showmatch = true
@@ -54,8 +55,6 @@ vim.cmd([[
     filetype on
     filetype plugin on
     filetype indent on
-    syntax on
-
 
     "abbreviations
     autocmd Filetype java :ab deprint System.out.print();
@@ -63,7 +62,7 @@ vim.cmd([[
     autocmd Filetype python :ab main$ if __name__ == '__main__':
 
     "template
-    autocmd Filetype cpp :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/main.cpp<CR>:131<CR>i
+    autocmd Filetype cpp :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/main.cpp<CR>:133<CR>i
     autocmd Filetype cpp :nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/main.cpp<CR>:6<CR>i
     autocmd Filetype java :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/Main.java<CR>:24<CR>i
     autocmd Filetype java :nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/Main.java<CR>:3<CR>i

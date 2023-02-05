@@ -123,6 +123,8 @@ using namespace Output;
  
 typedef pair <int, int> pii;
  
+const long long INFL = 1e18 + 1e15;
+const int INF = 1e9 + 10;
 const int N = 1e5 + 10;
  
 int main(){
