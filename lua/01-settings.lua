@@ -62,8 +62,8 @@ vim.cmd([[
     autocmd Filetype python :ab main$ if __name__ == '__main__':
 
     "template
-    autocmd Filetype cpp :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/main.cpp<CR>:133<CR>i
-    autocmd Filetype cpp :nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/main.cpp<CR>:6<CR>i
-    autocmd Filetype java :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/Main.java<CR>:24<CR>i
-    autocmd Filetype java :nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/Main.java<CR>:3<CR>i
+    autocmd Filetype cpp :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/main.cpp<CR>:133<CR>i<Tab>
+    autocmd Filetype cpp :nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/main.cpp<CR>:6<CR>i<Tab>
+    autocmd Filetype java :nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/Main.java<CR>:24<CR>i<Tab><Tab><Tab>
+    autocmd Filetype java :nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/Main.java<CR>:3<CR>i<Tab><Tab>
 ]])
