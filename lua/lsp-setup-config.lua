@@ -9,9 +9,3 @@ require('lspconfig')['clangd'].setup {
 require('lspconfig')['tsserver'].setup {
     capabilities = capabilities
 }
--- require('lspconfig')['pyright'].setup {
---     capabilities = capabilities
--- }
--- require('lspconfig')['jdtls'].setup {
---     capabilities = capabilities
--- }
