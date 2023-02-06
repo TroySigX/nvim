@@ -16,6 +16,6 @@ local opts = { silent = true }
 map('n', '<F1>', ":TroubleToggle<CR>", { desc = 'Toggle Trouble List', unpack(opts) })
 map('i', '<F1>', "<Esc>:TroubleToggle<CR>", { desc = 'Toggle Trouble List', unpack(opts) })
 map('v', '<F1>', "<Esc>:TroubleToggle<CR>", { desc = 'Toggle Trouble List', unpack(opts) })
-map('n', 'E', vim.diagnostic.open_float, { desc = 'Open Diagnostic on line' })
+map('n', '<C-d>', vim.diagnostic.open_float, { desc = 'Open [D]iagnostic on line' })
 map('n', '<C-k>', vim.diagnostic.goto_prev, { desc = 'Go To Previous Error' })
 map('n', '<C-j>', vim.diagnostic.goto_next, { desc = 'Go To Next Error' })
