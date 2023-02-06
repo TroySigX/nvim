@@ -1,3 +1,6 @@
-Install packer.nvim: yay -S nvim-packer-git <br />
-Install ripgrep: https://github.com/BurntSushi/ripgrep#installation <br />
-Install ctags: sudo pacman -S ctags <br />
+# Neovim config file
+
+## Packages to install:
+packer.nvim: yay -S nvim-packer-git <br />
+ripgrep: https://github.com/BurntSushi/ripgrep#installation <br />
+ctags: sudo pacman -S ctags <br />
