@@ -44,6 +44,7 @@ map('n', '<leader>0', ':tablast<CR>')
 map('n', 'nl', 'm`o<Esc>``', { desc = 'Insering new line below without entering insert mode' })
 map('n', 'NL', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
 
+-- open link
 map('n', 'gx', ":silent execute '!xdg-open ' .. shellescape(expand('<cfile>'))<CR>", { desc = 'open link', silent = true })
 
 vim.diagnostic.config({
