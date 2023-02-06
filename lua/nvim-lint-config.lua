@@ -1,6 +1,6 @@
 require('lint').linters_by_ft = {
   sh = {'shellcheck'},
-  lua = {'luacheck'}
+  -- lua = {'luacheck'}
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
