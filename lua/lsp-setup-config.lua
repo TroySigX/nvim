@@ -3,12 +3,16 @@ map('n', 'K', vim.lsp.buf.definition, { desc = 'LSP Definition' })
 map('n', '<space>ca', vim.lsp.buf.code_action, { desc = 'LSP [C]ode [A]ction' })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('lspconfig')['clangd'].setup{
+local lsp = require('lspconfig')
+lsp['clangd'].setup{
     capabilities = capabilities
 }
-require('lspconfig')['tsserver'].setup{
+lsp['tsserver'].setup{
     capabilities = capabilities
 }
-require('lspconfig')['sumneko_lua'].setup{
+lsp['sumneko_lua'].setup{
+    capabilities = capabilities
+}
+lsp['texlab'].setup{
     capabilities = capabilities
 }
