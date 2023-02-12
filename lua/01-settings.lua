@@ -23,11 +23,9 @@ vim.o.updatetime = 300
 -- moving between tabs
 local map = vim.keymap.set
 map('n', '<F7>', 'gt')
-map('i', '<F7>', '<Esc>gt')
-map('v', '<F7>', '<Esc>gt')
+map({ 'v', 'i' }, '<F7>', '<Esc>gt')
 map('n', '<F19>', 'gT')
-map('i', '<F19>', '<Esc>gT')
-map('v', '<F19>', '<Esc>gT')
+map({ 'v', 'i' }, '<F19>', '<Esc>gT')
 
 map('n', '<leader>1', '1gt')
 map('n', '<leader>2', '2gt')
@@ -45,8 +43,7 @@ map('n', 'nl', 'm`o<Esc>``', { desc = 'Insering new line below without entering 
 map('n', 'NL', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
 
 -- open link
-map('n', 'gx', '<Plug>(openbrowser-smart-search)', { desc = 'open link' })
-map('v', 'gx', '<Plug>(openbrowser-smart-search)', { desc = 'open link' })
+map({ 'n', 'v' }, 'gx', '<Plug>(openbrowser-smart-search)', { desc = 'open link' })
 
 vim.diagnostic.config({
     virtual_text = false,

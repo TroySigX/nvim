@@ -13,11 +13,7 @@ end
 
 local map = vim.keymap.set
 map('n', '<F3>', toggle_quickfix_list)
-map('i', '<F3>', function()
-    vim.api.nvim_command('<Esc>')
-    toggle_quickfix_list()
-end)
-map('v', '<F3>', function()
-    vim.api.nvim_command('<Esc>')
+map({ 'i', 'v' }, '<F3>', function()
+    vim.cmd.stopinsert()
     toggle_quickfix_list()
 end)
