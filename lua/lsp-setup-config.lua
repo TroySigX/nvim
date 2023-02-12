@@ -10,7 +10,7 @@ lsp['clangd'].setup{
 lsp['tsserver'].setup{
     capabilities = capabilities
 }
-lsp['sumneko_lua'].setup{
+lsp['lua_ls'].setup{
     capabilities = capabilities
 }
 lsp['texlab'].setup{
