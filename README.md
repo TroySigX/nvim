@@ -1,7 +1,8 @@
 # Neovim config file
 
 ## Packages to install:
-packer.nvim: yay -S nvim-packer-git <br />
-ripgrep: https://github.com/BurntSushi/ripgrep#installation <br />
-ctags: sudo pacman -S ctags <br />
-ueberzug: sudo pacman -S ueberzug <br />
+packer.nvim: yay -S nvim-packer-git \
+ripgrep: https://github.com/BurntSushi/ripgrep#installation \
+ctags: sudo pacman -S ctags \
+ueberzug: sudo pacman -S ueberzug \
+zathura: sudo pacman -S zathura zathura-pdf-mupdf (for live previewing) \
