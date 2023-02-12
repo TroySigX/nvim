@@ -45,6 +45,8 @@ return require('packer').startup(function(use)
 
     use 'nathom/filetype.nvim'
 
+    use 'frabjous/knap'
+
     use 'williamboman/mason.nvim'
 
     use {
