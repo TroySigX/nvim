@@ -7,6 +7,8 @@ return require('packer').startup(function(use)
 
     use 'sainnhe/gruvbox-material'
 
+    use 'tyru/open-browser.vim'
+
     use 'jiangmiao/auto-pairs'
 
     use 'mfussenegger/nvim-dap'

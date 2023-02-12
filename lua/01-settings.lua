@@ -45,7 +45,8 @@ map('n', 'nl', 'm`o<Esc>``', { desc = 'Insering new line below without entering 
 map('n', 'NL', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
 
 -- open link
-map('n', 'gx', ":silent execute '!xdg-open ' .. shellescape(expand('<cfile>'))<CR>", { desc = 'open link', silent = true })
+map('n', 'gx', '<Plug>(openbrowser-smart-search)', { desc = 'open link' })
+map('v', 'gx', '<Plug>(openbrowser-smart-search)', { desc = 'open link' })
 
 vim.diagnostic.config({
     virtual_text = false,
