@@ -7,11 +7,11 @@ map('v', '<F9>', "<Esc>:w<CR>:ToggleTerm<CR>", { desc = 'Toggle Term', unpack(bu
 map('t', '<F9>', "<C-\\><C-N>:ToggleTerm<CR>", { desc = 'Toggle Term', unpack(bufopts) })
 
 require("toggleterm").setup{
-  direction = 'float',
-  float_opts = {
-    border = 'curved',
-    width = 75, 
-    height = 20,
-    winblend = 17,
-  },
+    direction = 'float',
+    float_opts = {
+        border = 'curved',
+        width = 75, 
+        height = 20,
+        winblend = 17,
+    },
 }
