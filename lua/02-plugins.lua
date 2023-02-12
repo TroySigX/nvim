@@ -27,6 +27,14 @@ return require('packer').startup(function(use)
     use 'dstein64/vim-startuptime'
 
     use {
+        "princejoogie/chafa.nvim",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "m00qek/baleia.nvim"
+        },
+    }
+
+    use {
         "folke/todo-comments.nvim",
         requires = "nvim-lua/plenary.nvim",
     }
