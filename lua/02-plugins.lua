@@ -68,7 +68,10 @@ return require('packer').startup(function(use)
 
     use {
         'TimUntersberger/neogit',
-        requires = 'nvim-lua/plenary.nvim'
+        requires = {
+            'sindrets/diffview.nvim',
+            'nvim-lua/plenary.nvim'
+        }
     }
 
     use 'saadparwaiz1/cmp_luasnip'
