@@ -52,16 +52,6 @@ vim.diagnostic.config({
 
 local autocmd = vim.api.nvim_create_autocmd
 
--- abbreviations 
-autocmd("Filetype", { pattern = "java", command = [[ab deprint System.out.print();]] })
-autocmd("Filetype", { pattern = "java", command = [[ab deprintln System.out.println();]] })
-autocmd("Filetype", { pattern = "python", command = [[ab main$ if __name__ == '__main__':]] })
-
--- templates
-autocmd("Filetype", { pattern = "cpp", command = [[nnoremap <space>t :-1read $HOME/.config/nvim/templates/contest/main.cpp<CR>:133<CR>i<Tab>]] })
-autocmd("Filetype", { pattern = "cpp", command = [[nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/main.cpp<CR>:6<CR>i<Tab>]] })
-autocmd("Filetype", { pattern = "java", command = [[nnoremap <space>m :-1read $HOME/.config/nvim/templates/main/Main.java<CR>:3<CR>i<Tab><Tab>]] })
-
 -- enable filetype detection
 vim.cmd([[
     filetype plugin indent on
