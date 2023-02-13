@@ -49,4 +49,3 @@ neogit.setup {
 }
 
 local map = vim.keymap.set
-map({ 'n', 'i', 'v' }, '<F10>', require('neogit').open, { desc = 'Open Neogit' })
