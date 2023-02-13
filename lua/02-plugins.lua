@@ -66,12 +66,14 @@ return require('packer').startup(function(use)
         requires = { 'mfussenegger/nvim-dap' }
     }
 
+    use {
+        'TimUntersberger/neogit',
+        requires = 'nvim-lua/plenary.nvim'
+    }
+
     use 'saadparwaiz1/cmp_luasnip'
 
-    use {
-        'L3MON4D3/LuaSnip',
-        tag = "v<CurrentMajor>.*",
-    }
+    use 'L3MON4D3/LuaSnip'
 
     use {
         'hrsh7th/nvim-cmp',
