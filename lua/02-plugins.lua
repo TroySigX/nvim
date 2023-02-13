@@ -66,6 +66,13 @@ return require('packer').startup(function(use)
         requires = { 'mfussenegger/nvim-dap' }
     }
 
+    use 'saadparwaiz1/cmp_luasnip'
+
+    use {
+        'L3MON4D3/LuaSnip',
+        tag = "v<CurrentMajor>.*",
+    }
+
     use {
         'hrsh7th/nvim-cmp',
         requires = {
