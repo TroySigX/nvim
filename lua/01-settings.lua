@@ -19,7 +19,6 @@ vim.o.showmatch = true
 vim.o.nobackup = true
 vim.o.updatetime = 300
 
-
 -- moving between tabs
 local map = vim.keymap.set
 map('n', '<F7>', 'gt')
@@ -49,8 +48,6 @@ vim.diagnostic.config({
     virtual_text = false,
     signs = { severity = vim.diagnostic.severity.ERROR }
 })
-
-local autocmd = vim.api.nvim_create_autocmd
 
 -- enable filetype detection
 vim.cmd([[
