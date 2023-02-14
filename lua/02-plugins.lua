@@ -5,6 +5,8 @@ return require('packer').startup(function(use)
 
     use 'preservim/tagbar'
 
+    use 'lukas-reineke/indent-blankline.nvim'
+
     use 'sainnhe/gruvbox-material'
 
     use 'tyru/open-browser.vim'
