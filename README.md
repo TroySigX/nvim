@@ -5,4 +5,3 @@ packer.nvim: yay -S nvim-packer-git \
 ripgrep: https://github.com/BurntSushi/ripgrep#installation \
 ctags: sudo pacman -S ctags \
 ueberzug: sudo pacman -S ueberzug \
-zathura: sudo pacman -S zathura zathura-pdf-mupdf (for live previewing) \
