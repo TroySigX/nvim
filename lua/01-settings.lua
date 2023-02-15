@@ -18,6 +18,7 @@ vim.o.encoding = 'UTF-8'
 vim.o.showmatch = true
 vim.o.nobackup = true
 vim.o.updatetime = 300
+vim.o.list = true
 
 -- moving between tabs
 local map = vim.keymap.set
