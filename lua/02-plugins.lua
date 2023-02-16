@@ -96,4 +96,13 @@ return require('packer').startup(function(use)
         'subnut/nvim-ghost.nvim',
         run = ':call nvim_ghost#installer#install()'
     }
+
+    use{
+        'jackMort/ChatGPT.nvim',
+        requires = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    }
 end)
