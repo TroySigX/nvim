@@ -78,8 +78,6 @@ return require('packer').startup(function(use)
 
     use 'karb94/neoscroll.nvim'
 
-    use 'saadparwaiz1/cmp_luasnip'
-
     use 'L3MON4D3/LuaSnip'
 
     use {
@@ -88,7 +86,8 @@ return require('packer').startup(function(use)
             'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-nvim-lsp-signature-help'
+            'hrsh7th/cmp-nvim-lsp-signature-help',
+            'saadparwaiz1/cmp_luasnip'
         }
     }
 
