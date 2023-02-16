@@ -1,4 +1,4 @@
-require("todo-comments").setup()
+require('todo-comments').setup()
 
 local function toggle_quickfix_list()
     for _, win in pairs(vim.fn.getwininfo()) do

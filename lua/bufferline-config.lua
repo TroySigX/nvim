@@ -1,6 +1,6 @@
-require("bufferline").setup{
+require('bufferline').setup{
     options = {
-        mode = "tabs",
-        numbers = "ordinal",
+        mode = 'tabs',
+        numbers = 'ordinal',
     }
 }

@@ -1,8 +1,8 @@
 local function open_tab_silent(node)
-  local api = require("nvim-tree.api")
+    local api = require('nvim-tree.api')
 
-  api.node.open.tab(node)
-  vim.cmd.tabprev()
+    api.node.open.tab(node)
+    vim.cmd.tabprev()
 end
 
 local function open_tab(node)
@@ -15,20 +15,20 @@ local function open_tab(node)
 end
 
 local function goto_buffer_cwd()
-  vim.cmd("wincmd l")
-  local api = require("nvim-tree.api")
+  vim.cmd('wincmd l')
+  local api = require('nvim-tree.api')
   api.tree.close()
-  vim.cmd("NvimTreeFindFile!")
+  vim.cmd('NvimTreeFindFile!')
 end
 
-require("nvim-tree").setup({
+require('nvim-tree').setup({
   disable_netrw = true,
   view = {
     mappings = {
       list = {
-        { key = "<C-t>", action = "open_tab", action_cb = open_tab },
-        { key = "T", action = "open_tab_silent", action_cb = open_tab_silent },
-        { key = "CD", action = "goto_cwd", action_cb = goto_buffer_cwd },
+        { key = '<C-t>', action = 'open_tab', action_cb = open_tab },
+        { key = 'T', action = 'open_tab_silent', action_cb = open_tab_silent },
+        { key = 'CD', action = 'goto_cwd', action_cb = goto_buffer_cwd },
       },
     }
   },
