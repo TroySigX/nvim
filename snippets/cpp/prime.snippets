@@ -1,0 +1,18 @@
+snippet makesieve
+	vector <int> prime;
+	void sieve()
+	{
+		bitset<N> p;
+		for(int i = 2; sqr(i) < N; i++){
+			if (p[i] == 0){
+				for(int j = sqr(i); j < N; j+= i){
+					p[j] = 1;
+				}
+			}
+		}
+		for(int i = 2; i < N; i++){
+			if (p[i] == 0){
+				prime.push_back(i);
+			}
+		}
+	}
