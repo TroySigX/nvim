@@ -16,12 +16,12 @@ return require('packer').startup(function(use)
     use 'mfussenegger/nvim-dap'
 
     use {
-        "folke/trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
+        'folke/trouble.nvim',
+        requires = 'nvim-tree/nvim-web-devicons',
     }
 
     use { 'nvim-lualine/lualine.nvim',
-        requires = 'kyazdani42/nvim-web-devicons'
+        requires = 'nvim-tree/nvim-web-devicons'
     }
 
     use 'akinsho/toggleterm.nvim'
@@ -31,8 +31,8 @@ return require('packer').startup(function(use)
     use 'dstein64/vim-startuptime'
 
     use {
-        "folke/todo-comments.nvim",
-        requires = "nvim-lua/plenary.nvim",
+        'folke/todo-comments.nvim',
+        requires = 'nvim-lua/plenary.nvim',
     }
 
     use {
@@ -99,9 +99,9 @@ return require('packer').startup(function(use)
     use{
         'jackMort/ChatGPT.nvim',
         requires = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
+            'MunifTanjim/nui.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim'
         }
     }
 end)
