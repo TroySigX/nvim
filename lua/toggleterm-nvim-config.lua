@@ -3,9 +3,11 @@ local bufopts = { silent = true }
 
 local toggleTerm = function()
     local api = vim.api
-    -- check if buffer is modifiable
-    local buf = api.nvim_win_get_buf(0)
-    if not vim.bo[buf].readonly then
+    local bufnr = api.nvim_get_current_buf()
+    local filename = api.nvim_buf_get_name(bufnr)
+    local modifiable = api.nvim_buf_get_option(bufnr, 'modifiable')
+
+    if filename ~= '' and modifiable then
         api.nvim_command('write')
     end
 
