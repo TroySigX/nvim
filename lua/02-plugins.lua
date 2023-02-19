@@ -96,6 +96,8 @@ return require('packer').startup(function(use)
         run = ':call nvim_ghost#installer#install()'
     }
 
+    use 'ggandor/leap.nvim'
+
     use{
         'jackMort/ChatGPT.nvim',
         requires = {
