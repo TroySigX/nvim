@@ -1,6 +1,22 @@
 return require('packer').startup(function(use)
     use 'lewis6991/impatient.nvim'
 
+    use {
+        'hrsh7th/nvim-cmp',
+        requires = {
+            'neovim/nvim-lspconfig',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-nvim-lsp-signature-help',
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip'
+        }
+    }
+
+    use 'numToStr/Comment.nvim'
+
+    use 'akinsho/toggleterm.nvim'
+
     use 'nvim-tree/nvim-tree.lua'
 
     use 'preservim/tagbar'
@@ -23,10 +39,6 @@ return require('packer').startup(function(use)
     use { 'nvim-lualine/lualine.nvim',
         requires = 'nvim-tree/nvim-web-devicons'
     }
-
-    use 'akinsho/toggleterm.nvim'
-
-    use 'numToStr/Comment.nvim'
 
     use 'dstein64/vim-startuptime'
 
@@ -58,7 +70,10 @@ return require('packer').startup(function(use)
 
     use {
         'ibhagwan/fzf-lua',
-        requires = 'nvim-tree/nvim-web-devicons',
+        requires = {
+            'junegunn/fzf',
+            'nvim-tree/nvim-web-devicons',
+        }
     }
 
     use 'mfussenegger/nvim-lint'
@@ -77,19 +92,6 @@ return require('packer').startup(function(use)
     }
 
     use 'karb94/neoscroll.nvim'
-
-    use 'L3MON4D3/LuaSnip'
-
-    use {
-        'hrsh7th/nvim-cmp',
-        requires = {
-            'neovim/nvim-lspconfig',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-buffer',
-            'hrsh7th/cmp-nvim-lsp-signature-help',
-            'saadparwaiz1/cmp_luasnip'
-        }
-    }
 
     use {
         'subnut/nvim-ghost.nvim',
