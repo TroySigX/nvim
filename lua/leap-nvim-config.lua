@@ -1,4 +1,4 @@
 local map = vim.keymap.set
 
-map({ 'n', 'v' }, 'g', '<Plug>(leap-forward-to)', { desc = '[g]oto word forward (leap nvim)' })
-map({ 'n', 'v' }, 'G', '<Plug>(leap-backward-to)', { desc = '[G]oto word backward (leap nvim)' })
+map({ 'n', 'v' }, 't', '<Plug>(leap-forward-to)', { desc = '[t]o word forward (leap nvim)' })
+map({ 'n', 'v' }, 'T', '<Plug>(leap-backward-to)', { desc = '[T]o word backward (leap nvim)' })
