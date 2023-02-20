@@ -12,7 +12,6 @@ require('dashboard').setup {
             '/_/ /_/   \\____/\\__, //____/_/\\__, /_/|_|  ',
             '               /____/        /____/        '
         },
-        -- header = { 'TroySigX' },
         packages = { enable = false },
         shortcut = {
             { desc = ' Update', group = '@property', action = 'PackerUpdate', key = 'u' },
@@ -24,6 +23,7 @@ require('dashboard').setup {
                 action = require('fzf-lua').files,
                 key = 'f',
             },
+            { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
         },
     },
 }
