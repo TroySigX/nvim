@@ -39,8 +39,8 @@ map('n', '<leader>9', '9gt')
 map('n', '<leader>0', ':tablast<CR>')
 
 -- insert new line without entering insert mode
-map('n', 'nl', 'm`o<Esc>``', { desc = 'Insering new line below without entering insert mode' })
-map('n', 'NL', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
+map('n', '<space>n', 'm`o<Esc>``', { desc = 'Insering new line below without entering insert mode' })
+map('n', '<space>N', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
 
 -- open link
 map({ 'n', 'v' }, 'gx', '<Plug>(openbrowser-smart-search)', { desc = 'open link' })
