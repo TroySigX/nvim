@@ -13,6 +13,19 @@ require('dashboard').setup {
             '               /____/        /____/        '
         },
         packages = { enable = false },
+        project = {
+            limit = 5,
+            icon = ' ',
+            label = 'Recent Projects:',
+            action = function(path)
+                require('fzf-lua').files({ cwd = path })
+            end
+        },
+        mru = {
+            limit = 10,
+            icon = ' ',
+            label = 'Recent Files:'
+        },
         shortcut = {
             { desc = ' Update', group = '@property', action = 'PackerUpdate', key = 'u' },
             {
