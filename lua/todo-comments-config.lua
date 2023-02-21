@@ -12,8 +12,7 @@ local function toggle_quickfix_list()
 end
 
 local map = vim.keymap.set
-map('n', '<F3>', toggle_quickfix_list)
-map({ 'i', 'v' }, '<F3>', function()
+map({'n', 'i', 'v' }, '<F3>', function()
     vim.cmd.stopinsert()
     toggle_quickfix_list()
 end)

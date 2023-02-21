@@ -39,7 +39,7 @@ require('nvim-tree').setup({
 
 local map = vim.keymap.set
 local api = require('nvim-tree.api')
-map({ 'n', 'i', 'v' }, '<F2>', function() 
+map({ 'n', 'i', 'v' }, '<F2>', function()
     vim.cmd.stopinsert()
     api.tree.toggle()
 end, { desc = 'Toggle Tree' })

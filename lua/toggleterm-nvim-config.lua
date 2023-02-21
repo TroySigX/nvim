@@ -14,8 +14,7 @@ local toggleTerm = function()
     api.nvim_command('ToggleTerm')
 end
 
-map('n', '<F9>', toggleTerm, { desc = 'Toggle Terminal', unpack(bufopts) })
-map({ 'i', 'v' }, '<F9>', function()
+map({ 'n', 'i', 'v' }, '<F9>', function()
     vim.cmd.stopinsert()
     toggleTerm()
 end, { desc = 'Toggle Term', unpack(bufopts) })
