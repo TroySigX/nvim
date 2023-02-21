@@ -15,4 +15,5 @@ clangd \
 codelldb \
 lua-language-server \
 typescipt-language-server \
-texlab
+texlab \
+shellcheck
