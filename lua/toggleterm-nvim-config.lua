@@ -1,5 +1,4 @@
 local map = vim.keymap.set
-local bufopts = { silent = true }
 
 local toggleTerm = function()
     local api = vim.api
@@ -17,8 +16,8 @@ end
 map({ 'n', 'i', 'v' }, '<F9>', function()
     vim.cmd.stopinsert()
     toggleTerm()
-end, { desc = 'Toggle Term', unpack(bufopts) })
-map('t', '<F9>', '<C-\\><C-N>:ToggleTerm<CR>', { desc = 'Toggle Term', unpack(bufopts) })
+end, { desc = 'Toggle Term', silent = true })
+map('t', '<F9>', '<C-\\><C-N>:ToggleTerm<CR>', { desc = 'Toggle Term', silent = true })
 
 require('toggleterm').setup{
     direction = 'float',
