@@ -13,7 +13,7 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping.complete{ reason = cmp.ContextReason.Auto },
     ['<C-e>'] = cmp.mapping.abort(),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    ['<Tab>'] = function(fallback)
+    ['<Tab>'] = cmp.mapping(function(fallback)
         if not cmp.select_next_item() then
             if vim.bo.buftype ~= 'prompt' and has_words_before() then
                 cmp.complete()
@@ -21,8 +21,8 @@ cmp.setup({
                 fallback()
             end
         end
-    end,
-    ['<S-Tab>'] = function(fallback)
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
         if not cmp.select_prev_item() then
             if vim.bo.buftype ~= 'prompt' and has_words_before() then
                 cmp.complete()
@@ -30,7 +30,7 @@ cmp.setup({
                 fallback()
             end
         end
-    end,
+    end, { 'i', 's' }),
     }),
 
     sources = {
