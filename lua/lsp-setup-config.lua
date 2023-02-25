@@ -10,6 +10,9 @@ lsp['clangd'].setup{
 lsp['tsserver'].setup{
     capabilities = capabilities
 }
+lsp['pyright'].setup{
+    capabilities = capabilities
+}
 lsp['lua_ls'].setup{
     capabilities = capabilities
 }
