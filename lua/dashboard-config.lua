@@ -12,7 +12,7 @@ require('dashboard').setup {
             '/_/ /_/   \\____/\\__, //____/_/\\__, /_/|_|  ',
             '               /____/        /____/        '
         },
-        packages = { enable = false },
+        packages = { enable = true },
         project = {
             limit = 5,
             icon = ' ',
