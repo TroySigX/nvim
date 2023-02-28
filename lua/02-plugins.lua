@@ -156,7 +156,6 @@ require('lazy').setup({
             'junegunn/fzf',
             'nvim-tree/nvim-web-devicons',
         },
-        keys = { '<F6>', '<F18>', '<space>gr', '<space>sw', '<space>km' },
         config = function()
             require('fzf-lua-config')
         end,
