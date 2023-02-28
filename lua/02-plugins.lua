@@ -24,6 +24,8 @@ require('lazy').setup({
         }
     },
 
+    'williamboman/mason.nvim',
+
     'numToStr/Comment.nvim',
 
     'akinsho/toggleterm.nvim',
@@ -77,8 +79,6 @@ require('lazy').setup({
     'nathom/filetype.nvim',
 
     'frabjous/knap',
-
-    'williamboman/mason.nvim',
 
     {
         'junegunn/fzf',
