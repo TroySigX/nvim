@@ -24,6 +24,8 @@ require('lazy').setup({
         },
         config = function()
             require('nvim-cmp-config')
+            require('lsp-setup-config')
+            require('luasnip-config')
         end,
     },
 
