@@ -108,6 +108,15 @@ require('lazy').setup({
         }
     },
 
+    {
+        'nvim-neotest/neotest',
+        dependencies = {
+            'haydenmeade/neotest-jest',
+            'nvim-treesitter/nvim-treesitter',
+            'nvim-lua/plenary.nvim',
+        }
+    },
+
     'karb94/neoscroll.nvim',
 
     {
