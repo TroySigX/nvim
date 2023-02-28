@@ -1,4 +1,7 @@
-for dir in io.popen([[ls ~/.config/nvim/lua/*.lua]]):lines() do
-    require(dir:match("^.*/(.*).lua$"))
-end
+-- for dir in io.popen([[ls ~/.config/nvim/lua/*.lua]]):lines() do
+--     require(dir:match("^.*/(.*).lua$"))
+-- end
+
+require('01-settings')
+require('02-plugins')
 
