@@ -1,7 +1,7 @@
 # Neovim config file
 
 ## Packages to install:
-ripgrep: https://github.com/BurntSushi/ripgrep#installation \
+ripgrep: sudo pacman -S ripgrep \
 ctags: sudo pacman -S ctags \
 ueberzug: sudo pacman -S ueberzug \
 xclip: sudo pacman -S xclip
