@@ -20,6 +20,9 @@ vim.o.nobackup = true
 vim.o.updatetime = 300
 vim.o.list = true
 
+-- default filetype for latex is tex
+vim.g.tex_flavor = 'latex'
+
 -- moving between tabs
 local map = vim.keymap.set
 map('n', '<F7>', 'gt')
