@@ -45,7 +45,9 @@ require('lazy').setup({
 
     {
         'akinsho/toggleterm.nvim',
-        keys = '<F9>',
+        keys = {
+            { '<F9>', mode = { 'n', 'i', 'v' } },
+        },
         config = function()
             require('toggleterm-config')
         end,
@@ -53,7 +55,9 @@ require('lazy').setup({
 
     {
         'nvim-tree/nvim-tree.lua',
-        keys = '<F2>',
+        keys = {
+            { '<F2>', mode = { 'n', 'i', 'v' } },
+        },
         config = function()
             require('nvim-tree-config')
         end,
@@ -76,7 +80,9 @@ require('lazy').setup({
 
     {
         'preservim/tagbar',
-        keys = '<F5>',
+        keys = {
+            { '<F5>', mode = { 'n', 'i', 'v' } },
+        },
         config = function()
             require('tagbar-config')
         end,
@@ -98,7 +104,10 @@ require('lazy').setup({
     {
         'folke/trouble.nvim',
         dependencies = 'nvim-tree/nvim-web-devicons',
-        keys = { '<F1>', '<leader>e', '<C-k>', '<C-j>' },
+        keys = {
+            { '<F1>', mode = { 'n', 'i', 'v' } },
+            '<leader>e', '<C-k>', '<C-j>',
+        },
         config = function()
             require('trouble-config')
         end,
@@ -157,6 +166,10 @@ require('lazy').setup({
             'junegunn/fzf',
             'nvim-tree/nvim-web-devicons',
         },
+        keys = {
+            { '<F6>', mode = { 'n', 'i', 'v' } },
+        },
+        module = true,
         config = function()
             require('fzf-lua-config')
         end,
@@ -172,7 +185,10 @@ require('lazy').setup({
     {
         'rcarriga/nvim-dap-ui',
         dependencies = 'mfussenegger/nvim-dap',
-        keys = { '<leader>b', '<F8>' },
+        keys = {
+            { '<F8>', mode = { 'n', 'i', 'v' } },
+            '<leader>b',
+        },
         config = function()
             require('nvim-dap-config')
         end,
@@ -184,7 +200,9 @@ require('lazy').setup({
             'sindrets/diffview.nvim',
             'nvim-lua/plenary.nvim'
         },
-        keys = '<F10>',
+        keys = {
+            { '<F10>', mode = { 'n', 'i', 'v' } },
+        },
         config = function()
             require('neogit-config')
         end,
@@ -197,7 +215,10 @@ require('lazy').setup({
             'nvim-treesitter/nvim-treesitter',
             'nvim-lua/plenary.nvim',
         },
-        keys = { '<F4>', '<leader>t', '<leader>at' },
+        keys = {
+            { '<F4>', mode = { 'n', 'i', 'v' } },
+            '<leader>t', '<leader>at',
+        },
         config = function()
             require('neotest-config')
         end,
@@ -222,10 +243,11 @@ require('lazy').setup({
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope.nvim'
         },
-        keys = '<F11>',
+        keys = {
+            { '<F11>', mode = { 'n', 'i', 'v' } },
+        },
         config = function()
             require('chatgpt-config')
         end,
-
     },
 })
