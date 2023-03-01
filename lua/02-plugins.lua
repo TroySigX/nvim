@@ -117,7 +117,6 @@ require('lazy').setup({
     {
         'folke/todo-comments.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
-        keys = '<F3>',
         config = function()
             require('todo-comments-config')
         end,
