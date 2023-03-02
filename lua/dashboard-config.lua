@@ -40,4 +40,3 @@ require('dashboard').setup {
         },
     },
 }
-
