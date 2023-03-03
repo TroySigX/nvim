@@ -24,23 +24,23 @@ require('lazy').setup({
             'hrsh7th/cmp-cmdline',
         },
         config = function()
-            require('nvim-cmp-config')
-            require('lsp-setup-config')
-            require('luasnip-config')
+            require('config.nvim-cmp')
+            require('config.lsp-setup')
+            require('config.luasnip')
         end,
     },
 
     {
         'williamboman/mason.nvim',
         config = function()
-            require('mason-config')
+            require('config.mason')
         end,
     },
 
     {
         'numToStr/Comment.nvim',
         config = function()
-            require('comment-config')
+            require('config.comment')
         end,
     },
 
@@ -50,7 +50,7 @@ require('lazy').setup({
             { '<F9>', mode = { 'n', 'i', 'v' } },
         },
         config = function()
-            require('toggleterm-config')
+            require('config.toggleterm')
         end,
     },
 
@@ -60,7 +60,7 @@ require('lazy').setup({
             { '<F2>', mode = { 'n', 'i', 'v' } },
         },
         config = function()
-            require('nvim-tree-config')
+            require('config.nvim-tree')
         end,
     },
 
@@ -68,14 +68,14 @@ require('lazy').setup({
         'glepnir/dashboard-nvim',
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
-            require('dashboard-config')
+            require('config.dashboard')
         end,
     },
 
     {
         'ggandor/leap.nvim',
         config = function()
-            require('leap-nvim-config')
+            require('config.leap-nvim')
         end,
     },
 
@@ -85,7 +85,7 @@ require('lazy').setup({
             { '<F5>', mode = { 'n', 'i', 'v' } },
         },
         config = function()
-            require('tagbar-config')
+            require('config.tagbar')
         end,
     },
 
@@ -94,7 +94,7 @@ require('lazy').setup({
     {
         'sainnhe/gruvbox-material',
         config = function()
-            require('colorscheme-config')
+            require('config.colorscheme')
         end,
     },
 
@@ -104,7 +104,7 @@ require('lazy').setup({
             { 'gx', mode = { 'n', 'v' } },
         },
         config = function()
-            require('openbrowser-config')
+            require('config.open-browser')
         end,
     },
 
@@ -118,7 +118,7 @@ require('lazy').setup({
             '<leader>e', '<C-k>', '<C-j>',
         },
         config = function()
-            require('trouble-config')
+            require('config.trouble')
         end,
     },
 
@@ -126,7 +126,7 @@ require('lazy').setup({
         'nvim-lualine/lualine.nvim',
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
-            require('lualine-config')
+            require('config.lualine')
         end,
     },
 
@@ -139,7 +139,7 @@ require('lazy').setup({
         'folke/todo-comments.nvim',
         dependencies = 'nvim-lua/plenary.nvim',
         config = function()
-            require('todo-comments-config')
+            require('config.todo-comments')
         end,
     },
 
@@ -147,7 +147,7 @@ require('lazy').setup({
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         config = function()
-            require('treesitter-config')
+            require('config.treesitter')
         end,
     },
 
@@ -155,7 +155,7 @@ require('lazy').setup({
         'akinsho/bufferline.nvim',
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
-            require('bufferline-config')
+            require('config.bufferline')
         end,
     },
 
@@ -163,7 +163,7 @@ require('lazy').setup({
         'frabjous/knap',
         keys = '<space>pr',
         config = function()
-            require('knap-config')
+            require('config.knap')
         end,
     },
 
@@ -181,26 +181,29 @@ require('lazy').setup({
         },
         module = true,
         config = function()
-            require('fzf-lua-config')
+            require('config.fzf-lua')
         end,
     },
 
     {
         'mfussenegger/nvim-lint',
         config = function()
-            require('nvim-lint-config')
+            require('config.nvim-lint')
         end,
     },
 
     {
         'rcarriga/nvim-dap-ui',
-        dependencies = 'mfussenegger/nvim-dap',
+        dependencies = {
+            'mfussenegger/nvim-dap',
+            'mxsdev/nvim-dap-vscode-js',
+        },
         keys = {
             { '<F8>', mode = { 'n', 'i', 'v' } },
             '<leader>b',
         },
         config = function()
-            require('nvim-dap-config')
+            require('config.nvim-dap')
         end,
     },
 
@@ -214,7 +217,7 @@ require('lazy').setup({
             { '<F10>', mode = { 'n', 'i', 'v' } },
         },
         config = function()
-            require('neogit-config')
+            require('config.neogit')
         end,
     },
 
@@ -230,7 +233,7 @@ require('lazy').setup({
             '<leader>t', '<leader>at',
         },
         config = function()
-            require('neotest-config')
+            require('config.neotest')
         end,
     },
 
@@ -239,7 +242,7 @@ require('lazy').setup({
         keys = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
                 '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
         config = function()
-            require('neoscroll-config')
+            require('config.neoscroll')
         end,
     },
 
@@ -259,7 +262,7 @@ require('lazy').setup({
             { '<F11>', mode = { 'n', 'i', 'v' } },
         },
         config = function()
-            require('chatgpt-config')
+            require('config.chatgpt')
         end,
     },
 })
