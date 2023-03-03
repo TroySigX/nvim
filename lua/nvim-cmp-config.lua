@@ -37,7 +37,8 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'buffer' },
         { name = 'nvim_lsp_signature_help' },
-        { name = 'luasnip' }
+        { name = 'luasnip' },
+        { name = 'cmdline' },
     },
 
     snippet = {
@@ -45,4 +46,11 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body)
         end,
     },
+})
+
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
 })
