@@ -20,6 +20,7 @@
   "leap.nvim": { "branch": "main", "commit": "de9c1b3c694078baf4e9be4288dbcff10a74a9f2" },
   "lualine.nvim": { "branch": "master", "commit": "e99d733e0213ceb8f548ae6551b04ae32e590c80" },
   "mason.nvim": { "branch": "main", "commit": "7175340eee0b1b4a86b38794d8c21fdcfa01376b" },
+  "neogen": { "branch": "main", "commit": "93d997dbddfe084e77ba4541c54a7b8bfd754fb1" },
   "neogit": { "branch": "master", "commit": "85380916cec322b1351785cac4f4e3f24de36b2a" },
   "neoscroll.nvim": { "branch": "master", "commit": "d7601c26c8a183fa8994ed339e70c2d841253e93" },
   "neotest": { "branch": "master", "commit": "b06b0ccbddc61acfe781689da969d2e0117b3dfe" },

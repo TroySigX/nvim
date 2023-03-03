@@ -99,6 +99,14 @@ require('lazy').setup({
     },
 
     {
+        'danymat/neogen',
+        keys = '<space>ng',
+        config = function()
+            require('config.neogen')
+        end,
+    },
+
+    {
         'tyru/open-browser.vim',
         keys = {
             { 'gx', mode = { 'n', 'v' } },
