@@ -98,7 +98,15 @@ require('lazy').setup({
         end,
     },
 
-    'tyru/open-browser.vim',
+    {
+        'tyru/open-browser.vim',
+        keys = {
+            { 'gx', mode = { 'n', 'v' } },
+        },
+        config = function()
+            require('openbrowser-config')
+        end,
+    },
 
     'jiangmiao/auto-pairs',
 
@@ -122,7 +130,10 @@ require('lazy').setup({
         end,
     },
 
-    'dstein64/vim-startuptime',
+    {
+        'dstein64/vim-startuptime',
+        cmd = 'StartupTime',
+    },
 
     {
         'folke/todo-comments.nvim',
@@ -157,14 +168,12 @@ require('lazy').setup({
     },
 
     {
-        'junegunn/fzf',
-        build = './install --bin',
-    },
-
-    {
         'ibhagwan/fzf-lua',
         dependencies = {
-            'junegunn/fzf',
+            {
+                'junegunn/fzf',
+                build = './install --bin',
+            },
             'nvim-tree/nvim-web-devicons',
         },
         keys = {
@@ -227,6 +236,8 @@ require('lazy').setup({
 
     {
         'karb94/neoscroll.nvim',
+        keys = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+                '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
         config = function()
             require('neoscroll-config')
         end,
