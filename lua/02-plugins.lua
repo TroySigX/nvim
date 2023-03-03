@@ -21,7 +21,7 @@ require('lazy').setup({
             'hrsh7th/cmp-nvim-lsp-signature-help',
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
-            'hrsh7th/cmp-cmdline'
+            'hrsh7th/cmp-cmdline',
         },
         config = function()
             require('nvim-cmp-config')
