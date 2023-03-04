@@ -16,4 +16,5 @@ lua-language-server \
 typescipt-language-server \
 python \
 texlab \
-shellcheck
+shellcheck \
+js-debug-adapter
