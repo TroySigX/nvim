@@ -201,6 +201,41 @@ require('lazy').setup({
     },
 
     {
+        'TimUntersberger/neogit',
+        dependencies = {
+            'sindrets/diffview.nvim',
+            'nvim-lua/plenary.nvim'
+        },
+        keys = {
+            { '<F10>', mode = { 'n', 'i', 'v' } },
+        },
+        config = function()
+            require('config.neogit')
+        end,
+    },
+
+    {
+        'ThePrimeagen/refactoring.nvim',
+        keys = { '<space>rf', '<space>rv', '<space>ri' },
+        dependencies = {
+            {'nvim-lua/plenary.nvim'},
+            {'nvim-treesitter/nvim-treesitter'},
+        },
+        config = function()
+            require('config.refactor')
+        end,
+    },
+
+    {
+        'karb94/neoscroll.nvim',
+        keys = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
+                '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+        config = function()
+            require('config.neoscroll')
+        end,
+    },
+
+    {
         'rcarriga/nvim-dap-ui',
         dependencies = {
             'mfussenegger/nvim-dap',
@@ -212,20 +247,6 @@ require('lazy').setup({
         },
         config = function()
             require('config.nvim-dap')
-        end,
-    },
-
-    {
-        'TimUntersberger/neogit',
-        dependencies = {
-            'sindrets/diffview.nvim',
-            'nvim-lua/plenary.nvim'
-        },
-        keys = {
-            { '<F10>', mode = { 'n', 'i', 'v' } },
-        },
-        config = function()
-            require('config.neogit')
         end,
     },
 
@@ -242,15 +263,6 @@ require('lazy').setup({
         },
         config = function()
             require('config.neotest')
-        end,
-    },
-
-    {
-        'karb94/neoscroll.nvim',
-        keys = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
-                '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
-        config = function()
-            require('config.neoscroll')
         end,
     },
 
