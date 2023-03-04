@@ -194,10 +194,6 @@ require('lazy').setup({
             },
             'nvim-tree/nvim-web-devicons',
         },
-        keys = {
-            { '<F6>', mode = { 'n', 'i', 'v' } },
-        },
-        module = true,
         config = function()
             require('config.fzf-lua')
         end,
