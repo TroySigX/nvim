@@ -215,14 +215,20 @@ require('lazy').setup({
     },
 
     {
-        'ThePrimeagen/refactoring.nvim',
-        keys = { '<space>rf', '<space>rv', '<space>ri' },
+        'smjonas/inc-rename.nvim',
+        keys = '<space>rn',
+        config = function()
+            require('config.inc-rename')
+        end,
+    },
+
+    {
+        'folke/noice.nvim',
         dependencies = {
-            {'nvim-lua/plenary.nvim'},
-            {'nvim-treesitter/nvim-treesitter'},
+            'MunifTanjim/nui.nvim',
         },
         config = function()
-            require('config.refactor')
+            require('config.noice')
         end,
     },
 
