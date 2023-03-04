@@ -99,6 +99,16 @@ require('lazy').setup({
     },
 
     {
+        'folke/noice.nvim',
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+        },
+        config = function()
+            require('config.noice')
+        end,
+    },
+
+    {
         'danymat/neogen',
         keys = '<space>ng',
         config = function()
@@ -219,16 +229,6 @@ require('lazy').setup({
         keys = '<space>rn',
         config = function()
             require('config.inc-rename')
-        end,
-    },
-
-    {
-        'folke/noice.nvim',
-        dependencies = {
-            'MunifTanjim/nui.nvim',
-        },
-        config = function()
-            require('config.noice')
         end,
     },
 
