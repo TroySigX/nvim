@@ -2,7 +2,7 @@ local dap = require('dap')
 require('dap-vscode-js').setup {
     node_path = 'node',
     debugger_path = os.getenv('HOME') .. '/.local/share/nvim/mason/packages/js-debug-adapter',
-    adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' }, -- which adapters to register in nvim-dap
+    adapters = { 'pwa-node' },
 }
 for _, language in ipairs { 'typescript', 'javascript' } do
     dap.configurations[language] = {
