@@ -1,24 +1,25 @@
-vim.o.nocompatible = true
-vim.o.termguicolors = true
-vim.o.relativenumber = true
-vim.o.tabstop = 4
-vim.o.shiftwidth = 4
-vim.o.softtabstop = 4
-vim.o.expandtab = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.mouse = 'a'
-vim.o.splitright = true
-vim.o.splitbelow = true
-vim.opt.clipboard:append('unnamedplus')
-vim.o.signcolumn = 'yes'
-vim.o.syntax = 'on'
+local opt = vim.opt
+opt.termguicolors = true
+opt.relativenumber = true
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.expandtab = true
+opt.ignorecase = true
+opt.smartcase = true
+opt.mouse = 'a'
+opt.splitright = true
+opt.splitbelow = true
+opt.clipboard:append('unnamedplus')
+opt.signcolumn = 'yes'
+opt.syntax = 'on'
+opt.encoding = 'UTF-8'
+opt.showmatch = true
+opt.updatetime = 300
+opt.list = true
 
-vim.o.encoding = 'UTF-8'
-vim.o.showmatch = true
+vim.o.nocompatible = true
 vim.o.nobackup = true
-vim.o.updatetime = 300
-vim.o.list = true
 
 -- default filetype for latex is tex
 vim.g.tex_flavor = 'latex'
