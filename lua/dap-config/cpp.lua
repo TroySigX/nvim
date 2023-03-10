@@ -1,6 +1,5 @@
 local dap = require('dap')
 
--- C/C++ debugger
 dap.adapters.codelldb = {
     type = 'server',
     host = '127.0.0.1',
