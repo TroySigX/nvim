@@ -1,7 +1,7 @@
 local dap = require('dap')
 require('dap-vscode-js').setup {
     node_path = 'node',
-    debugger_path = os.getenv('HOME') .. '/.local/share/nvim/mason/packages/js-debug-adapter',
+    debugger_cmd = { 'js-debug-adapter' },
     adapters = { 'pwa-node' },
 }
 for _, language in ipairs { 'typescript', 'javascript' } do
@@ -24,7 +24,6 @@ for _, language in ipairs { 'typescript', 'javascript' } do
             type = 'pwa-node',
             request = 'launch',
             name = 'Debug Jest Tests',
-            -- trace = true, -- include debugger info
             runtimeExecutable = 'node',
             runtimeArgs = {
                 './node_modules/jest/bin/jest.js',
