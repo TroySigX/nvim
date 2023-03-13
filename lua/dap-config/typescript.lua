@@ -1,11 +1,11 @@
 local dap = require('dap')
 require('dap-vscode-js').setup {
     node_path = 'node',
-    debugger_cmd = { 'js-debug-adapter' },
+    debugger_path = os.getenv('HOME') .. '/.local/share/nvim/lazy/vscode-js-debug',
     adapters = { 'pwa-node' },
 }
 for _, language in ipairs { 'typescript', 'javascript' } do
-    dap.configurations[language] = {
+    require('dap').configurations[language] = {
         {
             type = 'pwa-node',
             request = 'launch',

@@ -242,6 +242,10 @@ require('lazy').setup({
         dependencies = {
             'mfussenegger/nvim-dap',
             'mxsdev/nvim-dap-vscode-js',
+            {
+                'microsoft/vscode-js-debug',
+                build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+            }
         },
         keys = {
             { '<F8>', mode = { 'n', 'i', 'v' } },
