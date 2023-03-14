@@ -284,19 +284,4 @@ require('lazy').setup({
             require('config.firenvim')
         end,
     },
-
-    {
-        'jackMort/ChatGPT.nvim',
-        dependencies = {
-            'MunifTanjim/nui.nvim',
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim'
-        },
-        keys = {
-            { '<F11>', mode = { 'n', 'i', 'v' } },
-        },
-        config = function()
-            require('config.chatgpt')
-        end,
-    },
 })
