@@ -99,6 +99,13 @@ require('lazy').setup({
     },
 
     {
+        'HiPhish/nvim-ts-rainbow2',
+        config = function ()
+            require('config.ts-rainbow')
+        end,
+    },
+
+    {
         'folke/noice.nvim',
         dependencies = {
             'MunifTanjim/nui.nvim',
