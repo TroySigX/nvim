@@ -257,6 +257,17 @@ require('lazy').setup({
             require('config.nvim-dap')
         end,
     },
+    
+    {
+        'michaelb/sniprun',
+        build = 'bash ./install.sh',
+        keys = {
+            { '<space>sr', mode = { 'n', 'v' } },
+        },
+        config = function()
+            require('config.sniprun')
+        end,
+    },
 
     {
         'nvim-neotest/neotest',
