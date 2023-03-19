@@ -44,7 +44,7 @@ map('n', '<leader>0', ':tablast<CR>')
 
 -- insert new line without entering insert mode
 map('n', '<space>nl', 'm`o<Esc>``', { desc = 'Insering new line below without entering insert mode' })
-map('n', '<space>Nl', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
+map('n', '<space>NL', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
 
 -- set signs
 local signs = {
