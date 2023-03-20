@@ -22,8 +22,14 @@ snippet item
 	}
 
 snippet table
-	\begin{tabular}{|c|c|}
+	\renewcommand{\arraystretch}{${1:1.5}}
+	\begin{tabular}{${2:|c|c|}}
 		\hline
-		${1:x} & ${2:y} \\
+		${3:x} & ${4:y} \\\
 		\hline
 	\end{tabular}
+
+snippet center
+	\begin{center}
+		${1}
+	\end{center}
