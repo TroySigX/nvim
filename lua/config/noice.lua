@@ -16,4 +16,15 @@ require('noice').setup({
         inc_rename = true,
         lsp_doc_border = false,
     },
+    commands = {
+        viewLast = {
+          view = "split",
+          opts = { enter = true, format = "details" },
+          filter = {},
+          filter_opts  = {count = 2}
+      },
+    },
 })
+
+local map = vim.keymap.set
+map('n', '<space>h', function() require('noice').cmd('viewLast') end, { desc = 'view last' })
