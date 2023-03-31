@@ -1,3 +1,4 @@
+vim.g.copilot_no_tab_map = true
 vim.cmd([[set completeopt=menu,menuone,noselect]])
 
 local has_words_before = function()
@@ -38,6 +39,7 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
+        { name = 'copilot' },
     },
 
     snippet = {
