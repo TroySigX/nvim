@@ -65,6 +65,6 @@ vim.diagnostic.config({
 })
 
 -- enable filetype detection
-vim.cmd([[
+vim.cmd[[
     filetype plugin indent on
-]])
+]]
