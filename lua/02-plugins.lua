@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
     {
         'hrsh7th/nvim-cmp',
+        event = 'InsertEnter',
         dependencies = {
             'neovim/nvim-lspconfig',
             'hrsh7th/cmp-nvim-lsp',
@@ -41,6 +42,7 @@ require('lazy').setup({
 
     {
         'numToStr/Comment.nvim',
+        event = 'InsertEnter',
         config = function()
             require('config.comment')
         end,
