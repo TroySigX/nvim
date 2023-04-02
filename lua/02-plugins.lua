@@ -24,11 +24,10 @@ require('lazy').setup({
             'saadparwaiz1/cmp_luasnip',
             'hrsh7th/cmp-cmdline',
             'github/copilot.vim',
-            '/hrsh7th/cmp-copilot',
+            'hrsh7th/cmp-copilot',
         },
         config = function()
             require('config.nvim-cmp')
-            require('config.lsp-setup')
             require('config.luasnip')
         end,
     },
