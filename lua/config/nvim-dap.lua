@@ -1,5 +1,4 @@
 require('dap-config.cpp')
-require('dap-config.typescript')
 
 require('dapui').setup()
 
