@@ -38,5 +38,6 @@ require('dashboard').setup {
             },
             { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
         },
+        footer = { '', '🚀 Think twice, Code once' }
     },
 }
