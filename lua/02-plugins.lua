@@ -41,7 +41,6 @@ require('lazy').setup({
 
     {
         'numToStr/Comment.nvim',
-        event = 'InsertEnter',
         config = function()
             require('config.comment')
         end,
