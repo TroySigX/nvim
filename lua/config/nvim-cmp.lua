@@ -9,7 +9,6 @@ local has_words_before = function()
 end
 
 local cmp = require('cmp')
-
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
     ['<C-Space>'] = cmp.mapping.complete{ reason = cmp.ContextReason.Auto },
