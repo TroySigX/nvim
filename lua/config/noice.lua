@@ -18,10 +18,15 @@ require('noice').setup({
     },
     commands = {
         viewLast = {
-          view = "split",
-          opts = { enter = true, format = "details" },
-          filter = {},
-          filter_opts  = {count = 2}
+            view = "split",
+            opts = { enter = true, format = "details" },
+            filter = {},
+            filter_opts  = {count = 2}
+        },
+        all = {
+            view = "split",
+            opts = { enter = true, format = "details" },
+            filter = {},
       },
     },
 })
