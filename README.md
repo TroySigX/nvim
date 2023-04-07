@@ -14,3 +14,6 @@ typescipt-language-server \
 python \
 texlab \
 shellcheck
+
+## EditorConfig
+command: `ln -s ~/.config/nvim/.editorconfig /mnt/HDD/.editorconfig`
