@@ -1,5 +1,5 @@
 require('neogen').setup{
-    snippet_engine = 'luasnip',
+  snippet_engine = 'luasnip',
 }
 
 local map = vim.keymap.set

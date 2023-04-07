@@ -1,3 +1,6 @@
+-- vim.g.completeopt = 'menu,menuone,noselect,preview'
+-- vim.g.copilot_enabled = false
+-- require('codeium').setup({})
 local has_words_before = function()
     unpack = unpack or table.unpack
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -35,6 +38,8 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
+        -- { name = 'copilot' },
+        -- { name = 'codeium' },
     },
 
     snippet = {

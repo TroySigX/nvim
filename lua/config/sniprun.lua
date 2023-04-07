@@ -1,9 +1,9 @@
 require('sniprun').setup({
-    display = {
-        'Classic',
-        'VirtualTextOk',
-        'TempFloatingWindow'
-    }
+  display = {
+    'Classic',
+    'VirtualTextOk',
+    'TempFloatingWindow'
+  }
 })
 
 local map = vim.keymap.set

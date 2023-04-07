@@ -6,7 +6,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lsp = require('lspconfig')
 local servers = { 'clangd', 'pyright', 'tsserver', 'lua_ls', 'texlab' }
 for _, ls in ipairs(servers) do
-    lsp[ls].setup{
-        capabilities = capabilities
-    }
+  lsp[ls].setup{
+    capabilities = capabilities
+  }
 end
