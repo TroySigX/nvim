@@ -4,6 +4,7 @@ root = true
 end_of_line = lf
 insert_final_newline = false
 
-[**.{ts,js}]
+# TypeScript/JavaScript config
+[**{.ts,.js,tsconfig.json,package.json,package-lock.json}]
 indent_style = space
 indent_size = 2
