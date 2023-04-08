@@ -84,12 +84,12 @@ require('lazy').setup({
   },
 
   {
-    'preservim/tagbar',
+    'simrat39/symbols-outline.nvim',
     keys = {
       { '<F5>', mode = { 'n', 'i', 'v' } },
     },
     config = function()
-      require('config.tagbar')
+      require('config.symbols-outline')
     end,
   },
 
@@ -261,7 +261,7 @@ require('lazy').setup({
       require('config.nvim-dap')
     end,
   },
- 
+
   {
     'michaelb/sniprun',
     build = 'bash ./install.sh',
