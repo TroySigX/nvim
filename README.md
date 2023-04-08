@@ -2,7 +2,6 @@
 
 ## Packages to install:
 ripgrep: `sudo pacman -S ripgrep` \
-ctags: `sudo pacman -S ctags` \
 ueberzug: `sudo pacman -S ueberzug` \
 xclip: `sudo pacman -S xclip`
 
