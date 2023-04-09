@@ -9,8 +9,8 @@ xclip: `sudo pacman -S xclip`
 clangd \
 codelldb \
 lua-language-server \
-typescipt-language-server \
-python \
+typescript-language-server \
+pyright \
 texlab \
 shellcheck
 
