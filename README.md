@@ -3,7 +3,8 @@
 ## Packages to install:
 ripgrep: `sudo pacman -S ripgrep` \
 ueberzug: `sudo pacman -S ueberzug` \
-xclip: `sudo pacman -S xclip`
+xclip: `sudo pacman -S xclip` \
+pandoc: `sudo pacman -S pacdoc`
 
 ## Install Mason packages:
 clangd \
