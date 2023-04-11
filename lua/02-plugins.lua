@@ -25,8 +25,8 @@ require('lazy').setup({
       'hrsh7th/cmp-cmdline',
       -- 'github/copilot.vim',
       -- 'hrsh7th/cmp-copilot',
-      -- 'nvim-lua/plenary.nvim',
-      -- 'jcdickinson/codeium.nvim',
+      'nvim-lua/plenary.nvim',
+      'jcdickinson/codeium.nvim',
     },
     config = function()
       require('config.nvim-cmp')
