@@ -1,6 +1,10 @@
 local opt = vim.opt
 opt.termguicolors = true
 opt.relativenumber = true
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
+opt.expandtab = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.mouse = 'a'
@@ -9,6 +13,7 @@ opt.splitbelow = true
 opt.clipboard:append('unnamedplus')
 opt.signcolumn = 'yes'
 opt.syntax = 'on'
+opt.encoding = 'UTF-8'
 opt.showmatch = true
 opt.updatetime = 300
 opt.list = true
