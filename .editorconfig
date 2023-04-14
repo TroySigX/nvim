@@ -9,7 +9,11 @@ indent_size = 4
 charset = utf-8
 
 # TypeScript/JavaScript config
-[**{.ts,.js,tsconfig.json,package.json,package-lock.json}]
+[**.{ts,js}]
+indent_size = 2
+
+# Json config
+[**.json]
 indent_size = 2
 
 # Lua config
