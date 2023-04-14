@@ -9,15 +9,4 @@ map('n', '<space>km', require('fzf-lua').keymaps, { desc = '[K]ey[M]aps' })
 
 local img_previewer = { "ueberzug" }
 
-require('fzf-lua').setup({
-  -- previewers = {
-  --   builtin = {
-  --     extensions = {
-  --       ['gif'] = img_previewer,
-  --       ['png'] = img_previewer,
-  --       ['jpg'] = img_previewer,
-  --       ['jpeg'] = img_previewer,
-  --     },
-  --   },
-  -- },
-})
+require('fzf-lua').setup({})
