@@ -5,6 +5,7 @@
 * xclip: `sudo pacman -S xclip`
 * pandoc: `sudo pacman -S pacdoc`
 * tex-live: `sudo pacman -S texlive-most`
+* bear: `sudo pacman -S bear`
 
 ## Install Mason packages:
 * codelldb
