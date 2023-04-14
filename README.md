@@ -2,7 +2,6 @@
 
 ## Packages to install:
 ripgrep: `sudo pacman -S ripgrep` \
-ueberzug: `sudo pacman -S ueberzug` \
 xclip: `sudo pacman -S xclip` \
 pandoc: `sudo pacman -S pacdoc` \
 tex-live: `sudo pacman -S texlive-most`
