@@ -2,7 +2,7 @@ local map = vim.keymap.set
 map('n', 'K', vim.lsp.buf.definition, { desc = 'LSP Definition' })
 map('n', '<space>ca', vim.lsp.buf.code_action, { desc = 'LSP [C]ode [A]ction' })
 
-function MasonLspPackages()
+local function MasonLspPackages()
 	local registry = require('mason-registry')
 	local lsp = {}
 	for _, pkg in ipairs(registry.get_installed_package_names()) do
