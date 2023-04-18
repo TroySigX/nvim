@@ -1,5 +1,5 @@
 vim.g.firenvim_config = {
-  globalSettings = { alt = "all" },
+  globalSettings = { alt = 'all' },
   localSettings = {
     [".*"] = {
       cmdline  = 'neovim',

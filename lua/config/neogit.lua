@@ -6,17 +6,17 @@ require('neogit').setup {
   auto_refresh = true,
   disable_builtin_notifications = false,
   use_magit_keybindings = false,
-  kind = "tab",
+  kind = 'tab',
   console_timeout = 2000,
   auto_show_console = true,
   popup = {
-    kind = "vsplit",
+    kind = 'vsplit',
   },
   signs = {
     -- { CLOSED, OPENED }
-    section = { ">", "v" },
-    item = { ">", "v" },
-    hunk = { "", "" },
+    section = { '>', 'v' },
+    item = { '>', 'v' },
+    hunk = { '', '' },
   },
   integrations = {
     diffview = true

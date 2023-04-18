@@ -24,4 +24,4 @@ map({ 'n', 'i', 'v' }, '<F4>', function()
   end
 end, { desc = 'Toggle Neotest Summary' })
 map('n', '<leader>t', require('neotest').run.run, { desc = '[T]est Current Test' })
-map('n', '<leader>at', function() require('neotest').run.run(vim.fn.expand("%")) end, { desc = 'Run [A]ll [T]est' })
+map('n', '<leader>at', function() require('neotest').run.run(vim.fn.expand('%')) end, { desc = 'Run [A]ll [T]est' })
