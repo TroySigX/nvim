@@ -19,3 +19,7 @@ indent_size = 2
 # Lua config
 [**.lua]
 indent_size = 2
+
+# Latex config
+[**.tex]
+trim_trailing_whitespace = false
