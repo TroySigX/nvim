@@ -1,11 +1,14 @@
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_enabled = false
-
 local has_words_before = function()
     unpack = unpack or table.unpack
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match('%s') == nil
 end
+
+require('copilot').setup({
+  suggestion = { enabled = false },
+  panel = { enabled = false },
+})
+require('copilot_cmp').setup()
 
 local cmp = require('cmp')
 cmp.setup({
