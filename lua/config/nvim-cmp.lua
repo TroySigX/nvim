@@ -1,4 +1,6 @@
-require('codeium').setup({})
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_enabled = false
+
 local has_words_before = function()
     unpack = unpack or table.unpack
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -36,7 +38,7 @@ cmp.setup({
         { name = 'buffer' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
-        { name = 'codeium' },
+        { name = 'copilot' },
     },
 
     snippet = {

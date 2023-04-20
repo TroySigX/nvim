@@ -23,8 +23,8 @@ require('lazy').setup({
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-cmdline',
-      'nvim-lua/plenary.nvim',
-      'jcdickinson/codeium.nvim',
+      'github/copilot.vim',
+      'hrsh7th/cmp-copilot',
     },
     config = function()
       require('config.nvim-cmp')
