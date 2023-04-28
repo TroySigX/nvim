@@ -92,7 +92,13 @@ require('lazy').setup({
     end,
   },
 
-  'lukas-reineke/indent-blankline.nvim',
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function()
+      require('config.indent')
+    end
+  },
+
 
   {
     'sainnhe/gruvbox-material',
