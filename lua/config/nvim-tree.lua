@@ -16,8 +16,8 @@ end
 
 local function goto_buffer_cwd()
   vim.cmd('wincmd l')
-  api.tree.close()
-  vim.cmd('NvimTreeFindFile!')
+  api.tree.find_file { open = true, update_root = '!' }
+  api.tree.focus()
 end
 
 local function opts(bufnr)
