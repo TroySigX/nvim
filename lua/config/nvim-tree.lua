@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local unmap = vim.keymap.del
 local api = require('nvim-tree.api')
 
 local function open_tab_silent(node)
@@ -19,15 +20,22 @@ local function goto_buffer_cwd()
   vim.cmd('NvimTreeFindFile!')
 end
 
+local function opts(bufnr)
+  return { buffer = bufnr, nowait = true }
+end
+
 require('nvim-tree').setup({
   disable_netrw = true,
 
-  on_attach = function()
-    map('n', '<C-t>', open_tab)
-    map('n', 'T', open_tab_silent)
-    map('n', 'CD', goto_buffer_cwd)
-    map('n', '<Tab>', api.node.open.preview)
-    map('n', '<CR>', api.node.open.edit)
+  on_attach = function(bufnr)
+    api.config.mappings.default_on_attach(bufnr)
+
+    -- custom mappings
+    unmap('n', '<C-t>', { buffer = bufnr })
+    map('n', '<C-t>', open_tab, opts(bufnr))
+    map('n', 'T', open_tab_silent, opts(bufnr))
+    map('n', 'CD', goto_buffer_cwd, opts(bufnr))
+    map('n', '<C-s>', api.node.open.horizontal, opts(bufnr))
   end,
 
   git = {
