@@ -8,7 +8,7 @@ require('copilot').setup({
   suggestion = { enabled = false },
   panel = { enabled = false },
 })
-require('copilot_cmp').setup()
+require('copilot_cmp').setup({ event = 'LspAttach' })
 
 local cmp = require('cmp')
 cmp.setup({
