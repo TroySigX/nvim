@@ -46,22 +46,15 @@ map('n', '<space>nl', 'm`o<Esc>``', { desc = 'Insering new line below without en
 map('n', '<space>NL', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
 
 -- auto indent on newline
-map('n', 'i', function()
+local function auto_indent(mode)
   if #vim.fn.getline '.' == 0 then
     return [["_cc]]
   else
-    return 'i'
+    return mode
   end
 end
-, { desc = 'auto indent on newline in insert mode', expr = true  })
-map('n', 'a', function()
-  if #vim.fn.getline '.' == 0 then
-    return [["_cc]]
-  else
-    return 'a'
-  end
-end
-, { desc = 'auto indent on newline in append mode', expr = true  })
+map('n', 'i', function() return auto_indent('i') end, { desc = 'auto indent on newline in insert mode', expr = true  })
+map('n', 'a', function() return auto_indent('a') end, { desc = 'auto indent on newline in append mode', expr = true  })
 
 -- set signs
 local signs = {
