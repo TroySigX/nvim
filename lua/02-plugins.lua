@@ -99,13 +99,12 @@ require('lazy').setup({
     end
   },
 
-
   {
-    'sainnhe/gruvbox-material',
-    config = function()
-      require('config.colorscheme')
-    end,
-  },
+  'folke/tokyonight.nvim',
+  config = function(_, opts)
+    require('config.colorscheme')
+  end,
+},
 
   {
     'HiPhish/nvim-ts-rainbow2',
