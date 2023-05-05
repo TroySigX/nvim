@@ -48,6 +48,25 @@ require('lazy').setup({
   },
 
   {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      {
+        'folke/noice.nvim',
+        dependencies = {
+          'MunifTanjim/nui.nvim',
+        },
+        config = function()
+          require('config.noice')
+        end,
+      },
+    },
+    config = function()
+      require('config.lualine')
+    end,
+  },
+
+  {
     'akinsho/toggleterm.nvim',
     keys = {
       { '<F9>', mode = { 'n', 'i', 'v' } },
@@ -100,26 +119,16 @@ require('lazy').setup({
   },
 
   {
-  'folke/tokyonight.nvim',
-  config = function(_, opts)
-    require('config.colorscheme')
-  end,
-},
+    'folke/tokyonight.nvim',
+    config = function(_, opts)
+      require('config.colorscheme')
+    end,
+  },
 
   {
     'HiPhish/nvim-ts-rainbow2',
     config = function ()
       require('config.ts-rainbow')
-    end,
-  },
-
-  {
-    'folke/noice.nvim',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-    },
-    config = function()
-      require('config.noice')
     end,
   },
 
@@ -152,14 +161,6 @@ require('lazy').setup({
     },
     config = function()
       require('config.trouble')
-    end,
-  },
-
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require('config.lualine')
     end,
   },
 
