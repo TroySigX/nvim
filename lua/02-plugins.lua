@@ -120,7 +120,7 @@ require('lazy').setup({
 
   {
     'folke/tokyonight.nvim',
-    config = function(_, opts)
+    config = function()
       require('config.colorscheme')
     end,
   },
