@@ -27,11 +27,11 @@ cmp.setup({
     }),
 
     sources = {
-        { name = 'nvim_lsp' },
-        { name = 'buffer' },
-        { name = 'nvim_lsp_signature_help' },
-        { name = 'luasnip' },
-        { name = 'copilot' },
+        { name = 'nvim_lsp', priority = 1 },
+        { name = 'buffer', priority = 1 },
+        { name = 'nvim_lsp_signature_help', priority = 1 },
+        { name = 'luasnip', priority = 2 },
+        { name = 'copilot', priority = 2 },
     },
 
     snippet = {
