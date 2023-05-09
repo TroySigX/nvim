@@ -295,6 +295,23 @@ require('lazy').setup({
   },
 
   {
+    'mrjones2014/smart-splits.nvim',
+    keys = {
+      { '<A-h>', mode = { 'n', 'i', 'v' } },
+      { '<A-j>', mode = { 'n', 'i', 'v' } },
+      { '<A-k>', mode = { 'n', 'i', 'v' } },
+      { '<A-l>', mode = { 'n', 'i', 'v' } },
+      '<leader><leader>h',
+      '<leader><leader>j',
+      '<leader><leader>k',
+      '<leader><leader>l',
+    },
+    config = function()
+      require('config.smart-splits')
+    end,
+  },
+
+  {
     'glacambre/firenvim',
 
     cond = not not vim.g.started_by_firenvim,
