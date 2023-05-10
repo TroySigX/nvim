@@ -32,4 +32,4 @@ require('noice').setup({
 })
 
 local map = vim.keymap.set
-map('n', '<space>h', function() require('noice').cmd('viewLast') end, { desc = 'view last' })
+map('n', '<space>h', function() require('noice').cmd('viewLast') end, { desc = 'Noice view last' })
