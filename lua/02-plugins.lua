@@ -312,6 +312,14 @@ require('lazy').setup({
   },
 
   {
+    'xeluxee/competitest.nvim',
+    dependencies = 'MunifTanjim/nui.nvim',
+    config = function()
+      require('config.competitest')
+    end,
+  },
+
+  {
     'glacambre/firenvim',
 
     cond = not not vim.g.started_by_firenvim,
