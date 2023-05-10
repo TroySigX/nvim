@@ -15,7 +15,7 @@ require('dashboard').setup {
     packages = { enable = true },
     project = {
       limit = 5,
-      icon = ' ',
+      icon = '󰏓 ',
       label = 'Recent Projects:',
       action = function(path)
         require('fzf-lua').files({ cwd = path })
@@ -27,7 +27,7 @@ require('dashboard').setup {
       label = 'Recent Files:'
     },
     shortcut = {
-      { desc = ' Update', group = '@property', action = require('lazy').update, key = 'u' },
+      { desc = '󰊳 Update', group = '@property', action = require('lazy').update, key = 'u' },
       {
         icon = ' ',
         icon_hl = '@variable',
