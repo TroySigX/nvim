@@ -27,7 +27,8 @@ require('lazy').setup({
       'zbirenbaum/copilot-cmp',
     },
     config = function()
-      require('config.nvim-cmp') require('config.luasnip')
+      require('config.nvim-cmp')
+      require('config.luasnip')
     end,
   },
 
