@@ -265,7 +265,9 @@ require('lazy').setup({
 
   {
     'echasnovski/mini.splitjoin',
-    keys = 'gs',
+    keys = {
+      { 'gs', mode = { 'n', 'v' } },
+    },
     config = function()
       require('config.mini-splitjoin')
     end
