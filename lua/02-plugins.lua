@@ -291,6 +291,14 @@ require('lazy').setup({
   },
 
   {
+    'mbbill/undotree',
+    keys = '<leader><F2>',
+    config = function()
+      require('config.undotree')
+    end,
+  },
+
+  {
     'michaelb/sniprun',
     build = 'bash ./install.sh',
     keys = {
