@@ -254,13 +254,16 @@ require('lazy').setup({
   },
 
   {
-    'matze/vim-move',
+    'echasnovski/mini.move',
     keys = {
       { '<A-h>', mode = { 'n', 'v' } },
       { '<A-j>', mode = { 'n', 'v' } },
       { '<A-k>', mode = { 'n', 'v' } },
       { '<A-l>', mode = { 'n', 'v' } },
     },
+    config = function()
+      require('config.mini-move')
+    end,
   },
 
   {
