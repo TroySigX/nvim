@@ -53,19 +53,18 @@ local function auto_indent(mode)
     return mode
   end
 end
-map('n', 'i', function() return auto_indent('i') end, { desc = 'auto indent on newline in insert mode', expr = true  })
-map('n', 'a', function() return auto_indent('a') end, { desc = 'auto indent on newline in append mode', expr = true  })
+map('n', 'i', function() return auto_indent('i') end, { desc = 'auto indent on newline in insert mode', expr = true })
+map('n', 'a', function() return auto_indent('a') end, { desc = 'auto indent on newline in append mode', expr = true })
 
 -- set signs
 local signs = {
-  { name = 'DiagnosticSignError', text = '' },
-  { name = 'DiagnosticSignWarn', text = '' },
-  { name = 'DiagnosticSignHint', text = '' },
+  { name = 'DiagnosticSignError', text = '' },
+  { name = 'DiagnosticSignWarn', text = '' },
+  { name = 'DiagnosticSignHint', text = '' },
   { name = 'DiagnosticSignInfo', text = '' },
 }
 for _, sign in ipairs(signs) do
   vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-
 end
 
 -- diagnostic severity
