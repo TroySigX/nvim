@@ -12,8 +12,10 @@ snippet contest
 		void setIO(string s = ""){
 			ios_base::sync_with_stdio(false);
 			cin.tie(0); cout.tie(0);
-            setIn(s + ".in");
-            setOut(s + ".out");
+            if (s != ""){
+                setIn(s + ".in");
+                setOut(s + ".out");
+            }
 		}
 	}
 
@@ -118,6 +120,8 @@ snippet contest
 	const int N = 1e5 + 10;
 
 	int main(){
+        setIO();
+
 		${1}
 
 		return 0;
