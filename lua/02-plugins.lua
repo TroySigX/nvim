@@ -27,8 +27,7 @@ require('lazy').setup({
       'zbirenbaum/copilot-cmp',
     },
     config = function()
-      require('config.nvim-cmp')
-      require('config.luasnip')
+      require('config.nvim-cmp') require('config.luasnip')
     end,
   },
 
@@ -254,6 +253,24 @@ require('lazy').setup({
   },
 
   {
+    'matze/vim-move',
+    keys = {
+      { '<A-h>', mode = { 'n', 'v' } },
+      { '<A-j>', mode = { 'n', 'v' } },
+      { '<A-k>', mode = { 'n', 'v' } },
+      { '<A-l>', mode = { 'n', 'v' } },
+    },
+  },
+
+  {
+    'echasnovski/mini.splitjoin',
+    keys = 'gs',
+    config = function()
+      require('config.mini-splitjoin')
+    end
+  },
+
+  {
     'rcarriga/nvim-dap-ui',
     dependencies = {
       'mfussenegger/nvim-dap',
@@ -297,10 +314,10 @@ require('lazy').setup({
   {
     'mrjones2014/smart-splits.nvim',
     keys = {
-      { '<A-h>', mode = { 'n', 'i', 'v' } },
-      { '<A-j>', mode = { 'n', 'i', 'v' } },
-      { '<A-k>', mode = { 'n', 'i', 'v' } },
-      { '<A-l>', mode = { 'n', 'i', 'v' } },
+      { '<A-H>', mode = { 'n', 'i', 'v' } },
+      { '<A-J>', mode = { 'n', 'i', 'v' } },
+      { '<A-K>', mode = { 'n', 'i', 'v' } },
+      { '<A-L>', mode = { 'n', 'i', 'v' } },
       '<leader><leader>h',
       '<leader><leader>j',
       '<leader><leader>k',
