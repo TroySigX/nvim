@@ -346,14 +346,12 @@ require('lazy').setup({
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     keys = {
-      '<space>tr',
-      '<space>tdo',
       '<space>tdt',
       '<space>tdc',
       '<space>tdp',
       '<space>ta',
       '<space>te',
-      '<space>tnr',
+      '<space>to',
     },
     config = function()
       require('config.competitest')
