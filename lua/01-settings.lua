@@ -13,13 +13,9 @@ opt.splitbelow = true
 opt.clipboard:append('unnamedplus')
 opt.signcolumn = 'yes'
 opt.syntax = 'on'
-opt.encoding = 'UTF-8'
 opt.showmatch = true
 opt.updatetime = 300
 opt.list = true
-
-vim.o.nocompatible = true
-vim.o.nobackup = true
 
 -- default filetype for latex is tex
 vim.g.tex_flavor = 'latex'
@@ -53,9 +49,10 @@ local function auto_indent(mode)
     return mode
   end
 end
-map('n', 'i', function() return auto_indent('i') end, { desc = 'auto indent on newline in insert mode', expr = true })
-map('n', 'a', function() return auto_indent('a') end, { desc = 'auto indent on newline in append mode', expr = true })
-map('n', 'A', function() return auto_indent('A') end, { desc = 'auto indent on newline in append-last-line mode', expr = true })
+local insertModes = { 'i', 'a', 'A' }
+for _, mode in ipairs(insertModes) do
+  map('n', mode, function() return auto_indent(mode) end, { desc = 'auto indent on newline in insert mode', expr = true })
+end
 
 -- set signs
 local signs = {
