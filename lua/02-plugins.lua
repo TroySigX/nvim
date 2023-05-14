@@ -352,6 +352,7 @@ require('lazy').setup({
       '<space>ta',
       '<space>te',
       '<space>to',
+      '<space>tr',
     },
     config = function()
       require('config.competitest')
