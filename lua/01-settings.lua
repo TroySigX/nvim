@@ -73,8 +73,3 @@ vim.diagnostic.config({
   virtual_text = false,
   signs = { severity = vim.diagnostic.severity.ERROR }
 })
-
--- enable filetype detection
-vim.cmd[[
-  filetype plugin indent on
-]]
