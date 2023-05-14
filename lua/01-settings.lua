@@ -55,6 +55,7 @@ local function auto_indent(mode)
 end
 map('n', 'i', function() return auto_indent('i') end, { desc = 'auto indent on newline in insert mode', expr = true })
 map('n', 'a', function() return auto_indent('a') end, { desc = 'auto indent on newline in append mode', expr = true })
+map('n', 'A', function() return auto_indent('A') end, { desc = 'auto indent on newline in append-last-line mode', expr = true })
 
 -- set signs
 local signs = {
