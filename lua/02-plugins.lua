@@ -51,17 +51,15 @@ require('lazy').setup({
     'nvim-lualine/lualine.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
+      'rcarriga/nvim-notify',
       {
         'folke/noice.nvim',
-        dependencies = {
-          'MunifTanjim/nui.nvim',
-        },
-        config = function()
-          require('config.noice')
-        end,
+        dependencies = 'MunifTanjim/nui.nvim',
       },
     },
     config = function()
+      require('config.notify')
+      require('config.noice')
       require('config.lualine')
     end,
   },
