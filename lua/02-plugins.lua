@@ -350,6 +350,15 @@ require('lazy').setup({
     end,
   },
 
+  -- {
+  --   'AckslD/muren.nvim',
+  --   config = function()
+  --     require('muren').setup({
+  --       two_step = true,
+  --     })
+  --   end,
+  -- },
+
   {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
