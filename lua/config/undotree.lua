@@ -1,1 +1,1 @@
-vim.keymap.set('n', '<leader><F2>', vim.cmd.UndotreeToggle, { desc = 'Toggle UndoTree' })
+vim.keymap.set('n', '<F7>', vim.cmd.UndotreeToggle, { desc = 'Toggle UndoTree' })
