@@ -358,6 +358,13 @@ require('lazy').setup({
   },
 
   {
+    'kylechui/nvim-surround',
+    config = function()
+      require('config.nvim-surround')
+    end,
+  },
+
+  {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     keys = {
