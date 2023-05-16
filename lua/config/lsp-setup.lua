@@ -13,6 +13,10 @@ require('lspsaga').setup({
     sign = false,
     virtual_text = false,
   },
+
+  symbol_in_winbar = {
+    enable = false,
+  },
 })
 
 local map = vim.keymap.set
