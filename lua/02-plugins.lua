@@ -344,6 +344,13 @@ require('lazy').setup({
   },
 
   {
+    'roobert/search-replace.nvim',
+    config = function()
+      require('config.search-replace')
+    end,
+  },
+
+  {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     keys = {
