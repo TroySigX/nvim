@@ -293,7 +293,7 @@ require('lazy').setup({
 
   {
     'mbbill/undotree',
-    keys = '<leader><F2>',
+    keys = '<F7>',
     config = function()
       require('config.undotree')
     end,
