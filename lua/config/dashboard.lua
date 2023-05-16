@@ -37,6 +37,7 @@ require('dashboard').setup {
         key = 'f',
       },
       { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
+      { desc = '󰗼 Quit', action = 'q', key = 'q' },
     },
     footer = { '', '🚀 Think twice, Code once' }
   },
