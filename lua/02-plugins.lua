@@ -350,14 +350,12 @@ require('lazy').setup({
     end,
   },
 
-  -- {
-  --   'AckslD/muren.nvim',
-  --   config = function()
-  --     require('muren').setup({
-  --       two_step = true,
-  --     })
-  --   end,
-  -- },
+  {
+    'AckslD/muren.nvim',
+    config = function()
+      require('config.muren')
+    end,
+  },
 
   {
     'xeluxee/competitest.nvim',
