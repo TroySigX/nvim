@@ -41,6 +41,14 @@ require('lazy').setup({
   },
 
   {
+    'glepnir/lspsaga.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      'nvim-treesitter/nvim-treesitter'
+    },
+  },
+
+  {
     'numToStr/Comment.nvim',
     config = function()
       require('config.comment')
@@ -231,14 +239,6 @@ require('lazy').setup({
     },
     config = function()
       require('config.neogit')
-    end,
-  },
-
-  {
-    'smjonas/inc-rename.nvim',
-    keys = '<space>rn',
-    config = function()
-      require('config.inc-rename')
     end,
   },
 
