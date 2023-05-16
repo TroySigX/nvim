@@ -12,6 +12,10 @@ require('lspsaga').setup({
   lightbulb = {
     sign = false,
     virtual_text = false,
+  },
+
+  rename = {
+    quit = 'q',
   }
 })
 
