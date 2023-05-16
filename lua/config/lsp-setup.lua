@@ -13,10 +13,6 @@ require('lspsaga').setup({
     sign = false,
     virtual_text = false,
   },
-
-  rename = {
-    quit = 'q',
-  }
 })
 
 local map = vim.keymap.set
