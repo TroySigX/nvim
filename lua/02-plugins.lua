@@ -46,6 +46,9 @@ require('lazy').setup({
       'nvim-tree/nvim-web-devicons',
       'nvim-treesitter/nvim-treesitter'
     },
+    config = function()
+      require('config.lsp-setup')
+    end,
   },
 
   {
