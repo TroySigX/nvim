@@ -344,14 +344,10 @@ require('lazy').setup({
   },
 
   {
-    'roobert/search-replace.nvim',
-    config = function()
-      require('config.search-replace')
-    end,
-  },
-
-  {
     'AckslD/muren.nvim',
+    key = {
+      { '<C-s>', mode = { 'n', 'v' } },
+    },
     config = function()
       require('config.muren')
     end,
