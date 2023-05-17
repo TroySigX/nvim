@@ -176,7 +176,6 @@ require('lazy').setup({
     dependencies = 'nvim-tree/nvim-web-devicons',
     keys = {
       { '<F1>', mode = { 'n', 'i', 'v' } },
-      '<leader>e', '<C-k>', '<C-j>',
     },
     config = function()
       require('config.trouble')
