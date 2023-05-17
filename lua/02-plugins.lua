@@ -27,6 +27,7 @@ require('lazy').setup({
       'hrsh7th/cmp-cmdline',
       'zbirenbaum/copilot.lua',
       'zbirenbaum/copilot-cmp',
+      'onsails/lspkind.nvim',
     },
     config = function()
       require('config.nvim-cmp')
