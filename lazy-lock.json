@@ -20,7 +20,7 @@
   "knap": { "branch": "main", "commit": "8c083d333b8a82421a521539eb1c450b06c90eb6" },
   "lazy.nvim": { "branch": "main", "commit": "aba872ec78ffe7f7367764ab0fff6f0170421fde" },
   "leap.nvim": { "branch": "main", "commit": "6f2912755c9c4ae790abd829f0cf1b07c037b2a4" },
-  "lspsaga.nvim": { "branch": "main", "commit": "33d08e6b2f45933cb4dcd50cf19c47b7352d417b" },
+  "lspsaga.nvim": { "branch": "main", "commit": "426df9972053422c24d38c6fc23f90e423091a79" },
   "lualine.nvim": { "branch": "master", "commit": "05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "90a8bbf106b85b76951a34c542058ffa807de2b1" },
   "mason.nvim": { "branch": "main", "commit": "e634134312bb936f472468a401c9cae6485ab54b" },
@@ -55,5 +55,6 @@
   "tokyonight.nvim": { "branch": "main", "commit": "df13e3268a44f142999fa166572fe95a650a0b37" },
   "trouble.nvim": { "branch": "main", "commit": "d56bfc0c501ced4002a57cb60433362fb2ce9c4d" },
   "undotree": { "branch": "master", "commit": "485f01efde4e22cb1ce547b9e8c9238f36566f21" },
-  "vim-startuptime": { "branch": "master", "commit": "01b67169c3ebe41f163c07bf6853555ca19bc27f" }
+  "vim-startuptime": { "branch": "master", "commit": "01b67169c3ebe41f163c07bf6853555ca19bc27f" },
+  "which-key.nvim": { "branch": "main", "commit": "5a6c954a5a46023c19acc03a8b6d7c3e57964fc5" }
 }
