@@ -17,6 +17,10 @@ require('lspsaga').setup({
   symbol_in_winbar = {
     enable = false,
   },
+
+  ui = {
+    border = 'rounded'
+  }
 })
 
 local map = vim.keymap.set
