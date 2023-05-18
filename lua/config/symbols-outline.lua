@@ -1,5 +1,5 @@
 require('symbols-outline').setup({
-  auto_preview = true,
+  -- auto_preview = true,
 })
 
 local map = vim.keymap.set
