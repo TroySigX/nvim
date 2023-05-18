@@ -106,7 +106,7 @@ require('lazy').setup({
   },
 
   {
-    'glepnir/dashboard-nvim',
+    'nvimdev/dashboard-nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require('config.dashboard')
