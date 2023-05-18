@@ -41,6 +41,10 @@ require('nvim-tree').setup({
   git = {
     ignore = false,
   },
+
+  view = {
+    relativenumber = true,
+  },
 })
 
 map({ 'n', 'i', 'v' }, '<F2>', function()
