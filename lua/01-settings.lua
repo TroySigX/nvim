@@ -23,9 +23,7 @@ vim.g.tex_flavor = 'latex'
 -- moving between tabs
 local map = vim.keymap.set
 map('n', 'L', 'gt')
-map({ 'v', 'i' }, 'L', '<Esc>gt')
 map('n', 'H', 'gT')
-map({ 'v', 'i' }, 'H', '<Esc>gT')
 
 map('n', '<leader>1', '1gt')
 map('n', '<leader>2', '2gt')
