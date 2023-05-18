@@ -22,6 +22,7 @@ require('lspsaga').setup({
 local map = vim.keymap.set
 
 map('n', 'K', ':Lspsaga peek_definition<CR>', { desc = 'LSP Definition', silent = true })
+map('n', 'J', ':Lspsaga hover_doc<CR>', { desc = 'LSP Doc', silent = true })
 map('n', '<space>ca', ':Lspsaga code_action<CR>', { desc = 'LSP [C]ode [A]ction', silent = true })
 map('n', '<leader>e', ':Lspsaga show_line_diagnostics<CR>', { desc = 'Show [E]rrors on line', silent = true })
 
