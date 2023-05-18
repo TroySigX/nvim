@@ -24,7 +24,6 @@ local function opts(desc)
   return { desc = desc, silent = true }
 end
 
-
 map('n', 'K', ':Lspsaga peek_definition<CR>', opts('LSP Definition'))
 map('n', 'J', ':Lspsaga hover_doc<CR>', opts('LSP Doc'))
 map('n', '<space>ca', ':Lspsaga code_action<CR>', opts('LSP [C]ode [A]ction'))
