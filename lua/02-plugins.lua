@@ -370,6 +370,18 @@ require('lazy').setup({
   },
 
   {
+    'kevinhwang91/nvim-ufo',
+    dependencies = {
+      'kevinhwang91/promise-async',
+      'nvim-treesitter/nvim-treesitter',
+      'luukvbaal/statuscol.nvim',
+    },
+    config = function()
+      require('config.nvim-ufo')
+    end,
+  },
+
+  {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     keys = {
