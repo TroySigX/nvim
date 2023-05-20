@@ -277,12 +277,12 @@ require('lazy').setup({
   },
 
   {
-    'echasnovski/mini.splitjoin',
+    'Wansmer/treesj',
     keys = {
       { 'gs', mode = { 'n', 'v' } },
     },
     config = function()
-      require('config.mini-splitjoin')
+      require('config.treesj')
     end
   },
 
