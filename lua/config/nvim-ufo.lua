@@ -19,6 +19,3 @@ require('ufo').setup({
         return {'treesitter', 'indent'}
     end
 })
-
-local map = vim.keymap.set
-map({ 'n', 'v' }, '<leader>fc', ':foldclose<CR>', { desc = '[F]old [C]lose', silent = true })
