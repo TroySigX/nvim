@@ -37,6 +37,7 @@ require('dashboard').setup {
         key = 'f',
       },
       { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
+      { desc = ' Profile', action = require('lazy').profile, key = 'p' },
       { desc = '󰗼 Quit', action = 'q', key = 'q' },
     },
     footer = { '', '🚀 Think twice, Code once' }
