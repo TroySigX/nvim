@@ -5,4 +5,5 @@ Run `install.sh`
 
 ## Install Mason packages:
 * codelldb
+* jsonlint
 * shellcheck

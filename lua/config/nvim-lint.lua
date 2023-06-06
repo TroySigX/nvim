@@ -1,5 +1,6 @@
 require('lint').linters_by_ft = {
-  sh = {'shellcheck'},
+  sh = { 'shellcheck' },
+  json = { 'jsonlint' },
 }
 
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
