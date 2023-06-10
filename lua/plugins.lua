@@ -244,6 +244,17 @@ return {
   },
 
   {
+    'nvim-neorg/neorg',
+    build = ':Neorg sync-parsers',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    cmd = 'Neorg',
+    keys = { '<space>now', '<space>noi' },
+    config = function()
+      require('config.neorg')
+    end,
+  },
+
+  {
     'echasnovski/mini.move',
     keys = {
       { '<A-h>', mode = { 'n', 'v' } },
