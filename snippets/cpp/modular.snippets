@@ -4,7 +4,7 @@ snippet modular
 		int x;
 		static const int MOD = _MOD;
 
-		int inv(int A, int B){
+		int inv(int A, int B) {
 			A %= B;
 			return A == 1 ? 1 : B - 1LL * inv(B, A) * B / A;
 		}
@@ -15,7 +15,7 @@ snippet modular
 		Mod operator - () const{
 			Mod res = *this;
 			res.x = MOD - res.x;
-			if (res.x == MOD){
+			if (res.x == MOD) {
 				res.x = 0;
 			}
 			return res;
@@ -26,7 +26,7 @@ snippet modular
 		friend bool operator == (const Mod& A, const Mod& B) {return A.x == B.x;}
 		friend bool operator != (const Mod& A, const Mod& B) {return A.x != B.x;}
 
-		Mod& operator += (const Mod& A){
+		Mod& operator += (const Mod& A) {
 			x += A.x;
 			if (x >= MOD) x -= MOD;
 			return *this;
@@ -42,7 +42,7 @@ snippet modular
 			return *this += 1;
 		}
 
-		Mod& operator -= (const Mod& A){
+		Mod& operator -= (const Mod& A) {
 			x -= A.x;
 			if (x < 0) x += MOD;
 			return *this;
@@ -54,23 +54,23 @@ snippet modular
 			return res;
 		}
 
-		Mod& operator -- (){
+		Mod& operator -- () {
 			return *this -= 1;
 		}
 
-		Mod& operator *= (const Mod& A){
+		Mod& operator *= (const Mod& A) {
 			x = (1LL * x * A.x) % MOD;
 			return *this;
 		}
 
-		Mod& operator /= (const Mod& A){
+		Mod& operator /= (const Mod& A) {
 			return *this *= Mod(inv(A.x, MOD));
 		}
 
-		Mod& operator ^= (long long A){
+		Mod& operator ^= (long long A) {
 			Mod res = 1;
-			for(; A > 0; A >>= 1){
-				if (A&1){
+			for (; A > 0; A >>= 1) {
+				if (A&1) {
 					res *= x;
 				}
 				x = (1LL * x * x) % MOD;
@@ -79,29 +79,29 @@ snippet modular
 			return *this;
 		}
 
-		Mod& operator <<= (int A){
-			if (A <= 60){
+		Mod& operator <<= (int A) {
+			if (A <= 60) {
 				return *this *= 1LL << A;
 			}
 			return *this *= Mod(2) ^ A;
 		}
 
-		Mod& operator >>= (int A){
-			if (A <= 60){
+		Mod& operator >>= (int A) {
+			if (A <= 60) {
 				return *this /= 1LL << A;
 			}
 			return *this /= Mod(2) ^ A;
 		}
 
-		friend Mod operator + (const Mod& A, const Mod& B) {return Mod(A) += B;}
-		friend Mod operator - (const Mod& A, const Mod& B) {return Mod(A) -= B;}
-		friend Mod operator * (const Mod& A, const Mod& B) {return Mod(A) *= B;}
-		friend Mod operator / (const Mod& A, const Mod& B) {return Mod(A) /= B;}
-		friend Mod operator ^ (const Mod& A, const long long& B) {return Mod(A) ^= B;}
-		friend Mod operator << (const Mod& A, const int& B) {return Mod(A) <<= B;}
-		friend Mod operator >> (const Mod& A, const int& B) {return Mod(A) >>= B;}
+		friend Mod operator + (const Mod& A, const Mod& B) { return Mod(A) += B; }
+		friend Mod operator - (const Mod& A, const Mod& B) { return Mod(A) -= B; }
+		friend Mod operator * (const Mod& A, const Mod& B) { return Mod(A) *= B; }
+		friend Mod operator / (const Mod& A, const Mod& B) { return Mod(A) /= B; }
+		friend Mod operator ^ (const Mod& A, const long long& B) { return Mod(A) ^= B; }
+		friend Mod operator << (const Mod& A, const int& B) { return Mod(A) <<= B; }
+		friend Mod operator >> (const Mod& A, const int& B) { return Mod(A) >>= B; }
 
-		friend istream& operator >> (istream& stream, Mod& A){
+		friend istream& operator >> (istream& stream, Mod& A) {
 			long long x;
 			stream >> x;
 			A = x;
