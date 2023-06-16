@@ -248,7 +248,7 @@ return {
     build = ':Neorg sync-parsers',
     dependencies = { 'nvim-lua/plenary.nvim' },
     cmd = 'Neorg',
-    keys = { '<space>now', '<space>noi' },
+    -- keys = { '<leader>now', '<space>noi' },
     config = function()
       require('config.neorg')
     end,
@@ -370,6 +370,14 @@ return {
     config = function()
       require('config.nvim-ufo')
     end,
+  },
+
+  {
+    'tpope/vim-dadbod',
+    cmd = { 'DBUIToggle', 'DBUI', 'DBUIAddConnection', 'DBUIFindBuffer', 'DBUIRenameBuffer', 'DBUILastQueryInfo' },
+    dependencies = {
+      'kristijanhusak/vim-dadbod-ui',
+    },
   },
 
   {
