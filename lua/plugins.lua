@@ -374,10 +374,13 @@ return {
 
   {
     'tpope/vim-dadbod',
-    cmd = { 'DBUIToggle', 'DBUI', 'DBUIAddConnection', 'DBUIFindBuffer', 'DBUIRenameBuffer', 'DBUILastQueryInfo' },
+    keys = { 'Du', 'Df', 'Dr', 'Dq' },
     dependencies = {
       'kristijanhusak/vim-dadbod-ui',
     },
+    config = function()
+      require('config.dadbod')
+    end,
   },
 
   {
