@@ -106,12 +106,12 @@ return {
   },
 
   {
-    'simrat39/symbols-outline.nvim',
+    'preservim/tagbar',
     keys = {
       { '<F5>', mode = { 'n', 'i', 'v' } },
     },
     config = function()
-      require('config.symbols-outline')
+      require('config.tagbar')
     end,
   },
 
