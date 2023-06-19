@@ -12,6 +12,7 @@ packages=(
     "pandoc"
     "texlive-most"
     "bear"
+    "ctags"
 )
 
 for package in "${packages[@]}"; do
