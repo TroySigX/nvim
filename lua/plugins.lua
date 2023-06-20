@@ -374,7 +374,7 @@ return {
 
   {
     'tpope/vim-dadbod',
-    keys = { 'Du', 'Df', 'Dr', 'Dq' },
+    keys = { '<space>du', '<space>df', '<space>dr', '<space>dq' },
     dependencies = {
       'kristijanhusak/vim-dadbod-ui',
     },
