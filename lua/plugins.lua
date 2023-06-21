@@ -21,18 +21,12 @@ return {
   },
 
   {
-    'williamboman/mason-lspconfig.nvim',
-    dependencies = 'williamboman/mason.nvim',
-    config = function()
-      require('config.mason')
-    end,
-  },
-
-  {
     'nvimdev/lspsaga.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'nvim-treesitter/nvim-treesitter'
+      'nvim-treesitter/nvim-treesitter',
+      'williamboman/mason-lspconfig.nvim',
+      'williamboman/mason.nvim',
     },
     config = function()
       require('config.lsp-setup')
