@@ -1,7 +1,7 @@
 # Neovim config file
 
 ## Get started:
-Run `install.sh`
+Run `/setup/install.sh`
 
 ## Install Mason packages:
 * codelldb

@@ -5,6 +5,8 @@ if [[ $EUID -eq 0 ]]; then
     exit 1
 fi
 
+source ./debuggers/py.sh
+
 # Install system packages
 packages=(
     "ripgrep"
@@ -23,3 +25,6 @@ done
 
 # Symbolic link for editorconfig
 ln -s $HOME"/.config/nvim/.editorconfig" "/mnt/HDD/.editorconfig"
+
+# Install debugpy
+install_debugpy
