@@ -1,4 +1,5 @@
 require('dap-config.cpp')
+require('dap-config.py')
 
 require('dapui').setup()
 
