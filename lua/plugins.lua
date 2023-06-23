@@ -15,8 +15,8 @@ return {
       'onsails/lspkind.nvim',
     },
     config = function()
-      require('config.nvim-cmp')
-      require('config.luasnip')
+      require('plugin-config.nvim-cmp')
+      require('plugin-config.luasnip')
     end,
   },
 
@@ -29,21 +29,21 @@ return {
       'williamboman/mason.nvim',
     },
     config = function()
-      require('config.lsp-setup')
+      require('plugin-config.lsp-setup')
     end,
   },
 
   {
     'folke/which-key.nvim',
     config = function()
-      require('config.which-key')
+      require('plugin-config.which-key')
     end,
   },
 
   {
     'numToStr/Comment.nvim',
     config = function()
-      require('config.comment')
+      require('plugin-config.comment')
     end,
   },
 
@@ -58,9 +58,9 @@ return {
       },
     },
     config = function()
-      require('config.notify')
-      require('config.noice')
-      require('config.lualine')
+      require('plugin-config.notify')
+      require('plugin-config.noice')
+      require('plugin-config.lualine')
     end,
   },
 
@@ -70,7 +70,7 @@ return {
       { '<F9>', mode = { 'n', 'i', 'v' } },
     },
     config = function()
-      require('config.toggleterm')
+      require('plugin-config.toggleterm')
     end,
   },
 
@@ -80,7 +80,7 @@ return {
       { '<F2>', mode = { 'n', 'i', 'v' } },
     },
     config = function()
-      require('config.nvim-tree')
+      require('plugin-config.nvim-tree')
     end,
   },
 
@@ -88,14 +88,14 @@ return {
     'nvimdev/dashboard-nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('config.dashboard')
+      require('plugin-config.dashboard')
     end,
   },
 
   {
     'ggandor/leap.nvim',
     config = function()
-      require('config.leap-nvim')
+      require('plugin-config.leap-nvim')
     end,
   },
 
@@ -105,28 +105,28 @@ return {
       { '<F5>', mode = { 'n', 'i', 'v' } },
     },
     config = function()
-      require('config.tagbar')
+      require('plugin-config.tagbar')
     end,
   },
 
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('config.indent')
+      require('plugin-config.indent')
     end
   },
 
   {
     'folke/tokyonight.nvim',
     config = function()
-      require('config.colorscheme')
+      require('plugin-config.colorscheme')
     end,
   },
 
   {
     'HiPhish/nvim-ts-rainbow2',
     config = function ()
-      require('config.ts-rainbow')
+      require('plugin-config.ts-rainbow')
     end,
   },
 
@@ -134,7 +134,7 @@ return {
     'danymat/neogen',
     keys = '<space>ng',
     config = function()
-      require('config.neogen')
+      require('plugin-config.neogen')
     end,
   },
 
@@ -144,7 +144,7 @@ return {
       { 'gx', mode = { 'n', 'v' } },
     },
     config = function()
-      require('config.open-browser')
+      require('plugin-config.open-browser')
     end,
   },
 
@@ -157,7 +157,7 @@ return {
       { '<F1>', mode = { 'n', 'i', 'v' } },
     },
     config = function()
-      require('config.trouble')
+      require('plugin-config.trouble')
     end,
   },
 
@@ -165,7 +165,7 @@ return {
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      require('config.todo-comments')
+      require('plugin-config.todo-comments')
     end,
   },
 
@@ -173,7 +173,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = function()
-      require('config.treesitter')
+      require('plugin-config.treesitter')
     end,
   },
 
@@ -181,7 +181,7 @@ return {
     'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('config.bufferline')
+      require('plugin-config.bufferline')
     end,
   },
 
@@ -189,7 +189,7 @@ return {
     'frabjous/knap',
     keys = '<space>pr',
     config = function()
-      require('config.knap')
+      require('plugin-config.knap')
     end,
   },
 
@@ -203,14 +203,14 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('config.fzf-lua')
+      require('plugin-config.fzf-lua')
     end,
   },
 
   {
     'mfussenegger/nvim-lint',
     config = function()
-      require('config.nvim-lint')
+      require('plugin-config.nvim-lint')
     end,
   },
 
@@ -224,7 +224,7 @@ return {
       { '<F10>', mode = { 'n', 'i', 'v' } },
     },
     config = function()
-      require('config.neogit')
+      require('plugin-config.neogit')
     end,
   },
 
@@ -233,7 +233,7 @@ return {
     keys = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
     '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
     config = function()
-      require('config.neoscroll')
+      require('plugin-config.neoscroll')
     end,
   },
 
@@ -244,7 +244,7 @@ return {
     cmd = 'Neorg',
     -- keys = { '<leader>now', '<space>noi' },
     config = function()
-      require('config.neorg')
+      require('plugin-config.neorg')
     end,
   },
 
@@ -257,7 +257,7 @@ return {
       { '<A-l>', mode = { 'n', 'v' } },
     },
     config = function()
-      require('config.mini-move')
+      require('plugin-config.mini-move')
     end,
   },
 
@@ -267,7 +267,7 @@ return {
       { 'gs', mode = { 'n', 'v' } },
     },
     config = function()
-      require('config.treesj')
+      require('plugin-config.treesj')
     end
   },
 
@@ -282,7 +282,7 @@ return {
       '<leader>b',
     },
     config = function()
-      require('config.nvim-dap')
+      require('plugin-config.nvim-dap')
     end,
   },
 
@@ -290,7 +290,7 @@ return {
     'mbbill/undotree',
     keys = '<F7>',
     config = function()
-      require('config.undotree')
+      require('plugin-config.undotree')
     end,
   },
 
@@ -301,7 +301,7 @@ return {
       { '<space>sr', mode = { 'n', 'v' } },
     },
     config = function()
-      require('config.sniprun')
+      require('plugin-config.sniprun')
     end,
   },
 
@@ -317,7 +317,7 @@ return {
       '<leader>t', '<leader>at',
     },
     config = function()
-      require('config.neotest')
+      require('plugin-config.neotest')
     end,
   },
 
@@ -334,7 +334,7 @@ return {
       '<leader><leader>l',
     },
     config = function()
-      require('config.smart-splits')
+      require('plugin-config.smart-splits')
     end,
   },
 
@@ -344,14 +344,14 @@ return {
       { '<C-s>', mode = { 'n', 'v' } },
     },
     config = function()
-      require('config.muren')
+      require('plugin-config.muren')
     end,
   },
 
   {
     'kylechui/nvim-surround',
     config = function()
-      require('config.nvim-surround')
+      require('plugin-config.nvim-surround')
     end,
   },
 
@@ -363,7 +363,7 @@ return {
       'luukvbaal/statuscol.nvim',
     },
     config = function()
-      require('config.nvim-ufo')
+      require('plugin-config.nvim-ufo')
     end,
   },
 
@@ -374,7 +374,7 @@ return {
       'kristijanhusak/vim-dadbod-ui',
     },
     config = function()
-      require('config.dadbod')
+      require('plugin-config.dadbod')
     end,
   },
 
@@ -391,7 +391,7 @@ return {
       '<space>tr',
     },
     config = function()
-      require('config.competitest')
+      require('plugin-config.competitest')
     end,
   },
 
@@ -404,7 +404,7 @@ return {
       vim.fn['firenvim#install'](0)
     end,
     config = function()
-      require('config.firenvim')
+      require('plugin-config.firenvim')
     end,
   },
 }
