@@ -35,7 +35,7 @@ end
 local _virtual_env = ''
 
 local function py_bin_dir()
-  return path.join(_virtual_env, 'bin')
+  return path.join(_virtual_env, 'bin:')
 end
 
 -- setup venv
