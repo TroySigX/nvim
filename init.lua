@@ -1,9 +1,6 @@
 -- editor settings
 require('settings')
 
--- lang venv
-require('virtualenv-config.init')
-
 -- plugins
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -43,3 +40,6 @@ require('lazy').setup({
     },
   },
 })
+
+-- lang venv
+require('virtualenv-config.init')
