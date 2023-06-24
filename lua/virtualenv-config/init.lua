@@ -3,7 +3,7 @@ local function config_filetype_venv(filetype, venv_name)
     vim.api.nvim_create_autocmd('FileType', {
       pattern = { ft },
       callback = function()
-        vim.schedule(function() require('virtualenv-config.' .. venv_name) end )
+        require('virtualenv-config.' .. venv_name)
       end,
     })
   end
@@ -17,4 +17,5 @@ local function config_filetype_venv(filetype, venv_name)
   end
 end
 
+-- setup venv
 config_filetype_venv('python', 'python')
