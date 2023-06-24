@@ -296,7 +296,7 @@ return {
 
   {
     'michaelb/sniprun',
-    build = 'bash ./install.sh',
+    build = 'sh ./install.sh',
     keys = {
       { '<space>sr', mode = { 'n', 'v' } },
     },
