@@ -20,6 +20,7 @@ opt.cursorline = true
 
 -- default filetype for latex is tex
 vim.g.tex_flavor = 'latex'
+
 -- moving between tabs
 local map = vim.keymap.set
 map('n', 'L', 'gt')
@@ -39,6 +40,9 @@ map('n', '<leader>0', ':tablast<CR>')
 -- insert new line without entering insert mode
 map('n', '<space>nl', 'm`o<Esc>``', { desc = 'Insering new line below without entering insert mode' })
 map('n', '<space>NL', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
+
+-- select all in the current buffer
+map({ 'n', 'i', 'v' }, '<C-a>', '<Esc>ggVG', { desc = 'select all' })
 
 -- auto indent on newline
 local function auto_indent(mode)
