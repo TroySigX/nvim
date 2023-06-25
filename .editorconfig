@@ -27,3 +27,8 @@ trim_trailing_whitespace = false
 # Markdown config
 [**.md]
 trim_trailing_whitespace = false
+
+# Textfile config
+[**.txt]
+trim_trailing_whitespace = false
+insert_final_newline = false
