@@ -10,4 +10,4 @@ require('which-key').register({
     k = { function() require('smart-splits').swap_buf_up({ move_cursor = true }) end, 'move buffer up' },
     l = { function() require('smart-splits').swap_buf_right({ move_cursor = true }) end, 'move buffer right' },
   }
-})
+}, { mode = { 'n', 'v' } })
