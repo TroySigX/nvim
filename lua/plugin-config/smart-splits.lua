@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  require('smart-splits').setup({})
+  require('smart-splits').setup()
 end
 
 function M.keymaps()

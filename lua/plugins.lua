@@ -305,16 +305,7 @@ return {
 
   {
     'mrjones2014/smart-splits.nvim',
-    keys = {
-      { '<A-H>', mode = { 'n', 'i', 'v' } },
-      { '<A-J>', mode = { 'n', 'i', 'v' } },
-      { '<A-K>', mode = { 'n', 'i', 'v' } },
-      { '<A-L>', mode = { 'n', 'i', 'v' } },
-      '<leader><leader>h',
-      '<leader><leader>j',
-      '<leader><leader>k',
-      '<leader><leader>l',
-    },
+    lazy = true,
     config = function()
       require('plugin-config.smart-splits').setup()
     end,
