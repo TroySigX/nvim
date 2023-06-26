@@ -17,6 +17,7 @@ opt.showmatch = true
 opt.updatetime = 300
 opt.list = true
 opt.cursorline = true
+opt.exrc = true
 
 -- default filetype for latex is tex
 vim.g.tex_flavor = 'latex'

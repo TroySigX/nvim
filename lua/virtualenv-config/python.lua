@@ -52,3 +52,19 @@ if _virtual_env ~= '' and vim.env.PYTHONHOME then
   vim.env.old_PYTHONHOME = vim.env.PYTHONHOME
   vim.env.PYTHONHOME = ''
 end
+
+-- export to local config
+local venv_var = {}
+if _virtual_env ~= '' then
+  venv_var.assign = {
+    VIRTUAL_ENV = _virtual_env
+  }
+  venv_var.prepend = {
+    PATH = py_bin_dir()
+  }
+  if vim.env.PYTHONHOME then
+    venv_var.assign.PYTHONHOME = vim.env.PYTHONHOME
+  end
+end
+
+require('virtualenv-config.export').export(venv_var)
