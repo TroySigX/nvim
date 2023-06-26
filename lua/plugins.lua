@@ -22,6 +22,7 @@ return {
 
   {
     'nvimdev/lspsaga.nvim',
+    event = 'VeryLazy',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
       'nvim-treesitter/nvim-treesitter',
@@ -35,6 +36,7 @@ return {
 
   {
     'folke/which-key.nvim',
+    event = 'VeryLazy',
     config = function()
       require('plugin-config.which-key')
     end,
@@ -42,6 +44,7 @@ return {
 
   {
     'numToStr/Comment.nvim',
+    event = 'VeryLazy',
     config = function()
       require('plugin-config.comment')
     end,
@@ -92,6 +95,7 @@ return {
 
   {
     'ggandor/leap.nvim',
+    event = 'VeryLazy',
   },
 
   {
@@ -135,9 +139,13 @@ return {
 
   {
     'tyru/open-browser.vim',
+    event = 'VeryLazy',
   },
 
-  'jiangmiao/auto-pairs',
+  {
+    'jiangmiao/auto-pairs',
+    event = 'VeryLazy',
+  },
 
   {
     'folke/trouble.nvim',
@@ -152,6 +160,7 @@ return {
 
   {
     'folke/todo-comments.nvim',
+    event = 'VeryLazy',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
       require('plugin-config.todo-comments')
@@ -160,6 +169,7 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
+    event = 'VeryLazy',
     build = ':TSUpdate',
     config = function()
       require('plugin-config.treesitter')
@@ -198,6 +208,7 @@ return {
 
   {
     'mfussenegger/nvim-lint',
+    event = 'BufWritePost',
     config = function()
       require('plugin-config.nvim-lint')
     end,
@@ -217,6 +228,7 @@ return {
 
   {
     'karb94/neoscroll.nvim',
+    event = 'VeryLazy',
     keys = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
     '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
     config = function()
@@ -324,6 +336,7 @@ return {
 
   {
     'kylechui/nvim-surround',
+    event = 'VeryLazy',
     config = function()
       require('plugin-config.nvim-surround')
     end,
