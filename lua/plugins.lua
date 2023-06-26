@@ -69,9 +69,7 @@ return {
 
   {
     'akinsho/toggleterm.nvim',
-    keys = {
-      { '<F9>', mode = { 'n', 'i', 'v' } },
-    },
+    cmd = 'ToggleTerm',
     config = function()
       require('plugin-config.toggleterm')
     end,
@@ -100,9 +98,7 @@ return {
 
   {
     'preservim/tagbar',
-    keys = {
-      { '<F5>', mode = { 'n', 'i', 'v' } },
-    },
+    cmd = 'TagbarToggle',
     config = function()
       require('plugin-config.tagbar')
     end,
@@ -144,15 +140,12 @@ return {
 
   {
     'jiangmiao/auto-pairs',
-    event = 'VeryLazy',
   },
 
   {
     'folke/trouble.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
-    keys = {
-      { '<F1>', mode = { 'n', 'i', 'v' } },
-    },
+    cmd = 'TroubleToggle',
     config = function()
       require('plugin-config.trouble')
     end,
@@ -241,7 +234,6 @@ return {
     build = ':Neorg sync-parsers',
     dependencies = { 'nvim-lua/plenary.nvim' },
     cmd = 'Neorg',
-    -- keys = { '<leader>now', '<space>noi' },
     config = function()
       require('plugin-config.neorg')
     end,
@@ -282,14 +274,15 @@ return {
 
   {
     'mbbill/undotree',
-    keys = '<F7>',
+    cmd = 'UndotreeToggle',
   },
 
   {
     'michaelb/sniprun',
     build = 'sh ./install.sh',
-    keys = {
-      { '<space>sr', mode = { 'n', 'v' } },
+    cmd = {
+      'SnipRun',
+      'SnipClose',
     },
     config = function()
       require('plugin-config.sniprun')
@@ -356,7 +349,12 @@ return {
 
   {
     'tpope/vim-dadbod',
-    keys = { '<space>du', '<space>df', '<space>dr', '<space>dq' },
+    cmd = {
+      'DBUIToggle',
+      'DBUIFindBuffer',
+      'DBUIRenameBuffer',
+      'DBUILastQueryInfo',
+    },
     dependencies = {
       'kristijanhusak/vim-dadbod-ui',
     },
