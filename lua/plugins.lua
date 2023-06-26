@@ -120,6 +120,7 @@ return {
 
   {
     'HiPhish/nvim-ts-rainbow2',
+    event = 'VeryLazy',
     config = function ()
       require('plugin-config.ts-rainbow')
     end,
