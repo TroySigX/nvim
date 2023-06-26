@@ -13,10 +13,11 @@ function M.export(venv_var)
       if next(type_table) then
         for var, var_value in pairs(type_table) do
           file:write('vim.env.' .. var .. ' = ')
+          local value = '\'' .. var_value .. '\''
           if var_type == 'assign' then
-            file:write('\'' .. var_value .. '\'')
+            file:write(value)
           elseif var_type == 'prepend' then
-            file:write('\'' .. var_value .. '\'' .. ' .. vim.env.' .. var)
+            file:write(value .. ' .. vim.env.' .. var)
           end
           file:write('\n')
         end
