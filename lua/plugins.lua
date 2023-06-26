@@ -316,9 +316,7 @@ return {
 
   {
     'AckslD/muren.nvim',
-    key = {
-      { '<C-s>', mode = { 'n', 'v' } },
-    },
+    lazy = true,
     config = function()
       require('plugin-config.muren')
     end,
