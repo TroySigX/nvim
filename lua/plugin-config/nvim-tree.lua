@@ -46,8 +46,3 @@ require('nvim-tree').setup({
     relativenumber = true,
   },
 })
-
-map({ 'n', 'i', 'v' }, '<F2>', function()
-  vim.cmd.stopinsert()
-  api.tree.toggle()
-end, { desc = 'Toggle Tree' })

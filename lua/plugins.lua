@@ -76,9 +76,7 @@ return {
 
   {
     'nvim-tree/nvim-tree.lua',
-    keys = {
-      { '<F2>', mode = { 'n', 'i', 'v' } },
-    },
+    lazy = true,
     config = function()
       require('plugin-config.nvim-tree')
     end,
@@ -94,9 +92,6 @@ return {
 
   {
     'ggandor/leap.nvim',
-    config = function()
-      require('plugin-config.leap-nvim')
-    end,
   },
 
   {
@@ -132,7 +127,7 @@ return {
 
   {
     'danymat/neogen',
-    keys = '<space>ng',
+    lazy = true,
     config = function()
       require('plugin-config.neogen')
     end,
@@ -140,12 +135,6 @@ return {
 
   {
     'tyru/open-browser.vim',
-    keys = {
-      { 'gx', mode = { 'n', 'v' } },
-    },
-    config = function()
-      require('plugin-config.open-browser')
-    end,
   },
 
   'jiangmiao/auto-pairs',
@@ -187,7 +176,7 @@ return {
 
   {
     'frabjous/knap',
-    keys = '<space>pr',
+    lazy = true,
     config = function()
       require('plugin-config.knap')
     end,
@@ -220,9 +209,7 @@ return {
       'sindrets/diffview.nvim',
       'nvim-lua/plenary.nvim'
     },
-    keys = {
-      { '<F10>', mode = { 'n', 'i', 'v' } },
-    },
+    lazy = true,
     config = function()
       require('plugin-config.neogit')
     end,
@@ -263,9 +250,7 @@ return {
 
   {
     'Wansmer/treesj',
-    keys = {
-      { 'gs', mode = { 'n', 'v' } },
-    },
+    lazy = true,
     config = function()
       require('plugin-config.treesj')
     end
@@ -277,10 +262,7 @@ return {
       'mfussenegger/nvim-dap',
       'mfussenegger/nvim-dap-python',
     },
-    keys = {
-      { '<F8>', mode = { 'n', 'i', 'v' } },
-      '<leader>b',
-    },
+    lazy = true,
     config = function()
       require('plugin-config.nvim-dap')
     end,
@@ -289,9 +271,6 @@ return {
   {
     'mbbill/undotree',
     keys = '<F7>',
-    config = function()
-      require('plugin-config.undotree')
-    end,
   },
 
   {
@@ -312,10 +291,7 @@ return {
       'nvim-treesitter/nvim-treesitter',
       'nvim-lua/plenary.nvim',
     },
-    keys = {
-      { '<F4>', mode = { 'n', 'i', 'v' } },
-      '<leader>t', '<leader>at',
-    },
+    lazy = true,
     config = function()
       require('plugin-config.neotest')
     end,
@@ -381,15 +357,7 @@ return {
   {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
-    keys = {
-      '<space>tdt',
-      '<space>tdc',
-      '<space>tdp',
-      '<space>ta',
-      '<space>te',
-      '<space>to',
-      '<space>tr',
-    },
+    lazy = true,
     config = function()
       require('plugin-config.competitest')
     end,

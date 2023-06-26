@@ -18,7 +18,3 @@ require('neorg').setup {
     },
   },
 }
-
-local map = vim.keymap.set
-map('n', '<space>now', ':Neorg workspace ', { desc = '[N]e[O]rg [W]orkspace' })
-map('n', '<space>noi', ':Neorg index<CR> ', { desc = '[N]e[O]rg [W]orkspace', noremap = true, silent = true })
