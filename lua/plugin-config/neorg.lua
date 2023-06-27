@@ -24,13 +24,10 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<space>now'] = { ':Neorg workspace', '[N]e[O]rg [W]orkspace' }
-  }, { silent = false })
-
-  require('which-key').register({
-    ['<space>noi'] = { ':Neorg index<CR>', '[N]e[O]rg [I]ndex' }
-  })
+  return {
+    { '<space>now', ':Neorg workspace', desc = '[N]e[O]rg [W]orkspace' },
+    { '<space>noi', ':Neorg index<CR>', silent = true, desc = '[N]e[O]rg [I]ndex' },
+  }
 end
 
 return M

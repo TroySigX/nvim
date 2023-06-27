@@ -5,9 +5,9 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<F1>'] = { '<Esc>:TroubleToggle<CR>', 'Toggle Trouble List' }
-  }, { mode = { 'n', 'i', 'v' } })
+  return {
+    { '<F1>', '<Esc>:TroubleToggle<CR>', silent = true, desc = 'Toggle Trouble List', mode = { 'n', 'i', 'v' } }
+  }
 end
 
 return M

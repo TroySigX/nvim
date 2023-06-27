@@ -22,7 +22,6 @@ return {
 
   {
     'nvimdev/lspsaga.nvim',
-    event = 'VeryLazy',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
       'nvim-treesitter/nvim-treesitter',
@@ -69,7 +68,7 @@ return {
 
   {
     'akinsho/toggleterm.nvim',
-    cmd = 'ToggleTerm',
+    keys = require('plugin-config.toggleterm').keymaps(),
     config = function()
       require('plugin-config.toggleterm').setup()
     end,
@@ -98,7 +97,7 @@ return {
 
   {
     'preservim/tagbar',
-    cmd = 'TagbarToggle',
+    keys = require('plugin-config.tagbar').keymaps(),
     config = function()
       require('plugin-config.tagbar').setup()
     end,
@@ -120,7 +119,6 @@ return {
 
   {
     'HiPhish/nvim-ts-rainbow2',
-    event = 'VeryLazy',
     config = function ()
       require('plugin-config.ts-rainbow').setup()
     end,
@@ -136,7 +134,7 @@ return {
 
   {
     'tyru/open-browser.vim',
-    event = 'VeryLazy',
+    keys = require('plugin-config.open-browser').keymaps(),
   },
 
   {
@@ -145,8 +143,8 @@ return {
 
   {
     'folke/trouble.nvim',
+    keys = require('plugin-config.trouble').keymaps(),
     dependencies = 'nvim-tree/nvim-web-devicons',
-    cmd = 'TroubleToggle',
     config = function()
       require('plugin-config.trouble').setup()
     end,
@@ -163,7 +161,6 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
-    event = 'VeryLazy',
     build = ':TSUpdate',
     config = function()
       require('plugin-config.treesitter').setup()
@@ -234,7 +231,7 @@ return {
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    cmd = 'Neorg',
+    keys = require('plugin-config.neorg').keymaps(),
     config = function()
       require('plugin-config.neorg').setup()
     end,
@@ -275,16 +272,13 @@ return {
 
   {
     'mbbill/undotree',
-    cmd = 'UndotreeToggle',
+    keys = require('plugin-config.undotree').keymaps(),
   },
 
   {
     'michaelb/sniprun',
     build = 'sh ./install.sh',
-    cmd = {
-      'SnipRun',
-      'SnipClose',
-    },
+    keys = require('plugin-config.sniprun').keymaps(),
     config = function()
       require('plugin-config.sniprun').setup()
     end,
@@ -341,12 +335,7 @@ return {
 
   {
     'tpope/vim-dadbod',
-    cmd = {
-      'DBUIToggle',
-      'DBUIFindBuffer',
-      'DBUIRenameBuffer',
-      'DBUILastQueryInfo',
-    },
+    keys = require('plugin-config.dadbod').keymaps(),
     dependencies = {
       'kristijanhusak/vim-dadbod-ui',
     },

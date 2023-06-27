@@ -1,9 +1,9 @@
 local M = {}
 
 function M.keymaps()
-  require('which-key').register({
-    ['<F7>'] = { vim.cmd.UndotreeToggle, 'Toggle UndoTree' }
-  })
+  return {
+    { '<F7>', vim.cmd.UndotreeToggle, desc = 'Toggle UndoTree', mode = { 'n', 'i', 'v' } }
+  }
 end
 
 return M

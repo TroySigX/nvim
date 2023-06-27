@@ -5,12 +5,12 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    u = { '<cmd>DBUIToggle<CR>', 'Dadbod UI' },
-    f = { '<cmd>DBUIFindBuffer<CR>', 'Find DB buffer' },
-    r = { '<cmd>DBUIRenameBuffer<CR>', 'Rename DB buffer' },
-    q = { '<cmd>DBUILastQueryInfo<CR>', 'Last DB query info' },
-  }, { prefix = '<space>d' })
+  return {
+    { '<space>du', vim.cmd.DBUIToggle, silent = true, desc = 'Dadbod UI' },
+    { '<space>df', vim.cmd.DBUIFindBuffer, silent = true, desc = 'Find DB buffer' },
+    { '<space>dr', vim.cmd.DBUIRenameBuffer, silent = true, desc = 'Rename DB buffer' },
+    { '<space>dq', vim.cmd.DBUILastQueryInfo, silent = true, desc = 'Last DB query info' },
+  }
 end
 
 return M

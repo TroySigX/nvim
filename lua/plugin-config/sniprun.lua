@@ -12,10 +12,10 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    r = { ':SnipRun<CR>', 'Trigger [S]nip [R]un' },
-    c = { ':SnipClose<CR>', '[S]nip [C]lose' }
-  }, { prefix = '<space>s', mode = { 'n', 'v' } })
+  return {
+    { '<space>sr', vim.cmd.SnipRun, desc = 'Trigger [S]nip [R]un' },
+    { '<space>sc', vim.cmd.SnipClose, desc = '[S]nip [C]lose' },
+  }
 end
 
 return M
