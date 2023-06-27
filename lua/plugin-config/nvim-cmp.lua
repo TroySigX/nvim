@@ -19,6 +19,8 @@ function M.setup()
     mapping = cmp.mapping.preset.insert({
       ['<C-Space>'] = cmp.mapping.complete{ reason = cmp.ContextReason.Auto },
       ['<C-e>'] = cmp.mapping.abort(),
+      ['<C-d>'] = cmp.mapping.scroll_docs(4),
+      ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<CR>'] = cmp.mapping.confirm({ select = true }),
       ['<Tab>'] = cmp.mapping(function(fallback)
         if cmp.visible() then
@@ -58,6 +60,9 @@ function M.setup()
       { name = 'buffer' }
     }
   })
+
+  -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+  -- cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done { map_char = { tex = '' } })
 end
 
 return M
