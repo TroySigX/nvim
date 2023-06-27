@@ -10,7 +10,6 @@ function M.setup()
   })
 
   -- load plugin-config
-  require('plugin-config.competitest').keymaps()
   require('plugin-config.fzf-lua').keymaps()
   require('plugin-config.knap').keymaps()
   require('plugin-config.leap-nvim').keymaps()

@@ -347,7 +347,7 @@ return {
   {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
-    lazy = true,
+    keys = require('plugin-config.competitest').keymaps(),
     config = function()
       require('plugin-config.competitest').setup()
     end,
