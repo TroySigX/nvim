@@ -22,7 +22,7 @@ function M.setup()
   require('plugin-config.gui.noice').keymaps()
   require('plugin-config.workflow.nvim-dap').keymaps()
   require('plugin-config.explorer.nvim-tree').keymaps()
-  require('plugin-config.smart-splits').keymaps()
+  require('plugin-config.workflow.smart-splits').keymaps()
   require('plugin-config.workflow.todo-comments').keymaps()
   require('plugin-config.editing.treesj').keymaps()
 end

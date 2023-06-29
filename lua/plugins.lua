@@ -319,7 +319,7 @@ return {
     'mrjones2014/smart-splits.nvim',
     lazy = true,
     config = function()
-      require('plugin-config.smart-splits').setup()
+      require('plugin-config.workflow.smart-splits').setup()
     end,
   },
 
