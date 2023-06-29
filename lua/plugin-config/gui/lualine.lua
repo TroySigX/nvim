@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
   require('lualine').setup{
     options = {
-      theme = 'auto',
+      theme = 'ayu_mirage',
     },
     sections = {
       lualine_x = {
