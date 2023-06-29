@@ -28,8 +28,8 @@ function M.setup()
 
   local map = require('which-key').register
 
-  -- moving between tabs
   map({
+    -- moving between tabs
     L = { 'gt', 'move tab forward' },
     H = { 'gT', 'move tab backward' },
     ['<leader>'] = {
@@ -45,18 +45,23 @@ function M.setup()
       ['9'] = { '9gt', 'go to tab 9' },
       ['0'] = { ':tablast<CR>', 'go to last tab' },
     },
-  })
 
-  -- insert new line without entering insert mode
-  map({
-    nl = { 'm`o<Esc>``', 'Insering new line below without entering insert mode' },
-    NL = { 'm`O<Esc>``', 'Inserting new line above without entering insert mode' },
-  }, { prefix = '<space>' })
+    -- insert new line without entering insert mode
+    ['<space>'] = {
+      nl = { 'm`o<Esc>``', 'Insering new line below without entering insert mode' },
+      NL = { 'm`O<Esc>``', 'Inserting new line above without entering insert mode' },
+    },
+  })
 
   -- select all in the current buffer
   map({
     ['<C-a>'] = { '<Esc>ggVG', 'select all' },
-  }, { mode = { 'n', 'i', 'v' } })
+  })
+
+  map({
+    ['<C-h>'] = { '<C-o>k', 'jump to above line in insert mode' },
+    ['<C-l>'] = { '<C-o>j', 'jump to below line in insert mode' },
+  }, { mode = 'i' })
 end
 
 return M
