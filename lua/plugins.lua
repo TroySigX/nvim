@@ -15,8 +15,8 @@ return {
       'onsails/lspkind.nvim',
     },
     config = function()
-      require('plugin-config.nvim-cmp').setup()
-      require('plugin-config.luasnip').setup()
+      require('plugin-config.lsp.nvim-cmp').setup()
+      require('plugin-config.lsp.luasnip').setup()
     end,
   },
 
@@ -29,7 +29,7 @@ return {
       'williamboman/mason.nvim',
     },
     config = function()
-      require('plugin-config.lsp-setup').setup()
+      require('plugin-config.lsp.lsp-setup').setup()
     end,
   },
 
@@ -45,7 +45,7 @@ return {
     'numToStr/Comment.nvim',
     event = 'VeryLazy',
     config = function()
-      require('plugin-config.comment').setup()
+      require('plugin-config.editing.comment').setup()
     end,
   },
 
@@ -60,17 +60,17 @@ return {
       },
     },
     config = function()
-      require('plugin-config.notify').setup()
-      require('plugin-config.noice').setup()
-      require('plugin-config.lualine').setup()
+      require('plugin-config.gui.notify').setup()
+      require('plugin-config.gui.noice').setup()
+      require('plugin-config.gui.lualine').setup()
     end,
   },
 
   {
     'akinsho/toggleterm.nvim',
-    keys = require('plugin-config.toggleterm').keymaps(),
+    keys = require('plugin-config.workflow.toggleterm').keymaps(),
     config = function()
-      require('plugin-config.toggleterm').setup()
+      require('plugin-config.workflow.toggleterm').setup()
     end,
   },
 
@@ -78,7 +78,7 @@ return {
     'nvim-tree/nvim-tree.lua',
     lazy = true,
     config = function()
-      require('plugin-config.nvim-tree').setup()
+      require('plugin-config.explorer.nvim-tree').setup()
     end,
   },
 
@@ -86,7 +86,7 @@ return {
     'nvimdev/dashboard-nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('plugin-config.dashboard').setup()
+      require('plugin-config.gui.dashboard').setup()
     end,
   },
 
@@ -97,30 +97,30 @@ return {
 
   {
     'preservim/tagbar',
-    keys = require('plugin-config.tagbar').keymaps(),
+    keys = require('plugin-config.navigation.tagbar').keymaps(),
     config = function()
-      require('plugin-config.tagbar').setup()
+      require('plugin-config.navigation.tagbar').setup()
     end,
   },
 
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require('plugin-config.indent').setup()
+      require('plugin-config.editing.indent').setup()
     end
   },
 
   {
     'folke/tokyonight.nvim',
     config = function()
-      require('plugin-config.colorscheme').setup()
+      require('plugin-config.gui.colorscheme').setup()
     end,
   },
 
   {
     'HiPhish/nvim-ts-rainbow2',
     config = function ()
-      require('plugin-config.ts-rainbow').setup()
+      require('plugin-config.editing.ts-rainbow').setup()
     end,
   },
 
@@ -128,7 +128,7 @@ return {
     'danymat/neogen',
     lazy = true,
     config = function()
-      require('plugin-config.neogen').setup()
+      require('plugin-config.editing.neogen').setup()
     end,
   },
 
@@ -147,7 +147,7 @@ return {
       'windwp/nvim-ts-autotag',
     },
     config= function()
-      require('plugin-config.autopairs').setup()
+      require('plugin-config.editing.autopairs').setup()
     end,
   },
 
@@ -155,16 +155,16 @@ return {
     'abecodes/tabout.nvim',
     event = 'InsertEnter',
     config = function()
-      require('plugin-config.tabout').setup()
+      require('plugin-config.editing.tabout').setup()
     end,
   },
 
   {
     'folke/trouble.nvim',
-    keys = require('plugin-config.trouble').keymaps(),
+    keys = require('plugin-config.lsp.trouble').keymaps(),
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('plugin-config.trouble').setup()
+      require('plugin-config.lsp.trouble').setup()
     end,
   },
 
@@ -173,7 +173,7 @@ return {
     event = 'VeryLazy',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      require('plugin-config.todo-comments').setup()
+      require('plugin-config.workflow.todo-comments').setup()
     end,
   },
 
@@ -181,7 +181,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = function()
-      require('plugin-config.treesitter').setup()
+      require('plugin-config.lsp.treesitter').setup()
     end,
   },
 
@@ -189,7 +189,7 @@ return {
     'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require('plugin-config.bufferline').setup()
+      require('plugin-config.gui.bufferline').setup()
     end,
   },
 
@@ -197,7 +197,7 @@ return {
     'frabjous/knap',
     lazy = true,
     config = function()
-      require('plugin-config.knap').setup()
+      require('plugin-config.workflow.knap').setup()
     end,
   },
 
@@ -211,7 +211,7 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('plugin-config.fzf-lua').setup()
+      require('plugin-config.explorer.fzf-lua').setup()
     end,
   },
 
@@ -219,7 +219,7 @@ return {
     'mfussenegger/nvim-lint',
     event = 'BufWritePost',
     config = function()
-      require('plugin-config.nvim-lint')
+      require('plugin-config.lsp.nvim-lint')
     end,
   },
 
@@ -231,7 +231,7 @@ return {
     },
     lazy = true,
     config = function()
-      require('plugin-config.neogit').setup()
+      require('plugin-config.workflow.neogit').setup()
     end,
   },
 
@@ -241,7 +241,7 @@ return {
     keys = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
     '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
     config = function()
-      require('plugin-config.neoscroll').setup()
+      require('plugin-config.navigation.neoscroll').setup()
     end,
   },
 
@@ -249,9 +249,9 @@ return {
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = require('plugin-config.neorg').keymaps(),
+    keys = require('plugin-config.workflow.neorg').keymaps(),
     config = function()
-      require('plugin-config.neorg').setup()
+      require('plugin-config.workflow.neorg').setup()
     end,
   },
 
@@ -264,7 +264,7 @@ return {
       { '<A-l>', mode = { 'n', 'v' } },
     },
     config = function()
-      require('plugin-config.mini-move').setup()
+      require('plugin-config.editing.mini-move').setup()
     end,
   },
 
@@ -272,7 +272,7 @@ return {
     'Wansmer/treesj',
     lazy = true,
     config = function()
-      require('plugin-config.treesj').setup()
+      require('plugin-config.editing.treesj').setup()
     end
   },
 
@@ -284,21 +284,21 @@ return {
     },
     lazy = true,
     config = function()
-      require('plugin-config.nvim-dap').setup()
+      require('plugin-config.workflow.nvim-dap').setup()
     end,
   },
 
   {
     'mbbill/undotree',
-    keys = require('plugin-config.undotree').keymaps(),
+    keys = require('plugin-config.workflow.undotree').keymaps(),
   },
 
   {
     'michaelb/sniprun',
     build = 'sh ./install.sh',
-    keys = require('plugin-config.sniprun').keymaps(),
+    keys = require('plugin-config.workflow.sniprun').keymaps(),
     config = function()
-      require('plugin-config.sniprun').setup()
+      require('plugin-config.workflow.sniprun').setup()
     end,
   },
 
@@ -311,7 +311,7 @@ return {
     },
     lazy = true,
     config = function()
-      require('plugin-config.neotest').setup()
+      require('plugin-config.workflow.neotest').setup()
     end,
   },
 
@@ -327,7 +327,7 @@ return {
     'AckslD/muren.nvim',
     lazy = true,
     config = function()
-      require('plugin-config.muren').setup()
+      require('plugin-config.editing.muren').setup()
     end,
   },
 
@@ -335,7 +335,7 @@ return {
     'kylechui/nvim-surround',
     event = 'VeryLazy',
     config = function()
-      require('plugin-config.nvim-surround').setup()
+      require('plugin-config.editing.nvim-surround').setup()
     end,
   },
 
@@ -347,7 +347,7 @@ return {
       'luukvbaal/statuscol.nvim',
     },
     config = function()
-      require('plugin-config.nvim-ufo').setup()
+      require('plugin-config.navigation.nvim-ufo').setup()
     end,
   },
 
