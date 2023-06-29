@@ -6,14 +6,14 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    gr = { require('fzf-lua').live_grep, 'Live [Gr]ep' },
-    sw = { require('fzf-lua').grep_cword, '[S]earch [W]ord' },
-    km = { require('fzf-lua').keymaps, '[K]ey[M]aps' },
+    gr = { function() require('fzf-lua').live_grep() end, 'Live [Gr]ep' },
+    sw = { function() require('fzf-lua').grep_cword() end, '[S]earch [W]ord' },
+    km = { function() require('fzf-lua').keymaps() end, '[K]ey[M]aps' },
   }, { prefix = '<space>' })
 
   require('which-key').register({
-    ['<F6>'] = { require('fzf-lua').files, 'Find files' },
-    ['<F18>'] = { require('fzf-lua').oldfiles, 'Old files' },
+    ['<F6>'] = { function() require('fzf-lua').files() end, 'Find files' },
+    ['<F18>'] = { function() require('fzf-lua').oldfiles() end, 'Old files' },
   }, { mode = { 'n', 'v', 'i' } })
 end
 

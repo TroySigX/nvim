@@ -203,6 +203,7 @@ return {
 
   {
     'ibhagwan/fzf-lua',
+    lazy = true,
     dependencies = {
       {
         'junegunn/fzf',

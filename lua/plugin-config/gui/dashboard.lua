@@ -36,7 +36,7 @@ function M.setup()
           icon_hl = '@variable',
           desc = 'Files',
           group = 'Label',
-          action = require('fzf-lua').files,
+          action = function() require('fzf-lua').files() end,
           key = 'f',
         },
         { desc = ' Mason', group = '@property', action = 'Mason', key = 'm' },
