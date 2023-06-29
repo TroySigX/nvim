@@ -14,7 +14,7 @@ function M.setup()
   -- moving between tabs
   map({
     L = { 'gt', 'move tab forward' },
-    H = { 'gT', 'move tab backware' },
+    H = { 'gT', 'move tab backward' },
     ['<leader>'] = {
       name = 'go to specific tab',
       ['1'] = { '1gt', 'go to tab 1' },
