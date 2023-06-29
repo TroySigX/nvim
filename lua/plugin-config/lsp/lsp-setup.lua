@@ -46,7 +46,7 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    K = { ':Lspsaga preview_definition<CR>', 'LSP Preview Definition' },
+    K = { ':Lspsaga peek_definition<CR>', 'LSP Preview Definition' },
     J = { ':Lspsaga hover_doc<CR>', 'LSP Doc' },
 
     ['<space>'] = {
