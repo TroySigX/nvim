@@ -138,7 +138,25 @@ return {
   },
 
   {
-    'jiangmiao/auto-pairs',
+    'altermo/npairs-integrate-upair',
+    event = 'InsertEnter',
+    dependencies = {
+      'windwp/nvim-autopairs',
+      'altermo/ultimate-autopair.nvim',
+      'RRethy/nvim-treesitter-endwise',
+      'windwp/nvim-ts-autotag',
+    },
+    config= function()
+      require('plugin-config.autopairs').setup()
+    end,
+  },
+
+  {
+    'abecodes/tabout.nvim',
+    event = 'InsertEnter',
+    config = function()
+      require('plugin-config.tabout').setup()
+    end,
   },
 
   {
