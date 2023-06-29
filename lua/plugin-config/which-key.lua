@@ -9,6 +9,23 @@ function M.setup()
     },
   })
 
+  -- load plugin keymaps
+  require('plugin-config.explorer.fzf-lua').keymaps()
+  require('plugin-config.workflow.knap').keymaps()
+  require('plugin-config.navigation.leap-nvim').keymaps()
+  require('plugin-config.lsp.lsp-setup').keymaps()
+  require('plugin-config.lsp.luasnip').keymaps()
+  require('plugin-config.editing.muren').keymaps()
+  require('plugin-config.editing.neogen').keymaps()
+  require('plugin-config.workflow.neogit').keymaps()
+  require('plugin-config.workflow.neotest').keymaps()
+  require('plugin-config.gui.noice').keymaps()
+  require('plugin-config.workflow.nvim-dap').keymaps()
+  require('plugin-config.explorer.nvim-tree').keymaps()
+  require('plugin-config.workflow.smart-splits').keymaps()
+  require('plugin-config.workflow.todo-comments').keymaps()
+  require('plugin-config.editing.treesj').keymaps()
+
   local map = require('which-key').register
 
   -- moving between tabs
@@ -40,24 +57,6 @@ function M.setup()
   map({
     ['<C-a>'] = { '<Esc>ggVG', 'select all' },
   }, { mode = { 'n', 'i', 'v' } })
-
-
-  -- load plugin keymaps
-  require('plugin-config.explorer.fzf-lua').keymaps()
-  require('plugin-config.workflow.knap').keymaps()
-  require('plugin-config.navigation.leap-nvim').keymaps()
-  require('plugin-config.lsp.lsp-setup').keymaps()
-  require('plugin-config.lsp.luasnip').keymaps()
-  require('plugin-config.editing.muren').keymaps()
-  require('plugin-config.editing.neogen').keymaps()
-  require('plugin-config.workflow.neogit').keymaps()
-  require('plugin-config.workflow.neotest').keymaps()
-  require('plugin-config.gui.noice').keymaps()
-  require('plugin-config.workflow.nvim-dap').keymaps()
-  require('plugin-config.explorer.nvim-tree').keymaps()
-  require('plugin-config.workflow.smart-splits').keymaps()
-  require('plugin-config.workflow.todo-comments').keymaps()
-  require('plugin-config.editing.treesj').keymaps()
 end
 
 return M
