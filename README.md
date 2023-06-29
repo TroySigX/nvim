@@ -7,3 +7,4 @@ Run `/setup/install.sh`
 * codelldb
 * jsonlint
 * shellcheck
+* debugpy
