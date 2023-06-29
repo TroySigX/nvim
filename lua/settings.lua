@@ -22,29 +22,6 @@ opt.exrc = true
 -- default filetype for latex is tex
 vim.g.tex_flavor = 'latex'
 
--- moving between tabs
-local map = vim.keymap.set
-map('n', 'L', 'gt')
-map('n', 'H', 'gT')
-
-map('n', '<leader>1', '1gt')
-map('n', '<leader>2', '2gt')
-map('n', '<leader>3', '3gt')
-map('n', '<leader>4', '4gt')
-map('n', '<leader>5', '5gt')
-map('n', '<leader>6', '6gt')
-map('n', '<leader>7', '7gt')
-map('n', '<leader>8', '8gt')
-map('n', '<leader>9', '9gt')
-map('n', '<leader>0', ':tablast<CR>')
-
--- insert new line without entering insert mode
-map('n', '<space>nl', 'm`o<Esc>``', { desc = 'Insering new line below without entering insert mode' })
-map('n', '<space>NL', 'm`O<Esc>``', { desc = 'Inserting new line above without entering insert mode' })
-
--- select all in the current buffer
-map({ 'n', 'i', 'v' }, '<C-a>', '<Esc>ggVG', { desc = 'select all' })
-
 -- auto indent on newline
 local function auto_indent(mode)
   if #vim.fn.getline '.' == 0 then
@@ -55,7 +32,7 @@ local function auto_indent(mode)
 end
 local insertModes = { 'i', 'a', 'A' }
 for _, mode in ipairs(insertModes) do
-  map('n', mode, function() return auto_indent(mode) end, { desc = 'auto indent on newline in insert mode', expr = true })
+  vim.keymap.set('n', mode, function() return auto_indent(mode) end, { desc = 'auto indent on newline in insert mode', expr = true })
 end
 
 -- set signs

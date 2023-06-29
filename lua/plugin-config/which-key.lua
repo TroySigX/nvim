@@ -9,7 +9,37 @@ function M.setup()
     },
   })
 
-  -- load plugin-config
+  local map = require('which-key').register
+
+  -- moving between tabs
+  map({
+    L = { 'gt', 'move tab forward' },
+    H = { 'gT', 'move tab backware' },
+    ['<leader>1'] = { '1gt', 'go to tab 1' },
+    ['<leader>2'] = { '2gt', 'go to tab 2' },
+    ['<leader>3'] = { '3gt', 'go to tab 3' },
+    ['<leader>4'] = { '4gt', 'go to tab 4' },
+    ['<leader>5'] = { '5gt', 'go to tab 5' },
+    ['<leader>6'] = { '6gt', 'go to tab 6' },
+    ['<leader>7'] = { '7gt', 'go to tab 7' },
+    ['<leader>8'] = { '8gt', 'go to tab 8' },
+    ['<leader>9'] = { '9gt', 'go to tab 9' },
+    ['<leader>0'] = { ':tablast<CR>', 'go to last tab' },
+  })
+
+  -- insert new line without entering insert mode
+  map({
+    nl = { 'm`o<Esc>``', 'Insering new line below without entering insert mode' },
+    NL = { 'm`O<Esc>``', 'Inserting new line above without entering insert mode' },
+  }, { prefix = '<space>' })
+
+  -- select all in the current buffer
+  map({
+    ['<C-a>'] = { '<Esc>ggVG', 'select all' },
+  }, { mode = { 'n', 'i', 'v' } })
+
+
+  -- load plugin keymaps
   require('plugin-config.explorer.fzf-lua').keymaps()
   require('plugin-config.workflow.knap').keymaps()
   require('plugin-config.navigation.leap-nvim').keymaps()
