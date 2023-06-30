@@ -6,7 +6,7 @@ end
 
 function M.keymaps()
   return {
-    { '<F1>', '<Esc>:TroubleToggle<CR>', silent = true, desc = 'Toggle Trouble List', mode = { 'n', 'i', 'v' } }
+    { '<F1>', vim.cmd.TroubleToggle, silent = true, desc = 'Toggle Trouble List', mode = { 'n', 'i', 'v' } }
   }
 end
 

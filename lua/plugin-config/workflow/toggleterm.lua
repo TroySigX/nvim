@@ -15,8 +15,7 @@ end
 
 function M.keymaps()
   return {
-    { '<F9>', '<Esc>:ToggleTerm<CR>', silent = true, desc = 'Toggle Term', mode = { 'n', 'i', 'v' } },
-    { '<F9>', '<C-\\><C-N>:ToggleTerm<CR>', silent = true, desc = 'Toggle Term', mode = 't' },
+    { '<F9>', vim.cmd.ToggleTerm, silent = true, desc = 'Toggle Term', mode = { 'n', 'i', 'v', 't' } },
   }
 end
 

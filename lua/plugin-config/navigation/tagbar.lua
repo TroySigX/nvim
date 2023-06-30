@@ -11,7 +11,7 @@ end
 
 function M.keymaps()
   return {
-    { '<F5>', '<Esc>:TagbarToggle<CR>', silent = true, desc = 'Toggle Tagbar', mode = { 'n', 'i', 'v' } },
+    { '<F5>', vim.cmd.TagbarToggle, silent = true, desc = 'Toggle Tagbar', mode = { 'n', 'i', 'v' } },
   }
 end
 
