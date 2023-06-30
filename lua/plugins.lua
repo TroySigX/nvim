@@ -238,8 +238,7 @@ return {
 
   {
     'karb94/neoscroll.nvim',
-    keys = {'<C-u>', '<C-d>', '<C-b>', '<C-f>',
-    '<C-y>', '<C-e>', 'zt', 'zz', 'zb'},
+    keys = require('plugin-config.navigation.neoscroll').keymaps(),
     config = function()
       require('plugin-config.navigation.neoscroll').setup()
     end,
