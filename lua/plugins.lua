@@ -238,7 +238,7 @@ return {
 
   {
     'karb94/neoscroll.nvim',
-    keys = require('plugin-config.navigation.neoscroll').keymaps(),
+    keys = require('plugin-config.navigation.neoscroll').keymaps({ 'desc' }),
     config = function()
       require('plugin-config.navigation.neoscroll').setup()
     end,
