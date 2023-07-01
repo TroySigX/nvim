@@ -3,7 +3,7 @@ local function config_filetype_venv(filetype, venv_name)
     vim.api.nvim_create_autocmd('FileType', {
       pattern = { ft },
       callback = function()
-        require('virtualenv-config.' .. venv_name)
+        require('virtualenv-config.' .. venv_name).setup()
       end,
     })
   end
