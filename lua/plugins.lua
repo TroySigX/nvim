@@ -257,10 +257,10 @@ return {
   {
     'echasnovski/mini.move',
     keys = {
-      { '<A-h>', mode = { 'n', 'v' } },
-      { '<A-j>', mode = { 'n', 'v' } },
-      { '<A-k>', mode = { 'n', 'v' } },
-      { '<A-l>', mode = { 'n', 'v' } },
+      { '<A-h>', mode = { 'n', 'v' }, desc = 'move text to the left' },
+      { '<A-j>', mode = { 'n', 'v' }, desc = 'move text down 1 line' },
+      { '<A-k>', mode = { 'n', 'v' }, desc = 'move text up 1 line' },
+      { '<A-l>', mode = { 'n', 'v' }, desc = 'move text to the right' },
     },
     config = function()
       require('plugin-config.editing.mini-move').setup()
