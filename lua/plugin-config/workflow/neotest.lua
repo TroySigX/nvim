@@ -21,10 +21,10 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    t = { function() require('neotest').run.run() end, '[T]est Current Test' },
-    at = { function() require('neotest').run.run(vim.fn.expand('%')) end, 'Run [A]ll [T]est' },
-    T = { function() require('neotest').run.stop() end, 'Stop Current Test' },
-    AT = { function() require('neotest').run.stop(vim.fn.expand('%')) end, 'Stop All Test' },
+    t = { function() require('neotest').run.run() end, 'Unit [T]est Current Test' },
+    at = { function() require('neotest').run.run(vim.fn.expand('%')) end, 'Run [A]ll Unit [T]est' },
+    T = { function() require('neotest').run.stop() end, 'Stop Current Unit Test' },
+    AT = { function() require('neotest').run.stop(vim.fn.expand('%')) end, 'Stop All Unit Tests' },
   }, { prefix = '<leader>' })
 
   require('which-key').register({
