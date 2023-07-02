@@ -15,9 +15,9 @@ function M.keymaps(opts)
 
   local returned_keys = {}
   if opts ~= nil then
-    for _, v in ipairs(keys) do
+    for _, v in pairs(keys) do
       local key = { v.key }
-      for _, opt in ipairs(opts) do
+      for _, opt in pairs(opts) do
         key[opt] = v[opt]
       end
       table.insert(returned_keys, key)

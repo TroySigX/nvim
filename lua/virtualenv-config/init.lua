@@ -11,7 +11,7 @@ local function config_filetype_venv(filetype, venv_name)
   if type(filetype) == 'string' then
     create_autocmd(filetype)
   else
-    for _, ft in ipairs(filetype) do
+    for _, ft in pairs(filetype) do
       create_autocmd(ft)
     end
   end

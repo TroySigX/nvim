@@ -31,7 +31,7 @@ local function auto_indent(mode)
   end
 end
 local insertModes = { 'i', 'a', 'A' }
-for _, mode in ipairs(insertModes) do
+for _, mode in pairs(insertModes) do
   vim.keymap.set('n', mode, function() return auto_indent(mode) end, { desc = 'auto indent on newline in insert mode', expr = true })
 end
 
@@ -42,7 +42,7 @@ local signs = {
   { name = 'DiagnosticSignHint', text = '' },
   { name = 'DiagnosticSignInfo', text = '' },
 }
-for _, sign in ipairs(signs) do
+for _, sign in pairs(signs) do
   vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
