@@ -33,7 +33,6 @@ function M.setup()
     L = { 'gt', 'move tab forward' },
     H = { 'gT', 'move tab backward' },
     ['<leader>'] = {
-      name = 'go to specific tab',
       ['1'] = { '1gt', 'go to tab 1' },
       ['2'] = { '2gt', 'go to tab 2' },
       ['3'] = { '3gt', 'go to tab 3' },
