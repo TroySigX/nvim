@@ -12,6 +12,7 @@ function M.keymaps()
     ['<A-L>'] = { function() require('smart-splits').resize_right() end, 'Resize buffer right' },
 
     ['<leader><leader>'] = {
+      name = 'move buffer',
       h = { function() require('smart-splits').swap_buf_left({ move_cursor = true }) end, 'move buffer left' },
       j = { function() require('smart-splits').swap_buf_down({ move_cursor = true }) end, 'move buffer down' },
       k = { function() require('smart-splits').swap_buf_up({ move_cursor = true }) end, 'move buffer up' },
