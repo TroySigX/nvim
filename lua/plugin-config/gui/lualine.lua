@@ -7,6 +7,7 @@ function M.setup()
     },
     sections = {
       lualine_x = {
+        'overseer',
         {
           require('noice').api.statusline.mode.get,
           cond = require('noice').api.statusline.mode.has,

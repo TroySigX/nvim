@@ -271,6 +271,21 @@ return {
   },
 
   {
+    'stevearc/dressing.nvim',
+    config = function()
+      require('plugin-config.gui.dressing').setup()
+    end,
+  },
+
+  {
+    'stevearc/overseer.nvim',
+    keys = require('plugin-config.workflow.overseer').keymaps(),
+    config = function()
+      require('plugin-config.workflow.overseer').setup()
+    end,
+  },
+
+  {
     'rcarriga/nvim-dap-ui',
     dependencies = {
       'mfussenegger/nvim-dap',
