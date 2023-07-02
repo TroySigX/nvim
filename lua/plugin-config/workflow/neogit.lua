@@ -52,7 +52,7 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    ['<F10>'] = { function() require('neogit').open() end, 'Open Neogit' },
+    ['<F10>'] = { function() require('neogit').open() end, 'Open Neogit (manage git repo)' },
   }, { mode = { 'n', 'v', 'i' } })
 end
 

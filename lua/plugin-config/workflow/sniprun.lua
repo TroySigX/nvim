@@ -13,8 +13,8 @@ end
 
 function M.keymaps()
   return {
-    { '<space>sr', vim.cmd.SnipRun, desc = 'Trigger [S]nip [R]un' },
-    { '<space>sc', vim.cmd.SnipClose, desc = '[S]nip [C]lose' },
+    { '<space>sr', vim.cmd.SnipRun, desc = 'Trigger [S]nip [R]un (run code runner)' },
+    { '<space>sc', vim.cmd.SnipClose, desc = '[S]nip [C]lose (close code runner)' },
   }
 end
 

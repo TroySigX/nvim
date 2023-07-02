@@ -20,7 +20,7 @@ function M.keymaps()
     ['<F3>'] = { function()
       vim.cmd.stopinsert()
       toggle_quickfix_list()
-    end, 'Toggle Quickfix List'
+    end, 'Toggle TODO List'
     }
   }, { mode = { 'n', 'i', 'v' } })
 end

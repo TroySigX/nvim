@@ -56,7 +56,7 @@ function M.keymaps()
     ['<F2>'] = { function()
       vim.cmd.stopinsert()
       require('nvim-tree.api').tree.toggle()
-    end, 'Toggle Tree' },
+    end, 'Toggle Tree (file explorer)' },
   }, { mode = { 'n', 'i', 'v' } })
 end
 

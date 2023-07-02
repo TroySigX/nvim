@@ -2,8 +2,8 @@ local M = {}
 
 function M.keymaps()
   return {
-    { '<F4>', vim.cmd.OverseerRun, desc = 'Task Runner', mode = { 'n', 'i', 'v' } },
-    { '<space>os', vim.cmd.OverseerToggle, desc = '[O]ver[S]eer Toggle', silent = true },
+    { '<F4>', vim.cmd.OverseerRun, desc = 'Trigger Task Runner', mode = { 'n', 'i', 'v' } },
+    { '<space>os', vim.cmd.OverseerToggle, desc = '[O]ver[S]eer Toggle (toggle task runner window)', silent = true },
   }
 end
 

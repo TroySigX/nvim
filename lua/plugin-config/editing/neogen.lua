@@ -8,7 +8,7 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    ['<space>ng'] = { function() require('neogen').generate() end, '[N]eo[G]en' },
+    ['<space>ng'] = { function() require('neogen').generate() end, '[N]eo[G]en (generate docs)' },
   })
 end
 
