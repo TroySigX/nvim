@@ -11,7 +11,7 @@ end
 
 function M.keymaps()
   return {
-    { '<F5>', vim.cmd.TagbarToggle, silent = true, desc = 'Toggle Tagbar (code outline)', mode = { 'n', 'i', 'v' } },
+    { '<F4>', vim.cmd.TagbarToggle, silent = true, desc = 'Toggle Tagbar (code outline)', mode = { 'n', 'i', 'v' } },
   }
 end
 
