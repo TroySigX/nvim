@@ -20,8 +20,9 @@ function M.setup()
   require('overseer').setup({
     templates = { 'builtin', 'user.init' },
     strategy = {
-      'toggleterm',
       use_shell = true,
+      'toggleterm',
+      quit_on_exit = 'success',
     },
   })
 end
