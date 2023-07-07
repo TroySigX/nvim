@@ -124,6 +124,19 @@ return {
     end,
   },
 
+  -- {
+  --   'jackMort/ChatGPT.nvim',
+  --   keys = require('plugin-config.workflow.chatgpt').keymaps(),
+  --   dependencies = {
+  --     'MunifTanjim/nui.nvim',
+  --     'nvim-lua/plenary.nvim',
+  --     'nvim-telescope/telescope.nvim'
+  --   },
+  --   config = function()
+  --     require('plugin-config.workflow.chatgpt').setup()
+  --   end,
+  -- },
+
   {
     'danymat/neogen',
     lazy = true,
