@@ -70,7 +70,6 @@ function M.setup()
   end
 
   vim.schedule(function() require('virtualenv-config.export').export(venv_var) end)
-
 end
 
 return M
