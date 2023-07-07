@@ -2,13 +2,13 @@ local M = {}
 
 function M.keymaps(opts)
   local keys = {
-    { key = '<C-u>', desc = 'Scroll up half page (move cursor)' },
-    { key = '<C-d>', desc = 'Scroll down half page (move cursor)' },
-    { key = '<C-b>', desc = 'Scroll 1 page up (move cursor)' },
-    { key = '<C-f>', desc = 'Scroll 1 page down (move cursor)' },
-    { key = '<C-y>', desc = 'Page up 3 lines (cursor stay in line)' },
-    { key = '<C-e>', desc = 'Page down 3 lines (cursor stay in line)' },
-    { key = 'zt', desc = 'Adjust cursor to top screen (cursor stay in line)' },
+    { key = '<C-u>', desc = 'Scroll up half page (move cursor)', mode = { 'n', 'v' } },
+    { key = '<C-d>', desc = 'Scroll down half page (move cursor)', mode = { 'n', 'v' } },
+    { key = '<C-b>', desc = 'Scroll 1 page up (move cursor)', mode = { 'n', 'v' } },
+    { key = '<C-f>', desc = 'Scroll 1 page down (move cursor)', mode = { 'n', 'v' } },
+    { key = '<C-y>', desc = 'Page up 3 lines (cursor stay in line)', mode = { 'n', 'v' } },
+    { key = '<C-e>', desc = 'Page down 3 lines (cursor stay in line)', mode = { 'n', 'v' } },
+    { key = 'zt', desc = 'Adjust cursor to top screen (cursor stay in line)', mode = { 'n', 'v' } },
     { key = 'zz', desc = 'Adjust cursor to mid screen (cursor stay in line)' },
     { key = 'zb', desc = 'Adjust cursor to bottom screen (cursor stay in line)' },
   }
