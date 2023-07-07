@@ -298,11 +298,17 @@ return {
     end,
   },
 
+
   {
     'rcarriga/nvim-dap-ui',
     dependencies = {
       'mfussenegger/nvim-dap',
       'mfussenegger/nvim-dap-python',
+      {
+        'microsoft/vscode-js-debug',
+        build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
+      },
+      'mxsdev/nvim-dap-vscode-js',
     },
     lazy = true,
     config = function()
