@@ -13,8 +13,8 @@ function M.setup()
       ['core.dirman'] = { -- Manages Neorg workspaces
       config = {
         workspaces = {
-          proj = '/mnt/HDD/notes/projects',
-          umass = '/mnt/HDD/notes/umass',
+          proj = '~/notes/projects',
+          umass = '~/notes/umass',
         },
         open_last_workspace = true,
       },
