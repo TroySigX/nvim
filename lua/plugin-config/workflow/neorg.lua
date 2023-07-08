@@ -16,7 +16,6 @@ function M.setup()
           proj = '~/notes/projects',
           umass = '~/notes/umass',
         },
-        open_last_workspace = true,
       },
     },
   },
