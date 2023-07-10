@@ -56,11 +56,6 @@ function M.setup()
   map({
     ['<C-a>'] = { '<Esc>ggVG', 'select all' },
   })
-
-  map({
-    ['<C-h>'] = { '<C-o>k', 'jump to above line in insert mode' },
-    ['<C-l>'] = { '<C-o>j', 'jump to below line in insert mode' },
-  }, { mode = 'i' })
 end
 
 return M
