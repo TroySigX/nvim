@@ -32,3 +32,7 @@ trim_trailing_whitespace = false
 [**.txt]
 trim_trailing_whitespace = false
 insert_final_newline = false
+
+# Snippets config
+[**.snippets]
+indent_style = tab
