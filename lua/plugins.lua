@@ -3,10 +3,9 @@ return {
     'hrsh7th/nvim-cmp',
     event = 'InsertEnter',
     dependencies = {
-      'neovim/nvim-lspconfig',
+      'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
-      'hrsh7th/cmp-nvim-lsp-signature-help',
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
       'hrsh7th/cmp-cmdline',
@@ -23,6 +22,7 @@ return {
   {
     'nvimdev/lspsaga.nvim',
     dependencies = {
+      'neovim/nvim-lspconfig',
       'nvim-tree/nvim-web-devicons',
       'nvim-treesitter/nvim-treesitter',
       'williamboman/mason-lspconfig.nvim',
@@ -238,7 +238,7 @@ return {
 
   {
     'karb94/neoscroll.nvim',
-    keys = require('plugin-config.navigation.neoscroll').keymaps({ 'desc' }),
+    keys = require('plugin-config.navigation.neoscroll').keymaps({ 'desc', 'mode' }),
     config = function()
       require('plugin-config.navigation.neoscroll').setup()
     end,
@@ -291,11 +291,6 @@ return {
     dependencies = {
       'mfussenegger/nvim-dap',
       'mfussenegger/nvim-dap-python',
-      {
-        'microsoft/vscode-js-debug',
-        build = 'npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out',
-      },
-      'mxsdev/nvim-dap-vscode-js',
     },
     lazy = true,
     config = function()
