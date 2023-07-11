@@ -34,6 +34,16 @@ return {
   },
 
   {
+    'jose-elias-alvarez/null-ls.nvim',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = function()
+      require('plugin-config.lsp.null-ls').setup()
+    end,
+  },
+
+  {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     config = function()
@@ -213,14 +223,6 @@ return {
     },
     config = function()
       require('plugin-config.explorer.fzf-lua').setup()
-    end,
-  },
-
-  {
-    'mfussenegger/nvim-lint',
-    event = 'BufWritePost',
-    config = function()
-      require('plugin-config.lsp.nvim-lint')
     end,
   },
 
