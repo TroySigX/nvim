@@ -30,8 +30,8 @@ function M.setup()
 
   map({
     -- moving between tabs
-    L = { 'gt', 'move to right tab' },
-    H = { 'gT', 'move to left tab' },
+    L = { 'gt', 'go to right tab' },
+    H = { 'gT', 'go to left tab' },
     ['<leader>'] = {
       ['1'] = { '1gt', 'go to tab 1' },
       ['2'] = { '2gt', 'go to tab 2' },
@@ -56,6 +56,11 @@ function M.setup()
   map({
     ['<C-a>'] = { '<Esc>ggVG', 'select all' },
   })
+
+  map({
+    H = { ':tabm -1<CR>', 'move tab to the left' },
+    L = { ':tabm +1<CR>', 'move tab to the right' },
+  }, { prefix = '<space>' })
 end
 
 return M
