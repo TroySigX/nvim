@@ -8,3 +8,5 @@ Run `/setup/install.sh` (for Arch-based only)
 * jsonlint
 * shellcheck
 * debugpy
+* stylua
+* prettier
