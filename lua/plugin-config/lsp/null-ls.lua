@@ -2,8 +2,17 @@ local M = {}
 
 function M.keymaps()
   require('which-key').register({
-    lf = { function() vim.lsp.buf.format() end, '[L]sp [F]ormat Code' },
+    l = {
+      name = 'lsp',
+      f = { function() vim.lsp.buf.format() end, '[L]sp [F]ormat Code' },
+    },
   }, { prefix = '<space>', mode = { 'n', 'v' } })
+
+  require('which-key').register({
+    l = {
+      i = { vim.cmd.NullLsInfo, 'Null-ls [L]sp [I]nfo' },
+    },
+  }, { prefix = '<space>' })
 end
 
 function M.setup()
@@ -14,7 +23,7 @@ function M.setup()
   null_ls.setup({
     sources = {
       formatting.stylua,
-      formatting.prettier,
+      formatting.prettier.with({ extra_args = { '--single-quote', '--jsx-single-quote' } }),
       diagnostic.shellcheck,
       diagnostic.jsonlint,
     },
