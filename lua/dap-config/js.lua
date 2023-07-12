@@ -1,13 +1,22 @@
 local M = {}
 
+-- TODO: replace dap-vscode-js with william's typescript debug config
+-- link: https://github.com/williamboman/nvim-config/blob/main/after/plugin/dap/typescript.lua
 function M.setup()
-  require('dap-vscode-js').setup({
-    node_path = 'node',
-    debugger_path = os.getenv('HOME') .. '/.local/share/nvim/lazy/vscode-js-debug',
-    adapters = { 'pwa-node' },
-  })
-  for _, language in pairs { --[[ 'typescript', ]] 'javascript' } do
-    require('dap').configurations[language] = {
+  local dap = require('dap')
+
+  dap.adapters['pwa-node'] = {
+    type = 'server',
+    host = 'localhost',
+    port = '${port}',
+    executable = {
+        command = vim.fn.exepath('js-debug-adapter'),
+        args = { '${port}' },
+    },
+  }
+
+  for _, language in pairs { 'typescript', 'javascript' } do
+    dap.configurations[language] = {
       {
         type = 'pwa-node',
         request = 'launch',
