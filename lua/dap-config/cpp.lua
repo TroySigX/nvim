@@ -17,7 +17,7 @@ function M.setup()
     {
       type = 'codelldb',
       request = 'launch',
-      program = vim.fn.getcwd() .. '/a.out',
+      program = vim.fn.getcwd() .. require('plenary.path').path.sep .. vim.fn.expand('%:r'),
       cwd = '${workspaceFolder}',
       terminal = 'integrated',
       stopOnEntry = false,
