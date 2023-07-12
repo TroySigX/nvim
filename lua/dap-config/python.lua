@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
   local dap = require('dap')
 
-  require('dap-python').setup('~/.local/share/nvim/mason/packages/debugpy/venv/bin/python')
+  require('dap-python').setup(vim.fn.stdpath('data') .. '/mason/packages/debugpy/venv/bin/python')
 
   table.insert(dap.configurations.python, {
     type = 'python',
