@@ -1,5 +1,15 @@
 local M = {}
 
+local function in_table(table, val)
+  for _, v in pairs(table) do
+    if v == val then
+      return true
+    end
+  end
+
+  return false
+end
+
 function M.setup()
   -- setup mason
   require('mason').setup({
@@ -20,11 +30,14 @@ function M.setup()
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   capabilities.offsetEncoding = 'utf-8'
 
+  local exclude_server = { 'tsserver' }
   require('mason-lspconfig').setup_handlers({
     function (server_name)
-      require('lspconfig')[server_name].setup {
-        capabilities = capabilities,
-      }
+      if not in_table(exclude_server, server_name) then
+        require('lspconfig')[server_name].setup {
+          capabilities = capabilities,
+        }
+      end
     end,
   })
 
