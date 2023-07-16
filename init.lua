@@ -18,7 +18,15 @@ vim.opt.rtp:prepend(lazypath)
 vim.loader.enable()
 
 require('lazy').setup({
-  spec = require('plugins'),
+  spec = {
+    { import = 'plugin-config.lsp.plugins' },
+    { import = 'plugin-config.editing.plugins' },
+    { import = 'plugin-config.explorer.plugins' },
+    { import = 'plugin-config.gui.plugins' },
+    { import = 'plugin-config.navigation.plugins' },
+    { import = 'plugin-config.workflow.plugins' },
+    { import = 'plugin-config.others.plugins' },
+  },
 
   -- disable built-in plugins
   performance = {
