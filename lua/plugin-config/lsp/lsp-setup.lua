@@ -23,7 +23,7 @@ function M.setup()
   })
 
   require('mason-lspconfig').setup({
-    ensure_installed = { 'clangd', 'pyright', 'tsserver', 'lua_ls', 'texlab', 'sqlls' },
+    ensure_installed = { 'clangd', 'pyright', 'tsserver', 'lua_ls', 'texlab' },
   })
 
   -- setup lsp
