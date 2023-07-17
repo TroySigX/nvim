@@ -18,7 +18,7 @@ end
 
 function M.setup()
   require('overseer').setup({
-    templates = { 'builtin', 'user.init' },
+    templates = { 'builtin', 'user' },
     strategy = {
       use_shell = true,
       'toggleterm',
