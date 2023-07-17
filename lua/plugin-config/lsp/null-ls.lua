@@ -15,14 +15,9 @@ function M.keymaps()
   }, { prefix = '<space>' })
 end
 
-local function should_load_eslint(utils)
-  return utils.root_has_file('.eslintrc')
-end
-
 function M.setup()
   local null_ls = require('null-ls')
   local formatting = null_ls.builtins.formatting
-  local diagnostic = null_ls.builtins.diagnostics
 
   null_ls.setup({
     sources = {
@@ -30,9 +25,6 @@ function M.setup()
       formatting.prettier.with({ extra_args = { '--single-quote', '--jsx-single-quote' } }),
       formatting.clang_format,
       formatting.black,
-      diagnostic.eslint_d.with({ condition = should_load_eslint }),
-      diagnostic.shellcheck,
-      diagnostic.jsonlint,
     },
 })
 end

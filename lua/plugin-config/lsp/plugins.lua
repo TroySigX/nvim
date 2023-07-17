@@ -50,6 +50,14 @@ return {
   },
 
   {
+    'mfussenegger/nvim-lint',
+    lazy = true,
+    config = function()
+      require(lsp_config_path .. 'nvim-lint').setup()
+    end,
+  },
+
+  {
     'folke/trouble.nvim',
     keys = require(lsp_config_path .. 'trouble').keymaps(),
     dependencies = 'nvim-tree/nvim-web-devicons',
