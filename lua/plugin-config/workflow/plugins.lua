@@ -10,14 +10,6 @@ return {
   },
 
   {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require(workflow_config_path .. 'which-key').setup()
-    end,
-  },
-
-  {
     'folke/todo-comments.nvim',
     event = 'VeryLazy',
     dependencies = 'nvim-lua/plenary.nvim',

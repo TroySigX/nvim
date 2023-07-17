@@ -22,6 +22,7 @@ require('lazy').setup({
     { import = 'plugin-config.lsp.plugins' },
     { import = 'plugin-config.editing.plugins' },
     { import = 'plugin-config.explorer.plugins' },
+    { import = 'plugin-config.keymaps.plugins' },
     { import = 'plugin-config.gui.plugins' },
     { import = 'plugin-config.navigation.plugins' },
     { import = 'plugin-config.workflow.plugins' },
