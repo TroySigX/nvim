@@ -1,7 +1,16 @@
 local M = {}
 
 function M.setup()
-  require('dap-config.init')
+  require ('mason-nvim-dap').setup({
+    ensure_installed = { 'codelldb', 'debugpy' },
+    handlers = {
+      function(config)
+        require('mason-nvim-dap').default_setup(config)
+      end,
+      python = require('dap-config.python').setup,
+    },
+  })
+  require('dap-config')
   require('dapui').setup()
 end
 
