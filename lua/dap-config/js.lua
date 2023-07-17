@@ -1,7 +1,5 @@
 local M = {}
 
--- TODO: replace dap-vscode-js with william's typescript debug config
--- link: https://github.com/williamboman/nvim-config/blob/main/after/plugin/dap/typescript.lua
 function M.setup()
   local dap = require('dap')
 
