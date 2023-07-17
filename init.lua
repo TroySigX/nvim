@@ -50,4 +50,4 @@ require('lazy').setup({
 })
 
 -- lang venv
-require('virtualenv-config.init')
+require('virtualenv-config')
