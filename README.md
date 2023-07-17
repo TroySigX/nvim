@@ -4,9 +4,7 @@
 Run `/setup/install.sh` (for Arch-based only)
 
 ## Install Mason packages:
-* codelldb
 * jsonlint
 * shellcheck
-* debugpy
 * stylua
 * prettier
