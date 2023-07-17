@@ -30,10 +30,12 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'williamboman/mason.nvim',
       'pmizio/typescript-tools.nvim',
+      'simrat39/rust-tools.nvim',
     },
     config = function()
       require(lsp_config_path .. 'lsp-setup').setup()
       require(lsp_config_path .. 'typescript-tools').setup()
+      require(lsp_config_path .. 'rust-tools').setup()
     end,
   },
 
