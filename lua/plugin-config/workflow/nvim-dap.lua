@@ -8,7 +8,6 @@ function M.setup()
         require('mason-nvim-dap').default_setup(config)
       end,
       python = require('dap-config.python').setup,
-      -- js = require('dap-config.js').setup,
     },
   })
   require('dap-config.js').setup()
