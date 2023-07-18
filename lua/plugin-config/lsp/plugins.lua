@@ -1,4 +1,8 @@
-local lsp_config_path = 'plugin-config.lsp.'
+local base_dir = 'plugin-config.lsp.'
+
+local function config_path(plugin_name)
+  return base_dir .. plugin_name
+end
 
 return {
   {
@@ -16,8 +20,8 @@ return {
       'onsails/lspkind.nvim',
     },
     config = function()
-      require(lsp_config_path .. 'nvim-cmp').setup()
-      require(lsp_config_path .. 'luasnip').setup()
+      require(config_path('nvim-cmp')).setup()
+      require(config_path('luasnip')).setup()
     end,
   },
 
@@ -33,19 +37,20 @@ return {
       'simrat39/rust-tools.nvim',
     },
     config = function()
-      require(lsp_config_path .. 'lsp-setup').setup()
-      require(lsp_config_path .. 'typescript-tools').setup()
-      require(lsp_config_path .. 'rust-tools').setup()
+      require(config_path('lsp-setup')).setup()
+      require(config_path('typescript-tools')).setup()
+      require(config_path('rust-tools')).setup()
     end,
   },
 
   {
     'jose-elias-alvarez/null-ls.nvim',
+    lazy = true,
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
     config = function()
-      require(lsp_config_path .. 'null-ls').setup()
+      require(config_path('null-ls')).setup()
     end,
   },
 
@@ -53,16 +58,16 @@ return {
     'mfussenegger/nvim-lint',
     lazy = true,
     config = function()
-      require(lsp_config_path .. 'nvim-lint').setup()
+      require(config_path('nvim-lint')).setup()
     end,
   },
 
   {
     'folke/trouble.nvim',
-    keys = require(lsp_config_path .. 'trouble').keymaps(),
+    keys = require(config_path('trouble')).keymaps(),
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require(lsp_config_path .. 'trouble').setup()
+      require(config_path('trouble')).setup()
     end,
   },
 
@@ -70,7 +75,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = function()
-      require(lsp_config_path .. 'treesitter').setup()
+      require(config_path('treesitter')).setup()
     end,
   },
 }

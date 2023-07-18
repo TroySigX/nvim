@@ -1,11 +1,15 @@
-local keymap_config_path = 'plugin-config.keymaps.'
+local base_dir = 'plugin-config.keymaps.'
+
+local function config_path(plugin_name)
+  return base_dir .. plugin_name
+end
 
 return {
   {
     'folke/which-key.nvim',
     event = 'VeryLazy',
     config = function()
-      require(keymap_config_path .. 'which-key').setup()
+      require(config_path('which-key')).setup()
     end,
   },
 

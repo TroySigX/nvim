@@ -1,4 +1,8 @@
-local navigation_config_path = 'plugin-config.navigation.'
+local base_dir = 'plugin-config.navigation.'
+
+local function config_path(plugin_name)
+  return base_dir .. plugin_name
+end
 
 return {
   {
@@ -8,17 +12,17 @@ return {
 
   {
     'preservim/tagbar',
-    keys = require(navigation_config_path .. 'tagbar').keymaps(),
+    keys = require(config_path('tagbar')).keymaps(),
     config = function()
-      require('plugin-config.navigation.tagbar').setup()
+      require(config_path('tagbar')).setup()
     end,
   },
 
   {
     'karb94/neoscroll.nvim',
-    keys = require(navigation_config_path .. 'neoscroll').keymaps({ 'desc', 'mode' }),
+    keys = require(config_path('neoscroll')).keymaps({ 'desc', 'mode' }),
     config = function()
-      require(navigation_config_path .. 'neoscroll').setup()
+      require(config_path('neoscroll')).setup()
     end,
   },
 
@@ -30,7 +34,7 @@ return {
       'luukvbaal/statuscol.nvim',
     },
     config = function()
-      require(navigation_config_path .. 'nvim-ufo').setup()
+      require(config_path('nvim-ufo')).setup()
     end,
   },
 }

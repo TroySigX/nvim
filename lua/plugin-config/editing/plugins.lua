@@ -1,25 +1,29 @@
-local editing_config_path = 'plugin-config.editing.'
+local base_dir = 'plugin-config.editing.'
+
+local function config_path(plugin_name)
+  return base_dir .. plugin_name
+end
 
 return {
   {
     'numToStr/Comment.nvim',
     event = 'VeryLazy',
     config = function()
-      require(editing_config_path .. 'comment').setup()
+      require(config_path('comment')).setup()
     end,
   },
 
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
-      require(editing_config_path .. 'indent').setup()
+      require(config_path('indent')).setup()
     end
   },
 
   {
     'HiPhish/nvim-ts-rainbow2',
     config = function ()
-      require(editing_config_path .. 'ts-rainbow').setup()
+      require(config_path('ts-rainbow')).setup()
     end,
   },
 
@@ -27,7 +31,7 @@ return {
     'danymat/neogen',
     lazy = true,
     config = function()
-      require(editing_config_path .. 'neogen').setup()
+      require(config_path('neogen')).setup()
     end,
   },
 
@@ -41,7 +45,7 @@ return {
       'windwp/nvim-ts-autotag',
     },
     config= function()
-      require(editing_config_path .. 'autopairs').setup()
+      require(config_path('autopairs')).setup()
     end,
   },
 
@@ -49,15 +53,15 @@ return {
     'abecodes/tabout.nvim',
     event = 'InsertEnter',
     config = function()
-      require(editing_config_path .. 'tabout').setup()
+      require(config_path('tabout')).setup()
     end,
   },
 
   {
     'echasnovski/mini.move',
-    keys = require('plugin-config.editing.mini-move').keymaps(),
+    keys = require(config_path('mini-move')).keymaps(),
     config = function()
-      require(editing_config_path .. 'mini-move').setup()
+      require(config_path('mini-move')).setup()
     end,
   },
 
@@ -65,7 +69,7 @@ return {
     'Wansmer/treesj',
     lazy = true,
     config = function()
-      require(editing_config_path .. 'treesj').setup()
+      require(config_path('treesj')).setup()
     end
   },
 
@@ -73,7 +77,7 @@ return {
     'AckslD/muren.nvim',
     lazy = true,
     config = function()
-      require(editing_config_path .. 'muren').setup()
+      require(config_path('muren')).setup()
     end,
   },
 
@@ -81,7 +85,7 @@ return {
     'kylechui/nvim-surround',
     event = 'VeryLazy',
     config = function()
-      require(editing_config_path .. 'nvim-surround').setup()
+      require(config_path('nvim-surround')).setup()
     end,
   },
 }

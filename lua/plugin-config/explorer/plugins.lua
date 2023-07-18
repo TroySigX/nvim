@@ -1,4 +1,8 @@
-local explorer_config_path = 'plugin-config.explorer.'
+local base_dir = 'plugin-config.explorer.'
+
+local function config_path(plugin_name)
+  return base_dir .. plugin_name
+end
 
 return {
   {
@@ -12,7 +16,7 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require(explorer_config_path .. 'fzf-lua').setup()
+      require(config_path('fzf-lua')).setup()
     end,
   },
 
@@ -20,7 +24,7 @@ return {
     'nvim-tree/nvim-tree.lua',
     lazy = true,
     config = function()
-      require(explorer_config_path .. 'nvim-tree').setup()
+      require(config_path('nvim-tree')).setup()
     end,
   },
 }

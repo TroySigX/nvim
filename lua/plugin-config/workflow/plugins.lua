@@ -1,11 +1,15 @@
-local workflow_config_path = 'plugin-config.workflow.'
+local base_dir = 'plugin-config.workflow.'
+
+local function config_path(plugin_name)
+  return base_dir .. plugin_name
+end
 
 return {
   {
     'akinsho/toggleterm.nvim',
-    keys = require(workflow_config_path .. 'toggleterm').keymaps(),
+    keys = require(config_path('toggleterm')).keymaps(),
     config = function()
-      require(workflow_config_path .. 'toggleterm').setup()
+      require(config_path('toggleterm')).setup()
     end,
   },
 
@@ -14,7 +18,7 @@ return {
     event = 'VeryLazy',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      require(workflow_config_path .. 'todo-comments').setup()
+      require(config_path('todo-comments')).setup()
     end,
   },
 
@@ -22,7 +26,7 @@ return {
     'frabjous/knap',
     lazy = true,
     config = function()
-      require(workflow_config_path .. 'knap').setup()
+      require(config_path('knap')).setup()
     end,
   },
 
@@ -34,7 +38,7 @@ return {
     },
     lazy = true,
     config = function()
-      require(workflow_config_path .. 'neogit').setup()
+      require(config_path('neogit')).setup()
     end,
   },
 
@@ -42,17 +46,17 @@ return {
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
     dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = require(workflow_config_path .. 'neorg').keymaps(),
+    keys = require(config_path('neorg')).keymaps(),
     config = function()
-      require(workflow_config_path .. 'neorg').setup()
+      require(config_path('neorg')).setup()
     end,
   },
 
   {
     'stevearc/overseer.nvim',
-    keys = require(workflow_config_path .. 'overseer').keymaps(),
+    keys = require(config_path('overseer')).keymaps(),
     config = function()
-      require(workflow_config_path .. 'overseer').setup()
+      require(config_path('overseer')).setup()
     end,
   },
 
@@ -65,21 +69,21 @@ return {
     },
     lazy = true,
     config = function()
-      require(workflow_config_path .. 'nvim-dap').setup()
+      require(config_path('nvim-dap')).setup()
     end,
   },
 
   {
     'mbbill/undotree',
-    keys = require(workflow_config_path .. 'undotree').keymaps(),
+    keys = require(config_path('undotree')).keymaps(),
   },
 
   {
     'michaelb/sniprun',
     build = 'sh ./install.sh',
-    keys = require(workflow_config_path .. 'sniprun').keymaps(),
+    keys = require(config_path('sniprun')).keymaps(),
     config = function()
-      require(workflow_config_path .. 'sniprun').setup()
+      require(config_path('sniprun')).setup()
     end,
   },
 
@@ -92,7 +96,7 @@ return {
     },
     lazy = true,
     config = function()
-      require(workflow_config_path .. 'neotest').setup()
+      require(config_path('neotest')).setup()
     end,
   },
 
@@ -100,7 +104,7 @@ return {
     'mrjones2014/smart-splits.nvim',
     lazy = true,
     config = function()
-      require(workflow_config_path .. 'smart-splits').setup()
+      require(config_path('smart-splits')).setup()
     end,
   },
 }

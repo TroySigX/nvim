@@ -1,4 +1,8 @@
-local gui_config_path = 'plugin-config.gui.'
+local base_dir = 'plugin-config.gui.'
+
+local function config_path(plugin_name)
+  return base_dir .. plugin_name
+end
 
 return {
   {
@@ -12,9 +16,9 @@ return {
       },
     },
     config = function()
-      require(gui_config_path .. 'notify').setup()
-      require(gui_config_path .. 'noice').setup()
-      require(gui_config_path .. 'lualine').setup()
+      require(config_path('notify')).setup()
+      require(config_path('noice')).setup()
+      require(config_path('lualine')).setup()
     end,
   },
 
@@ -22,14 +26,14 @@ return {
     'nvimdev/dashboard-nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require(gui_config_path .. 'dashboard').setup()
+      require(config_path('dashboard')).setup()
     end,
   },
 
   {
     'folke/tokyonight.nvim',
     config = function()
-      require(gui_config_path .. 'colorscheme').setup()
+      require(config_path('colorscheme')).setup()
     end,
   },
 
@@ -37,14 +41,14 @@ return {
     'akinsho/bufferline.nvim',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require(gui_config_path .. 'bufferline').setup()
+      require(config_path('bufferline')).setup()
     end,
   },
 
   {
     'stevearc/dressing.nvim',
     config = function()
-      require(gui_config_path .. 'dressing').setup()
+      require(config_path('dressing')).setup()
     end,
   },
 }

@@ -1,28 +1,32 @@
-local others_config_path = 'plugin-config.others.'
+local base_dir = 'plugin-config.others.'
+
+local function config_path(plugin_name)
+  return base_dir .. plugin_name
+end
 
 return {
   {
     'tyru/open-browser.vim',
-    keys = require(others_config_path .. 'open-browser').keymaps(),
+    keys = require(config_path('open-browser')).keymaps(),
   },
 
   {
     'tpope/vim-dadbod',
-    keys = require(others_config_path .. 'dadbod').keymaps(),
+    keys = require(config_path('dadbod')).keymaps(),
     dependencies = {
       'kristijanhusak/vim-dadbod-ui',
     },
     config = function()
-      require(others_config_path .. 'dadbod').setup()
+      require(config_path('dadbod')).setup()
     end,
   },
 
   {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
-    keys = require(others_config_path .. 'competitest').keymaps(),
+    keys = require(config_path('competitest')).keymaps(),
     config = function()
-      require(others_config_path .. 'competitest').setup()
+      require(config_path('competitest')).setup()
     end,
   },
 
@@ -35,7 +39,7 @@ return {
       vim.fn['firenvim#install'](0)
     end,
     config = function()
-      require(others_config_path .. 'firenvim').setup()
+      require(config_path('firenvim')).setup()
     end,
   },
 }
