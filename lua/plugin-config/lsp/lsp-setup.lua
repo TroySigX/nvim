@@ -1,13 +1,9 @@
 local M = {}
 
-local function in_table(table, val)
-  for _, v in pairs(table) do
-    if v == val then
-      return true
-    end
-  end
-
-  return false
+local function Set(table)
+  local set = {}
+  for _, v in ipairs(table) do set[v] = true end
+  return set
 end
 
 function M.setup()
@@ -30,10 +26,10 @@ function M.setup()
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   capabilities.offsetEncoding = 'utf-8'
 
-  local exclude_server = { 'tsserver', 'rust_analyzer' }
+  local exclude_server = Set({ 'tsserver', 'rust_analyzer' })
   require('mason-lspconfig').setup_handlers({
     function (server_name)
-      if not in_table(exclude_server, server_name) then
+      if not exclude_server[server_name] then
         require('lspconfig')[server_name].setup {
           capabilities = capabilities,
         }
