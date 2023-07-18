@@ -8,3 +8,8 @@ Run `/setup/install.sh` (for Arch-based only)
 * shellcheck
 * stylua
 * prettier
+
+## Language-based packages:
+* Markdown: pandoc
+* Latex: texlive-most
+* C/C++: bear

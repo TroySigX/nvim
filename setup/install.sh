@@ -9,9 +9,6 @@ fi
 packages=(
     "ripgrep"
     "xclip"
-    "pandoc"
-    "texlive-most"
-    "bear"
     "ctags"
 )
 
