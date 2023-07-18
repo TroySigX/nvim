@@ -34,8 +34,7 @@ function M.setup()
   local function goto_buffer_cwd()
     local current_tab = vim.api.nvim_get_current_tabpage()
     vim.fn.win_gotoid(open_win[current_tab])
-    api.tree.find_file({ open = true, update_root = true })
-    api.tree.focus()
+    api.tree.find_file({ open = true, update_root = true, focus = true })
   end
 
   require('nvim-tree').setup({
