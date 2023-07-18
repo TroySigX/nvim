@@ -1,5 +1,19 @@
 local M = {}
 
+-- maps tabpage with win id that opens nvim-tree
+local open_win = {}
+
+local function map_win_id()
+  local current_tab = vim.api.nvim_get_current_tabpage()
+  local current_win_id = vim.fn.win_getid()
+
+  open_win[current_tab] = current_win_id
+end
+
+local function opts(bufnr)
+  return { buffer = bufnr, nowait = true }
+end
+
 function M.setup()
   local map = vim.keymap.set
   local unmap = vim.keymap.del
@@ -18,13 +32,10 @@ function M.setup()
   end
 
   local function goto_buffer_cwd()
-    vim.cmd('wincmd l')
-    api.tree.find_file { open = true, update_root = '!' }
+    local current_tab = vim.api.nvim_get_current_tabpage()
+    vim.fn.win_gotoid(open_win[current_tab])
+    api.tree.find_file({ open = true, update_root = '!' })
     api.tree.focus()
-  end
-
-  local function opts(bufnr)
-    return { buffer = bufnr, nowait = true }
   end
 
   require('nvim-tree').setup({
@@ -54,8 +65,15 @@ end
 function M.keymaps()
   require('which-key').register({
     ['<F2>'] = { function()
-      vim.cmd.stopinsert()
-      require('nvim-tree.api').tree.toggle()
+      local api = require('nvim-tree.api')
+      if api.tree.is_visible() then
+        api.tree.close()
+      else
+        map_win_id()
+        api.tree.open()
+      end
+      -- vim.cmd.stopinsert()
+      -- api.tree.toggle()
     end, 'Toggle Tree (file explorer)' },
   }, { mode = { 'n', 'i', 'v' } })
 end
