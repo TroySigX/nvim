@@ -49,5 +49,6 @@ end
 -- diagnostic severity
 vim.diagnostic.config({
   virtual_text = false,
-  signs = { severity = vim.diagnostic.severity.ERROR }
+  severity_sort = true,
+  signs = { severity = { min = vim.diagnostic.severity.WARN } }
 })
