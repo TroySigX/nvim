@@ -6,10 +6,10 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    ['<A-H>'] = { function() require('smart-splits').resize_left() end, 'Resize buffer left' },
-    ['<A-J>'] = { function() require('smart-splits').resize_down() end, 'Resize buffer down' },
-    ['<A-K>'] = { function() require('smart-splits').resize_up() end, 'Resize buffer up' },
-    ['<A-L>'] = { function() require('smart-splits').resize_right() end, 'Resize buffer right' },
+    ['<C-Left>'] = { function() require('smart-splits').resize_left() end, 'Resize buffer left' },
+    ['<C-Down>'] = { function() require('smart-splits').resize_down() end, 'Resize buffer down' },
+    ['<C-Up>'] = { function() require('smart-splits').resize_up() end, 'Resize buffer up' },
+    ['<C-Right>'] = { function() require('smart-splits').resize_right() end, 'Resize buffer right' },
 
     ['<leader><leader>'] = {
       name = 'move buffer',
