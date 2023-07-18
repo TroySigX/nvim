@@ -43,7 +43,7 @@ local signs = {
   { name = 'DiagnosticSignInfo', text = '' },
 }
 for _, sign in pairs(signs) do
-  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
+  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
 end
 
 -- diagnostic severity
