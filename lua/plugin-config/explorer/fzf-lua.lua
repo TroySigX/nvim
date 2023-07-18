@@ -12,6 +12,10 @@ function M.keymaps()
   }, { prefix = '<space>' })
 
   require('which-key').register({
+    sw = { function() require('fzf-lua').grep_visual() end, '[S]earch Selected [W]ord' },
+  }, { prefix = '<space>', mode = 'v' })
+
+  require('which-key').register({
     ['<F6>'] = { function() require('fzf-lua').files() end, 'Find files' },
     ['<F18>'] = { function() require('fzf-lua').oldfiles() end, 'Old files' },
   }, { mode = { 'n', 'v', 'i' } })
