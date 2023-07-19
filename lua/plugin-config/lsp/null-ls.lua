@@ -22,7 +22,7 @@ function M.setup()
   null_ls.setup({
     sources = {
       formatting.stylua,
-      formatting.prettier.with({ extra_args = { '--single-quote', '--jsx-single-quote' } }),
+      formatting.prettierd.with({ extra_args = { '--single-quote', '--jsx-single-quote' } }),
       formatting.clang_format,
       formatting.black,
     },
