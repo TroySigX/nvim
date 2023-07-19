@@ -11,9 +11,9 @@ function M.setup()
   cmp.setup({
     formatting = {
       format = require('lspkind').cmp_format({
-        mode = 'symbol_text', -- show only symbol annotations
-        maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-        ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+        mode = 'symbol_text',
+        maxwidth = 50,
+        ellipsis_char = '...',
         symbol_map = { Copilot = '' },
       })
     },
@@ -44,6 +44,7 @@ function M.setup()
       { name = 'buffer', priority = 1 },
       { name = 'nvim_lsp_signature_help', priority = 1 },
       { name = 'neorg', priority = 1 },
+      { name = 'emoji', priority = 1 },
       { name = 'luasnip', priority = 2 },
       { name = 'copilot', priority = 2 },
     },

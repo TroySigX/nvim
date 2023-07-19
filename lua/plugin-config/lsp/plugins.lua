@@ -18,6 +18,7 @@ return {
       'zbirenbaum/copilot.lua',
       'zbirenbaum/copilot-cmp',
       'onsails/lspkind.nvim',
+      'hrsh7th/cmp-emoji',
     },
     config = function()
       require(config_path('nvim-cmp')).setup()
