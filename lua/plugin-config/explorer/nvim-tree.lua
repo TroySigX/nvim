@@ -10,8 +10,8 @@ local function map_win_id()
   open_win[current_tab] = current_win_id
 end
 
-local function opts(bufnr)
-  return { buffer = bufnr, nowait = true }
+local function opts(bufnr, desc)
+  return { buffer = bufnr, nowait = true, desc = desc }
 end
 
 function M.setup()
@@ -45,10 +45,11 @@ function M.setup()
 
       -- custom mappings
       unmap('n', '<C-t>', { buffer = bufnr })
-      map('n', '<C-t>', open_tab, opts(bufnr))
-      map('n', 'T', open_tab_silent, opts(bufnr))
-      map('n', 'CD', goto_buffer_cwd, opts(bufnr))
-      map('n', '<C-s>', api.node.open.horizontal, opts(bufnr))
+      map('n', '<C-t>', open_tab, opts(bufnr, 'open in new tab'))
+      map('n', 'T', open_tab_silent, opts(bufnr, 'open in new tab without switching tab'))
+      map('n', 'CD', goto_buffer_cwd, opts(bufnr, 'point to file explorer node of current window'))
+      map('n', '<C-s>', api.node.open.horizontal, opts(bufnr, 'open file horizontally (split window)'))
+      map('n', '?', api.tree.toggle_help, opts(bufnr, 'show help'))
     end,
 
     git = {
