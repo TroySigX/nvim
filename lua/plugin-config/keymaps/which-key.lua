@@ -12,7 +12,7 @@ function M.setup()
   -- load plugin keymaps
   require('plugin-config.explorer.fzf-lua').keymaps()
   require('plugin-config.workflow.knap').keymaps()
-  require('plugin-config.navigation.leap-nvim').keymaps()
+  require('plugin-config.navigation.flash-nvim').keymaps()
   require('plugin-config.lsp.lsp-setup').keymaps()
   require('plugin-config.lsp.nvim-lint').keymaps()
   require('plugin-config.lsp.luasnip').keymaps()
