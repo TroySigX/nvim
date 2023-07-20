@@ -11,4 +11,14 @@ function M.keymaps()
   }, { mode = { 'n', 'v' } })
 end
 
+function M.setup()
+  require('flash').setup({
+    modes = {
+      char = {
+        enabled = false,
+      }
+    }
+  })
+end
+
 return M

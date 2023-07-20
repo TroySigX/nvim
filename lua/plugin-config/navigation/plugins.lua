@@ -9,13 +9,7 @@ return {
     'folke/flash.nvim',
     event = 'VeryLazy',
     config = function()
-      require('flash').setup({
-        modes = {
-          char = {
-            enabled = false,
-          }
-        }
-      })
+      require(config_path('flash-nvim')).setup()
     end
   },
 
