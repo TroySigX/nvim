@@ -21,7 +21,7 @@ function M.setup()
   local mason_lspcofig = require('mason-lspconfig')
 
   mason_lspcofig.setup({
-    ensure_installed = { 'clangd', 'pyright', 'tsserver', 'lua_ls', 'texlab', 'rust_analyzer' },
+    ensure_installed = { 'clangd', 'pyright', 'tsserver', 'lua_ls' },
   })
 
   -- setup lsp
