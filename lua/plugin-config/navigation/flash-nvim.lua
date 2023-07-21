@@ -17,7 +17,10 @@ function M.setup()
       char = {
         enabled = false,
       }
-    }
+    },
+    jump = {
+      autojump = true,
+    },
   })
 end
 
