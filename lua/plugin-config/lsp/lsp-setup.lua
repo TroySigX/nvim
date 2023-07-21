@@ -18,7 +18,9 @@ function M.setup()
     }
   })
 
-  require('mason-lspconfig').setup({
+  local mason_lspcofig = require('mason-lspconfig')
+
+  mason_lspcofig.setup({
     ensure_installed = { 'clangd', 'pyright', 'tsserver', 'lua_ls', 'texlab', 'rust_analyzer' },
   })
 
@@ -27,7 +29,7 @@ function M.setup()
   capabilities.offsetEncoding = 'utf-8'
 
   local exclude_server = Set({ 'rust_analyzer' })
-  require('mason-lspconfig').setup_handlers({
+  mason_lspcofig.setup_handlers({
     function (server_name)
       if not exclude_server[server_name] then
         require('lspconfig')[server_name].setup {
