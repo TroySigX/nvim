@@ -6,4 +6,8 @@ function M.keymaps()
   }
 end
 
+function M.setup()
+  vim.g.undotree_SetFocusWhenToggle = 1
+end
+
 return M

@@ -76,6 +76,9 @@ return {
   {
     'mbbill/undotree',
     keys = require(config_path('undotree')).keymaps(),
+    config = function()
+      require(config_path('undotree')).setup()
+    end
   },
 
   {
