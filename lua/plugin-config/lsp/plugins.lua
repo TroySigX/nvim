@@ -52,6 +52,11 @@ return {
   },
 
   {
+    'CKolkey/ts-node-action',
+    lazy = true,
+  },
+
+  {
     'folke/trouble.nvim',
     keys = require(config_path('trouble')).keymaps(),
     dependencies = 'nvim-tree/nvim-web-devicons',
