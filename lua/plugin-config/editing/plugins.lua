@@ -22,9 +22,17 @@ return {
 
   {
     'HiPhish/nvim-ts-rainbow2',
-    config = function ()
+    config = function()
       require(config_path('ts-rainbow')).setup()
     end,
+  },
+
+  {
+    'mhartington/formatter.nvim',
+    keys = require(config_path('formatter-nvim')).keymaps(),
+    config = function()
+      require(config_path('formatter-nvim')).setup()
+    end
   },
 
   {

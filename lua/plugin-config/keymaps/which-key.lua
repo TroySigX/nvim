@@ -26,7 +26,6 @@ function M.setup()
   require('plugin-config.workflow.smart-splits').keymaps()
   require('plugin-config.workflow.todo-comments').keymaps()
   require('plugin-config.editing.treesj').keymaps()
-  require('plugin-config.lsp.null-ls').keymaps()
 
   local map = require('which-key').register
 

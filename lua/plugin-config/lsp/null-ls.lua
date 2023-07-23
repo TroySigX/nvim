@@ -26,7 +26,7 @@ function M.setup()
       formatting.clang_format,
       formatting.black,
     },
-})
+  })
 end
 
 return M

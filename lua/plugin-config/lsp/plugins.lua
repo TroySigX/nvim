@@ -44,17 +44,6 @@ return {
   },
 
   {
-    'jose-elias-alvarez/null-ls.nvim',
-    lazy = true,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    config = function()
-      require(config_path('null-ls')).setup()
-    end,
-  },
-
-  {
     'mfussenegger/nvim-lint',
     lazy = true,
     config = function()
