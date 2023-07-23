@@ -66,6 +66,7 @@ function M.keymaps()
   require('which-key').register({
     ['<F2>'] = {
       function()
+        vim.cmd.stopinsert()
         local api = require('nvim-tree.api')
         if api.tree.is_visible() then
           api.tree.close()
@@ -73,8 +74,6 @@ function M.keymaps()
           map_win_id()
           api.tree.open()
         end
-        -- vim.cmd.stopinsert()
-        -- api.tree.toggle()
       end,
       'Toggle Tree (file explorer)',
     },
