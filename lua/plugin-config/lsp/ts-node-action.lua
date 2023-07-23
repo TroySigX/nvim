@@ -6,8 +6,8 @@ function M.keymaps()
       function()
         require('ts-node-action').node_action()
       end,
-      'Treesitter Node Action',
-    }
+      'TS Node Action (toggle boolean, if/else <-> ternary, toggle operator)',
+    },
   }, { prefix = '<space>' })
 end
 
