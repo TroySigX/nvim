@@ -7,7 +7,7 @@ function M.setup()
     rainbow = {
       enable = true,
       query = {
-        'rainbow-parens'
+        'rainbow-parens',
       },
       extended_mode = true,
       strategy = rainbow.strategy.global,
@@ -20,7 +20,7 @@ function M.setup()
         'TSRainbowRed',
         'TSRainbowCyan',
       },
-    }
+    },
   })
 end
 

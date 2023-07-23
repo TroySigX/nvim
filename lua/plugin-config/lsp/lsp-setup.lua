@@ -2,7 +2,9 @@ local M = {}
 
 local function Set(table)
   local set = {}
-  for _, v in ipairs(table) do set[v] = true end
+  for _, v in ipairs(table) do
+    set[v] = true
+  end
   return set
 end
 
@@ -13,9 +15,9 @@ function M.setup()
       icons = {
         package_installed = '✓',
         package_pending = '➜',
-        package_uninstalled = '✗'
-      }
-    }
+        package_uninstalled = '✗',
+      },
+    },
   })
 
   local mason_lspcofig = require('mason-lspconfig')
@@ -30,11 +32,11 @@ function M.setup()
 
   local exclude_server = Set({ 'rust_analyzer' })
   mason_lspcofig.setup_handlers({
-    function (server_name)
+    function(server_name)
       if not exclude_server[server_name] then
-        require('lspconfig')[server_name].setup {
+        require('lspconfig')[server_name].setup({
           capabilities = capabilities,
-        }
+        })
       end
     end,
   })
@@ -50,8 +52,8 @@ function M.setup()
     },
 
     ui = {
-      border = 'rounded'
-    }
+      border = 'rounded',
+    },
   })
 end
 
@@ -69,12 +71,18 @@ function M.keymaps()
       },
     },
 
-    ['<C-k>'] = { function()
-      require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-    end, 'Go To Previous Error' },
-    ['<C-j>'] = { function()
-      require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })
-    end, 'Go To Next Error' },
+    ['<C-k>'] = {
+      function()
+        require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+      end,
+      'Go To Previous Error',
+    },
+    ['<C-j>'] = {
+      function()
+        require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })
+      end,
+      'Go To Next Error',
+    },
 
     ['<leader>e'] = { ':Lspsaga show_line_diagnostics<CR>', 'Show [E]rrors on line' },
   })

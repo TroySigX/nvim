@@ -9,14 +9,19 @@ function M.setup()
       kind = 'vsplit',
     },
     integrations = {
-      diffview = true
+      diffview = true,
     },
   })
 end
 
 function M.keymaps()
   require('which-key').register({
-    ['<F10>'] = { function() require('neogit').open() end, 'Open Neogit (manage git repo)' },
+    ['<F10>'] = {
+      function()
+        require('neogit').open()
+      end,
+      'Open Neogit (manage git repo)',
+    },
   }, { mode = { 'n', 'v', 'i' } })
 end
 

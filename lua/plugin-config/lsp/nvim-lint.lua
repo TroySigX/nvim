@@ -3,7 +3,12 @@ local M = {}
 function M.keymaps()
   require('which-key').register({
     l = {
-      l = { function() require('lint').try_lint() end, '[L]sp [L]int' },
+      l = {
+        function()
+          require('lint').try_lint()
+        end,
+        '[L]sp [L]int',
+      },
     },
   }, { prefix = '<space>', mode = { 'n', 'v' } })
 end

@@ -24,7 +24,7 @@ function M.setup()
         view = 'split',
         opts = { enter = true, format = 'details' },
         filter = {},
-        filter_opts  = {count = 2}
+        filter_opts = { count = 2 },
       },
       all = {
         view = 'split',
@@ -37,7 +37,12 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    ['<space>h'] = { function() require('noice').cmd('viewLast') end, 'Noice view last' }
+    ['<space>h'] = {
+      function()
+        require('noice').cmd('viewLast')
+      end,
+      'Noice view last',
+    },
   })
 end
 

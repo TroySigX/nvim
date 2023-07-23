@@ -10,7 +10,7 @@ return {
     event = 'VeryLazy',
     config = function()
       require(config_path('flash-nvim')).setup()
-    end
+    end,
   },
 
   {

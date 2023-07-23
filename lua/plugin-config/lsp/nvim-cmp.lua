@@ -15,10 +15,10 @@ function M.setup()
         maxwidth = 50,
         ellipsis_char = '...',
         symbol_map = { Copilot = '' },
-      })
+      }),
     },
     mapping = cmp.mapping.preset.insert({
-      ['<C-Space>'] = cmp.mapping.complete{ reason = cmp.ContextReason.Auto },
+      ['<C-Space>'] = cmp.mapping.complete({ reason = cmp.ContextReason.Auto }),
       ['<C-e>'] = cmp.mapping.abort(),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -60,12 +60,12 @@ function M.setup()
   cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
-    }
+      { name = 'buffer' },
+    },
   })
 
   local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-  cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done { map_char = { tex = '' } })
+  cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done({ map_char = { tex = '' } }))
 end
 
 return M

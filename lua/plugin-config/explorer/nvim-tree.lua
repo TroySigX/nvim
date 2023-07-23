@@ -64,17 +64,20 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    ['<F2>'] = { function()
-      local api = require('nvim-tree.api')
-      if api.tree.is_visible() then
-        api.tree.close()
-      else
-        map_win_id()
-        api.tree.open()
-      end
-      -- vim.cmd.stopinsert()
-      -- api.tree.toggle()
-    end, 'Toggle Tree (file explorer)' },
+    ['<F2>'] = {
+      function()
+        local api = require('nvim-tree.api')
+        if api.tree.is_visible() then
+          api.tree.close()
+        else
+          map_win_id()
+          api.tree.open()
+        end
+        -- vim.cmd.stopinsert()
+        -- api.tree.toggle()
+      end,
+      'Toggle Tree (file explorer)',
+    },
   }, { mode = { 'n', 'i', 'v' } })
 end
 

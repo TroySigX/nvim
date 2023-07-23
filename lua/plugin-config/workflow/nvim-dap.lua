@@ -16,11 +16,21 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    ['<leader>b'] = { function() require('dap').toggle_breakpoint() end, 'Toggle [B]reakpoint' },
+    ['<leader>b'] = {
+      function()
+        require('dap').toggle_breakpoint()
+      end,
+      'Toggle [B]reakpoint',
+    },
   })
 
   require('which-key').register({
-    ['<F8>'] = { function() require('dapui').toggle() end, 'Toggle DapUI (debugger)' },
+    ['<F8>'] = {
+      function()
+        require('dapui').toggle()
+      end,
+      'Toggle DapUI (debugger)',
+    },
   }, { mode = { 'n', 'i', 'v' } })
 end
 

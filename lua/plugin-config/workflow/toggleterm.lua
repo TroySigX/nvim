@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  require('toggleterm').setup{
+  require('toggleterm').setup({
     direction = 'float',
     float_opts = {
       border = 'curved',
@@ -10,7 +10,7 @@ function M.setup()
       winblend = 17,
     },
     persist_mode = false,
-  }
+  })
 end
 
 function M.keymaps()

@@ -1,11 +1,11 @@
 local path = require('lspconfig.util').path
 
 local function get_pipenv_dir()
-  return vim.fn.trim(vim.fn.system 'pipenv --venv')
+  return vim.fn.trim(vim.fn.system('pipenv --venv'))
 end
 
 local function get_poetry_dir()
-  return vim.fn.trim(vim.fn.system 'poetry env info -p')
+  return vim.fn.trim(vim.fn.system('poetry env info -p'))
 end
 
 local function get_python_dir()
@@ -22,7 +22,7 @@ local function get_python_dir()
   end
 
   -- Find and use virtualenv in workspace directory.
-  for _, pattern in ipairs { '*', '.*' } do
+  for _, pattern in ipairs({ '*', '.*' }) do
     local match = vim.fn.glob(path.join(workspace, pattern, 'pyvenv.cfg'))
     if match ~= '' then
       return path.dirname(match)
@@ -59,17 +59,19 @@ function M.setup()
   local venv_var = {}
   if _virtual_env ~= '' then
     venv_var.assign = {
-      VIRTUAL_ENV = _virtual_env
+      VIRTUAL_ENV = _virtual_env,
     }
     venv_var.prepend = {
-      PATH = py_bin_dir(_virtual_env)
+      PATH = py_bin_dir(_virtual_env),
     }
     if vim.env.PYTHONHOME then
       venv_var.assign.PYTHONHOME = vim.env.PYTHONHOME
     end
   end
 
-  vim.schedule(function() require('virtualenv-config.export').export(venv_var) end)
+  vim.schedule(function()
+    require('virtualenv-config.export').export(venv_var)
+  end)
 end
 
 return M

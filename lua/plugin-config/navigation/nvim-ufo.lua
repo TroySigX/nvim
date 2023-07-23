@@ -19,8 +19,8 @@ function M.setup()
 
   require('ufo').setup({
     provider_selector = function()
-      return {'treesitter', 'indent'}
-    end
+      return { 'treesitter', 'indent' }
+    end,
   })
 end
 

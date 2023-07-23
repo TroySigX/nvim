@@ -24,7 +24,7 @@ vim.g.tex_flavor = 'latex'
 
 -- auto indent on newline
 local function auto_indent(mode)
-  if #vim.fn.getline '.' == 0 then
+  if #vim.fn.getline('.') == 0 then
     return [["_cc]]
   else
     return mode
@@ -32,7 +32,9 @@ local function auto_indent(mode)
 end
 local insertModes = { 'i', 'a', 'A' }
 for _, mode in pairs(insertModes) do
-  vim.keymap.set('n', mode, function() return auto_indent(mode) end, { desc = 'auto indent on newline in insert mode', expr = true })
+  vim.keymap.set('n', mode, function()
+    return auto_indent(mode)
+  end, { desc = 'auto indent on newline in insert mode', expr = true })
 end
 
 -- set signs
@@ -50,5 +52,5 @@ end
 vim.diagnostic.config({
   virtual_text = false,
   severity_sort = true,
-  signs = { severity = { min = vim.diagnostic.severity.WARN } }
+  signs = { severity = { min = vim.diagnostic.severity.WARN } },
 })

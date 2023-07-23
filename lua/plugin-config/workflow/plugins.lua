@@ -34,7 +34,7 @@ return {
     'NeogitOrg/neogit',
     dependencies = {
       'sindrets/diffview.nvim',
-      'nvim-lua/plenary.nvim'
+      'nvim-lua/plenary.nvim',
     },
     lazy = true,
     config = function()
@@ -78,7 +78,7 @@ return {
     keys = require(config_path('undotree')).keymaps(),
     config = function()
       require(config_path('undotree')).setup()
-    end
+    end,
   },
 
   {

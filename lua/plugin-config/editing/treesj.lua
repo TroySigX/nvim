@@ -8,7 +8,12 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    gs = { function() require('treesj').toggle() end, 'Toggle multi/single line' }
+    gs = {
+      function()
+        require('treesj').toggle()
+      end,
+      'Toggle multi/single line',
+    },
   })
 end
 

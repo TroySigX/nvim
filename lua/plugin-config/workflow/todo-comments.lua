@@ -17,11 +17,13 @@ function M.keymaps()
   end
 
   require('which-key').register({
-    ['<F3>'] = { function()
-      vim.cmd.stopinsert()
-      toggle_quickfix_list()
-    end, 'Toggle TODO List'
-    }
+    ['<F3>'] = {
+      function()
+        vim.cmd.stopinsert()
+        toggle_quickfix_list()
+      end,
+      'Toggle TODO List',
+    },
   }, { mode = { 'n', 'i', 'v' } })
 end
 

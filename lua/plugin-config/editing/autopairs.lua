@@ -22,10 +22,7 @@ function M.setup()
   local npairs = require('nvim-autopairs')
   local cond = require('nvim-autopairs.conds')
   npairs.add_rules({
-    Rule('$', '$', { 'tex', 'latex' })
-    :with_move(cond.none())
-    :with_del(cond.done())
-    :with_cr(cond.done())
+    Rule('$', '$', { 'tex', 'latex' }):with_move(cond.none()):with_del(cond.done()):with_cr(cond.done()),
   })
 end
 

@@ -4,7 +4,12 @@ function M.keymaps()
   require('which-key').register({
     l = {
       name = 'lsp',
-      f = { function() vim.lsp.buf.format() end, '[L]sp [F]ormat Code' },
+      f = {
+        function()
+          vim.lsp.buf.format()
+        end,
+        '[L]sp [F]ormat Code',
+      },
     },
   }, { prefix = '<space>', mode = { 'n', 'v' } })
 

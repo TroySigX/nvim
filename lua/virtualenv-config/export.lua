@@ -4,12 +4,12 @@ local M = {}
 local path = require('lspconfig.util').path
 
 local function file_exists(file_path)
-  local f=io.open(file_path,'r')
-  if f~=nil then
-      f:close()
-      return true
+  local f = io.open(file_path, 'r')
+  if f ~= nil then
+    f:close()
+    return true
   else
-      return false
+    return false
   end
 end
 
@@ -32,7 +32,7 @@ function M.export(venv_var)
       if next(type_table) then
         for var, var_value in pairs(type_table) do
           file:write('vim.env.' .. var .. ' = ')
-          local value = '\'' .. var_value .. '\''
+          local value = "'" .. var_value .. "'"
           if var_type == 'assign' then
             file:write(value)
           elseif var_type == 'prepend' then

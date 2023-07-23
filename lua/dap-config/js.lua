@@ -8,12 +8,12 @@ function M.setup()
     host = 'localhost',
     port = '${port}',
     executable = {
-        command = vim.fn.exepath('js-debug-adapter'),
-        args = { '${port}' },
+      command = vim.fn.exepath('js-debug-adapter'),
+      args = { '${port}' },
     },
   }
 
-  for _, language in pairs { 'typescript', 'javascript' } do
+  for _, language in pairs({ 'typescript', 'javascript' }) do
     dap.configurations[language] = {
       {
         type = 'pwa-node',

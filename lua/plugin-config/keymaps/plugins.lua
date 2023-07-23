@@ -12,6 +12,4 @@ return {
       require(config_path('which-key')).setup()
     end,
   },
-
-
 }

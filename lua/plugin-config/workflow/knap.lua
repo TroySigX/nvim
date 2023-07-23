@@ -19,7 +19,12 @@ end
 
 function M.keymaps()
   require('which-key').register({
-    ['<space>pr'] = { function() require('knap').toggle_autopreviewing() end, 'Toggle [Pr]eview' },
+    ['<space>pr'] = {
+      function()
+        require('knap').toggle_autopreviewing()
+      end,
+      'Toggle [Pr]eview',
+    },
   })
 end
 

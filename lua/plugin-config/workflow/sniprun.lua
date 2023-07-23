@@ -7,7 +7,7 @@ function M.setup()
       'VirtualTextOk',
       'TempFloatingWindow',
       'NvimNotify',
-    }
+    },
   })
 end
 

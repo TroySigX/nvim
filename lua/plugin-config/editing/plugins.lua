@@ -17,7 +17,7 @@ return {
     'lukas-reineke/indent-blankline.nvim',
     config = function()
       require(config_path('indent')).setup()
-    end
+    end,
   },
 
   {
@@ -32,7 +32,7 @@ return {
     keys = require(config_path('formatter-nvim')).keymaps(),
     config = function()
       require(config_path('formatter-nvim')).setup()
-    end
+    end,
   },
 
   {
@@ -52,7 +52,7 @@ return {
       'RRethy/nvim-treesitter-endwise',
       'windwp/nvim-ts-autotag',
     },
-    config= function()
+    config = function()
       require(config_path('autopairs')).setup()
     end,
   },
@@ -78,7 +78,7 @@ return {
     lazy = true,
     config = function()
       require(config_path('treesj')).setup()
-    end
+    end,
   },
 
   {
