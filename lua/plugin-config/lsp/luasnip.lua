@@ -1,6 +1,10 @@
 local M = {}
 
 function M.setup()
+  local luasnip = require('luasnip')
+  luasnip.filetype_extend('javascript', { 'javascriptreact', 'html' })
+  luasnip.filetype_extend('typescript', { 'javascript' })
+
   require('luasnip.loaders.from_snipmate').lazy_load({ paths = { '~/.config/nvim/snippets' } })
 end
 
