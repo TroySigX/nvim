@@ -22,10 +22,10 @@ function M.setup()
         require('formatter.filetypes.python').black,
       },
       cpp = {
-        require('formatter.filetypes.python').clangformat,
+        require('formatter.filetypes.c').clangformat,
       },
       c = {
-        require('formatter.filetypes.python').clangformat,
+        require('formatter.filetypes.c').clangformat,
       },
     },
   })
