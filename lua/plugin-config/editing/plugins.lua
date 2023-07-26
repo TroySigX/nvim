@@ -30,7 +30,7 @@ return {
   {
     'mhartington/formatter.nvim',
     keys = require(config_path('formatter-nvim')).keymaps(),
-    event = 'BufWritePost',
+    event = 'BufWritePre',
     config = function()
       require(config_path('formatter-nvim')).setup()
     end,
