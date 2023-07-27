@@ -17,6 +17,3 @@ for package in "${packages[@]}"; do
         sudo pacman -S --noconfirm "$package"
     fi
 done
-
-# Symbolic link for editorconfig
-ln -s $HOME"/.config/nvim/.editorconfig" "/mnt/HDD/.editorconfig"
