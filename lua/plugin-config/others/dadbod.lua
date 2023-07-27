@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   local path = require('lspconfig.util').path
-  vim.g.db_ui_save_location = path.join(vim.fn.stdpath('config'), 'db_ui')
+  vim.g.db_ui_save_location = path.join(vim.fn.stdpath('data'), 'db_ui')
 end
 
 function M.keymaps()
