@@ -19,7 +19,6 @@ return {
       'zbirenbaum/copilot-cmp',
       'onsails/lspkind.nvim',
       'hrsh7th/cmp-emoji',
-      'hrsh7th/cmp-nvim-lua',
     },
     config = function()
       require(config_path('nvim-cmp')).setup()
@@ -30,6 +29,7 @@ return {
   {
     'nvimdev/lspsaga.nvim',
     dependencies = {
+      'folke/neodev.nvim',
       'neovim/nvim-lspconfig',
       'nvim-tree/nvim-web-devicons',
       'nvim-treesitter/nvim-treesitter',
@@ -38,6 +38,8 @@ return {
       'simrat39/rust-tools.nvim',
     },
     config = function()
+      -- neodev has to init before lspconfig
+      require(config_path('neodev')).setup()
       require(config_path('lsp-setup')).setup()
       require(config_path('rust-tools')).setup()
     end,
