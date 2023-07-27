@@ -23,7 +23,7 @@ local function tmp_file()
   }
 end
 
-local function init_editorconfig()
+local function setup()
   local tmp = tmp_file()
   tmp:create()
 
@@ -46,4 +46,4 @@ local function init_editorconfig()
   tmp:remove()
 end
 
-vim.schedule(init_editorconfig)
+vim.schedule(setup)
