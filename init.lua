@@ -45,10 +45,13 @@ require('lazy').setup({
         'rrhelper',
         'vimball',
         'vimballPlugin',
-      }
+      },
     },
   },
 })
 
 -- lang venv
 require('virtualenv-config')
+
+-- editorconfig
+require('editor-config')
