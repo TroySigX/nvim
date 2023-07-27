@@ -46,7 +46,7 @@ local function setup_formatter(formatter)
   tmp:remove()
 end
 
-local function config_filetype_venv(filetype, formatter_type_name)
+local function config_filetype_formatter(filetype, formatter_type_name)
   local function create_autocmd(ft)
     vim.api.nvim_create_autocmd('FileType', {
       pattern = { ft },
@@ -68,6 +68,6 @@ local function config_filetype_venv(filetype, formatter_type_name)
 end
 
 -- setup formatters
-config_filetype_venv({ 'cpp', 'c' }, 'c')
-config_filetype_venv({ 'javascript', 'typescript' }, 'js')
-config_filetype_venv('lua', 'lua')
+config_filetype_formatter({ 'cpp', 'c' }, 'c')
+config_filetype_formatter({ 'javascript', 'typescript' }, 'js')
+config_filetype_formatter('lua', 'lua')
