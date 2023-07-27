@@ -34,7 +34,6 @@ function M.setup()
   vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = '*',
     callback = function()
-      vim.notify('Formatting file...')
       vim.cmd([[FormatWriteLock]])
     end,
   })
