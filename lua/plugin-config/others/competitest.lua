@@ -14,10 +14,20 @@ function M.keymaps()
       silent = true,
       desc = 'Competi[T]est [D]ownload [T]estcases',
     },
-    { '<space>tdp', '<cmd>CompetiTestReceive problem<CR>', silent = true, desc = 'Competi[T]est [D]ownload [P]roblem' },
-    { '<space>tdc', '<cmd>CompetiTestReceive contest<CR>', silent = true, desc = 'Competi[T]est [D]ownload [C]ontest' },
-    { '<space>ta', vim.cmd.CompetiTestAdd, silent = true, desc = 'Competi[T]est [A]dd' },
-    { '<space>te', '<cmd>CompetiTestEdit ', desc = 'Competi[T]est [E]dit' },
+    {
+      '<space>tdp',
+      '<cmd>CompetiTest receive problem<CR>',
+      silent = true,
+      desc = 'Competi[T]est [D]ownload [P]roblem',
+    },
+    {
+      '<space>tdc',
+      '<cmd>CompetiTest receive contest<CR>',
+      silent = true,
+      desc = 'Competi[T]est [D]ownload [C]ontest',
+    },
+    { '<space>ta', '<cmd>CompetiTest add_testcase<CR>', silent = true, desc = 'Competi[T]est [A]dd' },
+    { '<space>te', '<cmd>CompetiTest edit_testcase ', desc = 'Competi[T]est [E]dit' },
   }
 end
 
