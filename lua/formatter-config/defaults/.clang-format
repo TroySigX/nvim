@@ -1,0 +1,11 @@
+BasedOnStyle: Google
+ColumnLimit: 120
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+IndentCaseLabels: false
+AlignTrailingComments: true
+SpacesBeforeTrailingComments: 2
+BreakBeforeBraces: false
+SortIncludes: true
+SpaceBeforeParens: ControlStatementsExceptControlMacros

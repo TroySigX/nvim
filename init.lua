@@ -55,3 +55,6 @@ require('virtualenv-config')
 
 -- editorconfig
 require('editor-config')
+
+-- formatting
+require('formatter-config')
