@@ -70,3 +70,4 @@ end
 -- setup formatters
 config_filetype_venv({ 'cpp', 'c' }, 'c')
 config_filetype_venv({ 'javascript', 'typescript' }, 'js')
+config_filetype_venv('lua', 'lua')
