@@ -25,7 +25,10 @@ end
 
 local function setup()
   local tmp = tmp_file()
-  tmp:create()
+
+  if not pcall(tmp.create) then
+    return
+  end
 
   local config_exists = false
 
