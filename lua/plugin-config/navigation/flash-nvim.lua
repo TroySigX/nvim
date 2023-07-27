@@ -5,7 +5,7 @@ function M.keymaps()
     t = {
       function()
         require('flash').jump({
-          search = { forward = true, wrap = false, multi_window = false },
+          search = { multi_window = false },
           jump = {
             autojump = true,
           },
