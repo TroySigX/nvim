@@ -20,10 +20,8 @@ local function tmp_file(formatter_name)
   }
 end
 
-local function setup_formatter(formatter_name)
-  local formatter_path = path.join(vim.fn.getcwd(), formatter_name)
-
-  local tmp = tmp_file(formatter_name)
+local function setup_formatter(formatter)
+  local tmp = tmp_file(formatter.name)
 
   if not pcall(tmp.create) then
     return
@@ -32,17 +30,17 @@ local function setup_formatter(formatter_name)
   local config_exists = false
 
   path.traverse_parents(tmp.path, function(dir)
-    if path.exists(path.join(dir, formatter_name)) then
+    if path.exists(path.join(dir, formatter.name)) then
       config_exists = true
       return true
     end
   end)
 
   if not config_exists then
-    local config_file = path.join(vim.fn.stdpath('config'), 'lua', 'formatter-config', 'defaults', formatter_name)
+    local destination_path = path.join(vim.fn.getcwd(), formatter.name)
 
     -- create symlink
-    os.execute('ln -s ' .. config_file .. ' ' .. formatter_path)
+    os.execute('ln -s ' .. formatter.path .. ' ' .. destination_path)
   end
 
   tmp:remove()
