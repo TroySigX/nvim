@@ -42,7 +42,7 @@ local function setup()
   if not config_exists then
     local config_file = path.join(vim.fn.stdpath('config'), filename)
 
-    -- create symlink for editconfig
+    -- clone config file
     os.execute('cp ' .. config_file .. ' ' .. filepath)
   end
 
