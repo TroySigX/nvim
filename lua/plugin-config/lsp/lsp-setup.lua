@@ -30,7 +30,7 @@ function M.setup()
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   capabilities.offsetEncoding = 'utf-8'
 
-  local exclude_server = Set({ 'rust_analyzer' })
+  local exclude_server = Set({ 'rust_analyzer', 'clangd' })
   mason_lspcofig.setup_handlers({
     function(server_name)
       if not exclude_server[server_name] then

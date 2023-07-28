@@ -30,6 +30,7 @@ return {
     'nvimdev/lspsaga.nvim',
     dependencies = {
       'folke/neodev.nvim',
+      'p00f/clangd_extensions.nvim',
       'neovim/nvim-lspconfig',
       'nvim-tree/nvim-web-devicons',
       'nvim-treesitter/nvim-treesitter',
@@ -40,6 +41,7 @@ return {
     config = function()
       -- neodev has to init before lspconfig
       require(config_path('neodev')).setup()
+      require(config_path('clangd-extension')).setup()
       require(config_path('lsp-setup')).setup()
       require(config_path('rust-tools')).setup()
     end,
