@@ -39,8 +39,8 @@ local function setup_formatter(formatter)
   if not config_exists then
     local destination_path = path.join(vim.fn.getcwd(), formatter.name)
 
-    -- create symlink
-    os.execute('ln -s ' .. formatter.path .. ' ' .. destination_path)
+    -- clone config file
+    os.execute('cp ' .. formatter.path .. ' ' .. destination_path)
   end
 
   tmp:remove()
