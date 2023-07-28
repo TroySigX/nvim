@@ -43,7 +43,7 @@ local function setup()
     local config_file = path.join(vim.fn.stdpath('config'), filename)
 
     -- create symlink for editconfig
-    os.execute('ln -s ' .. config_file .. ' ' .. filepath)
+    os.execute('cp ' .. config_file .. ' ' .. filepath)
   end
 
   tmp:remove()
