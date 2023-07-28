@@ -42,9 +42,7 @@ return {
     config = function()
       -- neodev has to init before lspconfig
       require(config_path('neodev')).setup()
-      require(config_path('clangd-extension')).setup()
       require(config_path('lsp-setup')).setup()
-      require(config_path('rust-tools')).setup()
     end,
   },
 

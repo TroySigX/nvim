@@ -1,12 +1,9 @@
 local M = {}
 
-local function Set(table)
-  local set = {}
-  for _, v in ipairs(table) do
-    set[v] = true
-  end
-  return set
-end
+local lang_based_plugins = {
+  clangd = 'clangd-extension',
+  rust_analyzer = 'rust-tools',
+}
 
 function M.setup()
   -- setup mason
@@ -30,13 +27,14 @@ function M.setup()
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   capabilities.offsetEncoding = 'utf-8'
 
-  local exclude_server = Set({ 'rust_analyzer', 'clangd' })
   mason_lspcofig.setup_handlers({
     function(server_name)
-      if not exclude_server[server_name] then
+      if not lang_based_plugins[server_name] then
         require('lspconfig')[server_name].setup({
           capabilities = capabilities,
         })
+      else
+        require('plugin-config.lsp.' .. lang_based_plugins[server_name]).setup(capabilities)
       end
     end,
   })
