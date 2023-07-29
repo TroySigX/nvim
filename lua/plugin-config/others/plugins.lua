@@ -11,17 +11,6 @@ return {
   },
 
   {
-    'tpope/vim-dadbod',
-    keys = require(config_path('dadbod')).keymaps(),
-    dependencies = {
-      'kristijanhusak/vim-dadbod-ui',
-    },
-    config = function()
-      require(config_path('dadbod')).setup()
-    end,
-  },
-
-  {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     keys = require(config_path('competitest')).keymaps(),
