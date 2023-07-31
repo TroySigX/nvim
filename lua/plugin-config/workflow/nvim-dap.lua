@@ -109,7 +109,7 @@ local function ui_automation()
   end
 end
 
-function M.setup()
+local function debugger_setup()
   require('mason-nvim-dap').setup({
     ensure_installed = { 'codelldb', 'debugpy', 'js' },
     handlers = {
@@ -120,7 +120,54 @@ function M.setup()
     },
   })
   require('dap-config.js').setup()
-  require('dapui').setup()
+end
+
+local function dapui_setup()
+  require('dapui').setup({
+    layouts = {
+      {
+        elements = {
+          {
+            id = 'scopes',
+            size = 0.25,
+          },
+          {
+            id = 'watches',
+            size = 0.25,
+          },
+          {
+            id = 'breakpoints',
+            size = 0.25,
+          },
+          {
+            id = 'stacks',
+            size = 0.25,
+          },
+        },
+        position = 'left',
+        size = 40,
+      },
+      {
+        elements = {
+          {
+            id = 'repl',
+            size = 0.5,
+          },
+          {
+            id = 'console',
+            size = 0.5,
+          },
+        },
+        position = 'bottom',
+        size = 10,
+      },
+    },
+  })
+end
+
+function M.setup()
+  debugger_setup()
+  dapui_setup()
   on_attach_keymaps()
   ui_automation()
   sign_define()
