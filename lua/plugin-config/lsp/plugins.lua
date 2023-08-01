@@ -20,6 +20,10 @@ return {
       'zbirenbaum/copilot-cmp',
       'onsails/lspkind.nvim',
       'hrsh7th/cmp-emoji',
+      {
+        'jackieaskins/cmp-emmet',
+        build = 'npm run release',
+      },
     },
     config = function()
       require(config_path('nvim-cmp')).setup()
