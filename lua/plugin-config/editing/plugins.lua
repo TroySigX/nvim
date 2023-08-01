@@ -84,7 +84,7 @@ return {
 
   {
     'AckslD/muren.nvim',
-    lazy = true,
+    keys = require(config_path('muren')).keymaps(),
     config = function()
       require(config_path('muren')).setup()
     end,

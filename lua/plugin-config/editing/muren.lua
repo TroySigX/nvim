@@ -5,14 +5,9 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<C-s>'] = {
-      function()
-        require('muren.api').toggle_ui()
-      end,
-      'Toggle [S]ubstitute',
-    },
-  }, { mode = { 'n', 'v' } })
+  return {
+    { '<C-s>', ':MurenToggle<CR>', silent = true, desc = 'Toggle [S]ubstitute', mode = { 'n', 'v' } },
+  }
 end
 
 return M

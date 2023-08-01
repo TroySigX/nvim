@@ -10,7 +10,6 @@ function M.setup()
   })
 
   -- load plugin keymaps
-  require('plugin-config.editing.muren').keymaps()
   require('plugin-config.editing.neogen').keymaps()
   require('plugin-config.editing.treesj').keymaps()
   require('plugin-config.explorer.nvim-tree').keymaps()
