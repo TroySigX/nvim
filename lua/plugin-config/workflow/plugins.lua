@@ -16,7 +16,6 @@ return {
   {
     'folke/todo-comments.nvim',
     event = 'VeryLazy',
-    dependencies = 'nvim-lua/plenary.nvim',
     config = function()
       require(config_path('todo-comments')).setup()
     end,
@@ -34,7 +33,6 @@ return {
     'NeogitOrg/neogit',
     dependencies = {
       'sindrets/diffview.nvim',
-      'nvim-lua/plenary.nvim',
     },
     lazy = true,
     config = function()
@@ -45,7 +43,6 @@ return {
   {
     'nvim-neorg/neorg',
     build = ':Neorg sync-parsers',
-    dependencies = { 'nvim-lua/plenary.nvim' },
     keys = require(config_path('neorg')).keymaps(),
     config = function()
       require(config_path('neorg')).setup()
@@ -95,7 +92,6 @@ return {
     dependencies = {
       'haydenmeade/neotest-jest',
       'nvim-treesitter/nvim-treesitter',
-      'nvim-lua/plenary.nvim',
     },
     lazy = true,
     config = function()
