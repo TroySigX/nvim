@@ -19,6 +19,7 @@ vim.loader.enable()
 
 require('lazy').setup({
   spec = {
+    { import = 'plugin-config.utility.plugins' },
     { import = 'plugin-config.lsp.plugins' },
     { import = 'plugin-config.editing.plugins' },
     { import = 'plugin-config.explorer.plugins' },
