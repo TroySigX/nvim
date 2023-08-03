@@ -19,10 +19,6 @@ opt.list = true
 opt.cursorline = true
 opt.exrc = true
 
--- persistent undo
-opt.undodir = vim.fn.stdpath('data') .. '/.undodir'
-opt.undofile = true
-
 -- default filetype for latex is tex
 vim.g.tex_flavor = 'latex'
 
