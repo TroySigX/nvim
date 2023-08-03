@@ -24,17 +24,22 @@ function M.setup()
   })
 
   -- setup lsp
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  capabilities.offsetEncoding = 'utf-8'
+  local default_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
   mason_lspcofig.setup_handlers({
     function(server_name)
+      local server_capabilities = default_capabilities
+
       if not lang_based_plugins[server_name] then
+        if server_name == 'clangd' then
+          server_capabilities.offsetEncoding = 'utf-8'
+        end
+
         require('lspconfig')[server_name].setup({
-          capabilities = capabilities,
+          capabilities = server_capabilities,
         })
       else
-        require('plugin-config.lsp.' .. lang_based_plugins[server_name]).setup(capabilities)
+        require('plugin-config.lsp.' .. lang_based_plugins[server_name]).setup(server_capabilities)
       end
     end,
   })
