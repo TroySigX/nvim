@@ -13,10 +13,29 @@ function M.setup()
   })
 end
 
+local function new_term()
+  require('toggleterm.terminal').Terminal:new():toggle()
+end
+
 function M.keymaps()
   return {
-    { '<F9>', vim.cmd.ToggleTerm, silent = true, desc = 'Toggle Terminal', mode = { 'n', 'i', 'v', 't' } },
-    { '<F21>', vim.cmd.TermSelect, silent = true, desc = 'Select Terminal', mode = { 'n', 'i', 'v', 't' } },
+    {
+      '<F9>',
+      function()
+        vim.cmd.ToggleTerm()
+      end,
+      silent = true,
+      desc = 'Toggle Terminal',
+      mode = { 'n', 'i', 'v', 't' },
+    },
+    { '<F57>', new_term, silent = true, desc = 'Create New Terminal (<Alt-F9>)', mode = { 'n', 'i', 'v', 't' } },
+    {
+      '<F21>',
+      vim.cmd.TermSelect(),
+      silent = true,
+      desc = 'Select Terminal (<Shift-F9>)',
+      mode = { 'n', 'i', 'v', 't' },
+    },
   }
 end
 
