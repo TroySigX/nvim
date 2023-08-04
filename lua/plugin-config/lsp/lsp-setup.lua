@@ -30,11 +30,11 @@ function M.setup()
     function(server_name)
       local server_capabilities = default_capabilities
 
-      if not lang_based_plugins[server_name] then
-        if server_name == 'clangd' then
-          server_capabilities.offsetEncoding = 'utf-8'
-        end
+      if server_name == 'clangd' then
+        server_capabilities.offsetEncoding = 'utf-8'
+      end
 
+      if not lang_based_plugins[server_name] then
         require('lspconfig')[server_name].setup({
           capabilities = server_capabilities,
         })
