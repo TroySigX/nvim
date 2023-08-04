@@ -8,9 +8,7 @@ function M.keymaps()
   return {
     {
       '<F1>',
-      function()
-        vim.cmd.TroubleToggle()
-      end,
+      vim.cmd.TroubleToggle,
       silent = true,
       desc = 'Toggle Trouble(diagnostic) List',
       mode = { 'n', 'i', 'v' },
