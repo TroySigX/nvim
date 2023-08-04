@@ -2,7 +2,15 @@ local M = {}
 
 function M.keymaps()
   return {
-    { '<space>lf', vim.cmd.Format, silent = true, desc = '[L]sp [F]ormat Code', mode = { 'n', 'v' } },
+    {
+      '<space>lf',
+      function()
+        vim.cmd.Format()
+      end,
+      silent = true,
+      desc = '[L]sp [F]ormat Code',
+      mode = { 'n', 'v' },
+    },
   }
 end
 
