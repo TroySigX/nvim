@@ -16,6 +16,7 @@ end
 function M.keymaps()
   return {
     { '<F9>', vim.cmd.ToggleTerm, silent = true, desc = 'Toggle Terminal', mode = { 'n', 'i', 'v', 't' } },
+    { '<F21>', vim.cmd.TermSelect, silent = true, desc = 'Select Terminal', mode = { 'n', 'i', 'v', 't' } },
   }
 end
 
