@@ -5,7 +5,8 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
+  local map = require('which-key').register
+  map({
     gr = {
       function()
         require('fzf-lua').live_grep()
@@ -26,7 +27,7 @@ function M.keymaps()
     },
   }, { prefix = '<space>' })
 
-  require('which-key').register({
+  map({
     sw = {
       function()
         require('fzf-lua').grep_visual()
@@ -35,7 +36,7 @@ function M.keymaps()
     },
   }, { prefix = '<space>', mode = 'v' })
 
-  require('which-key').register({
+  map({
     ['<F6>'] = {
       function()
         require('fzf-lua').files()
@@ -49,6 +50,15 @@ function M.keymaps()
       'Old files',
     },
   }, { mode = { 'n', 'v', 'i' } })
+
+  map({
+    ['?'] = {
+      function()
+        require('fzf-lua').grep_curbuf()
+      end,
+      'Grep current buffer',
+    },
+  }, { mode = { 'n', 'v' } })
 end
 
 return M
