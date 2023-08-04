@@ -21,9 +21,7 @@ function M.keymaps()
   return {
     {
       '<F9>',
-      function()
-        vim.cmd.ToggleTerm()
-      end,
+      vim.cmd.ToggleTerm,
       silent = true,
       desc = 'Toggle Terminal',
       mode = { 'n', 'i', 'v', 't' },
@@ -31,7 +29,7 @@ function M.keymaps()
     { '<F57>', new_term, silent = true, desc = 'Create New Terminal (<Alt-F9>)', mode = { 'n', 'i', 'v', 't' } },
     {
       '<F21>',
-      vim.cmd.TermSelect(),
+      vim.cmd.TermSelect,
       silent = true,
       desc = 'Select Terminal (<Shift-F9>)',
       mode = { 'n', 'i', 'v', 't' },
