@@ -91,6 +91,14 @@ return {
   },
 
   {
+    'cshuaimin/ssr.nvim',
+    lazy = true,
+    config = function()
+      require(config_path('ssr')).setup()
+    end,
+  },
+
+  {
     'kylechui/nvim-surround',
     event = 'VeryLazy',
     config = function()

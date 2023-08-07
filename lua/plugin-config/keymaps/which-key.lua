@@ -12,6 +12,7 @@ function M.setup()
   -- load plugin keymaps
   require('plugin-config.editing.neogen').keymaps()
   require('plugin-config.editing.treesj').keymaps()
+  require('plugin-config.editing.ssr').keymaps()
   require('plugin-config.explorer.nvim-tree').keymaps()
   require('plugin-config.explorer.fzf-lua').keymaps()
   require('plugin-config.gui.noice').keymaps()
