@@ -35,7 +35,6 @@ return {
     'nvimdev/lspsaga.nvim',
     dependencies = {
       'folke/neodev.nvim',
-      'p00f/clangd_extensions.nvim',
       'neovim/nvim-lspconfig',
       'nvim-tree/nvim-web-devicons',
       'nvim-treesitter/nvim-treesitter',

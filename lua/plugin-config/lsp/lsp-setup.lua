@@ -1,7 +1,6 @@
 local M = {}
 
 local lang_based_plugins = {
-  clangd = 'clangd-extension',
   rust_analyzer = 'rust-tools',
 }
 
