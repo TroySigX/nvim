@@ -6,6 +6,10 @@ function M.setup()
 
     ensure_installed = { 'markdown', 'markdown_inline' },
 
+    indent = {
+      enable = true,
+    },
+
     highlight = {
       enable = true,
 
