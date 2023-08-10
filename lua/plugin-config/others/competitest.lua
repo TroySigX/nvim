@@ -1,7 +1,9 @@
 local M = {}
 
 function M.setup()
-  require('competitest').setup()
+  require('competitest').setup({
+    testcases_directory = './tests',
+  })
 end
 
 function M.keymaps()
