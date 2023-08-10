@@ -5,6 +5,11 @@ function M.setup()
 end
 
 function M.keymaps()
+  require('which-key').register({
+    ['<space>td'] = {
+      name = 'CompetiTest Download',
+    },
+  })
   return {
     { '<space>tr', '<cmd>CompetiTest run<CR>', silent = true, desc = 'Competi[T]est [R]un' },
     { '<space>to', '<cmd>CompetiTest show_ui<CR>', silent = true, desc = 'Competi[T]est [O]pen' },
