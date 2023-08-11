@@ -2,6 +2,7 @@ local M = {}
 
 local lang_based_plugins = {
   rust_analyzer = 'rust-tools',
+  tsserver = 'typescript-tools',
 }
 
 function M.setup()
