@@ -5,7 +5,7 @@
 <a href="https://dotfyle.com/TroySigX/nvim"><img src="https://dotfyle.com/TroySigX/nvim/badges/plugin-manager?style=flat" /></a>
 
 
-## Install Instructions
+## Installation
 
  > Install requires Neovim 0.9+. Always review the code before installing a configuration.
 
