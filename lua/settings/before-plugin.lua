@@ -19,8 +19,8 @@ opt.list = true
 opt.cursorline = true
 opt.exrc = true
 
-vim.g.mapleader = '\\'
-vim.g.maplocalleader = '\\'
+vim.g.mapleader = ';'
+vim.g.maplocalleader = ';'
 
 -- default filetype for latex is tex
 vim.g.tex_flavor = 'latex'
