@@ -6,28 +6,33 @@ function M.keymaps()
   }
 end
 
+local formatters_for_filetype = {
+  lua = 'stylua',
+  typescript = 'prettierd',
+  javascript = 'prettierd',
+  python = 'black',
+  cpp = 'clangformat',
+  c = 'clangformat',
+  tex = 'latexindent',
+}
+
+local function available_formatters()
+  local filetype_formatters = {}
+
+  for ft, fmt in pairs(formatters_for_filetype) do
+    if require('mason-registry').is_installed(fmt) then
+      filetype_formatters[ft] = {
+        require('formatter.filetypes.' .. ft)[fmt],
+      }
+    end
+  end
+
+  return filetype_formatters
+end
+
 function M.setup()
   require('formatter').setup({
-    filetype = {
-      lua = {
-        require('formatter.filetypes.lua').stylua,
-      },
-      typescript = {
-        require('formatter.filetypes.typescript').prettierd,
-      },
-      javascript = {
-        require('formatter.filetypes.javascript').prettierd,
-      },
-      python = {
-        require('formatter.filetypes.python').black,
-      },
-      cpp = {
-        require('formatter.filetypes.c').clangformat,
-      },
-      c = {
-        require('formatter.filetypes.c').clangformat,
-      },
-    },
+    filetype = available_formatters(),
   })
 
   -- auto format on save
