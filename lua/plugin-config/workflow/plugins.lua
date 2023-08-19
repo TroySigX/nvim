@@ -80,7 +80,7 @@ return {
 
   {
     'tzachar/highlight-undo.nvim',
-    keys = { { 'u', '<C-r>' } },
+    keys = { 'u', '<C-r>' },
     config = function()
       require(config_path('highlight-undo')).setup()
     end,
