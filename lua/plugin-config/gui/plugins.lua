@@ -46,7 +46,7 @@ return {
   },
 
   {
-    'norcalli/nvim-colorizer.lua',
+    'NvChad/nvim-colorizer.lua',
     keys = require(config_path('nvim-colorizer')).keymaps(),
     config = function()
       require(config_path('nvim-colorizer')).setup()
