@@ -69,6 +69,8 @@ function M.setup()
   map({
     q = { ':q<CR>', 'quit' },
     Q = { ':qa<CR>', 'quit all' },
+    x = { ':x<CR>', 'save and quit' },
+    X = { ':xa<CR>', 'save and quit all' },
   }, { prefix = '<leader>' })
 end
 
