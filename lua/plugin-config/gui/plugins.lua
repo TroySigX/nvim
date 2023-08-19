@@ -47,7 +47,6 @@ return {
 
   {
     'NvChad/nvim-colorizer.lua',
-    event = 'VeryLazy',
     keys = require(config_path('nvim-colorizer')).keymaps(),
     config = function()
       require(config_path('nvim-colorizer')).setup()
