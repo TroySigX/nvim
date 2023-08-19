@@ -15,6 +15,7 @@ return {
 
   {
     'lukas-reineke/indent-blankline.nvim',
+    event = 'VeryLazy',
     config = function()
       require(config_path('indent')).setup()
     end,
@@ -22,6 +23,7 @@ return {
 
   {
     'HiPhish/nvim-ts-rainbow2',
+    event = 'VeryLazy',
     config = function()
       require(config_path('ts-rainbow')).setup()
     end,

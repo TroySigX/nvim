@@ -47,6 +47,7 @@ return {
 
   {
     'NvChad/nvim-colorizer.lua',
+    event = 'VeryLazy',
     keys = require(config_path('nvim-colorizer')).keymaps(),
     config = function()
       require(config_path('nvim-colorizer')).setup()
@@ -55,6 +56,7 @@ return {
 
   {
     'stevearc/dressing.nvim',
+    event = 'VeryLazy',
     config = function()
       require(config_path('dressing')).setup()
     end,
@@ -62,6 +64,7 @@ return {
 
   {
     'kevinhwang91/nvim-bqf',
+    event = 'VeryLazy',
     config = function()
       require(config_path('nvim-bqf')).setup()
     end,
