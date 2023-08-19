@@ -64,6 +64,12 @@ function M.setup()
     ['<A-H>'] = { ':tabm -1<CR>', 'move tab to the left' },
     ['<A-L>'] = { ':tabm +1<CR>', 'move tab to the right' },
   })
+
+  -- quit Neovim
+  map({
+    q = { ':q<CR>', 'quit' },
+    Q = { ':qa<CR>', 'quit all' },
+  }, { prefix = '<leader>' })
 end
 
 return M
