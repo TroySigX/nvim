@@ -22,7 +22,7 @@ local function available_formatters()
   for ft, fmt in pairs(formatters_for_filetype) do
     if require('mason-registry').is_installed(fmt) then
       filetype_formatters[ft] = {
-        require('formatter.filetypes.' .. ft)[fmt],
+        require('formatter.filetypes.' .. (ft == 'tex' and 'la' or '') .. ft)[fmt],
       }
     end
   end
