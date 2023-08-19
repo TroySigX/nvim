@@ -7,6 +7,16 @@ The following package types should be installed via `Mason`:
 - Formatter
 - Debugger
 
+## Available languages
+- [C/C++](#cc)
+- [Python](#python)
+- [JavaScript/TypeScript](#javascripttypescript)
+- [Rust](#rust)
+- [Lua](#lua)
+- [Latex](#latex)
+- [Markdown](#markdown)
+- [Json](#json)
+
 ## C/C++
 - LSP: `clangd`
 - Formatter: `clang-format`
