@@ -59,4 +59,11 @@ return {
       require(config_path('dressing')).setup()
     end,
   },
+
+  {
+    'kevinhwang91/nvim-bqf',
+    config = function()
+      require(config_path('nvim-bqf')).setup()
+    end,
+  },
 }
