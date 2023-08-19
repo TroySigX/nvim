@@ -46,6 +46,14 @@ return {
   },
 
   {
+    'norcalli/nvim-colorizer.lua',
+    keys = require(config_path('nvim-colorizer')).keymaps(),
+    config = function()
+      require(config_path('nvim-colorizer')).setup()
+    end,
+  },
+
+  {
     'stevearc/dressing.nvim',
     config = function()
       require(config_path('dressing')).setup()
