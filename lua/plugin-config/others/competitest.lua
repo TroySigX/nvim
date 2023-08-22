@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   require('competitest').setup({
-    testcases_directory = './tests',
+    testcases_directory = 'tests',
   })
 end
 
