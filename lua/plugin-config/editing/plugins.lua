@@ -22,14 +22,6 @@ return {
   },
 
   {
-    'HiPhish/rainbow-delimiters.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require(config_path('rainbow-delimiters')).setup()
-    end,
-  },
-
-  {
     'mhartington/formatter.nvim',
     keys = require(config_path('formatter-nvim')).keymaps(),
     event = 'BufWritePre',
