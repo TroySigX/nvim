@@ -1,6 +1,9 @@
 local M = {}
 
 function M.setup()
+  local path = require('lspconfig.util').path
+  local base_path = path.join(vim.fn.expand('$HOME'), 'notes')
+
   require('neorg').setup({
     load = {
       ['core.defaults'] = {}, -- Loads default behaviour
@@ -12,10 +15,9 @@ function M.setup()
       },
       ['core.dirman'] = { -- Manages Neorg workspaces
         config = {
-          -- TODO: look for more cross-platform way
           workspaces = {
-            proj = '~/notes/projects',
-            umass = '~/notes/umass',
+            proj = path.join(base_path, 'projects'),
+            umass = path.join(base_path, 'umass'),
           },
         },
       },
