@@ -1,5 +1,6 @@
 local M = {}
 
+-- TODO: look for more cross-platform way
 function M.setup()
   local gknapsettings = {
     -- latex

@@ -12,6 +12,7 @@ function M.setup()
       },
       ['core.dirman'] = { -- Manages Neorg workspaces
         config = {
+          -- TODO: look for more cross-platform way
           workspaces = {
             proj = '~/notes/projects',
             umass = '~/notes/umass',
