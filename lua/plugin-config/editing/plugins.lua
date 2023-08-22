@@ -22,10 +22,10 @@ return {
   },
 
   {
-    'HiPhish/nvim-ts-rainbow2',
+    'HiPhish/rainbow-delimiters.nvim',
     event = 'VeryLazy',
     config = function()
-      require(config_path('ts-rainbow')).setup()
+      require(config_path('rainbow-delimiters')).setup()
     end,
   },
 
