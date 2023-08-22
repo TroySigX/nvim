@@ -30,7 +30,6 @@ local function on_attach_keymaps()
     },
     ['<space>'] = {
       d = {
-        name = 'debugger',
         x = {
           function()
             require('dap').terminate()
@@ -175,14 +174,17 @@ end
 
 function M.keymaps()
   wk.register({
-    ['<leader>b'] = {
-      function()
-        require('dap').toggle_breakpoint()
-        require('dapui')
-      end,
-      'Toggle [B]reakpoint',
+    d = {
+      name = 'debugger',
+      b = {
+        function()
+          require('dap').toggle_breakpoint()
+          require('dapui')
+        end,
+        'Toggle [B]reakpoint',
+      },
     },
-  })
+  }, { prefix = '<space>' })
 
   wk.register({
     ['<F8>'] = {
