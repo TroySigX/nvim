@@ -72,6 +72,7 @@ function M.setup()
     x = { ':x<CR>', 'save and quit' },
     X = { ':xa<CR>', 'save and quit all' },
     w = { ':w<CR>', 'save' },
+    bd = { ':bd<CR>', 'close buffer' },
   }, { prefix = '<leader>' })
 end
 
