@@ -118,7 +118,6 @@ return {
   {
     'vuki656/package-info.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
-    lazy = true,
     config = function()
       require(config_path('package-info')).setup()
     end,
