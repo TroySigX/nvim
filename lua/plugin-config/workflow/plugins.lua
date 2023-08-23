@@ -114,4 +114,12 @@ return {
       require(config_path('smart-splits')).setup()
     end,
   },
+
+  {
+    'vuki656/package-info.nvim',
+    lazy = true,
+    config = function()
+      require(config_path('package-info')).setup()
+    end,
+  },
 }

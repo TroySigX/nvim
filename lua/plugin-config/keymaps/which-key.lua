@@ -27,6 +27,7 @@ function M.setup()
   require('plugin-config.workflow.knap').keymaps()
   require('plugin-config.workflow.smart-splits').keymaps()
   require('plugin-config.workflow.todo-comments').keymaps()
+  require('plugin-config.workflow.package-info').keymaps()
 
   local map = require('which-key').register
 
