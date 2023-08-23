@@ -3,7 +3,7 @@ local M = {}
 function M.keymaps()
   return {
     {
-      '<space>ct',
+      '<leader>ct',
       vim.cmd.ColorizerToggle,
       silent = true,
       desc = '[C]olorizer [T]oggle',
