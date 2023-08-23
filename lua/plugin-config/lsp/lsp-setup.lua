@@ -66,12 +66,15 @@ function M.keymaps()
     K = { ':Lspsaga hover_doc<CR>', 'View LSP Doc' },
 
     ['<space>'] = {
-      ca = { ':Lspsaga code_action<CR>', 'LSP [C]ode [A]ction' },
       rn = {
         name = '[R]e[N]ame',
         p = { ':Lspsaga rename ++project<CR>', '[R]e[N]ame [P]roject' },
         f = { ':Lspsaga rename<CR>', '[R]e[N]ame [F]ile' },
       },
+    },
+
+    ['<leader>'] = {
+      ca = { ':Lspsaga code_action<CR>', 'LSP [C]ode [A]ction' },
     },
 
     ['<C-k>'] = {
