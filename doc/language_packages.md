@@ -21,7 +21,7 @@ The following package types should be installed via `Mason`:
 - LSP: `clangd`
 - Formatter: `clang-format`
 - Debugger: `codelldb`
-- Make utitiliy: `bear`
+- Make utitiliy: [bear](https://github.com/rizsotto/Bear)
 
 ## Python
 - LSP: `pyright`
