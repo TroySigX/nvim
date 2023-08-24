@@ -51,9 +51,6 @@ require('lazy').setup({
   },
 })
 
--- lang venv
-require('virtualenv-config')
-
 -- editorconfig
 require('editor-config')
 
