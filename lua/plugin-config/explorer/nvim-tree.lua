@@ -37,6 +37,9 @@ function M.setup()
     api.tree.find_file({ open = true, update_root = true, focus = true })
   end
 
+  -- for auto-update imports when renaming files
+  require('lsp-file-operations').setup()
+
   require('nvim-tree').setup({
     disable_netrw = true,
 

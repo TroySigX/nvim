@@ -23,6 +23,9 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     lazy = true,
+    dependencies = {
+      'antosha417/nvim-lsp-file-operations',
+    },
     config = function()
       require(config_path('nvim-tree')).setup()
     end,
