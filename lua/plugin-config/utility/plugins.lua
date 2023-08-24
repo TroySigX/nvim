@@ -1,3 +1,6 @@
 return {
-  'nvim-lua/plenary.nvim',
+  {
+    'nvim-lua/plenary.nvim',
+    priority = 100,
+  },
 }
