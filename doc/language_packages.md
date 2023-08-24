@@ -48,6 +48,9 @@ The following package types should be installed via `Mason`:
 - Compiler: `texlive-most`
 - Formatter: `latexindent`
   + Dependency (system package): [libxcrypt-compat](https://archlinux.org/packages/core/x86_64/libxcrypt-compat/)
+ 
+## Bash
+- Linter: `shellcheck`
 
 ## Markdown
 - Compiler: `pandoc`
