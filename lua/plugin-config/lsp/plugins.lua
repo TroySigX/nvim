@@ -51,6 +51,17 @@ return {
   },
 
   {
+    'ThePrimeagen/refactoring.nvim',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    lazy = true,
+    config = function()
+      require(config_path('refactoring')).setup()
+    end,
+  },
+
+  {
     'mfussenegger/nvim-lint',
     lazy = true,
     config = function()
