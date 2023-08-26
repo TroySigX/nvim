@@ -6,6 +6,7 @@ function M.setup()
 
   luasnip.filetype_extend('javascript', { 'javascriptreact', 'html' })
   luasnip.filetype_extend('typescript', { 'javascript' })
+  luasnip.filetype_extend('cpp', { 'c' })
 
   require('luasnip.loaders.from_snipmate').lazy_load({ paths = { path.join(vim.fn.stdpath('config'), 'snippets') } })
   require('luasnip.loaders.from_vscode').lazy_load()
