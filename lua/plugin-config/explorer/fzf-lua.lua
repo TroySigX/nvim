@@ -7,11 +7,19 @@ end
 function M.keymaps()
   local map = require('which-key').register
   map({
-    gr = {
-      function()
-        require('fzf-lua').live_grep()
-      end,
-      'Live [Gr]ep',
+    g = {
+      r = {
+        function()
+          require('fzf-lua').live_grep()
+        end,
+        'Live [Gr]ep',
+      },
+      R = {
+        function()
+          require('fzf-lua').live_grep_resume()
+        end,
+        '[G]rep [R]esume',
+      },
     },
     sw = {
       function()
