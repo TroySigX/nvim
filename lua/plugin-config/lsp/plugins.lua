@@ -32,12 +32,9 @@ return {
   },
 
   {
-    'nvimdev/lspsaga.nvim',
+    'neovim/nvim-lspconfig',
     dependencies = {
       'folke/neodev.nvim',
-      'neovim/nvim-lspconfig',
-      'nvim-tree/nvim-web-devicons',
-      'nvim-treesitter/nvim-treesitter',
       'williamboman/mason-lspconfig.nvim',
       'williamboman/mason.nvim',
       'simrat39/rust-tools.nvim',
@@ -47,6 +44,18 @@ return {
       -- neodev has to init before lspconfig
       require(config_path('neodev')).setup()
       require(config_path('lsp-setup')).setup()
+    end,
+  },
+
+  {
+    'nvimdev/lspsaga.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function()
+      require(config_path('lspsaga')).setup()
     end,
   },
 
