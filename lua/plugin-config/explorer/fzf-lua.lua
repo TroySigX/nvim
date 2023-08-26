@@ -53,6 +53,12 @@ function M.keymaps()
     },
     ['<F18>'] = {
       function()
+        require('fzf-lua').resume()
+      end,
+      'Resume last fzf command',
+    },
+    ['<F30>'] = {
+      function()
         require('fzf-lua').oldfiles()
       end,
       'Old files',
