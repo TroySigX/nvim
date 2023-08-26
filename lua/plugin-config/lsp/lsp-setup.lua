@@ -74,7 +74,8 @@ function M.keymaps()
     },
 
     ['<leader>'] = {
-      ca = { ':Lspsaga code_action<CR>', 'LSP [C]ode [A]ction' },
+      ca = { ':Lspsaga code_action<CR>', 'LSP Code Action' },
+      e = { ':Lspsaga show_line_diagnostics<CR>', 'Show [E]rrors on line' },
     },
 
     ['<C-k>'] = {
@@ -89,8 +90,6 @@ function M.keymaps()
       end,
       'Go To Next Error',
     },
-
-    ['<leader>e'] = { ':Lspsaga show_line_diagnostics<CR>', 'Show [E]rrors on line' },
   })
 end
 
