@@ -4,6 +4,9 @@ function M.setup()
   require('nvim-treesitter.configs').setup({
     auto_install = true,
 
+    -- required by other plugins
+    ensure_installed = { 'markdown', 'markdown_inline', 'vim', 'regex' },
+
     indent = {
       enable = true,
     },
