@@ -30,10 +30,29 @@ local function available_formatters()
   return filetype_formatters
 end
 
+local function formatting_notify()
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'FormatterPre',
+    callback = function()
+      vim.notify('Formatting code...', vim.log.levels.INFO)
+    end,
+  })
+
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'FormatterPost',
+    callback = function()
+      vim.notify('Formatting done', vim.log.levels.INFO)
+    end,
+  })
+end
+
 function M.setup()
   require('formatter').setup({
     filetype = available_formatters(),
   })
+
+  -- notify on format
+  formatting_notify()
 
   -- auto format on save
   vim.api.nvim_create_autocmd('BufWritePost', {
