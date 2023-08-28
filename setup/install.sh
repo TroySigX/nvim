@@ -8,6 +8,7 @@ fi
 # Install system packages
 packages=(
   "ripgrep"
+  "fd"
   "xclip"
   "ctags"
 )
