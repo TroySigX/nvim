@@ -41,8 +41,6 @@ return {
       'pmizio/typescript-tools.nvim',
     },
     config = function()
-      -- neodev has to init before lspconfig
-      require(config_path('neodev')).setup()
       require(config_path('lsp-setup')).setup()
     end,
   },

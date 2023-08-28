@@ -48,6 +48,14 @@ function M.setup()
     ['rust_analyzer'] = function()
       require(config_path('rust-tools')).setup(default_capabilities)
     end,
+
+    ['lua_ls'] = function()
+      -- neodev has to setup before lspconfig
+      require(config_path('neodev')).setup()
+      require('lspconfig')['lua_ls'].setup({
+        capabilities = default_capabilities,
+      })
+    end,
   })
 end
 
