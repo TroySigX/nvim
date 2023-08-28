@@ -33,6 +33,7 @@ return {
 
   {
     'neovim/nvim-lspconfig',
+    priority = 150,
     dependencies = {
       'folke/neodev.nvim',
       'williamboman/mason-lspconfig.nvim',
@@ -92,6 +93,7 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
+    -- priority = 150,
     build = ':TSUpdate',
     config = function()
       require(config_path('treesitter')).setup()
