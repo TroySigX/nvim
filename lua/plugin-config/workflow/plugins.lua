@@ -108,14 +108,6 @@ return {
   },
 
   {
-    'mrjones2014/smart-splits.nvim',
-    lazy = true,
-    config = function()
-      require(config_path('smart-splits')).setup()
-    end,
-  },
-
-  {
     'vuki656/package-info.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     config = function()

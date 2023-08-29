@@ -63,6 +63,14 @@ return {
   },
 
   {
+    'mrjones2014/smart-splits.nvim',
+    lazy = true,
+    config = function()
+      require(config_path('smart-splits')).setup()
+    end,
+  },
+
+  {
     'kevinhwang91/nvim-bqf',
     event = 'VeryLazy',
     config = function()
