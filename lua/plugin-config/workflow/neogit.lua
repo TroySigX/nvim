@@ -18,6 +18,7 @@ function M.keymaps()
   require('which-key').register({
     ['<F10>'] = {
       function()
+        vim.cmd.stopinsert()
         require('neogit').open()
       end,
       'Open Neogit (manage git repo)',

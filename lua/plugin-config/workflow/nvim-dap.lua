@@ -189,6 +189,7 @@ function M.keymaps()
   wk.register({
     ['<F8>'] = {
       function()
+        vim.cmd.stopinsert()
         require('dapui').toggle()
       end,
       'Toggle DapUI (debugger)',

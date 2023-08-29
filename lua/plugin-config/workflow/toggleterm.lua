@@ -21,7 +21,10 @@ function M.keymaps()
   return {
     {
       '<F9>',
-      vim.cmd.ToggleTerm,
+      function()
+        vim.cmd.stopinsert()
+        vim.cmd.ToggleTerm()
+      end,
       silent = true,
       desc = 'Toggle Terminal',
       mode = { 'n', 'i', 'v', 't' },

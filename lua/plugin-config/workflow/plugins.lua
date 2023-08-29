@@ -108,6 +108,11 @@ return {
   },
 
   {
+    'luk400/vim-jukit',
+    lazy = true,
+  },
+
+  {
     'vuki656/package-info.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     config = function()
