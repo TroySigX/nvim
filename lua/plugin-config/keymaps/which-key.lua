@@ -1,8 +1,81 @@
 local M = {}
 
+local function plugin_keymaps()
+  local base_dir = 'plugin-config.'
+
+  local function config_path(plugin_type)
+    local path = base_dir .. plugin_type .. '.'
+
+    return function(plugin)
+      return path .. plugin
+    end
+  end
+
+  local function editing()
+    local path = config_path('editing')
+
+    require(path('neogen')).keymaps()
+    require(path('treesj')).keymaps()
+    require(path('ssr')).keymaps()
+  end
+
+  local function explorer()
+    local path = config_path('explorer')
+
+    require(path('nvim-tree')).keymaps()
+    require(path('fzf-lua')).keymaps()
+  end
+
+  local function gui()
+    local path = config_path('gui')
+
+    require(path('noice')).keymaps()
+    require(path('notify')).keymaps()
+    require(path('smart-splits')).keymaps()
+  end
+
+  local function lsp()
+    local path = config_path('lsp')
+
+    require(path('lspsaga')).keymaps()
+    require(path('nvim-lint')).keymaps()
+    require(path('luasnip')).keymaps()
+    require(path('refactoring')).keymaps()
+    require(path('ts-node-action')).keymaps()
+  end
+
+  local function navigation()
+    local path = config_path('navigation')
+
+    require(path('flash-nvim')).keymaps()
+  end
+
+  local function workflow()
+    local path = config_path('workflow')
+
+    require(path('neogit')).keymaps()
+    require(path('neotest')).keymaps()
+    require(path('nvim-dap')).keymaps()
+    require(path('knap')).keymaps()
+    require(path('todo-comments')).keymaps()
+    require(path('package-info')).keymaps()
+  end
+
+  return {
+    setup = function()
+      editing()
+      explorer()
+      gui()
+      lsp()
+      navigation()
+      workflow()
+    end,
+  }
+end
+
 function M.setup()
   vim.o.timeout = true
-  vim.o.timeoutlen = 300
+  vim.o.timeoutlen = 299
   require('which-key').setup({
     triggers_blacklist = {
       n = { 'v' },
@@ -10,26 +83,7 @@ function M.setup()
   })
 
   -- load plugin keymaps
-  require('plugin-config.editing.neogen').keymaps()
-  require('plugin-config.editing.treesj').keymaps()
-  require('plugin-config.editing.ssr').keymaps()
-  require('plugin-config.explorer.nvim-tree').keymaps()
-  require('plugin-config.explorer.fzf-lua').keymaps()
-  require('plugin-config.gui.noice').keymaps()
-  require('plugin-config.gui.notify').keymaps()
-  require('plugin-config.gui.smart-splits').keymaps()
-  require('plugin-config.lsp.lspsaga').keymaps()
-  require('plugin-config.lsp.nvim-lint').keymaps()
-  require('plugin-config.lsp.luasnip').keymaps()
-  require('plugin-config.lsp.refactoring').keymaps()
-  require('plugin-config.lsp.ts-node-action').keymaps()
-  require('plugin-config.navigation.flash-nvim').keymaps()
-  require('plugin-config.workflow.neogit').keymaps()
-  require('plugin-config.workflow.neotest').keymaps()
-  require('plugin-config.workflow.nvim-dap').keymaps()
-  require('plugin-config.workflow.knap').keymaps()
-  require('plugin-config.workflow.todo-comments').keymaps()
-  require('plugin-config.workflow.package-info').keymaps()
+  plugin_keymaps().setup()
 
   local map = require('which-key').register
 
