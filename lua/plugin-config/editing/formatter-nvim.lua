@@ -1,8 +1,15 @@
 local M = {}
 
+local autoformat = true
+
+local function toggle_autoformat()
+  autoformat = not autoformat
+end
+
 function M.keymaps()
   return {
-    { '<space>lf', vim.cmd.Format, silent = true, desc = '[L]sp [F]ormat Code', mode = { 'n', 'v' } },
+    { '<space>fr', vim.cmd.Format, silent = true, desc = '[F]ormat Code [R]un', mode = { 'n', 'v' } },
+    { '<space>ft', toggle_autoformat, desc = '[F]ormat [T]oggle' },
   }
 end
 
@@ -58,7 +65,9 @@ function M.setup()
   vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = '*',
     callback = function()
-      vim.cmd([[FormatWriteLock]])
+      if autoformat and not Knap_autopreview() then
+        vim.cmd([[FormatWriteLock]])
+      end
     end,
   })
 end

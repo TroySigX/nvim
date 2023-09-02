@@ -1,5 +1,12 @@
 local M = {}
 
+local autopreview = false
+
+-- returns true if autopreview is on
+function Knap_autopreview()
+  return autopreview
+end
+
 -- TODO: look for more cross-platform way
 function M.setup()
   local gknapsettings = {
@@ -22,6 +29,7 @@ function M.keymaps()
   require('which-key').register({
     ['<space>pr'] = {
       function()
+        autopreview = not autopreview
         require('knap').toggle_autopreviewing()
       end,
       'Toggle [Pr]eview',
