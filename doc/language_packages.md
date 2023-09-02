@@ -14,6 +14,7 @@ The following package types should be installed via `Mason`:
 - [Rust](#rust)
 - [Lua](#lua)
 - [Latex](#latex)
+- [Bash](#bash)
 - [Markdown](#markdown)
 - [Json](#json)
 
@@ -46,6 +47,7 @@ The following package types should be installed via `Mason`:
 ## Latex
 - LSP: `texlab`
 - Compiler: `texlive-most`
+- PDF converter: `pdflatex`
 - Formatter: `latexindent`
   + Dependency (system package): [libxcrypt-compat](https://archlinux.org/packages/core/x86_64/libxcrypt-compat/)
  
@@ -53,7 +55,7 @@ The following package types should be installed via `Mason`:
 - Linter: `shellcheck`
 
 ## Markdown
-- Compiler: `pandoc`
+- PDF converter: `pandoc`
 
 ## Json
 - Linter: `jsonlint`
