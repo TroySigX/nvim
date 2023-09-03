@@ -45,7 +45,6 @@ function M.setup()
       outdated = '#e09443',
     },
     autostart = false,
-    hide_up_to_date = true,
   })
 end
 
