@@ -13,16 +13,8 @@ function M.setup()
   })
 
   -- setup autopairs
-  require('npairs-int-upair').setup({
-    bs = 'u',
-    map = 'n',
-  })
-
-  local Rule = require('nvim-autopairs.rule')
-  local npairs = require('nvim-autopairs')
-  local cond = require('nvim-autopairs.conds')
-  npairs.add_rules({
-    Rule('$', '$', { 'tex', 'latex' }):with_move(cond.none()):with_del(cond.done()):with_cr(cond.done()),
+  require('ultimate-autopair').setup({
+    { '$', '$', suround = true, alpha = true, ft = { 'tex', 'latex' }, multiline = true },
   })
 end
 

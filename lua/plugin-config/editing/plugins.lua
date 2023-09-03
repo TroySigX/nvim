@@ -39,11 +39,11 @@ return {
   },
 
   {
-    'altermo/npairs-integrate-upair',
+    'altermo/ultimate-autopair.nvim',
+    -- TODO: remove commit after update neovim to 0.9.2
+    commit = '667d230',
     event = 'InsertEnter',
     dependencies = {
-      'windwp/nvim-autopairs',
-      'altermo/ultimate-autopair.nvim',
       'RRethy/nvim-treesitter-endwise',
       'windwp/nvim-ts-autotag',
     },
