@@ -29,7 +29,6 @@ local function plugin_keymaps()
   local function gui()
     local path = config_path('gui')
 
-    require(path('noice')).keymaps()
     require(path('notify')).keymaps()
     require(path('smart-splits')).keymaps()
   end

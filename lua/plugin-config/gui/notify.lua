@@ -6,12 +6,20 @@ function M.keymaps()
       function()
         require('notify').dismiss()
       end,
-      '[N]otification [D]ismiss',
+      'Notification [D]ismiss',
+    },
+
+    ['<A-n>'] = {
+      function()
+        require('telescope').extensions.notify.notify('notify')
+      end,
+      'Notification History',
     },
   }, { mode = { 'n', 'i', 'v' } })
 end
 
 function M.setup()
+  require('telescope').load_extension('notify')
   vim.notify = require('notify')
   vim.notify.setup({
     timeout = 1500,
