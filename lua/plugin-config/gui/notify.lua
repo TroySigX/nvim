@@ -11,7 +11,7 @@ function M.keymaps()
 
     ['<A-n>'] = {
       function()
-        require('telescope').extensions.notify.notify('notify')
+        require('telescope').extensions.notify.notify()
       end,
       'Notification History',
     },
