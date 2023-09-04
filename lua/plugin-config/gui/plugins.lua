@@ -9,7 +9,6 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'rcarriga/nvim-notify',
       {
         'folke/noice.nvim',
         dependencies = 'MunifTanjim/nui.nvim',
@@ -17,8 +16,15 @@ return {
     },
     config = function()
       require(config_path('notify')).setup()
-      require(config_path('noice')).setup()
-      require(config_path('lualine')).setup()
+    end,
+  },
+
+  {
+    'rcarriga/nvim-notify',
+    event = 'VeryLazy',
+    dependencies = 'nvim-telescope/telescope.nvim',
+    config = function()
+      require(config_path('notify')).setup()
     end,
   },
 
@@ -82,6 +88,19 @@ return {
     'HiPhish/rainbow-delimiters.nvim',
     config = function()
       require(config_path('rainbow-delimiters')).setup()
+    end,
+  },
+
+  {
+    'kevinhwang91/nvim-ufo',
+    event = 'VeryLazy',
+    dependencies = {
+      'kevinhwang91/promise-async',
+      'nvim-treesitter/nvim-treesitter',
+      'luukvbaal/statuscol.nvim',
+    },
+    config = function()
+      require(config_path('nvim-ufo')).setup()
     end,
   },
 }

@@ -28,17 +28,4 @@ return {
       require(config_path('neoscroll')).setup()
     end,
   },
-
-  {
-    'kevinhwang91/nvim-ufo',
-    event = 'VeryLazy',
-    dependencies = {
-      'kevinhwang91/promise-async',
-      'nvim-treesitter/nvim-treesitter',
-      'luukvbaal/statuscol.nvim',
-    },
-    config = function()
-      require(config_path('nvim-ufo')).setup()
-    end,
-  },
 }
