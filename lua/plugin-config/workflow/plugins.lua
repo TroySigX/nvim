@@ -41,15 +41,6 @@ return {
   },
 
   {
-    'nvim-neorg/neorg',
-    build = ':Neorg sync-parsers',
-    keys = require(config_path('neorg')).keymaps(),
-    config = function()
-      require(config_path('neorg')).setup()
-    end,
-  },
-
-  {
     'stevearc/overseer.nvim',
     keys = require(config_path('overseer')).keymaps(),
     config = function()
