@@ -15,7 +15,8 @@ return {
       },
     },
     config = function()
-      require(config_path('notify')).setup()
+      require(config_path('noice')).setup()
+      require(config_path('lualine')).setup()
     end,
   },
 
