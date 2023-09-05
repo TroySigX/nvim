@@ -1,5 +1,13 @@
 local M = {}
 
+local exclude_ft = {}
+
+local function ignore_ft()
+  for _, v in ipairs(vim.g.exclude_filetypes) do
+    exclude_ft[v] = true
+  end
+end
+
 function M.setup()
   vim.o.foldcolumn = '1'
   vim.o.foldlevel = 99
@@ -17,8 +25,14 @@ function M.setup()
     },
   })
 
+  ignore_ft()
+
   require('ufo').setup({
-    provider_selector = function()
+    provider_selector = function(bufnr, filetype, buftype)
+      if exclude_ft[filetype] then
+        return ''
+      end
+
       return { 'treesitter', 'indent' }
     end,
   })

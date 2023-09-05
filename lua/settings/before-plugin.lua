@@ -25,6 +25,17 @@ vim.g.maplocalleader = ';'
 -- default filetype for latex is tex
 vim.g.tex_flavor = 'latex'
 
+-- disable filetypes
+vim.g.exclude_filetypes = {
+  'lspinfo',
+  'packer',
+  'checkhealth',
+  'help',
+  'man',
+  'dashboard',
+  '',
+}
+
 -- auto indent on newline
 local function auto_indent(mode)
   if #vim.fn.getline('.') == 0 then
