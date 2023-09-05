@@ -9,6 +9,7 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
+      'Pheon-Dev/pigeon',
       {
         'folke/noice.nvim',
         dependencies = 'MunifTanjim/nui.nvim',
@@ -16,6 +17,8 @@ return {
     },
     config = function()
       require(config_path('noice')).setup()
+      -- pigeon has to init before lualine
+      require(config_path('pigeon')).setup()
       require(config_path('lualine')).setup()
     end,
   },

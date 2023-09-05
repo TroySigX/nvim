@@ -16,6 +16,11 @@ function M.setup()
         },
       },
 
+      lualine_y = {
+        require('pigeon.battery').battery,
+        require('pigeon.datetime').current_time,
+      },
+
       lualine_c = {
         {
           -- LSP server name .
