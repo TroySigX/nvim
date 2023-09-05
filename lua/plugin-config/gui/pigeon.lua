@@ -10,7 +10,7 @@ function M.setup()
     },
     datetime = {
       time = {
-        format = '%H:%M %p',
+        format = '%I:%M %p',
         posttext = '',
         icon = '󰃰 ',
       },
