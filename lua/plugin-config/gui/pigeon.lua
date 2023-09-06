@@ -1,8 +1,14 @@
 local M = {}
 
+local OSes = {
+  Linux = 'linux',
+  Darwin = 'osx',
+  Windows_NT = 'windows',
+}
+
 function M.setup()
   require('pigeon').setup({
-    os = 'linux', -- TODO: Detect this
+    os = OSes[vim.loop.os_uname().sysname],
     plugin_manager = 'lazy',
     callbacks = {
       killing_pigeon = nil,
