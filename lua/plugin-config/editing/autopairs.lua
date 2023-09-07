@@ -14,7 +14,7 @@ function M.setup()
 
   -- setup autopairs
   require('ultimate-autopair').setup({
-    { '$', '$', suround = true, alpha = true, ft = { 'tex', 'latex' }, multiline = true },
+    { '$', '$', suround = true, alpha = true, ft = { 'tex', 'latex' }, multiline = true, disable_end = true },
   })
 end
 
