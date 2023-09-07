@@ -20,6 +20,7 @@ return {
       'zbirenbaum/copilot-cmp',
       'onsails/lspkind.nvim',
       'hrsh7th/cmp-emoji',
+      'lukas-reineke/cmp-under-comparator',
       {
         'jackieaskins/cmp-emmet',
         build = 'npm run release',
