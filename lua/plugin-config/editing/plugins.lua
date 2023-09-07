@@ -40,8 +40,6 @@ return {
 
   {
     'altermo/ultimate-autopair.nvim',
-    -- TODO: remove commit after update neovim to 0.9.2
-    commit = '667d230',
     event = 'InsertEnter',
     dependencies = {
       'RRethy/nvim-treesitter-endwise',
