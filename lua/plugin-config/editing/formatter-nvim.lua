@@ -18,26 +18,32 @@ local formatters_for_filetype = {
     mason = 'stylua',
     formatter = 'stylua',
   },
+
   typescript = {
     mason = 'prettierd',
     formatter = 'prettierd',
   },
+
   javascript = {
     mason = 'prettierd',
     formatter = 'prettierd',
   },
+
   python = {
     mason = 'black',
     formatter = 'black',
   },
+
   cpp = {
     mason = 'clang-format',
     formatter = 'clangformat',
   },
+
   c = {
     mason = 'clang-format',
     formatter = 'clangformat',
   },
+
   tex = {
     mason = 'latexindent',
     formmason = 'latexindent',
