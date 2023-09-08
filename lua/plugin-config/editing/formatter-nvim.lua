@@ -14,22 +14,43 @@ function M.keymaps()
 end
 
 local formatters_for_filetype = {
-  lua = 'stylua',
-  typescript = 'prettierd',
-  javascript = 'prettierd',
-  python = 'black',
-  cpp = 'clangformat',
-  c = 'clangformat',
-  tex = 'latexindent',
+  lua = {
+    mason = 'stylua',
+    formatter = 'stylua',
+  },
+  typescript = {
+    mason = 'prettierd',
+    formatter = 'prettierd',
+  },
+  javascript = {
+    mason = 'prettierd',
+    formatter = 'prettierd',
+  },
+  python = {
+    mason = 'black',
+    formatter = 'black',
+  },
+  cpp = {
+    mason = 'clang-format',
+    formatter = 'clangformat',
+  },
+  c = {
+    mason = 'clang-format',
+    formatter = 'clangformat',
+  },
+  tex = {
+    mason = 'latexindent',
+    formmason = 'latexindent',
+  },
 }
 
 local function available_formatters()
   local filetype_formatters = {}
 
   for ft, fmt in pairs(formatters_for_filetype) do
-    if require('mason-registry').is_installed(fmt) then
+    if require('mason-registry').is_installed(fmt['mason']) then
       filetype_formatters[ft] = {
-        require('formatter.filetypes.' .. (ft == 'tex' and 'la' or '') .. ft)[fmt],
+        require('formatter.filetypes.' .. (ft == 'tex' and 'la' or '') .. ft)[fmt['formatter']],
       }
     end
   end
