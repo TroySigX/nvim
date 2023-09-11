@@ -46,7 +46,7 @@ local formatters_for_filetype = {
 
   tex = {
     mason = 'latexindent',
-    formmason = 'latexindent',
+    formatter = 'latexindent',
   },
 }
 
