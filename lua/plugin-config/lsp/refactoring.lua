@@ -11,6 +11,21 @@ function M.keymaps()
         end,
         '[R]efactor extract [F]unction',
       },
+
+      v = {
+        e = {
+          function()
+            require('refactoring').refactor('Extract Variable')
+          end,
+          '[R]efactor [V]ariable [E]xtract',
+        },
+        i = {
+          function()
+            require('refactoring').refactor('Inline Variable')
+          end,
+          '[R]efactor [V]ariable [I]nline (opposite of extract variable)',
+        },
+      },
     },
   }, { prefix = '<leader>', mode = 'x' })
 
@@ -22,25 +37,14 @@ function M.keymaps()
         end,
         '[R]efactor extract [B]lock',
       },
-    },
-  }, { prefix = '<leader>' })
-
-  map({
-    rv = {
-      e = {
-        function()
-          require('refactoring').refactor('Extract Function')
-        end,
-        '[R]efactor [V]ariable [E]xtract',
-      },
-      i = {
+      vi = {
         function()
           require('refactoring').refactor('Inline Variable')
         end,
         '[R]efactor [V]ariable [I]nline (opposite of extract variable)',
       },
     },
-  })
+  }, { prefix = '<leader>' })
 end
 
 function M.setup()
