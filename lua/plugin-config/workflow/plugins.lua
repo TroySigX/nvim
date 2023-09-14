@@ -107,6 +107,18 @@ return {
   },
 
   {
+    'pwntester/octo.nvim',
+    keys = require(config_path('octo')).keymaps(),
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require(config_path('octo')).setup()
+    end,
+  },
+
+  {
     'linux-cultist/venv-selector.nvim',
     dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim' },
     keys = require(config_path('venv-selector')).keymaps(),

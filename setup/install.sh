@@ -11,6 +11,7 @@ packages=(
   "fd"
   "xclip"
   "ctags"
+  "github-cli"
 )
 
 for package in "${packages[@]}"; do
