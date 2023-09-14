@@ -2,11 +2,12 @@ local M = {}
 
 local path = require('lspconfig.util').path
 
-function M.formatter_name()
-  local name = '.prettierrc'
+function M.formatter()
+  local config_file = '.prettierrc'
   return {
-    name = name,
-    path = path.join(vim.fn.stdpath('config'), 'lua', 'formatter-config', 'defaults', name),
+    formatter_name = 'prettierd',
+    config_file_name = config_file,
+    path = path.join(vim.fn.stdpath('config'), 'lua', 'formatter-config', 'defaults', config_file),
   }
 end
 

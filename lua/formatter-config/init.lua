@@ -21,7 +21,14 @@ local function tmp_file(formatter_name)
 end
 
 local function setup_formatter(formatter)
-  local tmp = tmp_file(formatter.name)
+  -- formatter should be installed before setup
+  if not require('mason-registry').is_installed(formatter.formatter_name) then
+    return
+  end
+
+  -- if config file is not found from pwd to root
+  -- create one in pwd
+  local tmp = tmp_file(formatter.config_file_name)
 
   if not pcall(tmp.create) then
     return
@@ -30,7 +37,7 @@ local function setup_formatter(formatter)
   local config_exists = false
 
   path.traverse_parents(tmp.path, function(dir)
-    if path.exists(path.join(dir, formatter.name)) then
+    if path.exists(path.join(dir, formatter.config_file_name)) then
       config_exists = true
       return true
     end
@@ -52,7 +59,7 @@ local function config_filetype_formatter(filetype, formatter_type_name)
       pattern = { ft },
       callback = function()
         vim.schedule(function()
-          setup_formatter(require('formatter-config.' .. formatter_type_name).formatter_name())
+          setup_formatter(require('formatter-config.' .. formatter_type_name).formatter())
         end)
       end,
     })
