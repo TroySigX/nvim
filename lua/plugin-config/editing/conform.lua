@@ -20,6 +20,15 @@ function M.keymaps()
       'Toggle [F]ormat [T]oggle',
     },
   })
+
+  require('which-key').register({
+    ['<space>fr'] = {
+      function()
+        require('conform').format()
+      end,
+      '[F]ormat [R]un',
+    }
+  }, { mode = { 'n', 'v' } })
 end
 
 local function available_formatters()

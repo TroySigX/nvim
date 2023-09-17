@@ -23,7 +23,8 @@ return {
 
   {
     'stevearc/conform.nvim',
-    event = 'VeryLazy',
+    lazy = true,
+    event = 'BufWritePre',
     config = function()
       require(config_path('conform')).setup()
     end,
