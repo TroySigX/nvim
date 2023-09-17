@@ -55,4 +55,4 @@ require('lazy').setup({
 require('editor-config')
 
 -- formatting
-require('formatter-config')
+require('formatter-config').setup()

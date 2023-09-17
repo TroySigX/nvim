@@ -22,15 +22,30 @@ function M.keymaps()
   })
 end
 
+local function available_formatters()
+  local filetype_formatters = {}
+
+  for ft, ft_alias in pairs(require('formatter-config').filetypes()) do
+    local formatter = require('formatter-config.' .. ft_alias).formatter()
+    if require('mason-registry').is_installed(formatter.mason_name) then
+      filetype_formatters[ft] = { formatter.conform_name }
+    end
+  end
+
+  return filetype_formatters
+end
+
 function M.setup()
   require('conform').setup({
+    formatters_by_ft = available_formatters(),
+
     format_after_save = function(bufnr)
       if not autoformat or Knap_autopreview(bufnr) then
         return
       end
 
       return {
-        lsp_fallback = true,
+        lsp_fallback = false,
         timeout_ms = 500,
       }
     end

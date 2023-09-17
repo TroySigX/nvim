@@ -22,7 +22,7 @@ end
 
 local function setup_formatter(formatter)
   -- formatter should be installed before setup
-  if not require('mason-registry').is_installed(formatter.formatter_name) then
+  if not require('mason-registry').is_installed(formatter.mason_name) then
     return
   end
 
@@ -44,10 +44,10 @@ local function setup_formatter(formatter)
   end)
 
   if not config_exists then
-    local destination_path = path.join(vim.fn.getcwd(), formatter.name)
+    local destination_path = path.join(vim.fn.getcwd(), formatter.config_file_name)
 
     -- clone config file
-    os.execute('cp ' .. formatter.path .. ' ' .. destination_path)
+    os.execute('cp ' .. formatter.config_file_path .. ' ' .. destination_path)
   end
 
   tmp:remove()
@@ -74,7 +74,27 @@ local function config_filetype_formatter(filetype, formatter_type_name)
   end
 end
 
--- setup formatters
-config_filetype_formatter({ 'cpp', 'c' }, 'c')
-config_filetype_formatter({ 'javascript', 'typescript' }, 'js')
-config_filetype_formatter('lua', 'lua')
+local M = {}
+
+function M.setup()
+  -- setup formatters
+  config_filetype_formatter({ 'cpp', 'c' }, 'c')
+  config_filetype_formatter({ 'javascript', 'typescript' }, 'js')
+  config_filetype_formatter('lua', 'lua')
+end
+
+-- table mapping filetypes with their respective
+-- file name in the formatter-config directory
+function M.filetypes()
+  return {
+    lua = 'lua',
+    c = 'c',
+    cpp = 'c',
+    typescript = 'js',
+    javascript = 'js',
+    python = 'python',
+    tex = 'tex',
+  }
+end
+
+return M
