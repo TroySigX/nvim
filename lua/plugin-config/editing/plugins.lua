@@ -22,11 +22,10 @@ return {
   },
 
   {
-    'mhartington/formatter.nvim',
-    keys = require(config_path('formatter-nvim')).keymaps(),
-    event = 'BufWritePre',
+    'stevearc/conform.nvim',
+    event = 'VeryLazy',
     config = function()
-      require(config_path('formatter-nvim')).setup()
+      require(config_path('conform')).setup()
     end,
   },
 

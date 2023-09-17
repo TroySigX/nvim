@@ -15,6 +15,7 @@ local function plugin_keymaps()
     local path = config_path('editing')
 
     require(path('neogen')).keymaps()
+    require(path('conform')).keymaps()
     require(path('treesj')).keymaps()
     require(path('ssr')).keymaps()
   end

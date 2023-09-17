@@ -1,10 +1,10 @@
 local M = {}
 
-local autopreview = false
+local autopreview = {}
 
 -- returns true if autopreview is on
-function Knap_autopreview()
-  return autopreview
+function Knap_autopreview(bufnr)
+  return autopreview[bufnr]
 end
 
 -- TODO: look for more cross-platform way
@@ -29,7 +29,12 @@ function M.keymaps()
   require('which-key').register({
     ['<space>pr'] = {
       function()
-        autopreview = not autopreview
+        local bufnr = vim.api.nvim_get_current_buf()
+        if autopreview[bufnr] == nil then
+          autopreview[bufnr] = true
+        else
+          autopreview[bufnr] = not autopreview[bufnr]
+        end
         require('knap').toggle_autopreviewing()
       end,
       'Toggle [Pr]eview',
