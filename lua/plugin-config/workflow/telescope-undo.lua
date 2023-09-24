@@ -5,8 +5,7 @@ function M.keymaps()
     {
       '<F7>',
       function()
-        vim.cmd.stopinsert()
-        vim.cmd.UndotreeToggle()
+        require('telescope').extensions.undo.undo()
       end,
       desc = 'Toggle UndoTree',
       mode = { 'n', 'i', 'v' },
@@ -15,7 +14,7 @@ function M.keymaps()
 end
 
 function M.setup()
-  vim.g.undotree_SetFocusWhenToggle = 1
+  require('telescope').load_extension('undo')
 end
 
 return M

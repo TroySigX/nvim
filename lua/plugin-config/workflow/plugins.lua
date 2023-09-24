@@ -62,10 +62,10 @@ return {
   },
 
   {
-    'mbbill/undotree',
-    keys = require(config_path('undotree')).keymaps(),
+    'debugloop/telescope-undo.nvim',
+    keys = require(config_path('telescope-undo')).keymaps(),
     config = function()
-      require(config_path('undotree')).setup()
+      require(config_path('telescope-undo')).setup()
     end,
   },
 
