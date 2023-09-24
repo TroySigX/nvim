@@ -30,4 +30,12 @@ return {
       require(config_path('nvim-tree')).setup()
     end,
   },
+
+  {
+    'nvim-telescope/telescope.nvim',
+    lazy = true,
+    config = function()
+      require(config_path('telescope')).setup()
+    end,
+  },
 }
