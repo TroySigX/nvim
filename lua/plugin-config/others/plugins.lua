@@ -6,8 +6,11 @@ end
 
 return {
   {
-    'tyru/open-browser.vim',
-    keys = require(config_path('open-browser')).keymaps(),
+    'sontungexpt/url-open',
+    keys = require(config_path('url-open')).keymaps(),
+    config = function()
+      require(config_path('url-open')).setup()
+    end,
   },
 
   {
