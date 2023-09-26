@@ -31,6 +31,11 @@ return {
   },
 
   {
+    'chrisgrieser/nvim-puppeteer',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
+  },
+
+  {
     'danymat/neogen',
     lazy = true,
     config = function()
