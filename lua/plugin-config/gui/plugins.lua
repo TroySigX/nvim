@@ -27,6 +27,7 @@ return {
     'rcarriga/nvim-notify',
     event = 'VeryLazy',
     dependencies = 'nvim-telescope/telescope.nvim',
+    priority = 100,
     config = function()
       require(config_path('notify')).setup()
     end,
@@ -92,6 +93,14 @@ return {
     'HiPhish/rainbow-delimiters.nvim',
     config = function()
       require(config_path('rainbow-delimiters')).setup()
+    end,
+  },
+
+  {
+    'tzachar/highlight-undo.nvim',
+    keys = { 'u', '<C-r>' },
+    config = function()
+      require(config_path('highlight-undo')).setup()
     end,
   },
 

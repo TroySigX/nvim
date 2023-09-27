@@ -70,14 +70,6 @@ return {
   },
 
   {
-    'tzachar/highlight-undo.nvim',
-    keys = { 'u', '<C-r>' },
-    config = function()
-      require(config_path('highlight-undo')).setup()
-    end,
-  },
-
-  {
     'michaelb/sniprun',
     build = 'sh ./install.sh',
     keys = require(config_path('sniprun')).keymaps(),
