@@ -97,6 +97,17 @@ return {
   },
 
   {
+    'lukas-reineke/indent-blankline.nvim',
+    dependencies = {
+      'HiPhish/rainbow-delimiters.nvim',
+    },
+    event = 'VeryLazy',
+    config = function()
+      require(config_path('indent-blankline')).setup()
+    end,
+  },
+
+  {
     'tzachar/highlight-undo.nvim',
     keys = { 'u', '<C-r>' },
     config = function()
