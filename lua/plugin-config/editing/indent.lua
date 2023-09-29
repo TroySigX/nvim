@@ -1,7 +1,15 @@
 local M = {}
 
 function M.setup()
-  vim.g.indent_blankline_filetype_exclude = vim.g.exclude_filetypes
+  require('ibl').setup({
+    exclude = {
+      filetypes = vim.g.exclude_filetypes,
+    },
+
+    scope = {
+      enabled = false,
+    },
+  })
 end
 
 return M
