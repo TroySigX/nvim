@@ -35,36 +35,3 @@ vim.g.exclude_filetypes = {
   'dashboard',
   '',
 }
-
--- auto indent on newline
-local function auto_indent(mode)
-  if #vim.fn.getline('.') == 0 then
-    return [["_cc]]
-  else
-    return mode
-  end
-end
-local insertModes = { 'i', 'a', 'A' }
-for _, mode in pairs(insertModes) do
-  vim.keymap.set('n', mode, function()
-    return auto_indent(mode)
-  end, { desc = 'auto indent on newline in insert mode', expr = true })
-end
-
--- set signs
-local signs = {
-  { name = 'DiagnosticSignError', text = '' },
-  { name = 'DiagnosticSignWarn', text = '' },
-  { name = 'DiagnosticSignHint', text = '' },
-  { name = 'DiagnosticSignInfo', text = '' },
-}
-for _, sign in pairs(signs) do
-  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
-end
-
--- diagnostic severity
-vim.diagnostic.config({
-  virtual_text = false,
-  severity_sort = true,
-  signs = { severity = { min = vim.diagnostic.severity.WARN } },
-})
