@@ -111,20 +111,6 @@ return {
   },
 
   {
-    'coffebar/neovim-project',
-    event = 'VeryLazy',
-    config = function()
-      require(config_path('neovim-project')).setup()
-    end,
-    init = function()
-      vim.opt.sessionoptions:append('globals')
-    end,
-    dependencies = {
-      { 'Shatur/neovim-session-manager' },
-    },
-  },
-
-  {
     'linux-cultist/venv-selector.nvim',
     dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim' },
     keys = require(config_path('venv-selector')).keymaps(),
