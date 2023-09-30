@@ -27,7 +27,7 @@ function M.keymaps()
         require('conform').format()
       end,
       '[F]ormat [R]un',
-    }
+    },
   }, { mode = { 'n', 'v' } })
 end
 
@@ -57,7 +57,7 @@ function M.setup()
         lsp_fallback = false,
         timeout_ms = 500,
       }
-    end
+    end,
   })
 end
 
