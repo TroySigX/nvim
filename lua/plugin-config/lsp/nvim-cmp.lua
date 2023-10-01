@@ -43,7 +43,6 @@ function M.setup()
       { name = 'nvim_lsp', priority = 1 },
       { name = 'buffer', priority = 1 },
       { name = 'nvim_lsp_signature_help', priority = 1 },
-      { name = 'neorg', priority = 1 },
       { name = 'emoji', priority = 1 },
       { name = 'emmet', priority = 2 },
       { name = 'luasnip', priority = 2 },
