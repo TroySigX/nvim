@@ -122,6 +122,11 @@ function M.setup()
     ['<A-L>'] = { ':tabm +1<CR>', 'move tab to the right' },
   })
 
+  -- retain paste register after pasting
+  map({
+    p = { '"_dP', 'paste without losing paste register' },
+  }, { mode = 'v' })
+
   -- Neovim save and quit
   map({
     q = { ':q<CR>', 'quit' },
