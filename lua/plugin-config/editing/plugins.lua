@@ -24,6 +24,7 @@ return {
 
   {
     'chrisgrieser/nvim-puppeteer',
+    event = 'VeryLazy',
     dependencies = 'nvim-treesitter/nvim-treesitter',
   },
 
