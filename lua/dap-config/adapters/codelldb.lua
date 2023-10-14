@@ -2,6 +2,7 @@ local M = {}
 
 local dap = require('dap')
 local path_sep = require('plenary.path').path.sep
+local file_to_executable = {}
 
 dap.adapters.codelldb = {
   type = 'server',
@@ -23,12 +24,14 @@ function M.adapter()
         local co = coroutine.running()
         vim.ui.input({
           prompt = 'Path to executable: ',
-          default = vim.fn.getcwd() .. path_sep,
+          default = file_to_executable[vim.fn.expand('%')] or vim.fn.getcwd() .. path_sep,
         }, function(input)
           coroutine.resume(co, input)
         end)
 
-        return coroutine.yield()
+        local executable = coroutine.yield()
+        file_to_executable[vim.fn.expand('%')] = executable
+        return executable
       end,
       terminal = 'integrated',
       stopOnEntry = false,
