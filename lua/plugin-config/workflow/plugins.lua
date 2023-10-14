@@ -53,7 +53,6 @@ return {
     dependencies = {
       'mfussenegger/nvim-dap',
       'mfussenegger/nvim-dap-python',
-      'jay-babu/mason-nvim-dap.nvim',
     },
     lazy = true,
     config = function()

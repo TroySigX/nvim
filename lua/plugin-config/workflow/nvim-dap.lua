@@ -109,16 +109,27 @@ local function ui_automation()
 end
 
 local function debugger_setup()
-  require('mason-nvim-dap').setup({
-    ensure_installed = { 'codelldb', 'debugpy', 'js' },
-    handlers = {
-      function(config)
-        require('mason-nvim-dap').default_setup(config)
-      end,
-      python = require('dap-config.python').setup,
-    },
-  })
-  require('dap-config.js').setup()
+  local ft_to_adapter = {
+    c = 'codelldb',
+    cpp = 'codelldb',
+    javascript = 'js-debug-adapter',
+    typescript = 'js-debug-adapter',
+  }
+
+  local config_plugins = {
+    'nvim-dap-python',
+  }
+
+  -- setup adapters
+  local dap = require('dap')
+  for ft, adapter in pairs(ft_to_adapter) do
+    dap.configurations[ft] = require('dap-config.adapters.' .. adapter).adapter()
+  end
+
+  -- call predefined dap configurations
+  for _, config in pairs(config_plugins) do
+    require('dap-config.preconfig-plugins.' .. config).setup()
+  end
 end
 
 local function dapui_setup()
