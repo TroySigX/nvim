@@ -1,4 +1,20 @@
+local M = {}
+
 local path = require('lspconfig.util').path
+
+function M.formatter_installed(formatter)
+  if formatter.mason_name ~= nil then
+    if require('mason-registry').is_installed(formatter.mason_name) then
+      return true
+    end
+  elseif formatter.system_name ~= nil then
+    if vim.v.shell_error == 0 then
+      return true
+    end
+  end
+
+  return false
+end
 
 local function tmp_file(formatter_name)
   local tmp_path = path.join(vim.fn.getcwd(), formatter_name .. '.tmp')
@@ -22,7 +38,7 @@ end
 
 local function setup_formatter(formatter)
   -- formatter should be installed before setup
-  if not require('mason-registry').is_installed(formatter.mason_name) then
+  if not M.formatter_installed(formatter) then
     return
   end
 
@@ -74,11 +90,10 @@ local function config_filetype_formatter(filetype, formatter_type_name)
   end
 end
 
-local M = {}
-
 function M.setup()
   -- setup formatters
   config_filetype_formatter({ 'cpp', 'c' }, 'c')
+  config_filetype_formatter('rust', 'rust')
   config_filetype_formatter({ 'javascript', 'typescript' }, 'js')
   config_filetype_formatter('lua', 'lua')
 end
@@ -90,6 +105,7 @@ function M.filetypes()
     lua = 'lua',
     c = 'c',
     cpp = 'c',
+    rust = 'rust',
     typescript = 'js',
     javascript = 'js',
     python = 'python',

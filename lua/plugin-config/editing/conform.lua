@@ -33,10 +33,11 @@ end
 
 local function available_formatters()
   local filetype_formatters = {}
+  local formatter_config = require('formatter-config')
 
   for ft, ft_alias in pairs(require('formatter-config').filetypes()) do
     local formatter = require('formatter-config.' .. ft_alias).formatter()
-    if require('mason-registry').is_installed(formatter.mason_name) then
+    if formatter_config.formatter_installed(formatter) then
       filetype_formatters[ft] = { formatter.conform_name }
     end
   end
