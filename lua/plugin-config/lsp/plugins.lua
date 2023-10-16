@@ -22,8 +22,8 @@ return {
       'hrsh7th/cmp-emoji',
       'lukas-reineke/cmp-under-comparator',
       {
-        'jackieaskins/cmp-emmet',
-        build = 'npm run release',
+        'dcampos/cmp-emmet-vim',
+        dependencies = 'mattn/emmet-vim',
       },
     },
     config = function()
