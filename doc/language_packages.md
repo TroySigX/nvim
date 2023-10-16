@@ -39,6 +39,7 @@ The following package types should be installed via `Mason`:
 ## Rust
 - LSP: `rust_analyzer`
 - debugger: `codelldb`
+- Compiler: [Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
 ## Lua
 - LSP: `lua_ls`
