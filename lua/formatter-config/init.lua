@@ -91,7 +91,7 @@ local function config_filetype_formatter(filetype, formatter_type_name)
 end
 
 function M.setup()
-  -- setup formatters
+  -- map filetypes with their respective config file
   config_filetype_formatter({ 'cpp', 'c' }, 'c')
   config_filetype_formatter('rust', 'rust')
   config_filetype_formatter({ 'javascript', 'typescript' }, 'js')
