@@ -1,6 +1,6 @@
 local M = {}
 
-local path = require('lspconfig.util').path
+local path = require('globals.path')
 
 function M.formatter()
   local config_file = '.rustfmt.toml'

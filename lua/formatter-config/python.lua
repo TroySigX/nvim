@@ -1,7 +1,5 @@
 local M = {}
 
-local path = require('lspconfig.util').path
-
 function M.formatter()
   return {
     mason_name = 'black',

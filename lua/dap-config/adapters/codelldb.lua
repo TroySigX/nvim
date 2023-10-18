@@ -1,7 +1,7 @@
 local M = {}
 
 local dap = require('dap')
-local path_sep = require('plenary.path').path.sep
+local path_sep = require('globals.path').sep()
 local file_to_executable = {}
 
 dap.adapters.codelldb = {

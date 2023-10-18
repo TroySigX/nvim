@@ -1,4 +1,4 @@
-local path = require('lspconfig.util').path
+local path = require('globals.path')
 
 local filename = '.editorconfig'
 local filepath = path.join(vim.fn.getcwd(), filename)

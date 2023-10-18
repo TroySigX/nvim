@@ -1,6 +1,6 @@
 local M = {}
 
-local path = require('lspconfig.util').path
+local path = require('globals.path')
 
 function M.formatter_installed(formatter)
   if formatter.mason_name ~= nil then
