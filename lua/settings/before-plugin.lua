@@ -34,4 +34,6 @@ vim.g.exclude_filetypes = {
   'man',
   'dashboard',
   '',
+  'NvimTree',
+  'NeogitStatus',
 }
