@@ -14,7 +14,7 @@ opt.clipboard:append('unnamedplus')
 opt.signcolumn = 'yes'
 opt.syntax = 'on'
 opt.showmatch = true
-opt.updatetime = 300
+opt.updatetime = 250
 opt.list = true
 opt.cursorline = true
 opt.exrc = true
