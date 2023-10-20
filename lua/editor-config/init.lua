@@ -1,10 +1,17 @@
 local path = require('globals.path')
 
 local filename = '.editorconfig'
-local filepath = path.join(vim.fn.getcwd(), filename)
 
-local function tmp_file()
-  local tmp_path = path.join(vim.fn.getcwd(), filename .. '.tmp')
+local function tmp_file(buf_id)
+  local dir
+  if
+    not pcall(function() -- buffer is not file
+      dir = path.get_dir(vim.api.nvim_buf_get_name(buf_id))
+    end)
+  then
+    return nil
+  end
+  local tmp_path = path.join(dir, filename .. '.tmp')
 
   local function create()
     local tmpf = io.open(tmp_path, 'w')
@@ -20,11 +27,16 @@ local function tmp_file()
     create = create,
     remove = remove,
     path = tmp_path,
+    dir = dir,
   }
 end
 
-local function setup()
-  local tmp = tmp_file()
+local function setup(buf_id)
+  local tmp = tmp_file(buf_id)
+
+  if tmp == nil then
+    return
+  end
 
   if not pcall(tmp.create) then
     return
@@ -43,10 +55,21 @@ local function setup()
     local config_file = path.join(vim.fn.stdpath('config'), filename)
 
     -- clone config file
-    os.execute('cp ' .. config_file .. ' ' .. filepath)
+    os.execute('cp ' .. config_file .. ' ' .. path.join(tmp.dir, filename))
   end
 
   tmp:remove()
 end
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = { '*' },
+  callback = function(opts)
+    if not vim.bo[opts.buf].modifiable then
+      return
+    end
+    vim.schedule(function()
+      setup(opts.buf)
+    end)
+  end,
+})
 vim.schedule(setup)
