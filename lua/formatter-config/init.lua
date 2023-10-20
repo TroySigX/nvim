@@ -17,7 +17,14 @@ function M.formatter_installed(formatter)
 end
 
 local function tmp_file(formatter_name, buf_id)
-  local dir = path.get_dir(vim.api.nvim_buf_get_name(buf_id))
+  local dir
+  if
+    not pcall(function() -- buffer is not file
+      dir = path.get_dir(vim.api.nvim_buf_get_name(buf_id))
+    end)
+  then
+    return nil
+  end
   local tmp_path = path.join(dir, formatter_name .. '.tmp')
 
   local function create()
@@ -44,17 +51,16 @@ local function setup_formatter(formatter, buf_id)
     return
   end
 
-  -- buffer is not file
-  if not pcall(function()
-    vim.api.nvim_buf_get_name(buf_id)
-  end) then
-    return
-  end
-
   -- if config file is not found from pwd to root
   -- create one in pwd
   local tmp = tmp_file(formatter.config_file_name, buf_id)
 
+  -- buffer is not a file
+  if tmp == nil then
+    return
+  end
+
+  -- directory not writable
   if not pcall(tmp.create) then
     return
   end
