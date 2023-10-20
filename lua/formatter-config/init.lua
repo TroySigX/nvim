@@ -16,8 +16,9 @@ function M.formatter_installed(formatter)
   return false
 end
 
-local function tmp_file(formatter_name)
-  local tmp_path = path.join(vim.fn.getcwd(), formatter_name .. '.tmp')
+local function tmp_file(formatter_name, buf_id)
+  local dir = path.get_dir(vim.api.nvim_buf_get_name(buf_id))
+  local tmp_path = path.join(dir, formatter_name .. '.tmp')
 
   local function create()
     local tmpf = io.open(tmp_path, 'w')
@@ -33,18 +34,26 @@ local function tmp_file(formatter_name)
     create = create,
     remove = remove,
     path = tmp_path,
+    dir = dir,
   }
 end
 
-local function setup_formatter(formatter)
+local function setup_formatter(formatter, buf_id)
   -- formatter should be installed before setup
   if not M.formatter_installed(formatter) then
     return
   end
 
+  -- buffer is not file
+  if not pcall(function()
+    vim.api.nvim_buf_get_name(buf_id)
+  end) then
+    return
+  end
+
   -- if config file is not found from pwd to root
   -- create one in pwd
-  local tmp = tmp_file(formatter.config_file_name)
+  local tmp = tmp_file(formatter.config_file_name, buf_id)
 
   if not pcall(tmp.create) then
     return
@@ -60,7 +69,7 @@ local function setup_formatter(formatter)
   end)
 
   if not config_exists then
-    local destination_path = path.join(vim.fn.getcwd(), formatter.config_file_name)
+    local destination_path = path.join(tmp.dir, formatter.config_file_name)
 
     -- clone config file
     os.execute('cp ' .. formatter.config_file_path .. ' ' .. destination_path)
@@ -73,9 +82,9 @@ local function config_filetype_formatter(filetype, formatter_type_name)
   local function create_autocmd(ft)
     vim.api.nvim_create_autocmd('FileType', {
       pattern = { ft },
-      callback = function()
+      callback = function(opts)
         vim.schedule(function()
-          setup_formatter(require('formatter-config.' .. formatter_type_name).formatter())
+          setup_formatter(require('formatter-config.' .. formatter_type_name).formatter(), opts.buf)
         end)
       end,
     })

@@ -18,4 +18,9 @@ function M.exists(path)
   return lsp_path.exists(path)
 end
 
+-- get working dir of file
+function M.get_dir(path)
+  return lsp_path.dirname(path)
+end
+
 return M
