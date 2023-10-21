@@ -1,5 +1,11 @@
 local M = {}
 
+local lsp_to_plugin = {
+  tsserver = 'typescript-tools',
+  rust_analyzer = 'rust-tools',
+  lua_ls = 'neodev',
+}
+
 function M.setup()
   -- setup mason
   require('mason').setup({
@@ -12,9 +18,9 @@ function M.setup()
     },
   })
 
-  local mason_lspcofig = require('mason-lspconfig')
+  local mason_lspconfig = require('mason-lspconfig')
 
-  mason_lspcofig.setup({
+  mason_lspconfig.setup({
     ensure_installed = { 'clangd', 'pyright', 'tsserver', 'lua_ls' },
   })
 
@@ -26,11 +32,15 @@ function M.setup()
     return base_dir .. server_name
   end
 
-  mason_lspcofig.setup_handlers({
+  mason_lspconfig.setup_handlers({
     function(server_name)
-      require('lspconfig')[server_name].setup({
-        capabilities = default_capabilities,
-      })
+      if lsp_to_plugin[server_name] then
+        require(config_path(lsp_to_plugin[server_name])).setup(default_capabilities)
+      else
+        require('lspconfig')[server_name].setup({
+          capabilities = default_capabilities,
+        })
+      end
     end,
 
     ['clangd'] = function()
@@ -38,22 +48,6 @@ function M.setup()
       server_capabilities.offsetEncoding = 'utf-8'
       require('lspconfig')['clangd'].setup({
         capabilities = server_capabilities,
-      })
-    end,
-
-    ['tsserver'] = function()
-      require(config_path('typescript-tools')).setup(default_capabilities)
-    end,
-
-    ['rust_analyzer'] = function()
-      require(config_path('rust-tools')).setup(default_capabilities)
-    end,
-
-    ['lua_ls'] = function()
-      -- neodev has to setup before lspconfig
-      require(config_path('neodev')).setup()
-      require('lspconfig')['lua_ls'].setup({
-        capabilities = default_capabilities,
       })
     end,
   })
