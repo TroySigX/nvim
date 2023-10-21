@@ -44,7 +44,7 @@ function M.setup()
     end,
 
     ['clangd'] = function()
-      local server_capabilities = default_capabilities
+      local server_capabilities = vim.tbl_deep_extend('keep', default_capabilities, {})
       server_capabilities.offsetEncoding = 'utf-8'
       require('lspconfig')['clangd'].setup({
         capabilities = server_capabilities,
