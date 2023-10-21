@@ -1,9 +1,7 @@
 local M = {}
 
-function M.setup(capabilities)
-  require('typescript-tools').setup({
-    capabilities = capabilities,
-  })
+function M.setup(opts)
+  require('typescript-tools').setup(opts)
 end
 
 return M

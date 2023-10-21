@@ -1,13 +1,11 @@
 local M = {}
 
-function M.setup(capabilities)
+function M.setup(opts)
   require('rust-tools').setup({
     tools = {
       executor = require('rust-tools.executors').toggleterm,
     },
-    server = {
-      capabilities = capabilities,
-    },
+    server = opts,
     dap = {
       adapter = require('dap-config.adapters.codelldb').adapter,
     },
