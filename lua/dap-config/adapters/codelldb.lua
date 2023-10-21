@@ -38,9 +38,10 @@ function M.adapter()
       cwd = '${workspaceFolder}',
       program = function()
         local co = coroutine.running()
+        local filepath = vim.fn.expand('%:p')
         vim.ui.input({
           prompt = 'Path to executable: ',
-          default = file_to_executable[vim.fn.expand('%:p')] or vim.fn.getcwd() .. path_sep,
+          default = file_to_executable[filepath] or vim.fn.getcwd() .. path_sep,
         }, function(input)
           coroutine.resume(co, input)
         end)
@@ -52,7 +53,7 @@ function M.adapter()
           luarocks_installed = true
         end
         if is_executable(executable) then
-          file_to_executable[vim.fn.expand('%:p')] = executable
+          file_to_executable[filepath] = executable
         end
 
         return executable
