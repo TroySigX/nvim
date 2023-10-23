@@ -27,7 +27,7 @@ function M.setup()
     strategy = {
       use_shell = true,
       'toggleterm',
-      quit_on_exit = 'success',
+      quit_on_exit = 'never',
     },
   })
 end
