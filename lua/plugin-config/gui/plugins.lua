@@ -116,6 +116,15 @@ return {
   },
 
   {
+    'lukas-reineke/headlines.nvim',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
+    ft = 'markdown',
+    config = function()
+      require(config_path('headlines')).setup()
+    end,
+  },
+
+  {
     'kevinhwang91/nvim-ufo',
     event = 'VeryLazy',
     dependencies = {
