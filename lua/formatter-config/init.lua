@@ -1,14 +1,19 @@
 local M = {}
 
 local path = require('globals.path')
+local cmd = require('globals.cmd')
 
 function M.formatter_installed(formatter)
+  if formatter == nil then
+    return false
+  end
+
   if formatter.mason_name ~= nil then
     if require('mason-registry').is_installed(formatter.mason_name) then
       return true
     end
   elseif formatter.system_name ~= nil then
-    if vim.v.shell_error == 0 then
+    if cmd.run_cmd(formatter.system_name .. ' --version').status == 0 then
       return true
     end
   end
@@ -16,58 +21,42 @@ function M.formatter_installed(formatter)
   return false
 end
 
-local function tmp_file(formatter_name, buf_id)
-  local dir
-  if
-    not pcall(function() -- buffer is not file
-      dir = path.get_dir(vim.api.nvim_buf_get_name(buf_id))
-    end)
-  then
-    return nil
-  end
-  local tmp_path = path.join(dir, formatter_name .. '.tmp')
-
-  local function create()
-    local tmpf = io.open(tmp_path, 'w')
-    tmpf:write()
-    tmpf:close()
+local function project_root(formatter, cwd)
+  local git_root = path.git_root(cwd)
+  if git_root ~= nil then
+    return git_root
   end
 
-  local function remove()
-    os.remove(tmp_path)
+  local lang_root = formatter.project_root ~= nil and formatter.project_root()
+  if lang_root ~= nil then
+    return lang_root
   end
 
-  return {
-    create = create,
-    remove = remove,
-    path = tmp_path,
-    dir = dir,
-  }
+  return nil
 end
 
-local function setup_formatter(formatter, buf_id)
+local function setup_formatter(formatter, cwd)
   -- formatter should be installed before setup
   if not M.formatter_installed(formatter) then
     return
   end
 
-  -- if config file is not found from pwd to root
-  -- create one in pwd
-  local tmp = tmp_file(formatter.config_file_name, buf_id)
-
-  -- buffer is not a file
-  if tmp == nil then
+  -- if cwd is in a project, prioritize adding config to that project
+  local proj_root = project_root(formatter, cwd)
+  if proj_root ~= nil then
+    local dest_path = path.join(proj_root, formatter.config_file_name)
+    -- creating config file if not exist
+    if not path.exists(dest_path) then
+      cmd.run_cmd('cp ' .. formatter.config_file_path .. ' ' .. dest_path)
+    end
     return
   end
 
-  -- directory not writable
-  if not pcall(tmp.create) then
-    return
-  end
+  local tmp_path = path.join(cwd, formatter.config_file_name .. '.tmp')
 
   local config_exists = false
 
-  path.traverse_parents(tmp.path, function(dir)
+  path.traverse_parents(tmp_path, function(dir)
     if path.exists(path.join(dir, formatter.config_file_name)) then
       config_exists = true
       return true
@@ -75,13 +64,11 @@ local function setup_formatter(formatter, buf_id)
   end)
 
   if not config_exists then
-    local destination_path = path.join(tmp.dir, formatter.config_file_name)
+    local dest_path = path.join(cwd, formatter.config_file_name)
 
     -- clone config file
-    os.execute('cp ' .. formatter.config_file_path .. ' ' .. destination_path)
+    cmd.run_cmd('cp ' .. formatter.config_file_path .. ' ' .. dest_path)
   end
-
-  tmp:remove()
 end
 
 local function config_filetype_formatter(filetype, formatter_type_name)
@@ -90,7 +77,12 @@ local function config_filetype_formatter(filetype, formatter_type_name)
       pattern = { ft },
       callback = function(opts)
         vim.schedule(function()
-          setup_formatter(require('formatter-config.' .. formatter_type_name).formatter(), opts.buf)
+          local cwd = path.buf_dir(opts.buf)
+          -- buffer is not a file
+          if cwd == nil then
+            return
+          end
+          setup_formatter(require('formatter-config.' .. formatter_type_name).formatter(cwd), cwd)
         end)
       end,
     })
