@@ -11,6 +11,8 @@ function M.setup()
           return vim.fn.getcwd()
         end,
       }),
+
+      require('neotest-gtest').setup({}),
     },
 
     quickfix = {
@@ -27,25 +29,25 @@ function M.keymaps()
         function()
           require('neotest').run.run()
         end,
-        'Unit [T]est [R]un',
+        'Neo[T]est [R]un',
       },
       R = {
         function()
           require('neotest').run.run(vim.fn.expand('%'))
         end,
-        'Unit [T]est [R]un All',
+        'Neo[T]est [R]un All',
       },
       s = {
         function()
           require('neotest').run.stop()
         end,
-        'Unit Test [S]top',
+        'Neo[T]est [S]top',
       },
       S = {
         function()
           require('neotest').run.stop(vim.fn.expand('%'))
         end,
-        'Unit Tests [S]top All',
+        'Neo[T]est [S]top All',
       },
       t = {
         function()
