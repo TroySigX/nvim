@@ -19,6 +19,16 @@ function M.setup()
       inc_rename = true,
       lsp_doc_border = false,
     },
+    routes = {
+      {
+        filter = {
+          event = 'msg_show',
+          kind = '',
+          find = 'written',
+        },
+        opts = { skip = true },
+      },
+    },
     commands = {
       viewLast = {
         view = 'split',
