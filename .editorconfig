@@ -8,19 +8,14 @@ indent_style = space
 indent_size = 2
 charset = utf-8
 
-# Latex config
-[**.tex]
+# do not trim trailing whitespace
+[{**.{tex,md,txt}}]
 trim_trailing_whitespace = false
 
-# Markdown config
-[**.md]
-trim_trailing_whitespace = false
-
-# Textfile config
+# do not insert final newline
 [**.txt]
-trim_trailing_whitespace = false
 insert_final_newline = false
 
-# Snippets config
-[**.snippets]
+# indent: tab
+[**{.snippets,Makefile}]
 indent_style = tab
