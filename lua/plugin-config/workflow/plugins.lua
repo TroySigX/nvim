@@ -81,6 +81,7 @@ return {
     'nvim-neotest/neotest',
     dependencies = {
       'haydenmeade/neotest-jest',
+      'alfaix/neotest-gtest',
       'nvim-treesitter/nvim-treesitter',
     },
     lazy = true,
@@ -91,7 +92,7 @@ return {
 
   {
     'vuki656/package-info.nvim',
-    ft = 'json',
+    event = { 'BufRead package.json' },
     dependencies = 'MunifTanjim/nui.nvim',
     config = function()
       require(config_path('package-info')).setup()
@@ -99,14 +100,10 @@ return {
   },
 
   {
-    'pwntester/octo.nvim',
-    keys = require(config_path('octo')).keymaps(),
-    dependencies = {
-      'nvim-telescope/telescope.nvim',
-      'nvim-tree/nvim-web-devicons',
-    },
+    'saecki/crates.nvim',
+    event = { 'BufRead Cargo.toml' },
     config = function()
-      require(config_path('octo')).setup()
+      require(config_path('crates')).setup()
     end,
   },
 

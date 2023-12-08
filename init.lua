@@ -50,9 +50,3 @@ require('lazy').setup({
     },
   },
 })
-
--- editorconfig
-require('editor-config')
-
--- formatting
-require('formatter-config').setup()

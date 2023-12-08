@@ -26,9 +26,5 @@ NVIM_APPNAME=TroySigX/nvim/ nvim
 ### Install system packages:
 Run `/setup/install.sh` (for Arch-based only)
 
-### Plugin-based requirements:
-* [Octo.nvim](https://github.com/pwntester/octo.nvim):
-  - Github CLI login ([manual](https://cli.github.com/manual/gh_auth_login))
-
 ## Language-based packages:
 Read [doc](doc/language_packages.md)

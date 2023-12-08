@@ -9,7 +9,6 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      'Pheon-Dev/pigeon',
       {
         'folke/noice.nvim',
         dependencies = 'MunifTanjim/nui.nvim',
@@ -18,7 +17,6 @@ return {
     config = function()
       require(config_path('noice')).setup()
       -- pigeon has to init before lualine
-      require(config_path('pigeon')).setup()
       require(config_path('lualine')).setup()
     end,
   },
@@ -82,14 +80,6 @@ return {
   },
 
   {
-    'kevinhwang91/nvim-bqf',
-    event = 'VeryLazy',
-    config = function()
-      require(config_path('nvim-bqf')).setup()
-    end,
-  },
-
-  {
     'HiPhish/rainbow-delimiters.nvim',
     config = function()
       require(config_path('rainbow-delimiters')).setup()
@@ -112,15 +102,6 @@ return {
     keys = { 'u', '<C-r>' },
     config = function()
       require(config_path('highlight-undo')).setup()
-    end,
-  },
-
-  {
-    'lukas-reineke/headlines.nvim',
-    dependencies = 'nvim-treesitter/nvim-treesitter',
-    ft = 'markdown',
-    config = function()
-      require(config_path('headlines')).setup()
     end,
   },
 

@@ -17,12 +17,15 @@ function M.setup()
       },
 
       lualine_y = {
-        require('pigeon.datetime').current_time,
+        function()
+          local format = '%I:%M %p'
+          return '󰃰 ' .. os.date(format)
+        end,
       },
 
       lualine_c = {
         {
-          -- LSP server name .
+          -- LSP server name
           function()
             local msg = 'No Active LSP'
             local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')

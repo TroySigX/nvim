@@ -7,7 +7,6 @@ function Knap_autopreview(bufnr)
   return autopreview[bufnr]
 end
 
--- TODO: look for more cross-platform way
 function M.setup()
   local gknapsettings = {
     -- latex

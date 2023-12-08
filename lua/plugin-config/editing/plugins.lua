@@ -49,14 +49,6 @@ return {
   },
 
   {
-    'abecodes/tabout.nvim',
-    event = 'InsertEnter',
-    config = function()
-      require(config_path('tabout')).setup()
-    end,
-  },
-
-  {
     'echasnovski/mini.move',
     keys = require(config_path('mini-move')).keymaps(),
     config = function()

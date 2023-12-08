@@ -21,10 +21,6 @@ return {
       'onsails/lspkind.nvim',
       'hrsh7th/cmp-emoji',
       'lukas-reineke/cmp-under-comparator',
-      {
-        'dcampos/cmp-emmet-vim',
-        dependencies = 'mattn/emmet-vim',
-      },
     },
     config = function()
       require(config_path('nvim-cmp')).setup()
@@ -94,7 +90,6 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
-    -- priority = 150,
     build = ':TSUpdate',
     config = function()
       require(config_path('treesitter')).setup()

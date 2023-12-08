@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  require('headlines').setup()
+  require('crates').setup()
 end
 
 return M
