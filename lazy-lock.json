@@ -67,7 +67,7 @@
   "promise-async": { "branch": "main", "commit": "94f6f03c6c1e2aab551aacdf0c1e597a7269abb6" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "0b4c1ab6724062f3582746c6a5a8c0636bf7ed81" },
   "refactoring.nvim": { "branch": "master", "commit": "156532476deb10b1b2a32cb38e1078b3f9951c42" },
-  "rust-tools.nvim": { "branch": "master", "commit": "0cc8adab23117783a0292a0c8a2fbed1005dc645" },
+  "rustaceanvim": { "branch": "master", "commit": "34de6532db3fbf83cc61f3f979b875472d87c4c7" },
   "smart-splits.nvim": { "branch": "master", "commit": "f0003bf9c3f11b8b9209264f865b8864453ca926" },
   "sniprun": { "branch": "master", "commit": "639877399a23e375a8c07b75c14d017735eab7cb" },
   "ssr.nvim": { "branch": "main", "commit": "bb323ba621ac647b4ac5638b47666e3ef3c279e1" },

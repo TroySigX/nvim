@@ -8,7 +8,7 @@ end
 
 local lsp_to_plugin = {
   tsserver = 'typescript-tools',
-  rust_analyzer = 'rust-tools',
+  rust_analyzer = 'rustaceanvim',
   lua_ls = 'neodev',
 }
 

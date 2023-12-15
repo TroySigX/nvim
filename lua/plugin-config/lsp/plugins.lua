@@ -35,7 +35,7 @@ return {
       'folke/neodev.nvim',
       'williamboman/mason-lspconfig.nvim',
       'williamboman/mason.nvim',
-      'simrat39/rust-tools.nvim',
+      'mrcjkb/rustaceanvim',
       'pmizio/typescript-tools.nvim',
     },
     config = function()

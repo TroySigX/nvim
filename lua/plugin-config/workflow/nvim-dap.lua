@@ -112,6 +112,7 @@ local function debugger_setup()
   local ft_to_adapter = {
     c = 'codelldb',
     cpp = 'codelldb',
+    rust = 'codelldb',
     javascript = 'js-debug-adapter',
     typescript = 'js-debug-adapter',
   }
