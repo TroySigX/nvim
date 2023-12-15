@@ -10,7 +10,6 @@ packages=(
   "ripgrep"
   "fd"
   "xclip"
-  "ctags"
 )
 
 for package in "${packages[@]}"; do
