@@ -16,7 +16,6 @@ return {
     },
     config = function()
       require(config_path('noice')).setup()
-      -- pigeon has to init before lualine
       require(config_path('lualine')).setup()
     end,
   },
@@ -76,6 +75,14 @@ return {
     lazy = true,
     config = function()
       require(config_path('smart-splits')).setup()
+    end,
+  },
+
+  {
+    'kevinhwang91/nvim-bqf',
+    event = 'VeryLazy',
+    config = function()
+      require(config_path('nvim-bqf')).setup()
     end,
   },
 

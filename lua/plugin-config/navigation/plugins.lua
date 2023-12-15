@@ -14,10 +14,14 @@ return {
   },
 
   {
-    'preservim/tagbar',
-    keys = require(config_path('tagbar')).keymaps(),
+    'stevearc/aerial.nvim',
+    lazy = true,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
     config = function()
-      require(config_path('tagbar')).setup()
+      require(config_path('aerial')).setup()
     end,
   },
 

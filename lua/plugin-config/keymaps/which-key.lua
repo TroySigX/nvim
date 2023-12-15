@@ -48,6 +48,7 @@ local function plugin_keymaps()
     local path = config_path('navigation')
 
     require(path('flash-nvim')).keymaps()
+    require(path('aerial')).keymaps()
   end
 
   local function workflow()
