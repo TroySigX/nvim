@@ -28,7 +28,7 @@ local function on_attach_keymaps()
       end,
       'Debugger Step Out',
     },
-    ['<space>'] = {
+    ['<leader>'] = {
       d = {
         x = {
           function()
@@ -67,7 +67,7 @@ local function on_attach_keymaps()
         'Debugger Eval',
       },
     },
-  }, { prefix = '<space>', mode = { 'n', 'v' } })
+  }, { prefix = '<leader>', mode = { 'n', 'v' } })
 end
 
 local function sign_define()
@@ -196,7 +196,7 @@ function M.keymaps()
         'Toggle [B]reakpoint',
       },
     },
-  }, { prefix = '<space>' })
+  }, { prefix = '<leader>' })
 
   wk.register({
     ['<F8>'] = {
