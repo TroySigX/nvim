@@ -1,6 +1,6 @@
 local M = {}
 
-local path = require('globals.path')
+local path = require('utils.path')
 
 function M.formatter()
   local config_file = '.stylua.toml'

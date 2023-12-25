@@ -1,4 +1,4 @@
-local path = require('globals.path')
+local path = require('utils.path')
 local opt = vim.opt
 
 opt.undodir = path.join(vim.fn.stdpath('data'), '.undodir')

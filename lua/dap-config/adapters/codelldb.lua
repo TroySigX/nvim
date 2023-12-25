@@ -1,7 +1,7 @@
 local M = {}
 
 local dap = require('dap')
-local path = require('globals.path')
+local path = require('utils.path')
 local path_sep = path.sep()
 local file_to_executable = {} -- save last executable for file
 local luarocks_installed = false -- only call nvim_rocks once
@@ -37,16 +37,12 @@ function M.adapter()
       request = 'launch',
       cwd = '${workspaceFolder}',
       program = function()
-        local co = coroutine.running()
         local filepath = vim.fn.expand('%:p')
-        vim.ui.input({
-          prompt = 'Path to executable: ',
-          default = file_to_executable[filepath] or vim.fn.getcwd() .. path_sep,
-        }, function(input)
-          coroutine.resume(co, input)
-        end)
+        local executable = require('utils.user_input').input(
+          'Path to executable: ',
+          file_to_executable[filepath] or vim.fn.getcwd() .. path_sep
+        )
 
-        local executable = coroutine.yield()
         -- saving executable for file
         if not luarocks_installed then
           require('nvim_rocks').ensure_installed('luafilesystem')

@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   local luasnip = require('luasnip')
-  local path = require('globals.path')
+  local path = require('utils.path')
 
   luasnip.filetype_extend('javascript', { 'javascriptreact', 'html' })
   luasnip.filetype_extend('typescript', { 'javascript' })

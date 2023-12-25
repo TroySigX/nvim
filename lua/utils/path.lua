@@ -39,7 +39,7 @@ end
 
 -- get root of git directory
 function M.git_root(path)
-  return require('globals.cmd').run_cmd('cd ' .. path .. ' && git rev-parse --show-toplevel').output
+  return require('utils.cmd').run_cmd('cd ' .. path .. ' && git rev-parse --show-toplevel').output
 end
 
 return M

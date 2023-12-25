@@ -1,6 +1,6 @@
 local M = {}
 
-local cmd = require('globals.cmd')
+local cmd = require('utils.cmd')
 
 function M.formatter_installed(formatter)
   if formatter == nil then

@@ -1,12 +1,12 @@
 local M = {}
 
-local path = require('globals.path')
+local path = require('utils.path')
 
 function M.formatter(cwd)
   local config_file = '.prettierrc'
   return {
     project_root = function()
-      local npm_path = require('globals.cmd').run_cmd('cd ' .. cwd .. ' && npm root').output
+      local npm_path = require('utils.cmd').run_cmd('cd ' .. cwd .. ' && npm root').output
       return path.path_dir(npm_path)
     end,
     mason_name = 'prettierd',

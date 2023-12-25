@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   vim.g.firenvim_config = {
-    globalSettings = { alt = 'all' },
+    utilsettings = { alt = 'all' },
     localSettings = {
       ['.*'] = {
         cmdline = 'neovim',

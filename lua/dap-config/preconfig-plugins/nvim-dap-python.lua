@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   local dap = require('dap')
-  local path = require('globals.path')
+  local path = require('utils.path')
 
   local mason_registry = require('mason-registry')
   local debugpy_path = mason_registry.get_package('debugpy'):get_install_path()
