@@ -21,6 +21,38 @@ function M.keymaps()
   }
 end
 
+local function formatter_tasks()
+  local config_to_filetypes = {}
+  for ft, ft_alias in pairs(require('formatter-config').filetypes()) do
+    if config_to_filetypes[ft_alias] == nil then
+      config_to_filetypes[ft_alias] = { ft }
+    else
+      table.insert(config_to_filetypes[ft_alias], ft)
+    end
+  end
+
+  local overseer = require('overseer')
+  for ft_alias, ft in pairs(config_to_filetypes) do
+    local formatter = require('formatter-config.' .. ft_alias).formatter()
+    if formatter.config_file_name ~= nil then
+      overseer.register_template({
+        name = '~generate ' .. formatter.config_file_name,
+        builder = function()
+          local input_file = formatter.config_file_path
+          local output_file = formatter.config_file_name
+          return {
+            cmd = { 'cp' },
+            args = { input_file, output_file },
+          }
+        end,
+        condition = {
+          filetype = ft,
+        },
+      })
+    end
+  end
+end
+
 function M.setup()
   require('overseer').setup({
     templates = { 'builtin', 'user' },
@@ -30,6 +62,8 @@ function M.setup()
       quit_on_exit = 'never',
     },
   })
+
+  formatter_tasks()
 end
 
 return M
