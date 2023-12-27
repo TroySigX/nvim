@@ -10,6 +10,7 @@ packages=(
   "ripgrep"
   "fd"
   "xclip"
+  "wl-clipboard"
 )
 
 for package in "${packages[@]}"; do
