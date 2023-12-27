@@ -16,4 +16,16 @@ function M.input(prompt, default)
   return coroutine.yield()
 end
 
+function M.select(prompt, items)
+  local co = coroutine.running()
+
+  vim.ui.select(items, {
+    prompt = prompt,
+  }, function(choice)
+    coroutine.resume(co, choice)
+  end)
+
+  return coroutine.yield()
+end
+
 return M

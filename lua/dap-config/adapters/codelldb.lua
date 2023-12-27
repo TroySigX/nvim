@@ -1,10 +1,7 @@
 local M = {}
 
 local dap = require('dap')
-local path = require('utils.path')
-local path_sep = path.sep()
-local file_to_executable = {} -- save last executable for file
-local luarocks_installed = false -- only call nvim_rocks once
+local cache = {} -- last executable for file
 
 dap.adapters.codelldb = {
   type = 'server',
@@ -16,20 +13,6 @@ dap.adapters.codelldb = {
   },
 }
 
-local function is_executable(filepath)
-  -- checking if file exists
-  if not path.exists(filepath) then
-    return false
-  end
-
-  local lfs = require('lfs')
-  local attr = lfs.attributes(filepath)
-  if string.match(attr.permissions, 'x') then
-    return true
-  end
-  return false
-end
-
 function M.adapter()
   return {
     {
@@ -37,20 +20,17 @@ function M.adapter()
       request = 'launch',
       cwd = '${workspaceFolder}',
       program = function()
-        local filepath = vim.fn.expand('%:p')
-        local executable = require('utils.user_input').input(
-          'Path to executable: ',
-          file_to_executable[filepath] or vim.fn.getcwd() .. path_sep
-        )
-
-        -- saving executable for file
-        if not luarocks_installed then
-          require('nvim_rocks').ensure_installed('luafilesystem')
-          luarocks_installed = true
+        local cur_file = vim.fn.expand('%:p')
+        local files = {}
+        for file in require('utils.cmd').run_cmd('fd -I').output:gmatch('[^\r\n]+') do
+          if file == cache[cur_file] then
+            table.insert(files, 1, file)
+          else
+            table.insert(files, file)
+          end
         end
-        if is_executable(executable) then
-          file_to_executable[filepath] = executable
-        end
+        local executable = require('utils.user_input').select('Select executable: ', files)
+        cache[cur_file] = executable
 
         return executable
       end,
