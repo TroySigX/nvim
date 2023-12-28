@@ -36,4 +36,12 @@ vim.g.exclude_filetypes = {
   '',
   'NvimTree',
   'NeogitStatus',
+  'Trouble',
+  'aerial',
+  'dap-repl',
+  'dapui_console',
+  'dapui_scopes',
+  'dapui_watches',
+  'dapui_breakpoints',
+  'dapui_stacks',
 }
