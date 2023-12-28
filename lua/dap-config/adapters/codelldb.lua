@@ -16,6 +16,7 @@ dap.adapters.codelldb = {
 function M.adapter()
   return {
     {
+      name = 'Launch file',
       type = 'codelldb',
       request = 'launch',
       cwd = '${workspaceFolder}',

@@ -123,14 +123,23 @@ local function debugger_setup()
 
   -- setup adapters
   local dap = require('dap')
+  local adapter_to_ft = {}
   for ft, adapter in pairs(ft_to_adapter) do
     dap.configurations[ft] = require('dap-config.adapters.' .. adapter).adapter()
+
+    if not adapter_to_ft[adapter] then
+      adapter_to_ft[adapter] = {}
+    end
+    table.insert(adapter_to_ft[adapter], ft)
   end
 
   -- call predefined dap configurations
   for _, config in pairs(config_plugins) do
     require('dap-config.preconfig-plugins.' .. config).setup()
   end
+
+  -- local project settings
+  require('dap.ext.vscode').load_launchjs(nil, adapter_to_ft)
 end
 
 local function dapui_setup()
