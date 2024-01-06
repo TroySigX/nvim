@@ -31,6 +31,9 @@ function M.adapter()
           end
         end
         local executable = require('utils.user_input').select('Select executable: ', files)
+        if executable == nil then
+          return
+        end
         cache[cur_file] = executable
 
         return executable
