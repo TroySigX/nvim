@@ -125,8 +125,8 @@ function M.setup()
 
   -- retain paste register after pasting
   map({
-    p = { '"_dP', 'paste without losing paste register' },
-  }, { mode = 'v' })
+    p = { 'P', 'paste without losing paste register' },
+  }, { mode = 'x' })
 
   -- Neovim save and quit
   map({
