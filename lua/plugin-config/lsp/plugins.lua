@@ -34,6 +34,7 @@ return {
     dependencies = {
       'hrsh7th/cmp-nvim-lsp',
       'folke/neodev.nvim',
+      'mrcjkb/rustaceanvim',
       'williamboman/mason-lspconfig.nvim',
       'williamboman/mason.nvim',
       'pmizio/typescript-tools.nvim',

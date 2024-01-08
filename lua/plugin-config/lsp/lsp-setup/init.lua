@@ -11,6 +11,7 @@ local custom_lsp = {
   lua_ls = true,
   clangd = true,
   typst_lsp = true,
+  rust_analyzer = true,
 }
 
 function M.setup()
