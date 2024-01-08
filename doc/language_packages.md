@@ -51,6 +51,9 @@ The following package types should be installed via `Mason`:
 - PDF converter: `pdflatex`
 - Formatter: `latexindent`
   + Dependency (system package): [libxcrypt-compat](https://archlinux.org/packages/core/x86_64/libxcrypt-compat/)
+
+## Typst
+- LSP: `typst_lsp`
  
 ## Bash
 - Linter: `shellcheck`

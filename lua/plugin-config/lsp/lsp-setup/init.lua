@@ -10,6 +10,7 @@ local custom_lsp = {
   tsserver = true,
   lua_ls = true,
   clangd = true,
+  typst_lsp = true,
 }
 
 function M.setup()
