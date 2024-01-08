@@ -1,16 +1,15 @@
 local M = {}
 
 local dap = require('dap')
-local cache_file = require('utils.path').join(vim.fn.stdpath('data'), 'codelldb_executable_cache.json')
+local cache_file =
+  require('utils.file').file(require('utils.path').join(vim.fn.stdpath('data'), 'codelldb_executable_cache.json'))
 local cache = {} -- last executable for file
 
 -- load cache
 local function load_cache()
-  local file = io.open(cache_file, 'r')
-  if file then
-    local content = file:read('*a')
-    cache = vim.fn.json_decode(content)
-    io.close(file)
+  local read_res = cache_file.read()
+  if read_res.status == 0 then
+    cache = vim.fn.json_decode(read_res.content)
   end
 end
 
@@ -53,12 +52,8 @@ function M.adapter()
           cache[cur_file] = executable
 
           -- save cache
-          local file = io.open(cache_file, 'w')
-          if file then
-            local content = vim.fn.json_encode(cache)
-            file:write(content)
-            io.close(file)
-          end
+          local content = vim.fn.json_encode(cache)
+          cache_file.write(content)
         end
 
         return executable
