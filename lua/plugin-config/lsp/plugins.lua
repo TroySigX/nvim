@@ -32,6 +32,7 @@ return {
     'neovim/nvim-lspconfig',
     priority = 150,
     dependencies = {
+      'hrsh7th/cmp-nvim-lsp',
       'folke/neodev.nvim',
       'williamboman/mason-lspconfig.nvim',
       'williamboman/mason.nvim',
