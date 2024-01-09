@@ -40,6 +40,7 @@ function M.setup()
       end, { 'i', 's' }),
     }),
 
+    -- higher priority stays on top
     sources = {
       { name = 'nvim_lsp', priority = 1 },
       { name = 'buffer', priority = 1 },
