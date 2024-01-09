@@ -7,6 +7,9 @@ function M.setup(opts)
         ['rust-analyzer'] = opts,
       },
     },
+    dap = {
+      adapters = false,
+    },
   }
 end
 
