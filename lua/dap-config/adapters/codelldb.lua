@@ -1,8 +1,8 @@
 local M = {}
 
 local dap = require('dap')
-local cache_file =
-  require('utils.file').file(require('utils.path').join(vim.fn.stdpath('data'), 'codelldb_executable_cache.json'))
+local path = require('utils.path')
+local cache_file = require('utils.file').file(path.join(vim.fn.stdpath('data'), 'codelldb_executable_cache.json'))
 local cache = {} -- last executable for file
 
 -- load cache
@@ -36,8 +36,9 @@ function M.adapter()
       program = function()
         local cur_file = vim.fn.expand('%:p')
         local files = {}
+        local cwd = vim.fn.getcwd()
         for file in require('utils.cmd').run_cmd('fd -I').output:gmatch('[^\r\n]+') do
-          if file == cache[cur_file] then
+          if path.join(cwd, file) == cache[cur_file] then
             table.insert(files, 1, file)
           else
             table.insert(files, file)
@@ -48,8 +49,9 @@ function M.adapter()
           return
         end
 
-        if cache[cur_file] ~= executable then
-          cache[cur_file] = executable
+        local executable_abs = path.join(cwd, executable)
+        if cache[cur_file] ~= executable_abs then
+          cache[cur_file] = executable_abs
 
           -- save cache
           local content = vim.fn.json_encode(cache)
