@@ -165,7 +165,7 @@ local function dapui_setup()
           },
         },
         position = 'left',
-        size = 40,
+        size = 0.28,
       },
       {
         elements = {
@@ -179,7 +179,7 @@ local function dapui_setup()
           },
         },
         position = 'bottom',
-        size = 10,
+        size = 0.3,
       },
     },
   })
@@ -211,7 +211,9 @@ function M.keymaps()
     ['<F8>'] = {
       function()
         vim.cmd.stopinsert()
-        require('dapui').toggle()
+        require('dapui').toggle({
+          reset = true,
+        })
       end,
       'Toggle DapUI (debugger)',
     },
