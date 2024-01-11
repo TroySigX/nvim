@@ -2,7 +2,7 @@ local M = {}
 
 function M.keymaps()
   require('which-key').register({
-    J = { ':Lspsaga goto_definition<CR>', 'LSP Preview Definition' },
+    J = { ':Lspsaga goto_definition<CR>', 'LSP Goto Definition' },
     K = { ':Lspsaga hover_doc<CR>', 'View LSP Doc' },
 
     ['<space>'] = {
