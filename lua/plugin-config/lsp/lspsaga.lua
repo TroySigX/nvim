@@ -36,8 +36,7 @@ end
 function M.setup()
   require('lspsaga').setup({
     lightbulb = {
-      sign = false,
-      virtual_text = false,
+      enable = false,
     },
 
     symbol_in_winbar = {
