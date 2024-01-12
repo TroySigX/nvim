@@ -44,4 +44,5 @@ vim.g.exclude_filetypes = {
   'dapui_watches',
   'dapui_breakpoints',
   'dapui_stacks',
+  'qf',
 }
