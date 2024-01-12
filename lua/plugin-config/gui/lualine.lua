@@ -4,6 +4,7 @@ function M.setup()
   require('lualine').setup({
     options = {
       theme = 'ayu_mirage',
+      ignore_focus = vim.g.exclude_filetypes,
     },
     sections = {
       lualine_x = {
