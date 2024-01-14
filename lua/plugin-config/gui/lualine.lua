@@ -45,6 +45,24 @@ function M.setup()
           icon = ' LSP:',
           color = { fg = '#faa92f' },
         },
+        {
+          function()
+            local pyproject = vim.fn.findfile('pyproject.toml', vim.fn.getcwd() .. ';')
+            if pyproject == '' then
+              return ''
+            end
+
+            local venv = require('venv-selector').get_active_venv()
+            if venv then
+              local venv_parts = vim.fn.split(venv, '/')
+              local venv_name = venv_parts[#venv_parts]
+              return ' ' .. venv_name
+            else
+              return ' No Active Venv'
+            end
+          end,
+          color = { fg = '#CDD6F4' },
+        },
       },
     },
   })
