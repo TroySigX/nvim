@@ -11,6 +11,7 @@ function M.keymaps()
         p = { ':Lspsaga rename ++project<CR>', '[R]e[N]ame [P]roject' },
         f = { ':Lspsaga rename<CR>', '[R]e[N]ame [F]ile' },
       },
+      lr = { ':Lspsaga finder<CR>', '[L]sp [R]eferences' },
     },
 
     ['<leader>'] = {
@@ -37,6 +38,12 @@ function M.setup()
   require('lspsaga').setup({
     lightbulb = {
       enable = false,
+    },
+
+    finder = {
+      keys = {
+        vsplit = '<C-v>',
+      },
     },
 
     symbol_in_winbar = {
