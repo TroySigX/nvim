@@ -82,7 +82,6 @@ return {
 
   {
     'folke/trouble.nvim',
-    keys = require(config_path('trouble')).keymaps(),
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
       require(config_path('trouble')).setup()

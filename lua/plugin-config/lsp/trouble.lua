@@ -1,22 +1,20 @@
 local M = {}
 
 function M.setup()
-  require('trouble').setup({})
+  require('trouble').setup({
+    use_diagnostic_signs = true,
+  })
 end
 
 function M.keymaps()
-  return {
-    {
-      '<F1>',
+  require('which-key').register({
+    ['<F1>'] = {
       function()
-        vim.cmd.stopinsert()
-        vim.cmd.TroubleToggle()
+        require('trouble').toggle()
       end,
-      silent = true,
-      desc = 'Toggle Trouble(diagnostic) List',
-      mode = { 'n', 'i', 'v' },
+      'Toggle Trouble (diagnostic) List',
     },
-  }
+  }, { mode = { 'n', 'i', 'x' } })
 end
 
 return M

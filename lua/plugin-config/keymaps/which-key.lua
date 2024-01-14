@@ -38,6 +38,7 @@ local function plugin_keymaps()
     local path = config_path('lsp')
 
     require(path('lspsaga')).keymaps()
+    require(path('trouble')).keymaps()
     require(path('nvim-lint')).keymaps()
     require(path('luasnip')).keymaps()
     require(path('refactoring')).keymaps()
