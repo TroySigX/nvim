@@ -1,20 +1,20 @@
 local M = {}
 
 function M.keymaps()
-  return {
-    {
-      '<leader>vs',
-      vim.cmd.VenvSelect,
-      silent = true,
-      desc = 'Select Virtual Environment',
+  require('which-key').register({
+    vs = {
+      function()
+        require('venv-selector').open()
+      end,
+      'Select Virtual Environment',
     },
-    {
-      '<leader>vc',
-      vim.cmd.VenvSelectCached,
-      silent = true,
-      desc = 'Select Cached Virtual Environment',
+    vc = {
+      function()
+        require('venv-selector').retrieve_from_cache()
+      end,
+      'Select Virtual Environment',
     },
-  }
+  }, { prefix = '<leader>' })
 end
 
 function M.setup()
