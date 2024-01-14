@@ -42,7 +42,7 @@ function M.keymaps()
       end,
       '[S]earch Selected [W]ord',
     },
-  }, { prefix = '<space>', mode = 'v' })
+  }, { prefix = '<space>', mode = 'x' })
 
   map({
     ['<F6>'] = {
@@ -51,19 +51,20 @@ function M.keymaps()
       end,
       'Find files',
     },
+
     ['<F18>'] = {
       function()
         require('fzf-lua').resume()
       end,
-      'Resume last fzf command',
+      'Resume last fzf command (<S-F6>)',
     },
     ['<F30>'] = {
       function()
         require('fzf-lua').oldfiles()
       end,
-      'Old files',
+      'Old files (<C-F6>)',
     },
-  }, { mode = { 'n', 'v', 'i' } })
+  }, { mode = { 'n', 'x', 'i' } })
 
   map({
     ['?'] = {
@@ -72,7 +73,7 @@ function M.keymaps()
       end,
       'Grep current buffer',
     },
-  }, { mode = { 'n', 'v' } })
+  }, { mode = { 'n', 'x' } })
 end
 
 return M
