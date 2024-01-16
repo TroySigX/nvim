@@ -65,14 +65,6 @@ return {
   },
 
   {
-    'AckslD/muren.nvim',
-    keys = require(config_path('muren')).keymaps(),
-    config = function()
-      require(config_path('muren')).setup()
-    end,
-  },
-
-  {
     'cshuaimin/ssr.nvim',
     lazy = true,
     config = function()
