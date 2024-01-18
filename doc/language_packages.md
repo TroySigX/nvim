@@ -28,6 +28,9 @@ The following package types should be installed via `Mason`:
 - LSP: `pyright`
 - Formatter: `black`
 - Debugger: `debugpy`
+- Venv management:
+  - `poetry`
+  - `pyenv`
 
 ## JavaScript/TypeScript
 - LSP: `tsserver`
