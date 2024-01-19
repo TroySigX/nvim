@@ -62,6 +62,7 @@ local function plugin_keymaps()
     require(path('todo-comments')).keymaps()
     require(path('package-info')).keymaps()
     require(path('venv-selector')).keymaps()
+    require(path('crates')).keymaps()
   end
 
   return {
