@@ -40,14 +40,13 @@ function M.setup()
       end, { 'i', 's' }),
     }),
 
-    -- higher priority stays on top
     sources = {
-      { name = 'nvim_lsp', priority = 1 },
-      { name = 'buffer', priority = 1 },
-      { name = 'nvim_lsp_signature_help', priority = 1 },
-      { name = 'emoji', priority = 1 },
-      { name = 'luasnip', priority = 2 },
-      { name = 'copilot', priority = 2 },
+      { name = 'copilot' },
+      { name = 'luasnip' },
+      { name = 'nvim_lsp' },
+      { name = 'nvim_lsp_signature_help' },
+      { name = 'buffer' },
+      { name = 'emoji' },
     },
 
     sorting = {
