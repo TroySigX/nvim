@@ -45,10 +45,10 @@ end
 
 function M.setup()
   require('crates').setup({
-    src = {
-      cmp = {
-        enabled = true,
-      },
+    lsp = {
+      enabled = true,
+      actions = true,
+      completion = true,
     },
   })
 end
