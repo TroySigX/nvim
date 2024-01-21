@@ -20,7 +20,7 @@ function M.keymaps()
         function()
           require('crates').upgrade_all_crates()
         end,
-        '[c]rates [U]pgrade',
+        '[c]rates [U]pgrade All',
       },
       d = {
         function()
