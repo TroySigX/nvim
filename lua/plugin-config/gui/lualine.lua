@@ -8,7 +8,6 @@ function M.setup()
     },
     sections = {
       lualine_x = {
-        'overseer',
         {
           -- Macro recording
           require('noice').api.status.mode.get,
