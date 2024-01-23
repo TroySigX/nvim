@@ -109,8 +109,8 @@ return {
 
   {
     'linux-cultist/venv-selector.nvim',
+    lazy = true,
     dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim' },
-    keys = require(config_path('venv-selector')).keymaps(),
     config = function()
       require(config_path('venv-selector')).setup()
     end,
