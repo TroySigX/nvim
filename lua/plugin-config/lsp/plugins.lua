@@ -90,6 +90,7 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
+    priority = 150,
     build = ':TSUpdate',
     config = function()
       require(config_path('treesitter')).setup()
