@@ -40,7 +40,10 @@ return {
     'altermo/ultimate-autopair.nvim',
     event = 'InsertEnter',
     dependencies = {
-      'RRethy/nvim-treesitter-endwise',
+      {
+        'RRethy/nvim-treesitter-endwise',
+        dependencies = 'nvim-treesitter/nvim-treesitter',
+      },
       'windwp/nvim-ts-autotag',
     },
     config = function()
