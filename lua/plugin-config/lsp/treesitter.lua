@@ -5,7 +5,7 @@ function M.setup()
     auto_install = true,
 
     -- required by other plugins
-    ensure_installed = { 'markdown', 'markdown_inline', 'vim', 'regex' },
+    ensure_installed = { 'markdown', 'markdown_inline', 'vim', 'regex', 'html' },
 
     indent = {
       enable = true,
