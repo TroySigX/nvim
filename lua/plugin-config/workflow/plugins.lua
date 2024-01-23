@@ -100,6 +100,12 @@ return {
   },
 
   {
+    'folke/persistence.nvim',
+    event = 'BufReadPre',
+    config = true,
+  },
+
+  {
     'saecki/crates.nvim',
     event = { 'BufRead Cargo.toml' },
     config = function()

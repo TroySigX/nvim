@@ -63,6 +63,7 @@ local function plugin_keymaps()
     require(path('package-info')).keymaps()
     require(path('venv-selector')).keymaps()
     require(path('crates')).keymaps()
+    require(path('persistence')).keymaps()
   end
 
   return {
