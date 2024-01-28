@@ -7,8 +7,8 @@ function M.keymaps()
       function()
         require('telescope').extensions.undo.undo()
       end,
-      desc = 'Toggle UndoTree',
-      mode = { 'n', 'i', 'v' },
+      desc = 'Open UndoTree',
+      mode = { 'n', 'i', 'x' },
     },
   }
 end
