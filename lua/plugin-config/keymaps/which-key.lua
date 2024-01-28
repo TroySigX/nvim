@@ -106,7 +106,7 @@ function M.setup()
       ['7'] = { '7gt', 'go to tab 7' },
       ['8'] = { '8gt', 'go to tab 8' },
       ['9'] = { '9gt', 'go to tab 9' },
-      ['0'] = { ':tablast<CR>', 'go to last tab' },
+      ['0'] = { '<cmd>tablast<CR>', 'go to last tab' },
     },
 
     -- insert new line without entering insert mode
