@@ -3,12 +3,11 @@ local M = {}
 function M.keymaps()
   return {
     {
-      '<F7>',
+      '<space>ut',
       function()
         require('telescope').extensions.undo.undo()
       end,
-      desc = 'Open UndoTree',
-      mode = { 'n', 'i', 'x' },
+      desc = 'Open [U]ndo[T]ree',
     },
   }
 end
