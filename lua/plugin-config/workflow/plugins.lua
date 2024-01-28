@@ -62,7 +62,7 @@ return {
 
   {
     'debugloop/telescope-undo.nvim',
-    keys = require(config_path('telescope-undo')).keymaps(),
+    lazy = true,
     config = function()
       require(config_path('telescope-undo')).setup()
     end,

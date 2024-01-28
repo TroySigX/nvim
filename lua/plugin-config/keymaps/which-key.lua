@@ -64,6 +64,7 @@ local function plugin_keymaps()
     require(path('venv-selector')).keymaps()
     require(path('crates')).keymaps()
     require(path('persistence')).keymaps()
+    require(path('telescope-undo')).keymaps()
   end
 
   return {

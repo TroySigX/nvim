@@ -1,15 +1,14 @@
 local M = {}
 
 function M.keymaps()
-  return {
-    {
-      '<space>ut',
+  require('which-key').register({
+    ['<space>ut'] = {
       function()
         require('telescope').extensions.undo.undo()
       end,
-      desc = 'Open [U]ndo[T]ree',
+      'Open [U]ndo[T]ree',
     },
-  }
+  })
 end
 
 function M.setup()
