@@ -17,7 +17,7 @@ function M.keymaps()
       function()
         toggle_autoformat()
       end,
-      'Toggle [F]ormat [T]oggle',
+      '[F]ormatter [T]oggle',
     },
   })
 
@@ -26,9 +26,9 @@ function M.keymaps()
       function()
         require('conform').format()
       end,
-      '[F]ormat [R]un',
+      '[F]ormatter [R]un',
     },
-  }, { mode = { 'n', 'v' } })
+  }, { mode = { 'n', 'x' } })
 end
 
 local function available_formatters()
