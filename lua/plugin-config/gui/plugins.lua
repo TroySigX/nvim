@@ -79,14 +79,6 @@ return {
   },
 
   {
-    'kevinhwang91/nvim-bqf',
-    event = 'VeryLazy',
-    config = function()
-      require(config_path('nvim-bqf')).setup()
-    end,
-  },
-
-  {
     'HiPhish/rainbow-delimiters.nvim',
     config = function()
       require(config_path('rainbow-delimiters')).setup()
