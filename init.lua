@@ -46,6 +46,8 @@ require('lazy').setup({
         'rrhelper',
         'vimball',
         'vimballPlugin',
+        'tohtml',
+        'tutor',
       },
     },
   },
