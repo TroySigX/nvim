@@ -22,10 +22,10 @@ return {
     end,
   },
 
-  -- TODO: consider to lazy-load
   {
     'chrisgrieser/nvim-puppeteer',
     dependencies = 'nvim-treesitter/nvim-treesitter',
+    event = 'VeryLazy',
   },
 
   {
