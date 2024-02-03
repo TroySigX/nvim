@@ -23,7 +23,10 @@ return {
   {
     'rcarriga/nvim-notify',
     event = 'VeryLazy',
-    dependencies = 'nvim-telescope/telescope.nvim',
+    dependencies = {
+      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+    },
     priority = 100,
     config = function()
       require(config_path('notify')).setup()
@@ -80,6 +83,7 @@ return {
 
   {
     'HiPhish/rainbow-delimiters.nvim',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
     config = function()
       require(config_path('rainbow-delimiters')).setup()
     end,

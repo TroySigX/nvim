@@ -25,6 +25,7 @@ return {
     lazy = true,
     dependencies = {
       'antosha417/nvim-lsp-file-operations',
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
       require(config_path('nvim-tree')).setup()
@@ -39,6 +40,7 @@ return {
         'nvim-telescope/telescope-fzf-native.nvim',
         build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
       },
+      'nvim-lua/plenary.nvim',
     },
     config = function()
       require(config_path('telescope')).setup()

@@ -60,6 +60,7 @@ return {
     'ThePrimeagen/refactoring.nvim',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
+      'nvim-lua/plenary.nvim',
     },
     lazy = true,
     config = function()
@@ -77,6 +78,7 @@ return {
 
   {
     'CKolkey/ts-node-action',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
   },
 
@@ -90,7 +92,6 @@ return {
 
   {
     'nvim-treesitter/nvim-treesitter',
-    priority = 150,
     build = ':TSUpdate',
     config = function()
       require(config_path('treesitter')).setup()

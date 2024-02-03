@@ -22,14 +22,15 @@ return {
     end,
   },
 
+  -- TODO: consider to lazy-load
   {
     'chrisgrieser/nvim-puppeteer',
-    event = 'VeryLazy',
     dependencies = 'nvim-treesitter/nvim-treesitter',
   },
 
   {
     'danymat/neogen',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
     config = function()
       require(config_path('neogen')).setup()
@@ -61,6 +62,7 @@ return {
 
   {
     'Wansmer/treesj',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
     config = function()
       require(config_path('treesj')).setup()
@@ -77,6 +79,7 @@ return {
 
   {
     'kylechui/nvim-surround',
+    dependencies = 'nvim-treesitter/nvim-treesitter',
     event = 'VeryLazy',
     config = function()
       require(config_path('nvim-surround')).setup()

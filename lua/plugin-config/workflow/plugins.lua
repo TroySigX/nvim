@@ -15,6 +15,7 @@ return {
 
   {
     'folke/todo-comments.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
     event = 'VeryLazy',
     config = function()
       require(config_path('todo-comments')).setup()
@@ -33,6 +34,7 @@ return {
     'NeogitOrg/neogit',
     dependencies = {
       'sindrets/diffview.nvim',
+      'nvim-lua/plenary.nvim',
     },
     lazy = true,
     config = function()
@@ -62,6 +64,7 @@ return {
 
   {
     'debugloop/telescope-undo.nvim',
+    dependencies = 'nvim-telescope/telescope.nvim',
     lazy = true,
     config = function()
       require(config_path('telescope-undo')).setup()
@@ -83,6 +86,7 @@ return {
       'haydenmeade/neotest-jest',
       'alfaix/neotest-gtest',
       'nvim-treesitter/nvim-treesitter',
+      'nvim-lua/plenary.nvim',
     },
     lazy = true,
     config = function()
@@ -92,7 +96,9 @@ return {
 
   {
     'vuki656/package-info.nvim',
-    event = { 'BufRead package.json' },
+    event = {
+      'BufRead package.json',
+    },
     dependencies = 'MunifTanjim/nui.nvim',
     config = function()
       require(config_path('package-info')).setup()
@@ -107,7 +113,9 @@ return {
 
   {
     'saecki/crates.nvim',
-    event = { 'BufRead Cargo.toml' },
+    event = {
+      'BufRead Cargo.toml',
+    },
     config = function()
       require(config_path('crates')).setup()
     end,
@@ -116,7 +124,10 @@ return {
   {
     'linux-cultist/venv-selector.nvim',
     lazy = true,
-    dependencies = { 'neovim/nvim-lspconfig', 'nvim-telescope/telescope.nvim' },
+    dependencies = {
+      'neovim/nvim-lspconfig',
+      'nvim-telescope/telescope.nvim',
+    },
     config = function()
       require(config_path('venv-selector')).setup()
     end,
