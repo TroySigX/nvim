@@ -8,6 +8,9 @@ function M.setup()
     popup = {
       kind = 'vsplit',
     },
+    commit_editor = {
+      kind = 'split',
+    },
     integrations = {
       diffview = true,
     },
