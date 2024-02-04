@@ -63,6 +63,9 @@ function M.setup()
       relativenumber = true,
     },
   })
+
+  -- disable executable highlighting
+  vim.api.nvim_set_hl(0, 'NvimTreeExecFile', { fg = 'none', bg = 'none' })
 end
 
 function M.keymaps()
