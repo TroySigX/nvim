@@ -1,6 +1,16 @@
 local M = {}
 
 function M.setup()
+  -- enable relative line number
+  vim.api.nvim_create_autocmd('FileType', {
+    pattern = { 'aerial' },
+    callback = function()
+      vim.schedule(function()
+        vim.cmd('set relativenumber')
+      end)
+    end,
+  })
+
   require('aerial').setup({
     layout = {
       max_width = 0.25,
@@ -17,7 +27,7 @@ function M.keymaps()
       end,
       'Toggle Aerial (code outline)',
     },
-  }, { mode = { 'n', 'v', 'i' } })
+  }, { mode = { 'n', 'x', 'i' } })
 end
 
 return M
