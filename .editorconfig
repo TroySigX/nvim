@@ -19,3 +19,7 @@ insert_final_newline = false
 # indent: tab
 [**{.snippets,Makefile}]
 indent_style = tab
+
+# set indent space to 4
+[**.py]
+indent_size = 4
