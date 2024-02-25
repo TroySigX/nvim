@@ -85,6 +85,7 @@ return {
     dependencies = {
       'haydenmeade/neotest-jest',
       'alfaix/neotest-gtest',
+      'nvim-neotest/neotest-python',
       'nvim-treesitter/nvim-treesitter',
       'nvim-lua/plenary.nvim',
     },
