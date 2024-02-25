@@ -13,6 +13,10 @@ function M.setup()
       }),
 
       require('neotest-gtest').setup({}),
+
+      require('neotest-python')({
+        runner = 'pytest',
+      }),
     },
 
     quickfix = {
@@ -58,6 +62,12 @@ function M.keymaps()
           end
         end,
         'Neo[T]est [T]oggle',
+      },
+      e = {
+        function()
+          require('neotest').output.open({ enter = true })
+        end,
+        'Neo[T]est [E]rrors',
       },
     },
   }, { prefix = '<leader>' })
