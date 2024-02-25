@@ -45,4 +45,5 @@ vim.g.exclude_filetypes = {
   'dapui_breakpoints',
   'dapui_stacks',
   'qf',
+  'neotest-summary',
 }
