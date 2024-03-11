@@ -26,7 +26,7 @@ The following package types should be installed via `Mason`:
 
 ## Python
 - LSP: `pyright`
-- Formatter: `black`
+- Formatter: `ruff`
 - Debugger: `debugpy`
 - Venv management:
   - `poetry`
