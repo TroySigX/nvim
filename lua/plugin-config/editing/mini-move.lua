@@ -2,10 +2,10 @@ local M = {}
 
 function M.keymaps()
   return {
-    { '<A-h>', mode = { 'n', 'v' }, desc = 'move text to the left' },
-    { '<A-j>', mode = { 'n', 'v' }, desc = 'move text down 1 line' },
-    { '<A-k>', mode = { 'n', 'v' }, desc = 'move text up 1 line' },
-    { '<A-l>', mode = { 'n', 'v' }, desc = 'move text to the right' },
+    { '<A-h>', mode = { 'n', 'x' }, desc = 'move text to the left' },
+    { '<A-j>', mode = { 'n', 'x' }, desc = 'move text down 1 line' },
+    { '<A-k>', mode = { 'n', 'x' }, desc = 'move text up 1 line' },
+    { '<A-l>', mode = { 'n', 'x' }, desc = 'move text to the right' },
   }
 end
 

@@ -6,6 +6,7 @@ opt.shiftwidth = 2
 opt.softtabstop = 2
 opt.expandtab = true
 opt.ignorecase = true
+opt.showmode = false
 opt.smartcase = true
 opt.mouse = 'a'
 opt.splitright = true

@@ -83,7 +83,7 @@ function M.keymaps()
       end,
       'Toggle Tree (file explorer)',
     },
-  }, { mode = { 'n', 'i', 'v' } })
+  }, { mode = { 'n', 'i', 'x' } })
 end
 
 return M

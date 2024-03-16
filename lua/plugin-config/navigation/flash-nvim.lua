@@ -23,7 +23,7 @@ function M.keymaps()
       end,
       'go [T]o word backward (word before cursor)',
     },
-  }, { mode = { 'n', 'v' } })
+  }, { mode = { 'n', 'x' } })
 end
 
 function M.setup()

@@ -26,7 +26,7 @@ function M.keymaps()
       end,
       'Open Neogit (manage git repo)',
     },
-  }, { mode = { 'n', 'v', 'i' } })
+  }, { mode = { 'n', 'x', 'i' } })
 end
 
 return M

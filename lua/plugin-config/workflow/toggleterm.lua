@@ -27,21 +27,21 @@ function M.keymaps()
       end,
       silent = true,
       desc = 'Toggle Terminal',
-      mode = { 'n', 'i', 'v', 't' },
+      mode = { 'n', 'i', 'x', 't' },
     },
     {
       '<F45>',
       '<C-\\><C-n>:ToggleTermSetName ',
       desc = 'Set Terminal Name (<Ctrl-Shift-F9>)',
-      mode = { 'n', 'i', 'v', 't' },
+      mode = { 'n', 'i', 'x', 't' },
     },
-    { '<F57>', new_term, silent = true, desc = 'Create New Terminal (<Alt-F9>)', mode = { 'n', 'i', 'v', 't' } },
+    { '<F57>', new_term, silent = true, desc = 'Create New Terminal (<Alt-F9>)', mode = { 'n', 'i', 'x', 't' } },
     {
       '<F21>',
       vim.cmd.TermSelect,
       silent = true,
       desc = 'Select Terminal (<Shift-F9>)',
-      mode = { 'n', 'i', 'v', 't' },
+      mode = { 'n', 'i', 'x', 't' },
     },
   }
 end

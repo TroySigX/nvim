@@ -2,7 +2,7 @@ local M = {}
 
 function M.keymaps()
   return {
-    { '<F5>', vim.cmd.OverseerRun, desc = 'Trigger Task Runner', mode = { 'n', 'i', 'v' } },
+    { '<F5>', vim.cmd.OverseerRun, desc = 'Trigger Task Runner', mode = { 'n', 'i', 'x' } },
     {
       '<F17>',
       function()
@@ -15,7 +15,7 @@ function M.keymaps()
         end
       end,
       desc = 'Run Last Task',
-      mode = { 'n', 'i', 'v' },
+      mode = { 'n', 'i', 'x' },
     },
     { '<space>os', vim.cmd.OverseerToggle, desc = '[O]ver[S]eer Toggle (toggle task runner window)', silent = true },
   }

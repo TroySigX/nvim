@@ -10,7 +10,7 @@ function M.keymaps()
         '[L]sp [L]int',
       },
     },
-  }, { prefix = '<space>', mode = { 'n', 'v' } })
+  }, { prefix = '<space>', mode = { 'n', 'x' } })
 end
 
 function M.setup()

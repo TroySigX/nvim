@@ -58,7 +58,7 @@ function M.keymaps()
         'move buffer right',
       },
     },
-  }, { mode = { 'n', 'v' } })
+  }, { mode = { 'n', 'x' } })
 end
 
 return M

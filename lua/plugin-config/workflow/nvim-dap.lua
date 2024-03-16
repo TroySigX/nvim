@@ -67,7 +67,7 @@ local function on_attach_keymaps()
         'Debugger Eval',
       },
     },
-  }, { prefix = '<leader>', mode = { 'n', 'v' } })
+  }, { prefix = '<leader>', mode = { 'n', 'x' } })
 end
 
 local function sign_define()
@@ -217,7 +217,7 @@ function M.keymaps()
       end,
       'Toggle DapUI (debugger)',
     },
-  }, { mode = { 'n', 'i', 'v' } })
+  }, { mode = { 'n', 'i', 'x' } })
 end
 
 return M

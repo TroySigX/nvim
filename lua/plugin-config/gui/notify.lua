@@ -15,7 +15,7 @@ function M.keymaps()
       end,
       'Notification History',
     },
-  }, { mode = { 'n', 'i', 'v' } })
+  }, { mode = { 'n', 'i', 'x' } })
 end
 
 function M.setup()
