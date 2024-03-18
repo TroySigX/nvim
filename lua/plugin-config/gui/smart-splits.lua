@@ -31,32 +31,30 @@ function M.keymaps()
       'Resize buffer right',
     },
 
-    ['<leader><leader>'] = {
-      name = 'move buffer',
-      h = {
-        function()
-          require('smart-splits').swap_buf_left({ move_cursor = true })
-        end,
-        'move buffer left',
-      },
-      j = {
-        function()
-          require('smart-splits').swap_buf_down({ move_cursor = true })
-        end,
-        'move buffer down',
-      },
-      k = {
-        function()
-          require('smart-splits').swap_buf_up({ move_cursor = true })
-        end,
-        'move buffer up',
-      },
-      l = {
+    -- moving buffers
+    ['<C-S-h>'] = {
+      function()
+        require('smart-splits').swap_buf_left({ move_cursor = true })
+      end,
+      'move buffer left',
+    },
+    ['<C-S-l>'] = {
         function()
           require('smart-splits').swap_buf_right({ move_cursor = true })
         end,
         'move buffer right',
-      },
+    },
+    ['<C-S-j>'] = {
+        function()
+          require('smart-splits').swap_buf_down({ move_cursor = true })
+        end,
+        'move buffer down',
+    },
+    ['<C-S-k>'] = {
+        function()
+          require('smart-splits').swap_buf_up({ move_cursor = true })
+        end,
+        'move buffer up',
     },
   }, { mode = { 'n', 'x' } })
 end
