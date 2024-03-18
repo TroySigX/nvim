@@ -25,6 +25,7 @@ function M.setup()
     typoutputext = 'pdf',
     typtopdf = 'typst compile %docroot% %outputfile%',
     typtopdfviewerlaunch = 'okular %outputfile%',
+    typtopdfviewerrefresh = 'kill -HUP %pid%',
   }
   vim.g.knap_settings = gknapsettings
 end
