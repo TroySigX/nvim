@@ -20,6 +20,11 @@ function M.setup()
     mdtopdf = 'pandoc %docroot% -o %outputfile%',
     mdtopdfviewerlaunch = 'okular %outputfile%',
     mdtopdfviewerrefresh = 'kill -HUP %pid%',
+
+    -- typst
+    typoutputext = 'pdf',
+    typtopdf = 'typst compile %docroot% %outputfile%',
+    typtopdfviewerlaunch = 'okular %outputfile%',
   }
   vim.g.knap_settings = gknapsettings
 end

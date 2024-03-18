@@ -29,8 +29,8 @@ The following package types should be installed via `Mason`:
 - Formatter: `ruff`
 - Debugger: `debugpy`
 - Venv management:
-  - `poetry`
-  - `pyenv`
+  - [poetry](https://archlinux.org/packages/extra/any/python-poetry/)
+  - [pyenv](https://archlinux.org/packages/extra/any/pyenv/)
 
 ## JavaScript/TypeScript
 - LSP: `tsserver`
@@ -57,12 +57,13 @@ The following package types should be installed via `Mason`:
 
 ## Typst
 - LSP: `typst_lsp`
+- Compiler: [typst](https://archlinux.org/packages/extra/x86_64/typst/)
  
 ## Bash
 - Linter: `shellcheck`
 
 ## Markdown
-- PDF converter: `pandoc`
+- PDF converter: [pandoc](https://archlinux.org/packages/extra/x86_64/pandoc-cli/)
 
 ## Json
 - Linter: `jsonlint`
