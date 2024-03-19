@@ -1,5 +1,5 @@
-# preview file for README
-README.pdf
+# preview file
+*.pdf
 
 # neodev config file
 .luarc.json
