@@ -113,7 +113,6 @@ return {
     event = 'VeryLazy',
     dependencies = {
       'kevinhwang91/promise-async',
-      'nvim-treesitter/nvim-treesitter',
       'luukvbaal/statuscol.nvim',
     },
     config = function()
