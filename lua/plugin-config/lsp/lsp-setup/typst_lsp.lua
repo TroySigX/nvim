@@ -7,7 +7,7 @@ function M.setup(opts)
       exportPdf = 'never',
     },
   })
-  require('lspconfig')['typst_lsp'].setup(opts)
+  require('lspconfig')['typst_lsp'].setup(server_opts)
 end
 
 return M
