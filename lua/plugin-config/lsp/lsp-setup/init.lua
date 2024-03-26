@@ -12,6 +12,7 @@ local custom_lsp = {
   clangd = true,
   typst_lsp = true,
   rust_analyzer = true,
+  basedpyright = true,
 }
 
 function M.setup()

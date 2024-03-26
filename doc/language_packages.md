@@ -25,7 +25,7 @@ The following package types should be installed via `Mason`:
 - Make utitiliy: [bear](https://github.com/rizsotto/Bear)
 
 ## Python
-- LSP: `pyright`
+- LSP: `basedpyright`
 - Formatter: `ruff`
 - Debugger: `debugpy`
 - Venv management:
