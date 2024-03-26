@@ -14,6 +14,7 @@ The following package types should be installed via `Mason`:
 - [Rust](#rust)
 - [Lua](#lua)
 - [Latex](#latex)
+- [Typst](#typst)
 - [Bash](#bash)
 - [Markdown](#markdown)
 - [Json](#json)
