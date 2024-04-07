@@ -11,6 +11,7 @@ packages=(
   "fd"
   "xclip"
   "wl-clipboard"
+  "tree-sitter-cli"
 )
 
 for package in "${packages[@]}"; do
