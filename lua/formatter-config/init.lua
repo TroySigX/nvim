@@ -32,6 +32,7 @@ function M.filetypes()
     javascript = 'js',
     python = 'python',
     tex = 'tex',
+    typst = 'typ',
   }
 end
 

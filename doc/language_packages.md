@@ -58,6 +58,7 @@ The following package types should be installed via `Mason`:
 
 ## Typst
 - LSP: `typst_lsp`
+- Formatter: `typstfmt`
 - Compiler: [typst](https://archlinux.org/packages/extra/x86_64/typst/)
  
 ## Bash
