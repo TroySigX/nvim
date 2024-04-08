@@ -27,19 +27,21 @@ function M.setup()
         {
           -- LSP server name
           function()
-            local msg = 'No Active LSP'
-            local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-            local clients = vim.lsp.get_active_clients()
+            local no_client_msg = 'No Active LSP'
+            local bufnr = vim.api.nvim_get_current_buf()
+            local clients = vim.lsp.get_active_clients({ burnr = bufnr })
             if next(clients) == nil then
-              return msg
+              return no_client_msg
             end
+
+            local client_names = ''
             for _, client in pairs(clients) do
-              local filetypes = client.config.filetypes
-              if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                return client.name
+              if client_names ~= '' then
+                client_names = client_names .. ','
               end
+              client_names = client_names .. client.name
             end
-            return msg
+            return client_names
           end,
           icon = ' LSP:',
           color = { fg = '#faa92f' },
