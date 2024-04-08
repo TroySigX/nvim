@@ -22,12 +22,11 @@ return {
 
   {
     'rcarriga/nvim-notify',
-    event = 'VeryLazy',
     dependencies = {
       'nvim-telescope/telescope.nvim',
       'nvim-lua/plenary.nvim',
     },
-    priority = 100,
+    priority = 200,
     config = function()
       require(config_path('notify')).setup()
     end,
