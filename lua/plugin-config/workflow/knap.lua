@@ -1,12 +1,5 @@
 local M = {}
 
-local autopreview = {}
-
--- returns true if autopreview is on
-function Knap_autopreview(bufnr)
-  return autopreview[bufnr]
-end
-
 function M.setup()
   local gknapsettings = {
     -- latex
@@ -35,10 +28,10 @@ function M.keymaps()
     ['<space>pr'] = {
       function()
         local bufnr = vim.api.nvim_get_current_buf()
-        if autopreview[bufnr] == nil then
-          autopreview[bufnr] = true
+        if vim.b[bufnr].autopreview == nil then
+          vim.b[bufnr].autopreview = true
         else
-          autopreview[bufnr] = not autopreview[bufnr]
+          vim.b[bufnr].autopreview = not vim.b[bufnr].autopreview
         end
         require('knap').toggle_autopreviewing()
       end,
