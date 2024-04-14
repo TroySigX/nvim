@@ -37,10 +37,10 @@ function M.setup()
             local client_names = ''
             for _, client in pairs(clients) do
               local filetypes = client.config.filetypes
-              if client_names ~= '' then
-                client_names = client_names .. ','
-              end
               if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                if client_names ~= '' then
+                  client_names = client_names .. ','
+                end
                 client_names = client_names .. client.name
               end
             end
