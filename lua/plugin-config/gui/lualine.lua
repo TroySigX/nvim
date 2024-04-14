@@ -27,11 +27,10 @@ function M.setup()
         {
           -- LSP server name
           function()
-            local no_client_msg = 'No Active LSP'
             local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
             local clients = vim.lsp.get_active_clients({ burnr = 0 })
             if next(clients) == nil then
-              return no_client_msg
+              return 'None'
             end
 
             local client_names = ''
@@ -48,6 +47,29 @@ function M.setup()
           end,
           icon = ' LSP:',
           color = { fg = '#faa92f' },
+        },
+        {
+          function()
+            local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+            local formatter_config = require('formatter-config')
+            if formatter_config.filetypes()[buf_ft] then
+              local client_name = formatter_config.filetypes()[buf_ft]
+              local formatter = require('formatter-config.' .. client_name).formatter()
+
+              if formatter_config.formatter_installed(formatter) then
+                return formatter.mason_name
+              end
+            end
+
+            return 'None'
+          end,
+          icon = ' Formatter:',
+          color = function()
+            local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+            return {
+              fg = vim.g.autoformat and require('formatter-config').filetypes()[buf_ft] and '#60e6a3' or '#a6a6a6',
+            }
+          end,
         },
         {
           function()

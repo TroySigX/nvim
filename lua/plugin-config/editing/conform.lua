@@ -1,10 +1,10 @@
 local M = {}
 
-local autoformat = true
+vim.g.autoformat = true
 
 local function toggle_autoformat()
-  autoformat = not autoformat
-  if not autoformat then
+  vim.g.autoformat = not vim.g.autoformat
+  if not vim.g.autoformat then
     vim.notify('Autoformatting disabled', vim.log.levels.INFO)
   else
     vim.notify('Autoformatting enabled', vim.log.levels.INFO)
@@ -50,7 +50,7 @@ function M.setup()
     formatters_by_ft = available_formatters(),
 
     format_after_save = function(bufnr)
-      if not autoformat or Knap_autopreview(bufnr) then
+      if not vim.g.autoformat or vim.b[bufnr].preview then
         return
       end
 
