@@ -70,9 +70,12 @@ function M.setup()
           end,
           icon = ' Formatter:',
           color = function()
+            local bufnr = vim.api.nvim_get_current_buf()
             local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
             return {
-              fg = vim.g.autoformat and require('formatter-config').filetypes()[buf_ft] and '#60e6a3' or '#a6a6a6',
+              fg = vim.b[bufnr].formatting and '#e7f20c'
+                or vim.g.autoformat and require('formatter-config').filetypes()[buf_ft] and '#60e6a3'
+                or '#a6a6a6',
             }
           end,
         },

@@ -11,6 +11,16 @@ local function toggle_autoformat()
   end
 end
 
+local function format_args(bufnr)
+  vim.b[bufnr].formatting = true
+  return {
+    lsp_fallback = false,
+    timeout_ms = 500,
+  }, function()
+    vim.b[bufnr].formatting = false
+  end
+end
+
 function M.keymaps()
   require('which-key').register({
     ['<space>ft'] = {
@@ -24,7 +34,8 @@ function M.keymaps()
   require('which-key').register({
     ['<space>fr'] = {
       function()
-        require('conform').format()
+        local bufnr = vim.api.nvim_get_current_buf()
+        require('conform').format(format_args(bufnr))
       end,
       '[F]ormatter [R]un',
     },
@@ -54,10 +65,7 @@ function M.setup()
         return
       end
 
-      return {
-        lsp_fallback = false,
-        timeout_ms = 500,
-      }
+      return format_args(bufnr)
     end,
   })
 end
