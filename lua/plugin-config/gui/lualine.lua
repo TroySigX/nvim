@@ -28,27 +28,27 @@ function M.setup()
           -- LSP server name
           function()
             local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-            local clients = vim.lsp.get_active_clients({ burnr = 0 })
-            if next(clients) == nil then
-              return 'None'
-            end
+            local clients = vim.lsp.get_active_clients({ bufnr = 0 })
 
             local max_num_clients = 2
             local client_names = ''
             for _, client in pairs(clients) do
-              max_num_clients = max_num_clients - 1
-              if max_num_clients < 0 then
-                break
-              end
               local filetypes = client.config.filetypes
               if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+                max_num_clients = max_num_clients - 1
+                if max_num_clients < 0 then
+                  break
+                end
+
                 if client_names ~= '' then
                   client_names = client_names .. ','
                 end
                 client_names = client_names .. client.name
               end
             end
-            return client_names .. (max_num_clients < 0 and ',+' .. tostring(-max_num_clients) or '')
+
+            client_names = client_names .. (max_num_clients < 0 and ',+' .. tostring(-max_num_clients) or '')
+            return client_names ~= '' and client_names or 'None'
           end,
           icon = ' LSP:',
           color = { fg = '#faa92f' },
