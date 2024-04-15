@@ -2,22 +2,24 @@ local M = {}
 
 local cmd = require('utils.cmd')
 
-function M.formatter_installed(formatter)
+function M.formatter_installed_name(formatter)
   if formatter == nil then
-    return false
+    return nil
   end
 
   if formatter.mason_name ~= nil then
     if require('mason-registry').is_installed(formatter.mason_name) then
-      return true
-    end
-  elseif formatter.system_name ~= nil then
-    if cmd.run_cmd(formatter.system_name .. ' --version').status == 0 then
-      return true
+      return formatter.mason_name
     end
   end
 
-  return false
+  if formatter.system_name ~= nil then
+    if cmd.run_cmd(formatter.system_name .. ' --version').status == 0 then
+      return formatter.system_name
+    end
+  end
+
+  return nil
 end
 
 -- table mapping filetypes with their respective

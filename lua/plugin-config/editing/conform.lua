@@ -48,7 +48,7 @@ local function available_formatters()
 
   for ft, ft_alias in pairs(require('formatter-config').filetypes()) do
     local formatter = require('formatter-config.' .. ft_alias).formatter()
-    if formatter_config.formatter_installed(formatter) then
+    if formatter_config.formatter_installed_name(formatter) then
       filetype_formatters[ft] = { formatter.conform_name }
     end
   end

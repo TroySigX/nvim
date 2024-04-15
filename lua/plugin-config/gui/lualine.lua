@@ -61,8 +61,9 @@ function M.setup()
               local client_name = formatter_config.filetypes()[buf_ft]
               local formatter = require('formatter-config.' .. client_name).formatter()
 
-              if formatter_config.formatter_installed(formatter) then
-                return formatter.mason_name
+              local installed_name = formatter_config.formatter_installed_name(formatter)
+              if installed_name then
+                return installed_name
               end
             end
 
