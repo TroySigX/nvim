@@ -33,8 +33,13 @@ function M.setup()
               return 'None'
             end
 
+            local max_num_clients = 2
             local client_names = ''
             for _, client in pairs(clients) do
+              max_num_clients = max_num_clients - 1
+              if max_num_clients < 0 then
+                break
+              end
               local filetypes = client.config.filetypes
               if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
                 if client_names ~= '' then
@@ -43,7 +48,7 @@ function M.setup()
                 client_names = client_names .. client.name
               end
             end
-            return client_names
+            return client_names .. (max_num_clients < 0 and ',+' .. tostring(-max_num_clients) or '')
           end,
           icon = ' LSP:',
           color = { fg = '#faa92f' },
@@ -80,13 +85,22 @@ function M.setup()
 
             local venv = require('venv-selector').get_active_venv()
             if venv then
+              local max_len = 30
               local venv_parts = vim.fn.split(venv, '/')
               local venv_name = venv_parts[#venv_parts]
-              return ' ' .. venv_name
+              local venv_name_len = venv_name:len()
+              venv_name = venv_name_len > max_len
+                  and venv_name:sub(1, max_len - 3 - 6) .. '...' .. venv_name:sub(
+                    venv_name_len - (6 - 1),
+                    venv_name_len
+                  )
+                or venv_name
+              return venv_name
             else
-              return ' No Active Venv'
+              return 'No Active Venv'
             end
           end,
+          icon = '',
           color = { fg = '#CDD6F4' },
         },
       },
