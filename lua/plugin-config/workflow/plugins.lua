@@ -55,6 +55,7 @@ return {
     dependencies = {
       'mfussenegger/nvim-dap',
       'mfussenegger/nvim-dap-python',
+      'nvim-neotest/nvim-nio',
     },
     lazy = true,
     config = function()
