@@ -54,6 +54,7 @@ function M.setup()
           color = { fg = '#faa92f' },
         },
         {
+          -- Formatter name
           function()
             local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
             local formatter_config = require('formatter-config')
@@ -81,6 +82,7 @@ function M.setup()
           end,
         },
         {
+          -- Venv name
           function()
             local pyproject = vim.fn.findfile('pyproject.toml', vim.fn.getcwd() .. ';')
             if pyproject == '' then
