@@ -57,8 +57,8 @@ function M.formatter_installed_name(formatter)
   return nil
 end
 
--- table mapping filetypes with their respective
--- file name in the formatter-config directory
+--- table mapping filetypes with their respective
+--- file name in the formatter-config directory
 function M.filetypes()
   return {
     lua = 'lua',

@@ -11,7 +11,7 @@ local function toggle_autoformat()
   end
 end
 
--- function to pass to conform.format
+--- function to pass to conform.format
 local function format_args(bufnr)
   vim.b[bufnr].formatting = true
   return {

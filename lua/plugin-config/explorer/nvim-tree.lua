@@ -10,6 +10,7 @@ local function map_win_id()
   open_win[current_tab] = current_win_id
 end
 
+--- pass to register mappings
 local function opts(bufnr, desc)
   return { buffer = bufnr, nowait = true, desc = desc }
 end
