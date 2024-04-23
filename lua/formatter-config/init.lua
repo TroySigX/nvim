@@ -4,50 +4,52 @@ local cmd = require('utils.cmd')
 local formatter_install_cache = {}
 local cache_renew_time = 60
 
-local function query_cache(formatter_name)
-  if formatter_install_cache[formatter_name] == nil then
-    return false
-  end
+local cache_update_methods = {
+  mason = function(formatter_name)
+    return require('mason-registry').is_installed(formatter_name)
+  end,
+  system = function(formatter_name)
+    return cmd.run_cmd(formatter_name .. ' --version').status == 0
+  end,
+}
 
+--- check if formatter is installed and updated in cache less than a minute ago
+---@param formatter_name string
+---@param update_method 'mason' | 'system'
+---@return boolean
+local function query_cache(formatter_name, update_method)
   local current_time = os.time()
-  if current_time - formatter_install_cache[formatter_name].last_updated > cache_renew_time then
-    return false
+
+  -- update cache
+  if
+    formatter_install_cache[formatter_name] == nil
+    or current_time - formatter_install_cache[formatter_name].last_updated > cache_renew_time
+  then
+    formatter_install_cache[formatter_name] = {
+      last_updated = os.time(),
+      installed = cache_update_methods[update_method](formatter_name),
+    }
   end
 
   return formatter_install_cache[formatter_name].installed
 end
 
+--- returns formatter's name if installed, nil otherwise
+---@param formatter Formatter
+---@return string | nil
 function M.formatter_installed_name(formatter)
   if formatter == nil then
     return nil
   end
 
   if formatter.mason_name ~= nil then
-    if query_cache(formatter.mason_name) then
-      return formatter.mason_name
-    end
-
-    formatter_install_cache[formatter.mason_name] = {
-      last_updated = os.time(),
-      installed = require('mason-registry').is_installed(formatter.mason_name),
-    }
-
-    if formatter_install_cache[formatter.mason_name].installed then
+    if query_cache(formatter.mason_name, 'mason') then
       return formatter.mason_name
     end
   end
 
   if formatter.system_name ~= nil then
-    if query_cache(formatter.system_name) then
-      return formatter.system_name
-    end
-
-    formatter_install_cache[formatter.system_name] = {
-      last_updated = os.time(),
-      installed = cmd.run_cmd(formatter.system_name .. ' --version').status == 0,
-    }
-
-    if formatter_install_cache[formatter.system_name].installed then
+    if query_cache(formatter.system_name, 'system') then
       return formatter.system_name
     end
   end
