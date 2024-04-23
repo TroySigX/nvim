@@ -1,6 +1,6 @@
 local M = {}
 
---- get the output of a shell command
+--- get the output and exit code of a shell command
 --- @param cmd string
 --- @return table
 function M.run_cmd(cmd)
