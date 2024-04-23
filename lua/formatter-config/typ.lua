@@ -2,6 +2,7 @@ local M = {}
 
 local path = require('utils.path')
 
+---@return Formatter
 function M.formatter()
   local config_file = 'typstfmt.toml'
   return {

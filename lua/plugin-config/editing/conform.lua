@@ -11,6 +11,7 @@ local function toggle_autoformat()
   end
 end
 
+-- function to pass to conform.format
 local function format_args(bufnr)
   vim.b[bufnr].formatting = true
   return {
@@ -42,6 +43,8 @@ function M.keymaps()
   }, { mode = { 'n', 'x' } })
 end
 
+--- mapping filetypes to conform name
+---@return table
 local function available_formatters()
   local filetype_formatters = {}
   local formatter_config = require('formatter-config')

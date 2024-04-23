@@ -1,5 +1,8 @@
 local M = {}
 
+--- class containing file operations
+---@param path string
+---@return table
 function M.file(path)
   local function read()
     local file = io.open(path, 'r')

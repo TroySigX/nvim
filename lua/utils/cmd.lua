@@ -1,6 +1,8 @@
 local M = {}
 
 --- get the output of a shell command
+--- @param cmd string
+--- @return table
 function M.run_cmd(cmd)
   local output = vim.fn.system(cmd)
   return {

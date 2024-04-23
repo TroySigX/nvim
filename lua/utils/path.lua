@@ -10,6 +10,7 @@ function M.traverse_parents(cwd, cb)
   lsp_path.traverse_parents(cwd, cb)
 end
 
+-- os path separator
 function M.sep()
   return require('plenary.path').path.sep
 end

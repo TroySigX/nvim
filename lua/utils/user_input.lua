@@ -1,21 +1,9 @@
 local M = {}
 
-function M.input(prompt, default)
-  if default == nil then
-    default = ''
-  end
-  local co = coroutine.running()
-
-  vim.ui.input({
-    prompt = prompt,
-    default = default,
-  }, function(input)
-    coroutine.resume(co, input)
-  end)
-
-  return coroutine.yield()
-end
-
+--- outputs selection from a list
+---@param prompt string question prompted for selecting
+---@param items table list of items to select from
+---@return string selected item
 function M.select(prompt, items)
   local co = coroutine.running()
 
