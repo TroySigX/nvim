@@ -17,7 +17,6 @@ end
 
 function M.setup()
   local map = vim.keymap.set
-  local unmap = vim.keymap.del
   local api = require('nvim-tree.api')
 
   local function is_directory()
@@ -79,7 +78,6 @@ function M.setup()
       api.config.mappings.default_on_attach(bufnr)
 
       -- custom mappings
-      unmap('n', '<C-t>', { buffer = bufnr })
       map('n', '<C-t>', open_tab, opts(bufnr, 'open in new tab'))
       map('n', 'T', open_tab_silent, opts(bufnr, 'open in new tab without switching tab'))
       map('n', 'CD', goto_buffer_cwd, opts(bufnr, 'point to file explorer node of current window'))
