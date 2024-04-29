@@ -72,7 +72,8 @@ function M.setup()
   require('nvim-tree-preview').setup()
 
   require('nvim-tree').setup({
-    disable_netrw = true,
+    disable_netrw = false,
+    hijack_netrw = true,
 
     on_attach = function(bufnr)
       api.config.mappings.default_on_attach(bufnr)
