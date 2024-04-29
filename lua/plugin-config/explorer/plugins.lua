@@ -26,6 +26,7 @@ return {
     dependencies = {
       'antosha417/nvim-lsp-file-operations',
       'nvim-tree/nvim-web-devicons',
+      'b0o/nvim-tree-preview.lua',
     },
     config = function()
       require(config_path('nvim-tree')).setup()

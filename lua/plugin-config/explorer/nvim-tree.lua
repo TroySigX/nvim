@@ -20,16 +20,35 @@ function M.setup()
   local unmap = vim.keymap.del
   local api = require('nvim-tree.api')
 
-  local function open_tab_silent(node)
-    api.node.open.tab(node)
-    vim.cmd.tabprev()
+  local function is_directory()
+    local node = api.tree.get_node_under_cursor()
+    if node.type == 'directory' then
+      return true
+    end
+
+    return false
   end
 
-  local function open_tab(node)
-    api.node.open.tab(node)
-    vim.cmd.tabprev()
-    api.tree.close()
-    vim.cmd.tabnext()
+  local function open_tab_silent()
+    -- if dir, expand
+    if is_directory() then
+      api.node.open.edit()
+    else
+      api.node.open.tab()
+      vim.cmd.tabprev()
+    end
+  end
+
+  local function open_tab()
+    -- if dir, expand
+    if is_directory() then
+      api.node.open.edit()
+    else
+      api.node.open.tab()
+      vim.cmd.tabprev()
+      api.tree.close()
+      vim.cmd.tabnext()
+    end
   end
 
   local function goto_buffer_cwd()
@@ -38,8 +57,20 @@ function M.setup()
     api.tree.find_file({ open = true, update_root = true, focus = true })
   end
 
+  local function preview_file()
+    -- if dir, expand
+    if is_directory() then
+      api.node.open.edit()
+    else
+      require('nvim-tree-preview').watch()
+    end
+  end
+
   -- for auto-update imports when renaming files
   require('lsp-file-operations').setup()
+
+  -- for previewing files
+  require('nvim-tree-preview').setup()
 
   require('nvim-tree').setup({
     disable_netrw = true,
@@ -54,6 +85,7 @@ function M.setup()
       map('n', 'CD', goto_buffer_cwd, opts(bufnr, 'point to file explorer node of current window'))
       map('n', '<C-s>', api.node.open.horizontal, opts(bufnr, 'open file horizontally (split window)'))
       map('n', '?', api.tree.toggle_help, opts(bufnr, 'show help'))
+      map('n', '<Tab>', preview_file, opts(bufnr, 'preview file'))
     end,
 
     git = {
