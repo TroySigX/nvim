@@ -36,12 +36,6 @@ local function on_attach_keymaps()
           end,
           'Terminate Debugger',
         },
-        h = {
-          function()
-            require('dap.ui.widgets').hover()
-          end,
-          'Debugger Hover Variables',
-        },
         R = {
           function()
             require('dap').run_to_cursor()
