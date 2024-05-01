@@ -36,17 +36,23 @@ local function on_attach_keymaps()
           end,
           'Terminate Debugger',
         },
-        R = {
+        r = {
           function()
             require('dap').run_to_cursor()
           end,
           'Debugger Run to Cursor',
         },
-        c = {
+        C = {
           function()
             require('dap').continue()
           end,
           'Launch debugger session',
+        },
+        c = {
+          function()
+            require('dap').run_last()
+          end,
+          'Run last debugger session',
         },
       },
     },
