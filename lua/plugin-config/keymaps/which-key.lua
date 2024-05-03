@@ -84,7 +84,7 @@ function M.setup()
   vim.o.timeoutlen = 299
   require('which-key').setup({
     triggers_blacklist = {
-      n = { 'v' },
+      n = { 'v', "'" },
     },
   })
 
