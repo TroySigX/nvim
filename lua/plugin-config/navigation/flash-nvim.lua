@@ -29,6 +29,9 @@ end
 function M.setup()
   require('flash').setup({
     modes = {
+      search = {
+        enabled = true,
+      },
       char = {
         enabled = false,
       },
