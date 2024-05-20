@@ -6,15 +6,6 @@ end
 
 return {
   {
-    'sontungexpt/url-open',
-    dependencies = 'nvim-lua/plenary.nvim',
-    keys = require(config_path('url-open')).keymaps(),
-    config = function()
-      require(config_path('url-open')).setup()
-    end,
-  },
-
-  {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     keys = require(config_path('competitest')).keymaps(),

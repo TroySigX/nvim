@@ -6,14 +6,6 @@ end
 
 return {
   {
-    'numToStr/Comment.nvim',
-    event = 'VeryLazy',
-    config = function()
-      require(config_path('comment')).setup()
-    end,
-  },
-
-  {
     'stevearc/conform.nvim',
     lazy = true,
     event = 'BufWritePre',
@@ -65,14 +57,6 @@ return {
     lazy = true,
     config = function()
       require(config_path('treesj')).setup()
-    end,
-  },
-
-  {
-    'cshuaimin/ssr.nvim',
-    lazy = true,
-    config = function()
-      require(config_path('ssr')).setup()
     end,
   },
 

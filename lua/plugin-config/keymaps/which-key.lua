@@ -17,7 +17,6 @@ local function plugin_keymaps()
     require(path('neogen')).keymaps()
     require(path('conform')).keymaps()
     require(path('treesj')).keymaps()
-    require(path('ssr')).keymaps()
   end
 
   local function explorer()
