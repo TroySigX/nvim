@@ -2,7 +2,6 @@ local M = {}
 
 function M.setup()
   require('neogit').setup({
-    disable_commit_confirmation = true,
     kind = 'tab',
     auto_show_console = false,
     popup = {
