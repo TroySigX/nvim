@@ -109,17 +109,9 @@ local function ui_automation()
 end
 
 local function debugger_setup()
-  local ft_to_adapter = {
-    c = 'codelldb',
-    cpp = 'codelldb',
-    rust = 'codelldb',
-    javascript = 'js-debug-adapter',
-    typescript = 'js-debug-adapter',
-  }
+  local ft_to_adapter = require('dap-config').ft_to_adapter()
 
-  local config_plugins = {
-    'nvim-dap-python',
-  }
+  local config_plugins = require('dap-config').preconfig_plugins()
 
   -- setup adapters
   local dap = require('dap')
