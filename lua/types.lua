@@ -2,5 +2,5 @@
 ---@field mason_name? string
 ---@field system_name? string
 ---@field conform_name string
----@config_file_name? string
----@config_file_path? string
+---@field config_file_name? string
+---@field config_file_path? string
