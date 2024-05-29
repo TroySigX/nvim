@@ -4,6 +4,7 @@ function M.setup()
   require('neogit').setup({
     kind = 'tab',
     auto_show_console = false,
+    disable_signs = true,
     popup = {
       kind = 'vsplit',
     },
