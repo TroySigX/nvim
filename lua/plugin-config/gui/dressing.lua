@@ -3,7 +3,7 @@ local M = {}
 function M.setup()
   require('dressing').setup({
     select = {
-      backend = { 'telescope', 'fzf_lua' },
+      backend = { 'fzf_lua', 'telescope' },
     },
   })
 end
