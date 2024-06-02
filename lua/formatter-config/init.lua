@@ -1,7 +1,7 @@
 local M = {}
 
 local cmd = require('utils.cmd')
-local formatter_install_cache = {}
+local formatter_install_cache = { mason = {}, system = {} }
 local cache_renew_time = 60
 
 local cache_update_methods = {
@@ -22,16 +22,16 @@ local function query_cache(formatter_name, update_method)
 
   -- update cache
   if
-    formatter_install_cache[formatter_name] == nil
-    or current_time - formatter_install_cache[formatter_name].last_updated > cache_renew_time
+    formatter_install_cache[update_method][formatter_name] == nil
+    or current_time - formatter_install_cache[update_method][formatter_name].last_updated > cache_renew_time
   then
-    formatter_install_cache[formatter_name] = {
+    formatter_install_cache[update_method][formatter_name] = {
       last_updated = os.time(),
       installed = cache_update_methods[update_method](formatter_name),
     }
   end
 
-  return formatter_install_cache[formatter_name].installed
+  return formatter_install_cache[update_method][formatter_name].installed
 end
 
 --- returns formatter's name if installed, nil otherwise
