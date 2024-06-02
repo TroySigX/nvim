@@ -38,7 +38,6 @@ return {
       'williamboman/mason-lspconfig.nvim',
       'williamboman/mason.nvim',
       'pmizio/typescript-tools.nvim',
-      'folke/lazydev.nvim',
     },
     config = function()
       require(config_path('lsp-setup')).setup()
