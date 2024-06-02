@@ -40,6 +40,11 @@ function M.setup()
   local lspconfig = require('lspconfig')
   mason_lspconfig.setup_handlers({
     function(server_name)
+      -- TODO: remove when ruff has auto-complete capability
+      if server_name == 'ruff' then
+        return
+      end
+
       if custom_lsp[server_name] then
         require(config_path(server_name)).setup(default_lsp_opts)
       else
