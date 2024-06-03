@@ -1,11 +1,2 @@
 # preview file
 *.pdf
-
-# neodev config file
-.luarc.json
-
-# auto generated formatter config
-.clang-format
-!/lua/formatter-config/defaults/.clang-format
-.prettierrc
-!/lua/formatter-config/defaults/.prettierrc
