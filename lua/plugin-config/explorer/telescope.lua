@@ -6,6 +6,14 @@ function M.setup()
   local actions = require('telescope.actions')
   require('telescope').setup({
     defaults = {
+      layout_config = {
+        horizontal = {
+          height = 0.9,
+          preview_cutoff = 120,
+          prompt_position = 'bottom',
+          width = 0.8,
+        },
+      },
       mappings = {
         i = {
           ['<C-j>'] = {
