@@ -89,7 +89,7 @@ function M.setup()
               return ''
             end
 
-            local venv = require('venv-selector').get_active_venv()
+            local venv = require('venv-selector').venv()
             if venv then
               local max_len = 30
               local venv_parts = vim.fn.split(venv, '/')
