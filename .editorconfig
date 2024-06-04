@@ -8,10 +8,6 @@ indent_style = space
 indent_size = 2
 charset = utf-8
 
-# do not trim trailing whitespace
-[{**.{tex,md,txt}}]
-trim_trailing_whitespace = false
-
 # do not insert final newline
 [**.txt]
 insert_final_newline = false
