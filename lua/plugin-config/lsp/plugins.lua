@@ -21,7 +21,6 @@ return {
       'zbirenbaum/copilot-cmp',
       'onsails/lspkind.nvim',
       'hrsh7th/cmp-emoji',
-      'lukas-reineke/cmp-under-comparator',
     },
     config = function()
       require(config_path('nvim-cmp')).setup()
