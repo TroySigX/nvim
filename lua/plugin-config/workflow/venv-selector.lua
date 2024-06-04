@@ -1,28 +1,25 @@
 local M = {}
 
 function M.keymaps()
-  require('which-key').register({
-    vs = {
-      function()
-        require('venv-selector').open()
-      end,
-      'Select Virtual Environment',
+  return {
+    {
+      '<leader>vs',
+      ':VenvSelect<CR>',
+      silent = true,
+      desc = 'Select Virtual Environment',
+      mode = { 'n', 'x' },
     },
-    vc = {
-      function()
-        require('venv-selector').retrieve_from_cache()
-      end,
-      'Select Virtual Environment',
-    },
-  }, { prefix = '<leader>' })
+  }
 end
 
 function M.setup()
   require('venv-selector').setup({
-    auto_refresh = true,
-    dap_enabled = true,
-    parents = 0,
-    name = { 'venv', '.venv' },
+    settings = {
+      options = {
+        enable_cached_venvs = true,
+        notify_user_on_venv_activation = true,
+      },
+    },
   })
 end
 
