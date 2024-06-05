@@ -10,8 +10,14 @@ function M.setup()
       lualine_x = {
         {
           -- Macro recording
-          require('noice').api.status.mode.get,
-          cond = require('noice').api.status.mode.has,
+          function()
+            local reg = vim.fn.reg_recording()
+            if reg == '' then
+              return ''
+            end
+
+            return 'recording @' .. reg
+          end,
           color = { fg = 'ff9e64' },
         },
       },
