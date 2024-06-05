@@ -27,8 +27,8 @@ function M.setup()
         {
           -- LSP server name
           function()
-            local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-            local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+            local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
+            local clients = vim.lsp.get_clients({ bufnr = 0 })
 
             local max_num_clients = 2
             local client_names = ''
@@ -56,7 +56,7 @@ function M.setup()
         {
           -- Formatter name
           function()
-            local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+            local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
             local formatter_config = require('formatter-config')
             if formatter_config.filetypes()[buf_ft] then
               local client_name = formatter_config.filetypes()[buf_ft]
@@ -73,7 +73,7 @@ function M.setup()
           icon = ' Formatter:',
           color = function()
             local bufnr = vim.api.nvim_get_current_buf()
-            local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+            local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
             return {
               fg = vim.b[bufnr].formatting and '#e7f20c'
                 or vim.g.autoformat and require('formatter-config').filetypes()[buf_ft] and '#60e6a3'
