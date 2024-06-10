@@ -1,8 +1,6 @@
 local M = {}
 
 function M.setup()
-  vim.api.nvim_set_hl(0, 'TelescopeBorder', { fg = '#5E81AC' })
-
   local actions = require('telescope.actions')
   require('telescope').setup({
     defaults = {
