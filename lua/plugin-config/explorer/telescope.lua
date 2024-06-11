@@ -1,6 +1,11 @@
 local M = {}
 
 function M.setup()
+  vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopeTitle', { link = 'Special' })
+  vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { link = 'Normal' })
+
   local actions = require('telescope.actions')
   require('telescope').setup({
     defaults = {
