@@ -26,6 +26,17 @@ return {
   },
 
   {
+    'nvim-treesitter/nvim-treesitter-textobjects',
+    event = 'VeryLazy',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function()
+      require(config_path('treesitter-textobjects')).setup()
+    end,
+  },
+
+  {
     'karb94/neoscroll.nvim',
     keys = require(config_path('neoscroll')).keymaps({ 'desc', 'mode' }),
     config = function()
