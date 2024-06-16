@@ -68,9 +68,6 @@ function M.setup()
   -- for auto-update imports when renaming files
   require('lsp-file-operations').setup()
 
-  -- for previewing files
-  require('nvim-tree-preview').setup()
-
   require('nvim-tree').setup({
     disable_netrw = false,
     hijack_netrw = true,
