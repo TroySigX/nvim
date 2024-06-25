@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   require('which-key').register({
-    [',,'] = {
+    [',.'] = {
       function()
         require('nvim-treesitter.textobjects.repeatable_move').repeat_last_move()
       end,
@@ -43,9 +43,9 @@ function M.setup()
           [',z'] = { query = '@fold', query_group = 'folds', desc = 'Go to next fold' },
         },
         goto_next_end = {
-          [',ef'] = { query = '@function.outer', desc = 'Go to end of function' },
-          [',ec'] = { query = '@class.outer', desc = 'Go to end of class' },
-          [',ez'] = { query = '@fold', query_group = 'folds', desc = 'Go to end of fold' },
+          [',,f'] = { query = '@function.outer', desc = 'Go to end of function' },
+          [',,c'] = { query = '@class.outer', desc = 'Go to end of class' },
+          [',,z'] = { query = '@fold', query_group = 'folds', desc = 'Go to end of fold' },
         },
         goto_previous_start = {
           [',F'] = { query = '@function.outer', desc = 'Go to previous function' },
@@ -53,9 +53,9 @@ function M.setup()
           [',Z'] = { query = '@fold', query_group = 'folds', desc = 'Go to previous fold' },
         },
         goto_previous_end = {
-          [',EF'] = { query = '@function.outer', desc = 'Go to end of previous function' },
-          [',EC'] = { query = '@class.outer', desc = 'Go to end of previous class' },
-          [',EZ'] = { query = '@fold', query_group = 'folds', desc = 'Go to end of previous fold' },
+          [',,F'] = { query = '@function.outer', desc = 'Go to end of previous function' },
+          [',,C'] = { query = '@class.outer', desc = 'Go to end of previous class' },
+          [',,Z'] = { query = '@fold', query_group = 'folds', desc = 'Go to end of previous fold' },
         },
       },
     },
