@@ -6,16 +6,20 @@ end
 
 return {
   {
+    'folke/noice.nvim',
+    dependencies = 'MunifTanjim/nui.nvim',
+    config = function()
+      require(config_path('noice')).setup()
+    end,
+  },
+
+  {
     'nvim-lualine/lualine.nvim',
     dependencies = {
       'nvim-tree/nvim-web-devicons',
-      {
-        'folke/noice.nvim',
-        dependencies = 'MunifTanjim/nui.nvim',
-      },
+      'folke/noice.nvim',
     },
     config = function()
-      require(config_path('noice')).setup()
       require(config_path('lualine')).setup()
     end,
   },
