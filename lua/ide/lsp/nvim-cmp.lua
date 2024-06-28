@@ -44,6 +44,7 @@ function M.setup()
       { name = 'copilot' },
       { name = 'luasnip' },
       { name = 'nvim_lsp' },
+      { name = 'otter' },
       { name = 'nvim_lsp_signature_help' },
       { name = 'buffer' },
       { name = 'path' },

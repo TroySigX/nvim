@@ -1,13 +1,13 @@
-local base_dir = 'plugin-config.explorer.'
-
-local function config_path(plugin_name)
-  return base_dir .. plugin_name
-end
+local config_path = require('utils.path').config_dir('explorer')
+local conf = require(config_path())
 
 return {
   {
     'ibhagwan/fzf-lua',
     lazy = true,
+    init = function()
+      conf.register_keymap('fzf-lua')
+    end,
     dependencies = {
       {
         'junegunn/fzf',
@@ -24,6 +24,9 @@ return {
   {
     'nvim-tree/nvim-tree.lua',
     lazy = true,
+    init = function()
+      conf.register_keymap('nvim-tree')
+    end,
     dependencies = {
       'antosha417/nvim-lsp-file-operations',
       'nvim-tree/nvim-web-devicons',

@@ -1,10 +1,15 @@
 local M = {}
 
 function M.keymaps()
-  return {
-    { '<F5>', vim.cmd.OverseerRun, desc = 'Trigger Task Runner', mode = { 'n', 'i', 'x' } },
-    {
-      '<F17>',
+  require('which-key').register({
+    ['<F5>'] = {
+      function()
+        require('overseer')
+        vim.cmd.OverseerRun()
+      end,
+      'Trigger Task Runner',
+    },
+    ['<F17>'] = {
       function()
         local overseer = require('overseer')
         local tasks = overseer.list_tasks({ recent_first = true })
@@ -14,11 +19,19 @@ function M.keymaps()
           overseer.run_action(tasks[1], 'restart')
         end
       end,
-      desc = 'Run Last Task',
-      mode = { 'n', 'i', 'x' },
+      'Run Last Task (<Shift-F5>)',
     },
-    { '<space>os', vim.cmd.OverseerToggle, desc = '[O]ver[S]eer Toggle (toggle task runner window)', silent = true },
-  }
+  }, { mode = { 'n', 'i', 'x' } })
+
+  require('which-key').register({
+    ['<space>os'] = {
+      function()
+        require('overseer')
+        vim.cmd.OverseerToggle()
+      end,
+      '[O]ver[S]eer Toggle (toggle task runner window)',
+    },
+  })
 end
 
 local function formatter_tasks()

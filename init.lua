@@ -3,7 +3,7 @@ require('settings')
 
 -- plugins
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system({
     'git',
     'clone',
@@ -19,14 +19,13 @@ vim.loader.enable()
 
 require('lazy').setup({
   spec = {
-    { import = 'plugin-config.lsp.plugins' },
-    { import = 'plugin-config.editing.plugins' },
-    { import = 'plugin-config.explorer.plugins' },
-    { import = 'plugin-config.keymaps.plugins' },
-    { import = 'plugin-config.gui.plugins' },
-    { import = 'plugin-config.navigation.plugins' },
-    { import = 'plugin-config.workflow.plugins' },
-    { import = 'plugin-config.others.plugins' },
+    { import = 'ide.lsp.plugins' },
+    { import = 'ide.editing.plugins' },
+    { import = 'ide.explorer.plugins' },
+    { import = 'ide.gui.plugins' },
+    { import = 'ide.navigation.plugins' },
+    { import = 'ide.workflow.plugins' },
+    { import = 'ide.others.plugins' },
   },
 
   -- disable built-in plugins
@@ -51,3 +50,6 @@ require('lazy').setup({
     },
   },
 })
+
+-- keymaps
+require('ide.keymaps').setup()

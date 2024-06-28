@@ -1,10 +1,6 @@
 local M = {}
 
-local base_dir = 'plugin-config.lsp.lsp-setup.'
-
-local function config_path(server_name)
-  return base_dir .. server_name
-end
+local config_path = require('utils.path').config_dir('lsp.lsp-setup')
 
 local custom_lsp = {
   tsserver = true,

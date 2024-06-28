@@ -1,3 +1,5 @@
+---@alias IDECapability 'editing' | 'explorer' | 'gui' | 'navigation' | 'others' | 'workflow' | 'lsp'
+
 ---@class Formatter
 ---@field mason_name? string
 ---@field system_name? string

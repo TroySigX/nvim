@@ -20,6 +20,9 @@ opt.list = true
 opt.cursorline = true
 opt.exrc = true
 
+vim.o.timeout = true
+vim.o.timeoutlen = 299
+
 vim.g.mapleader = ';'
 vim.g.maplocalleader = ';'
 

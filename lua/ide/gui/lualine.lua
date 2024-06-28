@@ -33,24 +33,18 @@ function M.setup()
         {
           -- LSP server name
           function()
-            local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
-            local clients = vim.lsp.get_clients({ bufnr = 0 })
+            local lsp_dir = require('utils.path').config_dir('lsp')()
+            local clients = require(lsp_dir).active_lsps()
 
             local max_num_clients = 2
             local client_names = ''
             for _, client in pairs(clients) do
-              local filetypes = client.config.filetypes
-              if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-                max_num_clients = max_num_clients - 1
-                if max_num_clients < 0 then
-                  break
-                end
+              max_num_clients = max_num_clients - 1
 
-                if client_names ~= '' then
-                  client_names = client_names .. ','
-                end
-                client_names = client_names .. client.name
+              if client_names ~= '' then
+                client_names = client_names .. ','
               end
+              client_names = client_names .. client.name
             end
 
             client_names = client_names .. (max_num_clients < 0 and ',+' .. tostring(-max_num_clients) or '')

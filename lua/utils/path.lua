@@ -1,13 +1,22 @@
 local M = {}
 
-local lsp_path = require('lspconfig.util').path
-
-function M.join(...)
-  return lsp_path.join({ ... })
+local lsp_path = function()
+  return require('lspconfig.util').path
 end
 
-function M.traverse_parents(cwd, cb)
-  lsp_path.traverse_parents(cwd, cb)
+--- path to plugin config file
+--- example: 'ide.lsp.treesitter'
+---@param base_dir IDECapability | 'lsp.lsp-setup'
+---@return function (plugin_name: string): string
+function M.config_dir(base_dir)
+  local base_path = 'ide.' .. base_dir
+  return function(plugin_name)
+    return base_path .. (plugin_name == nil and '' or '.' .. plugin_name)
+  end
+end
+
+function M.join(...)
+  return lsp_path().join({ ... })
 end
 
 --- os path separator
@@ -15,13 +24,9 @@ function M.sep()
   return require('plenary.path').path.sep
 end
 
-function M.exists(path)
-  return lsp_path.exists(path)
-end
-
 --- get working dir of file
 function M.path_dir(path)
-  return lsp_path.dirname(path)
+  return lsp_path().dirname(path)
 end
 
 --- get working dir of buffer
@@ -36,11 +41,6 @@ function M.buf_dir(buf_id)
   end
 
   return dir
-end
-
---- get root of git directory
-function M.git_root(path)
-  return require('utils.cmd').run_cmd('cd ' .. path .. ' && git rev-parse --show-toplevel').output
 end
 
 return M

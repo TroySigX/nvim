@@ -1,13 +1,13 @@
-local base_dir = 'plugin-config.navigation.'
-
-local function config_path(plugin_name)
-  return base_dir .. plugin_name
-end
+local config_path = require('utils.path').config_dir('navigation')
+local conf = require(config_path())
 
 return {
   {
     'folke/flash.nvim',
     event = 'VeryLazy',
+    init = function()
+      conf.register_keymap('flash-nvim')
+    end,
     config = function()
       require(config_path('flash-nvim')).setup()
     end,
@@ -16,6 +16,9 @@ return {
   {
     'stevearc/aerial.nvim',
     lazy = true,
+    init = function()
+      conf.register_keymap('aerial')
+    end,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       'nvim-tree/nvim-web-devicons',
@@ -30,6 +33,7 @@ return {
     event = 'VeryLazy',
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
+      'folke/which-key.nvim',
     },
     config = function()
       require(config_path('treesitter-textobjects')).setup()

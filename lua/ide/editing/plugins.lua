@@ -1,14 +1,14 @@
-local base_dir = 'plugin-config.editing.'
-
-local function config_path(plugin_name)
-  return base_dir .. plugin_name
-end
+local config_path = require('utils.path').config_dir('editing')
+local conf = require(config_path())
 
 return {
   {
     'stevearc/conform.nvim',
     lazy = true,
     event = 'BufWritePre',
+    init = function()
+      conf.register_keymap('conform')
+    end,
     config = function()
       require(config_path('conform')).setup()
     end,
@@ -23,6 +23,9 @@ return {
     'danymat/neogen',
     dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
+    init = function()
+      conf.register_keymap('neogen')
+    end,
     config = function()
       require(config_path('neogen')).setup()
     end,
@@ -55,6 +58,9 @@ return {
     'Wansmer/treesj',
     dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
+    init = function()
+      conf.register_keymap('treesj')
+    end,
     config = function()
       require(config_path('treesj')).setup()
     end,

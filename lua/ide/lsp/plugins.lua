@@ -1,8 +1,5 @@
-local base_dir = 'plugin-config.lsp.'
-
-local function config_path(plugin_name)
-  return base_dir .. plugin_name
-end
+local config_path = require('utils.path').config_dir('lsp')
+local conf = require(config_path())
 
 return {
   {
@@ -22,6 +19,9 @@ return {
       'onsails/lspkind.nvim',
       'hrsh7th/cmp-emoji',
     },
+    init = function()
+      conf.register_keymap('luasnip')
+    end,
     config = function()
       require(config_path('nvim-cmp')).setup()
       require(config_path('luasnip')).setup()
@@ -44,6 +44,7 @@ return {
     end,
   },
 
+  -- FIXME: keymap not registered
   {
     'nvimdev/lspsaga.nvim',
     event = 'VeryLazy',
@@ -51,6 +52,9 @@ return {
       'nvim-tree/nvim-web-devicons',
       'nvim-treesitter/nvim-treesitter',
     },
+    init = function()
+      conf.register_keymap('lspsaga')
+    end,
     config = function()
       require(config_path('lspsaga')).setup()
     end,
@@ -63,6 +67,9 @@ return {
       'nvim-lua/plenary.nvim',
     },
     lazy = true,
+    init = function()
+      conf.register_keymap('refactoring')
+    end,
     config = function()
       require(config_path('refactoring')).setup()
     end,
@@ -71,6 +78,9 @@ return {
   {
     'mfussenegger/nvim-lint',
     lazy = true,
+    init = function()
+      conf.register_keymap('nvim-lint')
+    end,
     config = function()
       require(config_path('nvim-lint')).setup()
     end,
@@ -80,12 +90,18 @@ return {
     'CKolkey/ts-node-action',
     dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
+    init = function()
+      conf.register_keymap('ts-node-action')
+    end,
   },
 
   {
     'folke/trouble.nvim',
     lazy = true,
     dependencies = 'nvim-tree/nvim-web-devicons',
+    init = function()
+      conf.register_keymap('trouble')
+    end,
     config = function()
       require(config_path('trouble')).setup()
     end,

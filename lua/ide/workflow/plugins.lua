@@ -1,13 +1,13 @@
-local base_dir = 'plugin-config.workflow.'
-
-local function config_path(plugin_name)
-  return base_dir .. plugin_name
-end
+local config_path = require('utils.path').config_dir('workflow')
+local conf = require(config_path())
 
 return {
   {
     'akinsho/toggleterm.nvim',
-    keys = require(config_path('toggleterm')).keymaps(),
+    cmd = 'ToggleTermSetName',
+    init = function()
+      conf.register_keymap('toggleterm')
+    end,
     config = function()
       require(config_path('toggleterm')).setup()
     end,
@@ -17,6 +17,9 @@ return {
     'folke/todo-comments.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     event = 'VeryLazy',
+    init = function()
+      conf.register_keymap('todo-comments')
+    end,
     config = function()
       require(config_path('todo-comments')).setup()
     end,
@@ -25,6 +28,9 @@ return {
   {
     'frabjous/knap',
     lazy = true,
+    init = function()
+      conf.register_keymap('knap')
+    end,
     config = function()
       require(config_path('knap')).setup()
     end,
@@ -37,6 +43,9 @@ return {
       'nvim-lua/plenary.nvim',
     },
     lazy = true,
+    init = function()
+      conf.register_keymap('neogit')
+    end,
     config = function()
       require(config_path('neogit')).setup()
     end,
@@ -44,7 +53,10 @@ return {
 
   {
     'stevearc/overseer.nvim',
-    keys = require(config_path('overseer')).keymaps(),
+    lazy = true,
+    init = function()
+      conf.register_keymap('overseer')
+    end,
     config = function()
       require(config_path('overseer')).setup()
     end,
@@ -58,6 +70,9 @@ return {
       'nvim-neotest/nvim-nio',
     },
     lazy = true,
+    init = function()
+      conf.register_keymap('nvim-dap')
+    end,
     config = function()
       require(config_path('nvim-dap')).setup()
     end,
@@ -67,6 +82,9 @@ return {
     'debugloop/telescope-undo.nvim',
     dependencies = 'nvim-telescope/telescope.nvim',
     lazy = true,
+    init = function()
+      conf.register_keymap('telescope-undo')
+    end,
     config = function()
       require(config_path('telescope-undo')).setup()
     end,
@@ -75,7 +93,10 @@ return {
   {
     'michaelb/sniprun',
     build = 'sh ./install.sh',
-    keys = require(config_path('sniprun')).keymaps(),
+    lazy = true,
+    init = function()
+      conf.register_keymap('sniprun')
+    end,
     config = function()
       require(config_path('sniprun')).setup()
     end,
@@ -91,6 +112,9 @@ return {
       'nvim-lua/plenary.nvim',
     },
     lazy = true,
+    init = function()
+      conf.register_keymap('neotest')
+    end,
     config = function()
       require(config_path('neotest')).setup()
     end,
@@ -101,6 +125,9 @@ return {
     event = {
       'BufRead package.json',
     },
+    init = function()
+      conf.register_keymap('package-info')
+    end,
     dependencies = 'MunifTanjim/nui.nvim',
     config = function()
       require(config_path('package-info')).setup()
@@ -111,6 +138,9 @@ return {
     'folke/persistence.nvim',
     event = 'BufReadPre',
     config = true,
+    init = function()
+      conf.register_keymap('persistence')
+    end,
   },
 
   {
@@ -118,6 +148,9 @@ return {
     event = {
       'BufRead Cargo.toml',
     },
+    init = function()
+      conf.register_keymap('crates')
+    end,
     config = function()
       require(config_path('crates')).setup()
     end,
@@ -126,7 +159,10 @@ return {
   {
     'linux-cultist/venv-selector.nvim',
     branch = 'regexp',
-    keys = require(config_path('venv-selector')).keymaps(),
+    lazy = true,
+    init = function()
+      conf.register_keymap('venv-selector')
+    end,
     dependencies = {
       'neovim/nvim-lspconfig',
       'nvim-telescope/telescope.nvim',

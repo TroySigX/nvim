@@ -1,8 +1,5 @@
-local base_dir = 'plugin-config.gui.'
-
-local function config_path(plugin_name)
-  return base_dir .. plugin_name
-end
+local config_path = require('utils.path').config_dir('gui')
+local conf = require(config_path())
 
 return {
   {
@@ -31,6 +28,9 @@ return {
       'nvim-lua/plenary.nvim',
     },
     priority = 200,
+    init = function()
+      conf.register_keymap('notify')
+    end,
     config = function()
       require(config_path('notify')).setup()
     end,
@@ -62,7 +62,10 @@ return {
 
   {
     'NvChad/nvim-colorizer.lua',
-    keys = require(config_path('nvim-colorizer')).keymaps(),
+    lazy = true,
+    init = function()
+      conf.register_keymap('nvim-colorizer')
+    end,
     config = function()
       require(config_path('nvim-colorizer')).setup()
     end,
@@ -79,6 +82,9 @@ return {
   {
     'mrjones2014/smart-splits.nvim',
     lazy = true,
+    init = function()
+      conf.register_keymap('smart-splits')
+    end,
     config = function()
       require(config_path('smart-splits')).setup()
     end,
