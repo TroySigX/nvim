@@ -15,7 +15,6 @@ end
 local function format_args(bufnr)
   vim.b[bufnr].formatting = true
   return {
-    lsp_fallback = false,
     timeout_ms = 500,
   }, function()
     vim.b[bufnr].formatting = false
