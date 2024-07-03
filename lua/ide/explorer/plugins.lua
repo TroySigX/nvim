@@ -13,6 +13,7 @@ return {
         'junegunn/fzf',
         build = './install --bin',
       },
+      'folke/tokyonight.nvim',
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
@@ -45,6 +46,7 @@ return {
         build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build',
       },
       'nvim-lua/plenary.nvim',
+      'folke/tokyonight.nvim',
     },
     config = function()
       require(config_path('telescope')).setup()
