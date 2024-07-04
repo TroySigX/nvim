@@ -3,18 +3,6 @@ local conf = require(config_path())
 
 return {
   {
-    'stevearc/conform.nvim',
-    lazy = true,
-    event = 'BufWritePre',
-    init = function()
-      conf.register_keymap('conform')
-    end,
-    config = function()
-      require(config_path('conform')).setup()
-    end,
-  },
-
-  {
     'chrisgrieser/nvim-puppeteer',
     dependencies = 'nvim-treesitter/nvim-treesitter',
   },
