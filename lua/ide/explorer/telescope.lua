@@ -4,6 +4,7 @@ function M.setup()
   vim.api.nvim_set_hl(0, 'TelescopeBorder', { link = 'Normal' })
   vim.api.nvim_set_hl(0, 'TelescopeTitle', { link = 'Special' })
   vim.api.nvim_set_hl(0, 'TelescopePromptBorder', { link = 'Normal' })
+  vim.api.nvim_set_hl(0, 'TelescopePromptTitle', { fg = '#ff9e64' })
   vim.api.nvim_set_hl(0, 'TelescopeSelection', { bg = '#36312f' })
   vim.api.nvim_set_hl(0, 'TelescopePreviewBorder', { link = 'Normal' })
 

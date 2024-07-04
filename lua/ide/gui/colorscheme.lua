@@ -11,6 +11,10 @@ function M.setup()
       sidebars = 'transparent',
       floats = 'transparent',
     },
+    plugins = {
+      telescope = false,
+      fzf = false,
+    },
   })
   tokyonight.load()
 end
