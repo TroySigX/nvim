@@ -63,10 +63,9 @@ function M.setup()
           icon = ' Formatter:',
           color = function()
             local bufnr = vim.api.nvim_get_current_buf()
-            local buf_ft = vim.api.nvim_get_option_value('filetype', { buf = 0 })
             return {
               fg = vim.b[bufnr].formatting and '#e7f20c'
-                or vim.g.autoformat and require('formatter-config').filetypes()[buf_ft] and '#60e6a3'
+                or vim.g.autoformat and require(lsp_dir).active_formatter() ~= 'None' and '#60e6a3'
                 or '#a6a6a6',
             }
           end,
