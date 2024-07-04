@@ -13,7 +13,6 @@ return {
         'junegunn/fzf',
         build = './install --bin',
       },
-      'folke/tokyonight.nvim',
       'nvim-tree/nvim-web-devicons',
     },
     config = function()
