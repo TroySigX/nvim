@@ -34,6 +34,9 @@ function M.add_keymap(keymap)
   end
 
   keymap.opts.desc = keymap[3]
+  if keymap.opts.silent == nil then
+    keymap.opts.silent = true
+  end
 
   vim.keymap.set(keymap.mode, keymap[1], keymap[2], keymap.opts)
 end
