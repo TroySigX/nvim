@@ -20,14 +20,14 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<F4>'] = {
-      function()
-        require('aerial').toggle()
-      end,
-      'Toggle Aerial (code outline)',
-    },
-  }, { mode = { 'n', 'x', 'i' } })
+  require('utils.keymaps').add_keymap({
+    '<F4>',
+    function()
+      require('aerial').toggle()
+    end,
+    'Toggle Aerial (code outline)',
+    mode = { 'n', 'x', 'i' },
+  })
 end
 
 return M

@@ -1,6 +1,6 @@
 local M = {}
 
-local plugin_keymaps = require('utils.keymaps').new('gui')
+local plugin_keymaps = require('utils.keymaps').create_capability_keymaps('gui')
 
 function M.register_keymap(plugin_name)
   plugin_keymaps.register(plugin_name)

@@ -1,16 +1,14 @@
 local M = {}
 
 function M.keymaps()
-  require('which-key').register({
-    l = {
-      l = {
-        function()
-          require('lint').try_lint()
-        end,
-        '[L]sp [L]int',
-      },
-    },
-  }, { prefix = '<space>', mode = { 'n', 'x' } })
+  require('utils.keymaps').add_keymap({
+    '<space>ll',
+    function()
+      require('lint').try_lint()
+    end,
+    '[L]sp [L]int',
+    mode = { 'n', 'x' },
+  })
 end
 
 function M.setup()

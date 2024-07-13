@@ -24,19 +24,18 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<space>pr'] = {
-      function()
-        local bufnr = vim.api.nvim_get_current_buf()
-        if vim.b[bufnr].preview == nil then
-          vim.b[bufnr].preview = true
-        else
-          vim.b[bufnr].preview = not vim.b[bufnr].preview
-        end
-        require('knap').toggle_autopreviewing()
-      end,
-      'Toggle [Pr]eview',
-    },
+  require('utils.keymaps').add_keymap({
+    '<space>pr',
+    function()
+      local bufnr = vim.api.nvim_get_current_buf()
+      if vim.b[bufnr].preview == nil then
+        vim.b[bufnr].preview = true
+      else
+        vim.b[bufnr].preview = not vim.b[bufnr].preview
+      end
+      require('knap').toggle_autopreviewing()
+    end,
+    'Toggle [Pr]eview',
   })
 end
 

@@ -1,13 +1,12 @@
 local M = {}
 
 function M.keymaps()
-  require('which-key').register({
-    ['<space>ut'] = {
-      function()
-        require('telescope').extensions.undo.undo()
-      end,
-      'Open [U]ndo[T]ree',
-    },
+  require('utils.keymaps').add_keymap({
+    '<space>ut',
+    function()
+      require('telescope').extensions.undo.undo()
+    end,
+    'Open [U]ndo[T]ree',
   })
 end
 

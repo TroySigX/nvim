@@ -7,14 +7,14 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<F1>'] = {
-      function()
-        require('trouble').toggle('diagnostics')
-      end,
-      'Toggle Trouble (diagnostic) List',
-    },
-  }, { mode = { 'n', 'i', 'x' } })
+  require('utils.keymaps').add_keymap({
+    '<F1>',
+    function()
+      require('trouble').toggle('diagnostics')
+    end,
+    'Toggle Trouble (diagnostic) List',
+    mode = { 'n', 'i', 'x' },
+  })
 end
 
 return M

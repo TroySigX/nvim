@@ -1,14 +1,13 @@
 local M = {}
 
 function M.keymaps()
-  require('which-key').register({
-    ts = {
-      function()
-        require('ts-node-action').node_action()
-      end,
-      'TS Node Action (toggle boolean, if/else <-> ternary, toggle operator)',
-    },
-  }, { prefix = '<space>' })
+  require('utils.keymaps').add_keymap({
+    '<space>ts',
+    function()
+      require('ts-node-action').node_action()
+    end,
+    'TS Node Action (toggle boolean, if/else <-> ternary, toggle operator)',
+  })
 end
 
 return M

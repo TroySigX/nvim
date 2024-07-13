@@ -7,7 +7,6 @@ return {
     cmd = 'CompetiTest',
     dependencies = {
       'MunifTanjim/nui.nvim',
-      'folke/which-key.nvim',
     },
     init = function()
       conf.register_keymap('competitest')

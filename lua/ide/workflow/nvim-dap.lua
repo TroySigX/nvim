@@ -1,73 +1,74 @@
 local M = {}
 
-local wk = require('which-key')
+local map = require('utils.keymaps').add_keymap
 
 local function on_attach_keymaps()
-  wk.register({
-    ['<A-Right>'] = {
-      function()
-        require('dap').step_over()
-      end,
-      'Debugger Step Over',
-    },
-    ['<A-Left>'] = {
-      function()
-        require('dap').step_back()
-      end,
-      'Debugger Step Back',
-    },
-    ['<A-Down>'] = {
-      function()
-        require('dap').step_into()
-      end,
-      'Debugger Step Back',
-    },
-    ['<A-Up>'] = {
-      function()
-        require('dap').step_out()
-      end,
-      'Debugger Step Out',
-    },
-    ['<leader>'] = {
-      d = {
-        x = {
-          function()
-            require('dap').terminate()
-          end,
-          'Terminate Debugger',
-        },
-        r = {
-          function()
-            require('dap').run_to_cursor()
-          end,
-          'Debugger Run to Cursor',
-        },
-        C = {
-          function()
-            require('dap').continue()
-          end,
-          'Launch debugger session',
-        },
-        c = {
-          function()
-            require('dap').run_last()
-          end,
-          'Run last debugger session',
-        },
-      },
-    },
+  map({
+    '<A-Right>',
+    function()
+      require('dap').step_over()
+    end,
+    'Debugger Step Over',
+  })
+  map({
+    '<A-Left>',
+    function()
+      require('dap').step_back()
+    end,
+    'Debugger Step Back',
+  })
+  map({
+    '<A-Down>',
+    function()
+      require('dap').step_into()
+    end,
+    'Debugger Step Back',
+  })
+  map({
+    '<A-Up>',
+    function()
+      require('dap').step_out()
+    end,
+    'Debugger Step Out',
   })
 
-  wk.register({
-    d = {
-      e = {
-        function()
-          require('dapui').eval()
-        end,
-        'Debugger Eval',
-      },
-    },
-  }, { prefix = '<leader>', mode = { 'n', 'x' } })
+  map({
+    '<leader>dx',
+    function()
+      require('dap').terminate()
+    end,
+    'Terminate Debugger',
+  })
+  map({
+    '<leader>dr',
+    function()
+      require('dap').run_to_cursor()
+    end,
+    'Debugger Run to Cursor',
+  })
+  map({
+    '<leader>dc',
+    function()
+      require('dap').run_last()
+    end,
+    'Run last debugger session',
+  })
+  map({
+    '<leader>dC',
+    function()
+      require('dap').continue()
+    end,
+    'Launch debugger session',
+  })
+
+  map({
+    '<leader>de',
+    function()
+      require('dapui').eval()
+    end,
+    'Debugger Eval',
+    mode = { 'n', 'x' },
+  })
 end
 
 local function sign_define()
@@ -186,30 +187,27 @@ function M.setup()
 end
 
 function M.keymaps()
-  wk.register({
-    d = {
-      name = 'debugger',
-      b = {
-        function()
-          require('dap').toggle_breakpoint()
-          require('dapui')
-        end,
-        'Toggle [B]reakpoint',
-      },
-    },
-  }, { prefix = '<leader>' })
+  require('which-key').add({ '<leader>d', group = 'debugger' })
+  map({
+    '<leader>db',
+    function()
+      require('dap').toggle_breakpoint()
+      require('dapui')
+    end,
+    'Toggle [B]reakpoint',
+  })
 
-  wk.register({
-    ['<F8>'] = {
-      function()
-        vim.cmd.stopinsert()
-        require('dapui').toggle({
-          reset = true,
-        })
-      end,
-      'Toggle DapUI (debugger)',
-    },
-  }, { mode = { 'n', 'i', 'x' } })
+  map({
+    '<F8>',
+    function()
+      vim.cmd.stopinsert()
+      require('dapui').toggle({
+        reset = true,
+      })
+    end,
+    'Toggle DapUI (debugger)',
+    mode = { 'n', 'i', 'x' },
+  })
 end
 
 return M

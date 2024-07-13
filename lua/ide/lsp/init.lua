@@ -1,6 +1,6 @@
 local M = {}
 
-local plugin_keymaps = require('utils.keymaps').new('lsp')
+local plugin_keymaps = require('utils.keymaps').create_capability_keymaps('lsp')
 
 function M.register_keymap(plugin_name)
   plugin_keymaps.register(plugin_name)

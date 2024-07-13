@@ -1,36 +1,60 @@
 local M = {}
 
 function M.keymaps()
-  require('which-key').register({
-    J = { ':Lspsaga goto_definition<CR>', 'LSP Goto Definition' },
-    K = { ':Lspsaga hover_doc<CR>', 'View LSP Doc' },
+  local map = require('utils.keymaps').add_keymap
+  map({
+    'J',
+    ':Lspsaga goto_definition<CR>',
+    'LSP Goto Definition',
+  })
+  map({
+    'K',
+    ':Lspsaga hover_doc<CR>',
+    'View LSP Doc',
+  })
 
-    ['<space>'] = {
-      rn = {
-        name = '[R]e[N]ame',
-        p = { ':Lspsaga rename ++project<CR>', '[R]e[N]ame [P]roject' },
-        f = { ':Lspsaga rename<CR>', '[R]e[N]ame [F]ile' },
-      },
-      lr = { ':Lspsaga finder<CR>', '[L]sp [R]eferences' },
-    },
+  require('which-key').add({ '<space>rn', group = '[R]e[N]ame' })
+  map({
+    '<space>rnp',
+    ':Lspsaga rename ++project<CR>',
+    '[R]e[N]ame [P]roject',
+  })
+  map({
+    '<space>rnf',
+    ':Lspsaga rename<CR>',
+    '[R]e[N]ame [F]ile',
+  })
 
-    ['<leader>'] = {
-      ca = { ':Lspsaga code_action<CR>', 'LSP Code Action' },
-      e = { ':Lspsaga show_line_diagnostics<CR>', 'Show [E]rrors on line' },
-    },
+  map({
+    '<space>lr',
+    ':Lspsaga finder<CR>',
+    '[L]sp [R]eferences',
+  })
 
-    ['<C-k>'] = {
-      function()
-        require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })
-      end,
-      'Go To Previous Error',
-    },
-    ['<C-j>'] = {
-      function()
-        require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })
-      end,
-      'Go To Next Error',
-    },
+  map({
+    '<leader>ca',
+    ':Lspsaga code_action<CR>',
+    'LSP Code Action',
+  })
+  map({
+    '<leader>e',
+    ':Lspsaga show_line_diagnostics<CR>',
+    'Show [E]rrors on line',
+  })
+
+  map({
+    '<C-k>',
+    function()
+      require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+    end,
+    'Go To Previous Error',
+  })
+  map({
+    '<C-j>',
+    function()
+      require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })
+    end,
+    'Go To Next Error',
   })
 end
 

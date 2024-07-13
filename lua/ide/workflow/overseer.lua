@@ -1,36 +1,37 @@
 local M = {}
 
 function M.keymaps()
-  require('which-key').register({
-    ['<F5>'] = {
-      function()
-        require('overseer')
-        vim.cmd.OverseerRun()
-      end,
-      'Trigger Task Runner',
-    },
-    ['<F17>'] = {
-      function()
-        local overseer = require('overseer')
-        local tasks = overseer.list_tasks({ recent_first = true })
-        if vim.tbl_isempty(tasks) then
-          vim.notify('No tasks found', vim.log.levels.WARN)
-        else
-          overseer.run_action(tasks[1], 'restart')
-        end
-      end,
-      'Run Last Task (<Shift-F5>)',
-    },
-  }, { mode = { 'n', 'i', 'x' } })
+  local map = require('utils.keymaps').add_keymap
+  map({
+    '<F5>',
+    function()
+      require('overseer')
+      vim.cmd.OverseerRun()
+    end,
+    'Trigger Task Runner',
+  })
+  map({
+    '<F17>',
+    function()
+      local overseer = require('overseer')
+      local tasks = overseer.list_tasks({ recent_first = true })
+      if vim.tbl_isempty(tasks) then
+        vim.notify('No tasks found', vim.log.levels.WARN)
+      else
+        overseer.run_action(tasks[1], 'restart')
+      end
+    end,
+    'Run Last Task (<Shift-F5>)',
+    mode = { 'n', 'i', 'x' },
+  })
 
-  require('which-key').register({
-    ['<space>os'] = {
-      function()
-        require('overseer')
-        vim.cmd.OverseerToggle()
-      end,
-      '[O]ver[S]eer Toggle (toggle task runner window)',
-    },
+  map({
+    '<space>os',
+    function()
+      require('overseer')
+      vim.cmd.OverseerToggle()
+    end,
+    '[O]ver[S]eer Toggle (toggle task runner window)',
   })
 end
 

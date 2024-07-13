@@ -1,14 +1,14 @@
 local M = {}
 
 function M.setup()
-  require('which-key').register({
-    [',.'] = {
-      function()
-        require('nvim-treesitter.textobjects.repeatable_move').repeat_last_move()
-      end,
-      'Repeat last textobjects movement',
-    },
-  }, { mode = 'n', 'x', 'o' })
+  require('utils.keymaps').add_keymap({
+    ',.',
+    function()
+      require('nvim-treesitter.textobjects.repeatable_move').repeat_last_move()
+    end,
+    'Repeat last textobjects movement',
+    mode = { 'n', 'x', 'o' },
+  })
 
   require('nvim-treesitter.configs').setup({
     textobjects = {

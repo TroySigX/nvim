@@ -1,50 +1,46 @@
 local M = {}
 
 function M.keymaps()
-  local map = require('which-key').register
+  local map = require('utils.keymaps').add_keymap
+  map({
+    '<leader>rf',
+    function()
+      require('refactoring').refactor('Extract Function')
+    end,
+    '[R]efactor extract [F]unction',
+    mode = 'x',
+  })
+  map({
+    '<leader>rve',
+    function()
+      require('refactoring').refactor('Extract Variable')
+    end,
+    '[R]efactor [V]ariable [E]xtract',
+    mode = 'x',
+  })
+  map({
+    '<leader>rvi',
+    function()
+      require('refactoring').refactor('Inline Variable')
+    end,
+    '[R]efactor [V]ariable [I]nline (opposite of extract variable)',
+    mode = 'x',
+  })
 
   map({
-    r = {
-      f = {
-        function()
-          require('refactoring').refactor('Extract Function')
-        end,
-        '[R]efactor extract [F]unction',
-      },
-
-      v = {
-        e = {
-          function()
-            require('refactoring').refactor('Extract Variable')
-          end,
-          '[R]efactor [V]ariable [E]xtract',
-        },
-        i = {
-          function()
-            require('refactoring').refactor('Inline Variable')
-          end,
-          '[R]efactor [V]ariable [I]nline (opposite of extract variable)',
-        },
-      },
-    },
-  }, { prefix = '<leader>', mode = 'x' })
-
+    '<leader>rb',
+    function()
+      require('refactoring').refactor('Extract Block')
+    end,
+    '[R]efactor extract [B]lock',
+  })
   map({
-    r = {
-      b = {
-        function()
-          require('refactoring').refactor('Extract Block')
-        end,
-        '[R]efactor extract [B]lock',
-      },
-      vi = {
-        function()
-          require('refactoring').refactor('Inline Variable')
-        end,
-        '[R]efactor [V]ariable [I]nline (opposite of extract variable)',
-      },
-    },
-  }, { prefix = '<leader>' })
+    '<leader>rvi',
+    function()
+      require('refactoring').refactor('Inline Variable')
+    end,
+    '[R]efactor [V]ariable [I]nline (opposite of extract variable)',
+  })
 end
 
 function M.setup()

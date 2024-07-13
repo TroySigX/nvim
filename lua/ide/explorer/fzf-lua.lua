@@ -7,75 +7,81 @@ function M.setup()
 end
 
 function M.keymaps()
-  local map = require('which-key').register
+  local map = require('utils.keymaps').add_keymap
   map({
-    g = {
-      r = {
-        function()
-          require('fzf-lua').live_grep()
-        end,
-        'Live [Gr]ep',
-      },
-      R = {
-        function()
-          require('fzf-lua').live_grep_resume()
-        end,
-        '[G]rep [R]esume',
-      },
-    },
-    sw = {
-      function()
-        require('fzf-lua').grep_cword()
-      end,
-      '[S]earch [W]ord',
-    },
-    km = {
-      function()
-        require('fzf-lua').keymaps()
-      end,
-      '[K]ey[M]aps',
-    },
-  }, { prefix = '<space>' })
+    '<space>gr',
+    function()
+      require('fzf-lua').live_grep()
+    end,
+    'Live [Gr]ep',
+  })
 
   map({
-    sw = {
-      function()
-        require('fzf-lua').grep_visual()
-      end,
-      '[S]earch Selected [W]ord',
-    },
-  }, { prefix = '<space>', mode = 'x' })
+    '<space>gR',
+    function()
+      require('fzf-lua').live_grep_resume()
+    end,
+    '[G]rep [R]esume',
+  })
 
   map({
-    ['<F6>'] = {
-      function()
-        require('fzf-lua').files()
-      end,
-      'Find files',
-    },
-
-    ['<F18>'] = {
-      function()
-        require('fzf-lua').resume()
-      end,
-      'Resume last fzf command (<S-F6>)',
-    },
-    ['<F30>'] = {
-      function()
-        require('fzf-lua').oldfiles()
-      end,
-      'Old files (<C-F6>)',
-    },
-  }, { mode = { 'n', 'x', 'i' } })
+    '<space>sw',
+    function()
+      require('fzf-lua').grep_cword()
+    end,
+    '[S]earch [W]ord',
+  })
 
   map({
-    ['?'] = {
-      function()
-        require('fzf-lua').grep_curbuf()
-      end,
-      'Grep current buffer',
-    },
-  }, { mode = { 'n', 'x' } })
+    '<space>km',
+    function()
+      require('fzf-lua').keymaps()
+    end,
+    '[K]ey[M]aps',
+  })
+
+  map({
+    '<space>sw',
+    function()
+      require('fzf-lua').grep_visual()
+    end,
+    '[S]earch Selected [W]ord',
+    mode = 'x',
+  })
+
+  map({
+    '<F6>',
+    function()
+      require('fzf-lua').files()
+    end,
+    'Find files',
+    mode = { 'n', 'x', 'i' },
+  })
+  map({
+    '<F18>',
+    function()
+      require('fzf-lua').resume()
+    end,
+    'Resume last fzf command (<S-F6>)',
+    mode = { 'n', 'x', 'i' },
+  })
+  map({
+    '<F30>',
+    function()
+      require('fzf-lua').oldfiles()
+    end,
+    'Old files (<C-F6>)',
+    mode = { 'n', 'x', 'i' },
+  })
+
+  map({
+    '?',
+    function()
+      require('fzf-lua').grep_curbuf()
+    end,
+    'Grep current buffer',
+    mode = { 'n', 'x' },
+  })
 end
 
 return M

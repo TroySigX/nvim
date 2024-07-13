@@ -7,13 +7,12 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    gs = {
-      function()
-        require('treesj').toggle()
-      end,
-      'Toggle multi/single line',
-    },
+  require('utils.keymaps').add_keymap({
+    'gs',
+    function()
+      require('treesj').toggle()
+    end,
+    'Toggle multi/single line',
   })
 end
 

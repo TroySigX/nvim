@@ -18,15 +18,15 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<F10>'] = {
-      function()
-        vim.cmd.stopinsert()
-        require('neogit').open()
-      end,
-      'Open Neogit (manage git repo)',
-    },
-  }, { mode = { 'n', 'x', 'i' } })
+  require('utils.keymaps').add_keymap({
+    '<F10>',
+    function()
+      vim.cmd.stopinsert()
+      require('neogit').open()
+    end,
+    'Open Neogit (manage git repo)',
+    mode = { 'n', 'x', 'i' },
+  })
 end
 
 return M

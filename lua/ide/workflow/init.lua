@@ -1,6 +1,6 @@
 local M = {}
 
-local plugin_keymaps = require('utils.keymaps').new('workflow')
+local plugin_keymaps = require('utils.keymaps').create_capability_keymaps('workflow')
 
 function M.register_keymap(plugin_name)
   plugin_keymaps.register(plugin_name)

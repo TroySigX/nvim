@@ -1,14 +1,13 @@
 local M = {}
 
 function M.keymaps()
-  require('which-key').register({
-    ['<leader>ct'] = {
-      function()
-        require('colorizer')
-        vim.cmd.ColorizerToggle()
-      end,
-      '[C]olorizer [T]oggle',
-    },
+  require('utils.keymaps').add_keymap({
+    '<leader>ct',
+    function()
+      require('colorizer')
+      vim.cmd.ColorizerToggle()
+    end,
+    '[C]olorizer [T]oggle',
   })
 end
 

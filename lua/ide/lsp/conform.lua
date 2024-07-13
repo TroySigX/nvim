@@ -22,24 +22,24 @@ local function format_args(bufnr)
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<space>ft'] = {
-      function()
-        toggle_autoformat()
-      end,
-      '[F]ormatter [T]oggle',
-    },
+  local map = require('utils.keymaps').add_keymap
+  map({
+    '<space>ft',
+    function()
+      toggle_autoformat()
+    end,
+    '[F]ormatter [T]oggle',
   })
 
-  require('which-key').register({
-    ['<space>fr'] = {
-      function()
-        local bufnr = vim.api.nvim_get_current_buf()
-        require('conform').format(format_args(bufnr))
-      end,
-      '[F]ormatter [R]un',
-    },
-  }, { mode = { 'n', 'x' } })
+  map({
+    '<space>fr',
+    function()
+      local bufnr = vim.api.nvim_get_current_buf()
+      require('conform').format(format_args(bufnr))
+    end,
+    '[F]ormatter [R]un',
+    mode = { 'n', 'x' },
+  })
 end
 
 --- mapping filetypes to conform name

@@ -2,8 +2,11 @@ local M = {}
 
 function M.setup()
   require('which-key').setup({
-    triggers_blacklist = {
-      n = { 'v', "'" },
+    icons = {
+      rules = false,
+    },
+    plugins = {
+      registers = false,
     },
   })
 end

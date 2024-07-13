@@ -12,24 +12,24 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('which-key').register({
-    ['<space>sr'] = {
-      function()
-        require('sniprun')
-        vim.cmd.SnipRun()
-      end,
-      'Trigger [S]nip [R]un (run code runner)',
-    },
-  }, { mode = { 'n', 'x' } })
+  local map = require('utils.keymaps').add_keymap
+  map({
+    '<space>sr',
+    function()
+      require('sniprun')
+      vim.cmd.SnipRun()
+    end,
+    'Trigger [S]nip [R]un (run code runner)',
+    mode = { 'n', 'x' },
+  })
 
-  require('which-key').register({
-    ['<space>sc'] = {
-      function()
-        require('sniprun')
-        vim.cmd.SnipClose()
-      end,
-      '[S]nip [C]lose (close code runner)',
-    },
+  map({
+    '<space>sc',
+    function()
+      require('sniprun')
+      vim.cmd.SnipClose()
+    end,
+    '[S]nip [C]lose (close code runner)',
   })
 end
 
