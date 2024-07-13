@@ -121,20 +121,6 @@ return {
   },
 
   {
-    'vuki656/package-info.nvim',
-    event = {
-      'BufRead package.json',
-    },
-    init = function()
-      conf.register_keymap('package-info')
-    end,
-    dependencies = 'MunifTanjim/nui.nvim',
-    config = function()
-      require(config_path('package-info')).setup()
-    end,
-  },
-
-  {
     'folke/persistence.nvim',
     event = 'BufReadPre',
     config = true,
