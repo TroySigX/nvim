@@ -162,11 +162,11 @@ local function dapui_setup()
 end
 
 function M.setup()
+  sign_define()
   debugger_setup()
   dapui_setup()
   on_attach_keymaps()
   ui_automation()
-  sign_define()
 end
 
 function M.keymaps()
@@ -174,8 +174,8 @@ function M.keymaps()
   map({
     '<leader>db',
     function()
-      require('dap').toggle_breakpoint()
       require('dapui')
+      require('dap').toggle_breakpoint()
     end,
     'Toggle [B]reakpoint',
   })
