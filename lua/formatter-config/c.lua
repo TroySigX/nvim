@@ -8,7 +8,7 @@ function M.formatter()
   return {
     mason_name = 'clang-format',
     system_name = 'clang-format',
-    conform_name = 'clang_format',
+    plugin_name = 'clang_format',
     config_file_name = config_file,
     config_file_path = path.join(vim.fn.stdpath('config'), 'lua', 'formatter-config', 'defaults', config_file),
   }

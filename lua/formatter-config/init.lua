@@ -54,6 +54,10 @@ function M.formatter_installed_name(formatter)
     end
   end
 
+  if formatter.plugin_name == 'injected' then
+    return 'injected'
+  end
+
   return nil
 end
 
@@ -70,6 +74,7 @@ function M.filetypes()
     python = 'python',
     tex = 'tex',
     typst = 'typ',
+    markdown = 'quarto',
   }
 end
 

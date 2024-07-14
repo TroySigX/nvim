@@ -4,7 +4,7 @@ local M = {}
 function M.formatter()
   return {
     mason_name = 'latexindent',
-    conform_name = 'latexindent',
+    plugin_name = 'latexindent',
   }
 end
 
