@@ -3,69 +3,52 @@ local M = {}
 local map = require('utils.keymaps').add_keymap
 
 local function on_attach_keymaps()
+  local dap = require('dap')
   map({
     '<A-Right>',
-    function()
-      require('dap').step_over()
-    end,
+    dap.step_over,
     'Debugger Step Over',
   })
   map({
     '<A-Left>',
-    function()
-      require('dap').step_back()
-    end,
+    dap.step_back,
     'Debugger Step Back',
   })
   map({
     '<A-Down>',
-    function()
-      require('dap').step_into()
-    end,
+    dap.step_into,
     'Debugger Step Back',
   })
   map({
     '<A-Up>',
-    function()
-      require('dap').step_out()
-    end,
+    dap.step_out,
     'Debugger Step Out',
   })
 
   map({
     '<leader>dx',
-    function()
-      require('dap').terminate()
-    end,
+    dap.terminate,
     'Terminate Debugger',
   })
   map({
     '<leader>dr',
-    function()
-      require('dap').run_to_cursor()
-    end,
+    dap.run_to_cursor,
     'Debugger Run to Cursor',
   })
   map({
     '<leader>dc',
-    function()
-      require('dap').run_last()
-    end,
+    dap.run_last,
     'Run last debugger session',
   })
   map({
     '<leader>dC',
-    function()
-      require('dap').continue()
-    end,
+    dap.continue,
     'Launch debugger session',
   })
 
   map({
     '<leader>de',
-    function()
-      require('dapui').eval()
-    end,
+    require('dapui').eval,
     'Debugger Eval',
     mode = { 'n', 'x' },
   })
