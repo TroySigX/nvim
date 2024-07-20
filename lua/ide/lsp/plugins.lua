@@ -20,7 +20,7 @@ return {
       'hrsh7th/cmp-emoji',
     },
     init = function()
-      conf.register_keymap('luasnip')
+      conf.register_plugin_name('luasnip')
     end,
     config = function()
       require(config_path('nvim-cmp')).setup()
@@ -52,7 +52,7 @@ return {
       'nvim-treesitter/nvim-treesitter',
     },
     init = function()
-      conf.register_keymap('lspsaga')
+      conf.register_plugin_name('lspsaga')
     end,
     config = function()
       require(config_path('lspsaga')).setup()
@@ -64,7 +64,7 @@ return {
     lazy = true,
     event = 'BufWritePre',
     init = function()
-      conf.register_keymap('conform')
+      conf.register_plugin_name('conform')
     end,
     config = function()
       require(config_path('conform')).setup()
@@ -79,7 +79,7 @@ return {
     },
     lazy = true,
     init = function()
-      conf.register_keymap('refactoring')
+      conf.register_plugin_name('refactoring')
     end,
     config = function()
       require(config_path('refactoring')).setup()
@@ -90,7 +90,7 @@ return {
     'mfussenegger/nvim-lint',
     lazy = true,
     init = function()
-      conf.register_keymap('nvim-lint')
+      conf.register_plugin_name('nvim-lint')
     end,
     config = function()
       require(config_path('nvim-lint')).setup()
@@ -190,7 +190,7 @@ return {
     dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
     init = function()
-      conf.register_keymap('ts-node-action')
+      conf.register_plugin_name('ts-node-action')
     end,
   },
 
@@ -199,7 +199,7 @@ return {
     lazy = true,
     dependencies = 'nvim-tree/nvim-web-devicons',
     init = function()
-      conf.register_keymap('trouble')
+      conf.register_plugin_name('trouble')
     end,
     config = function()
       require(config_path('trouble')).setup()

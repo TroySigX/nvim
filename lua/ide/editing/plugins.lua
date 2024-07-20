@@ -12,7 +12,7 @@ return {
     dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
     init = function()
-      conf.register_keymap('neogen')
+      conf.register_plugin_name('neogen')
     end,
     config = function()
       require(config_path('neogen')).setup()
@@ -47,7 +47,7 @@ return {
     dependencies = 'nvim-treesitter/nvim-treesitter',
     lazy = true,
     init = function()
-      conf.register_keymap('treesj')
+      conf.register_plugin_name('treesj')
     end,
     config = function()
       require(config_path('treesj')).setup()

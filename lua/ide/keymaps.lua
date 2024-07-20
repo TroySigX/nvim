@@ -1,13 +1,13 @@
 local M = {}
 
 local function ide_keymaps()
-  require('ide.editing').setup_keymap()
-  require('ide.explorer').setup_keymap()
-  require('ide.gui').setup_keymap()
-  require('ide.navigation').setup_keymap()
-  require('ide.others').setup_keymap()
-  require('ide.workflow').setup_keymap()
-  require('ide.lsp').setup_keymap()
+  require('ide.editing').setup_keymaps()
+  require('ide.explorer').setup_keymaps()
+  require('ide.gui').setup_keymaps()
+  require('ide.navigation').setup_keymaps()
+  require('ide.others').setup_keymaps()
+  require('ide.workflow').setup_keymaps()
+  require('ide.lsp').setup_keymaps()
 end
 
 local function general_keymaps()

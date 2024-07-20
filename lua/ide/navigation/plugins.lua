@@ -6,7 +6,7 @@ return {
     'folke/flash.nvim',
     event = 'VeryLazy',
     init = function()
-      conf.register_keymap('flash-nvim')
+      conf.register_plugin_name('flash-nvim')
     end,
     config = function()
       require(config_path('flash-nvim')).setup()
@@ -17,7 +17,7 @@ return {
     'stevearc/aerial.nvim',
     lazy = true,
     init = function()
-      conf.register_keymap('aerial')
+      conf.register_plugin_name('aerial')
     end,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',

@@ -6,7 +6,7 @@ return {
     'ibhagwan/fzf-lua',
     lazy = true,
     init = function()
-      conf.register_keymap('fzf-lua')
+      conf.register_plugin_name('fzf-lua')
     end,
     dependencies = {
       {
@@ -24,7 +24,7 @@ return {
     'nvim-tree/nvim-tree.lua',
     lazy = true,
     init = function()
-      conf.register_keymap('nvim-tree')
+      conf.register_plugin_name('nvim-tree')
     end,
     dependencies = {
       'antosha417/nvim-lsp-file-operations',

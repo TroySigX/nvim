@@ -2,24 +2,42 @@ local M = {}
 
 --- setup keymaps for ide capabilities
 ---@param ide_capability IDECapability
----@return table {config_path = function(), register = function(plugin_name: string), setup = function()}
+---@return IDEKeymapUtil
 function M.create_capability_keymaps(ide_capability)
   local config_path = require('utils.path').config_dir(ide_capability)
   local plugin_names = {}
+  local additional_keymap_set_functions = {}
 
+  --- add plugin name to list, which will be setup later in setup_keymaps()
+  ---@param plugin_name string
   local function register(plugin_name)
     if plugin_names[plugin_name] == nil then
       plugin_names[plugin_name] = true
     end
   end
 
+  --- add additional function to setup keymaps, which will be combined and setup later in setup_keymaps()
+  ---@param f function
+  local function add_keymap_setup_function(f)
+    table.insert(additional_keymap_set_functions, f)
+  end
+
   local function setup()
     for plugin_name, _ in pairs(plugin_names) do
       require(config_path(plugin_name)).keymaps()
     end
+
+    for _, f in pairs(additional_keymap_set_functions) do
+      f()
+    end
   end
 
-  return { config_path = config_path, register = register, setup = setup }
+  return {
+    config_path = config_path,
+    register_plugin_name = register,
+    add_keymap_setup_function = add_keymap_setup_function,
+    setup_keymaps = setup,
+  }
 end
 
 --- wrapper for vim.keymap.set

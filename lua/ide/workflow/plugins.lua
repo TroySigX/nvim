@@ -6,7 +6,7 @@ return {
     'akinsho/toggleterm.nvim',
     cmd = 'ToggleTermSetName',
     init = function()
-      conf.register_keymap('toggleterm')
+      conf.register_plugin_name('toggleterm')
     end,
     config = function()
       require(config_path('toggleterm')).setup()
@@ -18,7 +18,7 @@ return {
     dependencies = 'nvim-lua/plenary.nvim',
     event = 'VeryLazy',
     init = function()
-      conf.register_keymap('todo-comments')
+      conf.register_plugin_name('todo-comments')
     end,
     config = function()
       require(config_path('todo-comments')).setup()
@@ -29,7 +29,7 @@ return {
     'frabjous/knap',
     lazy = true,
     init = function()
-      conf.register_keymap('knap')
+      conf.register_plugin_name('knap')
     end,
     config = function()
       require(config_path('knap')).setup()
@@ -44,7 +44,7 @@ return {
     },
     lazy = true,
     init = function()
-      conf.register_keymap('neogit')
+      conf.register_plugin_name('neogit')
     end,
     config = function()
       require(config_path('neogit')).setup()
@@ -55,7 +55,7 @@ return {
     'stevearc/overseer.nvim',
     lazy = true,
     init = function()
-      conf.register_keymap('overseer')
+      conf.register_plugin_name('overseer')
     end,
     config = function()
       require(config_path('overseer')).setup()
@@ -71,7 +71,7 @@ return {
     },
     lazy = true,
     init = function()
-      conf.register_keymap('nvim-dap')
+      conf.register_plugin_name('nvim-dap')
     end,
     config = function()
       require(config_path('nvim-dap')).setup()
@@ -83,7 +83,7 @@ return {
     dependencies = 'nvim-telescope/telescope.nvim',
     lazy = true,
     init = function()
-      conf.register_keymap('telescope-undo')
+      conf.register_plugin_name('telescope-undo')
     end,
     config = function()
       require(config_path('telescope-undo')).setup()
@@ -95,7 +95,7 @@ return {
     build = 'sh ./install.sh',
     lazy = true,
     init = function()
-      conf.register_keymap('sniprun')
+      conf.register_plugin_name('sniprun')
     end,
     config = function()
       require(config_path('sniprun')).setup()
@@ -113,7 +113,7 @@ return {
     },
     lazy = true,
     init = function()
-      conf.register_keymap('neotest')
+      conf.register_plugin_name('neotest')
     end,
     config = function()
       require(config_path('neotest')).setup()
@@ -125,7 +125,7 @@ return {
     event = 'BufReadPre',
     config = true,
     init = function()
-      conf.register_keymap('persistence')
+      conf.register_plugin_name('persistence')
     end,
   },
 
@@ -135,7 +135,7 @@ return {
       'BufRead Cargo.toml',
     },
     init = function()
-      conf.register_keymap('crates')
+      conf.register_plugin_name('crates')
     end,
     config = function()
       require(config_path('crates')).setup()
@@ -147,7 +147,7 @@ return {
     branch = 'regexp',
     lazy = true,
     init = function()
-      conf.register_keymap('venv-selector')
+      conf.register_plugin_name('venv-selector')
     end,
     dependencies = {
       'neovim/nvim-lspconfig',

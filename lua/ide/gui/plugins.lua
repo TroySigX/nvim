@@ -28,7 +28,7 @@ return {
     },
     priority = 200,
     init = function()
-      conf.register_keymap('notify')
+      conf.register_plugin_name('notify')
     end,
     config = function()
       require(config_path('notify')).setup()
@@ -63,7 +63,7 @@ return {
     'NvChad/nvim-colorizer.lua',
     lazy = true,
     init = function()
-      conf.register_keymap('nvim-colorizer')
+      conf.register_plugin_name('nvim-colorizer')
     end,
     config = function()
       require(config_path('nvim-colorizer')).setup()
@@ -82,7 +82,7 @@ return {
     'mrjones2014/smart-splits.nvim',
     lazy = true,
     init = function()
-      conf.register_keymap('smart-splits')
+      conf.register_plugin_name('smart-splits')
     end,
     config = function()
       require(config_path('smart-splits')).setup()

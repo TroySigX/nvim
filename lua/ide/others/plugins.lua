@@ -9,7 +9,7 @@ return {
       'MunifTanjim/nui.nvim',
     },
     init = function()
-      conf.register_keymap('competitest')
+      conf.register_plugin_name('competitest')
     end,
     config = function()
       require(config_path('competitest')).setup()
