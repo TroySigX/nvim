@@ -12,3 +12,4 @@
 ---@field register_plugin_name function(plugin_name: string)
 ---@field setup_keymaps function
 ---@field add_keymap_setup_function function
+---@field [string] any
