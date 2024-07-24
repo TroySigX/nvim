@@ -41,7 +41,7 @@ function M.create_capability_keymaps(ide_capability)
 end
 
 --- wrapper for vim.keymap.set
----@param keymap table { [1]: lhs, [2]: rhs, [3](desc): string, mode?: string|table, opts?: table }
+---@param keymap table { [1]: lhs, [2]: rhs, [3]: desc, mode?: string|table, opts?: table }
 function M.add_keymap(keymap)
   if keymap.mode == nil then
     keymap.mode = 'n'
