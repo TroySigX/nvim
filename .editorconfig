@@ -17,5 +17,5 @@ insert_final_newline = false
 indent_style = tab
 
 # set indent space to 4
-[**.py]
+[**.{cpp,py,c}]
 indent_size = 4
