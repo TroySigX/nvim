@@ -28,9 +28,7 @@ return {
     'glacambre/firenvim',
 
     lazy = not vim.g.started_by_firenvim,
-    build = function()
-      vim.fn['firenvim#install'](0)
-    end,
+    build = ':call firenvim#install(0)',
     config = function()
       require(config_path('firenvim')).setup()
     end,
