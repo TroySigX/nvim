@@ -3,7 +3,7 @@ local M = {}
 local config_path = require('utils.path').config_dir('lsp.lsp-setup')
 
 local custom_lsp = {
-  tsserver = true,
+  ts_ls = true,
   lua_ls = true,
   clangd = true,
   typst_lsp = true,
