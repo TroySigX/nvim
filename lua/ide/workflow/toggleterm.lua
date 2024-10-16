@@ -13,10 +13,6 @@ function M.setup()
   })
 end
 
-local function new_term()
-  require('toggleterm.terminal').Terminal:new():toggle()
-end
-
 function M.keymaps()
   local map = require('utils.keymaps').add_keymap
   map({
