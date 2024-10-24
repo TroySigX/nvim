@@ -5,6 +5,9 @@ function M.setup(opts)
   server_opts.settings = {
     exportPdf = 'never',
   }
+  server_opts.flags = {
+    allow_incremental_sync = true,
+  }
   require('lspconfig')['typst_lsp'].setup(server_opts)
 end
 

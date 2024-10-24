@@ -31,9 +31,6 @@ function M.setup()
   -- setup lsp
   local default_lsp_opts = {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    flags = {
-      allow_incremental_sync = true,
-    },
   }
 
   local lspconfig = require('lspconfig')
