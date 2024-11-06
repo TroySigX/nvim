@@ -29,6 +29,11 @@ function M.setup()
         telescope_filter_type = 'character',
         notify_user_on_venv_activation = true,
       },
+      search = {
+        my_venvs = {
+          command = "$FD '/bin/python$' /mnt/HDD/.virtualenvs --full-path",
+        },
+      },
     },
   })
 end
