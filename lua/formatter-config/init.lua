@@ -74,7 +74,6 @@ function M.filetypes()
     python = 'python',
     tex = 'tex',
     typst = 'typ',
-    markdown = 'quarto',
   }
 end
 
