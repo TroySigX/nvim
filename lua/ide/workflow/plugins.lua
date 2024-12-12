@@ -130,19 +130,6 @@ return {
   },
 
   {
-    'saecki/crates.nvim',
-    event = {
-      'BufRead Cargo.toml',
-    },
-    init = function()
-      conf.register_plugin_name('crates')
-    end,
-    config = function()
-      require(config_path('crates')).setup()
-    end,
-  },
-
-  {
     'linux-cultist/venv-selector.nvim',
     branch = 'regexp',
     lazy = true,
