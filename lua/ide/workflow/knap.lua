@@ -27,11 +27,11 @@ end
 
 function M.keymaps()
   require('utils.keymaps').add_keymap({
-    '<space>pr',
+    '<space>pt',
     function()
       require('knap').toggle_autopreviewing()
     end,
-    'Toggle [Pr]eview',
+    '[P]review [T]oggle',
   })
 end
 
