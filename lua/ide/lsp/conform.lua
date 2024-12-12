@@ -63,7 +63,7 @@ function M.setup()
     formatters_by_ft = available_formatters(),
 
     format_after_save = function(bufnr)
-      if not vim.g.autoformat or vim.b[bufnr].preview then
+      if not vim.g.autoformat then
         return
       end
 
