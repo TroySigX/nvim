@@ -37,6 +37,17 @@ return {
   },
 
   {
+    'lewis6991/gitsigns.nvim',
+    event = 'VeryLazy',
+    init = function()
+      conf.register_plugin_name('gitsigns')
+    end,
+    config = function()
+      require('gitsigns').setup()
+    end,
+  },
+
+  {
     'NeogitOrg/neogit',
     dependencies = {
       'sindrets/diffview.nvim',
