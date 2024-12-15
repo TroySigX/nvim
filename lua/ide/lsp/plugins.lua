@@ -17,7 +17,6 @@ return {
       'zbirenbaum/copilot.lua',
       'zbirenbaum/copilot-cmp',
       'onsails/lspkind.nvim',
-      'hrsh7th/cmp-emoji',
     },
     init = function()
       conf.register_plugin_name('luasnip')
