@@ -53,6 +53,7 @@ function M.setup()
     sorting = {
       comparators = {
         cmp.config.compare.recently_used,
+        cmp.config.compare.exact,
         cmp.config.compare.offset,
         cmp.config.compare.score,
         function(entry1, entry2)
