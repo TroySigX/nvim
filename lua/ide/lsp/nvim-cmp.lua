@@ -54,7 +54,6 @@ function M.setup()
       comparators = {
         cmp.config.compare.recently_used,
         cmp.config.compare.offset,
-        cmp.config.compare.exact,
         cmp.config.compare.score,
         function(entry1, entry2)
           -- copied from https://github.com/lukas-reineke/cmp-under-comparator
@@ -68,7 +67,6 @@ function M.setup()
             return true
           end
         end,
-        cmp.config.compare.kind,
         cmp.config.compare.order,
       },
     },
