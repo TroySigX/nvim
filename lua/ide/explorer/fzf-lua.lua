@@ -75,6 +75,14 @@ function M.keymaps()
   })
 
   map({
+    '<leader>gbb',
+    function()
+      require('fzf-lua').git_blame()
+    end,
+    '[G]it [B]lame [B]uffer',
+  })
+
+  map({
     '?',
     function()
       require('fzf-lua').grep_curbuf()
