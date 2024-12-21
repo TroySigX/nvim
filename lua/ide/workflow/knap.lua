@@ -8,19 +8,19 @@ function M.setup()
     -- latex
     texoutputext = 'pdf',
     textopdf = 'pdflatex -jobname "$(basename -s .pdf %outputfile%)" -halt-on-error',
-    textopdfviewerlaunch = 'okular --unique %outputfile%',
+    textopdfviewerlaunch = 'okular  %outputfile%',
     textopdfbufferasstdin = true,
 
     -- markdown
     mdoutputext = 'pdf',
     mdtopdf = 'pandoc -f markdown --standalone -o %outputfile%',
-    mdtopdfviewerlaunch = 'okular --unique %outputfile%',
+    mdtopdfviewerlaunch = 'okular %outputfile%',
     mdtopdfbufferasstdin = true,
 
     -- typst
     typoutputext = 'pdf',
     typtopdf = 'typst compile %docroot% %outputfile%',
-    typtopdfviewerlaunch = 'okular --unique %outputfile%',
+    typtopdfviewerlaunch = 'okular %outputfile%',
   }
   vim.g.knap_settings = gknapsettings
 end
