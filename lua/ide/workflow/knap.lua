@@ -7,7 +7,8 @@ function M.setup()
 
     -- latex
     texoutputext = 'pdf',
-    textopdf = 'pdflatex -jobname "$(basename -s .pdf %outputfile%)" -halt-on-error',
+    -- textopdf = 'lualatex -jobname "$(basename -s .pdf %outputfile%)" -halt-on-error', -- lualatex
+    textopdf = 'pdflatex -jobname "$(basename -s .pdf %outputfile%)" -halt-on-error', -- pdflatex
     textopdfviewerlaunch = 'okular  %outputfile%',
     textopdfbufferasstdin = true,
 
