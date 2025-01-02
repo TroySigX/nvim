@@ -51,8 +51,8 @@ The following package types should be installed via `Mason`:
 
 ## Latex
 - LSP: `texlab`
-- Compiler: `texlive-most`
-- PDF converter: `pdflatex`
+- Compiler: `texlive`
+- PDF converter: `lualatex`, `pdflatex`
 - Formatter: `latexindent`
   + Dependency (system package): [libxcrypt-compat](https://archlinux.org/packages/core/x86_64/libxcrypt-compat/)
 
@@ -60,7 +60,7 @@ The following package types should be installed via `Mason`:
 - LSP: `typst_lsp`
 - Formatter: `typstfmt`
 - Compiler: [typst](https://archlinux.org/packages/extra/x86_64/typst/)
- 
+
 ## Bash
 - Linter: `shellcheck`
 
