@@ -27,12 +27,22 @@ function M.setup()
 end
 
 function M.keymaps()
-  require('utils.keymaps').add_keymap({
+  local map = require('utils.keymaps').add_keymap
+
+  map({
     '<space>pt',
     function()
       require('knap').toggle_autopreviewing()
     end,
     '[P]review [T]oggle',
+  })
+
+  map({
+    '<space>po',
+    function()
+      require('knap').process_once()
+    end,
+    '[P]rocess [O]nce',
   })
 end
 
