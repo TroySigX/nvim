@@ -18,7 +18,7 @@ end
 function M.keymaps()
   require('utils.keymaps').add_keymap({
     '<F3>',
-    '<Esc>:TodoTelescope keywords=TODO,FIXME<CR>',
+    vim.cmd.TodoTelescope,
     'Open TODO List',
     mode = { 'n', 'i', 'x' },
   })
