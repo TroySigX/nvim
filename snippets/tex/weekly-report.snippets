@@ -1,0 +1,60 @@
+snippet report
+	\documentclass[12pt]{article}
+	\usepackage{fullpage}
+	\usepackage[shortlabels]{enumitem}
+
+	\usepackage{amsmath}
+	\usepackage{float}
+	\usepackage{mathtools}
+	\usepackage{amssymb}
+	\usepackage{enumitem}
+	\usepackage{siunitx}
+	\usepackage{tabularx}
+	\usepackage{graphicx}
+	\usepackage{tikz}
+	\usepackage{upgreek}
+	\usepackage{subcaption}
+	\usepackage{adjustbox}
+	\usepackage{listings}
+	\usetikzlibrary{automata, positioning, arrows}
+	\usepackage{diagbox}
+	\graphicspath{ {./images/} }
+
+	\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+
+	\definecolor{dkgreen}{rgb}{0,0.6,0}
+	\definecolor{gray}{rgb}{0.5,0.5,0.5}
+	\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+
+	\lstset{frame=tb,
+		language=Python,
+		aboveskip=3mm,
+		belowskip=3mm,
+		showstringspaces=false,
+		columns=flexible,
+		basicstyle={\small\ttfamily},
+		numbers=none,
+		numberstyle=\tiny\color{gray},
+		keywordstyle=\color{blue},
+		commentstyle=\color{dkgreen},
+		stringstyle=\color{mauve},
+		breaklines=true,
+		breakatwhitespace=true,
+		tabsize=4
+	}
+
+
+	\title{Weekly Report}
+	\author{Tri Than}
+	\date{${1:month-date-year}}
+
+	\begin{document}
+	\maketitle
+
+	\section*{\textbf{Summary}}
+
+	\section*{\textbf{Details}}
+	\subsection*{\textbf{$2}}
+
+	\end{document}
