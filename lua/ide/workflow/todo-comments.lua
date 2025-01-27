@@ -4,7 +4,6 @@ function M.setup()
   require('todo-comments').setup({
     search = {
       args = {
-        '--no-ignore',
         '--color=never',
         '--no-heading',
         '--with-filename',
