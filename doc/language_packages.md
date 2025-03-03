@@ -53,6 +53,7 @@ The following package types should be installed via `Mason`:
 - LSP: `texlab`
 - Compiler: `texlive`
 - PDF converter: `lualatex`, `pdflatex`
+- Biblatex compiler: `biber`
 - Formatter: `latexindent`
   + Dependency (system package): [libxcrypt-compat](https://archlinux.org/packages/core/x86_64/libxcrypt-compat/)
 
