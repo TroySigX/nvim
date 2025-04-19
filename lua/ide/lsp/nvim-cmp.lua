@@ -19,7 +19,6 @@ function M.setup()
       }),
     },
     mapping = cmp.mapping.preset.insert({
-      ['<C-Space>'] = cmp.mapping.complete({ reason = cmp.ContextReason.Auto }),
       ['<C-e>'] = cmp.mapping.abort(),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
@@ -44,7 +43,7 @@ function M.setup()
       { name = 'copilot' },
       { name = 'luasnip' },
       { name = 'nvim_lsp' },
-      { name = 'nvim_lsp_signature_help' },
+      -- { name = 'nvim_lsp_signature_help' },
       { name = 'buffer' },
       { name = 'path' },
     },
