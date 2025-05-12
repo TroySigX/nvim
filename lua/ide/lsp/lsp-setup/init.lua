@@ -22,32 +22,25 @@ function M.setup()
     },
   })
 
-  local mason_lspconfig = require('mason-lspconfig')
-
-  mason_lspconfig.setup({
-    ensure_installed = { 'lua_ls' },
-  })
-
   -- setup lsp
   local default_lsp_opts = {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
   }
 
   local lspconfig = require('lspconfig')
-  mason_lspconfig.setup_handlers({
-    function(server_name)
-      -- TODO: remove when ruff has auto-complete capability
-      if server_name == 'ruff' then
-        return
+
+  local installed_lsp_servers = require('mason-lspconfig').get_installed_servers()
+  for _, server in pairs(installed_lsp_servers) do
+    if server ~= 'ruff' then
+      if custom_lsp[server] then
+        require(config_path(server)).setup(default_lsp_opts)
+      else
+        lspconfig[server].setup(default_lsp_opts)
       end
 
-      if custom_lsp[server_name] then
-        require(config_path(server_name)).setup(default_lsp_opts)
-      else
-        lspconfig[server_name].setup(default_lsp_opts)
-      end
-    end,
-  })
+      vim.lsp.enable(server)
+    end
+  end
 end
 
 return M
