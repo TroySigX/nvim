@@ -38,7 +38,7 @@ function M.setup()
         lspconfig[server].setup(default_lsp_opts)
       end
 
-      vim.lsp.enable(server)
+      -- vim.lsp.enable(server)
     end
   end
 end
