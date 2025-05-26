@@ -2,7 +2,8 @@ local M = require('utils.keymaps').create_capability_keymaps('workflow')
 
 function M.active_venv()
   local pyproject = vim.fn.findfile('pyproject.toml', vim.fn.getcwd() .. ';')
-  if pyproject == '' then
+  local pip_requirements = vim.fn.findfile('requirements.txt', vim.fn.getcwd() .. ';')
+  if pyproject == '' and pip_requirements == '' then
     return ''
   end
 
