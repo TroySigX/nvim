@@ -9,7 +9,6 @@ return {
       require(config_path('noice')).setup()
     end,
   },
-
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {

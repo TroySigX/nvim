@@ -30,7 +30,7 @@ function M.setup()
         label = 'Recent Files:',
       },
       shortcut = {
-        { desc = '󰊳 Update', group = '@property', action = require('lazy').update, key = 'u' },
+        -- { desc = '󰊳 Update', group = '@property', action = require('lazy').update, key = 'u' },
         {
           icon = ' ',
           icon_hl = '@variable',

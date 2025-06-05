@@ -207,6 +207,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    branch = 'master',
     config = function()
       require(config_path('treesitter')).setup()
     end,
